@@ -1,5 +1,5 @@
 <template>
-    <section id="cover">
+    <section id="usuario-nao-autenticado-cover">
         <div id="cover-caption">
             <div class="container">
                 <div class="text-center">
@@ -20,19 +20,21 @@
 
 
 <style>
-    html, body {
-        height: 100%;
+    /* TODO corrigir este erro*/
+    
+    #usuario-nao-autenticado-cover {
+/*
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+*/
+        height: 100vh;
+        width: 100vw;
         background: #222 url('/static/img/thanks1.png') center center no-repeat;
         background-size: cover;
         color: indianred;
-        height: 100%;
-
-    }
-    #cover {
-        background: #222 url('/static/img/thanks1.png') center center no-repeat;
-        background-size: cover;
-        color: indianred;
-        height: 100%;
         text-align: center;
         display: flex;
         align-items: center;
