@@ -6,7 +6,7 @@
                     <img src="/static/img/logo.png" class="img-fluid" alt="Logo">
                     <div class="text-center" style="padding-top: 20px;">
                         <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/login">Entrar</router-link>
-                        <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro">Cadastrar-se</router-link>
+                        <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Cadastrar-se</router-link>
                     </div>
                 </div>
             </div>    
