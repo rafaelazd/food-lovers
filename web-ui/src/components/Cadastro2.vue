@@ -1,4 +1,5 @@
-<template>
+
+  <template>
    <div class="container">
         <div class="text-center">
             <div class="col-md-6">
@@ -12,7 +13,32 @@
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formLogin" action="">
                             
-                            
+                            <div class="form-group">
+                            <div class="row">
+                                <div class="form-group">	
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/cafe.png" alt="Café" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">	
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/macarrao.png" alt="Macarrão" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/nachos.png" alt="Nachos" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/pizza.png" alt="Pizza" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label></div>
+                                </div>
+                            </div>
+                               <div class="row">
+                                <div class="form-group">	
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/sanduiche.png" alt="Sanduíche" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/sushi.png" alt="Sushi" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/tacos.png" alt="Tacos" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label></div>
+                                </div>
+                            </div>	
+                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
+                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
+                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
+                            </div>
                             <div class="form-group">
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
@@ -30,6 +56,11 @@
 
 
 <script>
+$(document).ready(function(e){
+    		$(".img-check").click(function(){
+				$(this).toggleClass("check");
+			});
+	});
 
 
 </script>
@@ -129,5 +160,10 @@
         min-height: 100vh;
         align-items: center;
     }
+    .check {
+    opacity:0.5;
+	color:#996;
+	
+}
 
 </style>
