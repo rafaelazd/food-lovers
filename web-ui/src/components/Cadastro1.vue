@@ -1,7 +1,6 @@
 <template>
    <div class="container">
-        <div class="text-center">
-            <div class="col-md-6">
+        <div class="vertical-center">
                 <div class="nb-login">
                    <div class="progress">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
@@ -41,10 +40,7 @@
                             </div>
                         </form>
                     </div>
-
                 </div>
-            </div>
-
         </div>
     </div> 
 </template>
@@ -59,16 +55,16 @@
     body {
         height: 100%;
         width: 100%;
-        background: #222 url('/static/img/boys.png') center no-repeat;
+        background: #222 url('img/boys.png') center no-repeat;
         background-size: cover;
     }
     
     .nb-login {
-        max-width: 300px;
+        max-width: none;
         margin: 30px auto;
         padding: 20px 25px;
         border-radius: 2px;
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
     }
     
     .nb-login h3 {
@@ -76,7 +72,11 @@
         line-height: 13px;
         margin: 15px 0px 25px 0px;
         text-transform: uppercase;
-        color: #fff;
+        color: #ffffff;
+    }
+    
+    .nb-login h2 {
+        font-family: 'Asap Condensed', sans-serif;
     }
     
     .nb-login p {
@@ -85,14 +85,14 @@
     
     .nb-login form {
         margin-bottom: 15px;
-        color: #fff;
+        color: #ffffff;
     }
     
     .nb-login form input,
     .nb-login form textarea {
         box-shadow: none !important;
         padding: 6px 5px;
-        color: #fff;
+        color: #ffffff;
         border: 0px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         background: transparent;
@@ -104,11 +104,11 @@
     }
     
     .nb-login form ::-webkit-input-placeholder {
-        color: #fff;
+        color: #ffffff;
     }
     
     .nb-login form ::-moz-placeholder {
-        color: #fff;
+        color: #ffffff;
     }
     
     .nb-login form :-ms-input-placeholder {
@@ -146,9 +146,13 @@
     }
     
     .vertical-center {
-        min-height: 100%;
-        min-height: 100vh;
         align-items: center;
+        text-align: center;
+    }
+    
+    .file {
+        visibility: hidden;
+        position: absolute;
     }
 
 </style>
