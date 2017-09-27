@@ -1,8 +1,7 @@
 <template>
    <section id="login-cover">
-    <div class="container">
-        <div class="text-center">
-            <div class="col-md-6">
+    <div class="mx-auto">
+        <div class="vertical-center">
                 <div class="nb-login">
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
                     <!-- Formulario -->
@@ -26,8 +25,6 @@
                     </div>
                     <!-- end Formulario -->
                 </div>
-            </div>
-
         </div>
     </div>
   </section>
@@ -47,14 +44,15 @@
         background: #222 url('/static/img/sparkles.jpg') center no-repeat;
         background-size: cover;
         display: flex;
+        align-items: center;
+        
     }
     
     .nb-login {
         max-width: 300px;
-        margin: 30px auto;
         padding: 20px 25px;
         border-radius: 2px;
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.05);
+        box-shadow: 0px 30px 20px rgba(255, 255, 255, 0.05);
     }
     
     .nb-login h3 {
@@ -74,11 +72,11 @@
     .nb-login form textarea {
         box-shadow: none !important;
         padding: 6px 5px;
-        color: #fff;
         border: 0px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         background: transparent;
         border-radius: 0px;
+        
     }
     
     .nb-login form input:focus {
@@ -157,9 +155,8 @@
     }
     
     .vertical-center {
-        min-height: 100%;
-        min-height: 100vh;
         align-items: center;
+        text-align: center;
     }
 
 </style>
