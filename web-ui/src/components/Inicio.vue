@@ -13,11 +13,22 @@
                       <b-nav-item href="#">Combinações</b-nav-item>
                 </b-nav>
             </b-collapse>
-    </nav>
+    </nav> <br>
    <!-- END Navbar -->
-   <!-- Cards de Perfil -->
    
-   <!-- END Cards de Perfil -->
+   <!-- Nav -->
+    <div class="nav nav-pills nav-fill">
+        <div class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-camera" aria-hidden="true"></i></a>
+        </div><div class="nav-item">
+            <a class="nav-link active" href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-comments" aria-hidden="true"></i></a>
+        </div>
+    </div>
+   <!-- END Nav -->
+
    </div>
   </section>
 </template>
@@ -48,13 +59,15 @@
         height: 100vh;
     }
     
+    
     .container nav {
         background-color: #34495e;
         display: block;
         width: 100vw;
         margin-left: 0;
         left: 0;
-         font-family: 'Exo', sans-serif;
+        font-family: 'Exo', sans-serif;
     }
+
     
 </style>
