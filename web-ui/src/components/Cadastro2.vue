@@ -1,18 +1,17 @@
 <template>
    <section id="cad-cover">
        <div class="container">
-        <div class="vertical-center">
+        <div class="horizontal-center">
                 <div class="nb-login">
                    <div class="progress">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    </div> <br> <br>
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
                     <p>Selecione 5 categorias culinárias de sua preferência.</p>
                     <!-- Formulario -->
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formLogin" action="">
                             
-                            <div class="form-group">
                             <div class="row">
                                 <div class="col"><label class="btn btn-primary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item1" value="val1" class="hidden" autocomplete="off"></label></div>
                                 <div class="col"><label class="btn btn-primary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item2" value="val2" class="hidden" autocomplete="off"></label></div>
@@ -31,7 +30,6 @@
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
-                            </div>
                         </form>
                     </div>
                 </div>
@@ -52,21 +50,24 @@
 
 <style>
    #cad-cover {
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         background: #222 url('/static/img/boys.png') no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        display: flex;
         
     }
+
     
     .nb-login {
-        max-width: none;
         padding: 20px 25px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
+        height: 100vh;
+        align-content: center;
     }
     
     .nb-login h3 {
@@ -147,7 +148,7 @@
         color: #FFF;
     }
     
-    .vertical-center {
+    .horizontal-center {
         align-items: center;
         text-align: center;
     }
