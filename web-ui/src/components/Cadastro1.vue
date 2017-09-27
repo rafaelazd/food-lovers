@@ -1,6 +1,6 @@
 <template>
+  <section id="cad-cover">
    <div class="container">
-        <div class="vertical-center">
                 <div class="nb-login">
                    <div class="progress">
                     <div class="progress-bar bg-info" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
@@ -41,8 +41,8 @@
                         </form>
                     </div>
                 </div>
-        </div>
     </div> 
+</section>
 </template>
 
 
@@ -52,19 +52,24 @@
 </script>
 
 <style>
-    body {
+    #cad-cover {
         height: 100%;
         width: 100%;
-        background: #222 url('img/boys.png') center no-repeat;
+        background: #222 url('/static/img/boys.png') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         background-size: cover;
+        
     }
-    
     .nb-login {
-        max-width: none;
-        margin: 30px auto;
         padding: 20px 25px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
+        align-items: center;
+        text-align: center;
+        max-height: inherit;
+       
     }
     
     .nb-login h3 {
@@ -148,6 +153,8 @@
     .vertical-center {
         align-items: center;
         text-align: center;
+        width: 100%;
+        height: 100%;
     }
     
     .file {

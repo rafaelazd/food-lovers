@@ -1,5 +1,6 @@
 <template>
-   <div class="container">
+   <section id="cad-cover">
+       <div class="container">
         <div class="vertical-center">
                 <div class="nb-login">
                    <div class="progress">
@@ -13,40 +14,30 @@
                             
                             <div class="form-group">
                             <div class="row">
-                                <div class="form-group">	
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/cafe.png" alt="Café" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label></div>
-                                </div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item1" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item2" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/cafe.png" alt="Café" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item3" value="val3" class="hidden" autocomplete="off"></label></div>
                             </div>
                             <div class="row">
-                                <div class="form-group">	
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/macarrao.png" alt="Macarrão" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/nachos.png" alt="Nachos" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/pizza.png" alt="Pizza" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label></div>
-                                </div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/macarrao.png" alt="Macarrão" class="img-thumbnail img-check"><input type="checkbox" name="chk4" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/nachos.png" alt="Nachos" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item5" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/pizza.png" alt="Pizza" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item6" value="val3" class="hidden" autocomplete="off"></label></div>
                             </div>
                                <div class="row">
-                                <div class="form-group">	
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/sanduiche.png" alt="Sanduíche" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/sushi.png" alt="Sushi" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col-md-3"><label class="btn btn-primary"><img src="/static/img/tacos.png" alt="Tacos" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/sanduiche.png" alt="Sanduíche" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item7" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/sushi.png" alt="Sushi" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item8" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-primary"><img src="/static/img/tacos.png" alt="Tacos" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item9" value="val3" class="hidden" autocomplete="off"></label></div>
                                 </div>
-                            </div>	
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
-                            </div>
-                            <div class="form-group">
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-3">Confirmar</router-link>
+                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
                             </div>
                         </form>
                     </div>
                 </div>
         </div>
-    </div> 
+        </div>
+    </section>
 </template>
 
 
@@ -60,16 +51,19 @@
 </script>
 
 <style>
-    body {
+   #cad-cover {
         height: 100%;
         width: 100%;
-        background: #222 url('img/boys.png') center no-repeat;
+        background: #222 url('/static/img/boys.png') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         background-size: cover;
+        
     }
     
     .nb-login {
         max-width: none;
-        margin: 30px auto;
         padding: 20px 25px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
@@ -156,11 +150,6 @@
     .vertical-center {
         align-items: center;
         text-align: center;
-    }
-    
-    .file {
-        visibility: hidden;
-        position: absolute;
     }
 
 </style>
