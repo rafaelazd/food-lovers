@@ -32,12 +32,11 @@
     <!-- Perfil Card -->
     <div class="row justify-content-center align-items-center">
         <div class="profile" id="idUsuario">
-            <img src="/static/img/m5.jpg" class="img-fluid" alt="Usuario">
-                <b-button-group>
-                    <b-button><i class="fa fa-times" aria-hidden="true"></i></b-button>
-                    <b-button><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
-                    <b-button><i class="fa fa-check" aria-hidden="true"></i></b-button>
-                </b-button-group>
+                 <div class="d-flex justify-content-around">
+                  <button type="button" class="btn btn-circle btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+                  <button type="button" class="btn btn-circle btn-info"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
+                  <button type="button" class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>
+                </div>
         </div>
     </div>
     <!-- END Perfil Card -->
@@ -88,13 +87,29 @@
         height: 450px;
         background-color: #ecf0f1;
         border-style: hidden;
-        vertical-align: middle;
-        text-align: center;
         box-sizing: border-box;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 20px 20px rgba(0,0,0,.2);
+        background-image: url('/static/img/m5.jpg');
+        background-size: cover;
+        align-content: stretch;
         
     }
+    .container .profile .btn-circle {
+        width: 45px;    
+        height: 45px;
+        vertical-align: bottom;
+        font-size: 12px;
+        border-radius: 25px;
+        
+    }
+    .container .profile .d-flex {
+        vertical-align: bottom;
+        bottom: 0;
+        margin-bottom: 0;
+        
+    }
+  
     
 </style>
