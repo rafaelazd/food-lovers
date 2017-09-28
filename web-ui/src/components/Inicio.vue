@@ -30,13 +30,21 @@
     <!--END Nav -->
     
     <!-- Perfil Card -->
-    <div class="row justify-content-center align-items-center">
-        <div class="profile" id="idUsuario">
-                 <div class="d-flex justify-content-around">
-                  <button type="button" class="btn btn-circle btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-circle btn-info"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
-                  <button type="button" class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>
-                </div>
+    <div class="row justify-content-center">
+        <div>
+           <b-card-group>
+                <b-card class="profile">
+                    <div slot="footer" class="d-flex justify-content-around">
+                        <b-button class="btn btn-circle btn-danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
+                        <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-info m-1"><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
+                        <b-button class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></b-button>
+                    </div>
+                    <b-collapse id="collapse2">
+                        <h1>Kali Meinar, 23</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                  </b-collapse>
+                </b-card>
+            </b-card-group>
         </div>
     </div>
     <!-- END Perfil Card -->
@@ -83,7 +91,7 @@
     }
     
     .container .profile {
-        width: 300px;
+        width: 270px;
         height: 450px;
         background-color: #ecf0f1;
         border-style: hidden;
@@ -104,11 +112,11 @@
         border-radius: 25px;
         
     }
-    .container .profile .d-flex {
-        vertical-align: bottom;
-        bottom: 0;
-        margin-bottom: 0;
-        
+   
+    .container b-card {
+       height: 100%;
+       width: 100%;
+       background-image: url(/static/img/m5.jpg);
     }
   
     
