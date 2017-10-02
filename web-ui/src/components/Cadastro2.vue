@@ -7,7 +7,7 @@
                     <div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
                     </div> <br> <br>
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
-                    <p>Selecione 5 categorias culinárias de sua preferência.</p>
+                    <p>Selecione até 5 categorias culinárias de sua preferência.</p>
                     <!-- Formulario -->
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formLogin" action="">
