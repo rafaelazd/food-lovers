@@ -129,8 +129,8 @@
     
     #collapse2 {
         background-color: #f7f7f7;
-        border-style: hidden;
-        border-radius: 3px;
+        box-sizing: border-box;
+        border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 30px 20px rgba(0,0,0,.2);
         text-align: center;
@@ -148,17 +148,17 @@
     #collapse2 p {
         font-family: 'Raleway', sans-serif;
         color: #3498db;
-        border-bottom: 0.5px solid;
-        border-bottom-color: #bdc3c7;
-        border-top: 0.5px solid;
-        border-top-color: #bdc3c7;
+        border-bottom: 0.2px solid;
+        border-bottom-color: #ecf0f1;
+        border-top: 0.2px solid;
+        border-top-color: #ecf0f1;
         text-align: justify;
         padding: 7px;
     }
     #collapse2 h2 {
         color: #3498db;
-        border-top: 0.5px solid;
-        border-top-color: #bdc3c7;
+        border-top: 0.2px solid;
+        border-top-color: #ecf0f1;
         text-align: center;
         padding: 7px;
     }
