@@ -37,11 +37,19 @@
                     <div slot="footer" class="d-flex justify-content-around">
                         <b-button class="btn btn-circle btn-danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
                         <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-info m-1"><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
-                        <b-button class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></b-button>
+                        <b-button class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></b-button> 
                     </div>
                     <b-collapse id="collapse2">
                         <h1>Kali Meinar, 23</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>  São Paulo, SP - Brasil</p>
+                        <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h6>
+                        <h2>
+                        <img src="/static/img/batataico.png" alt="icoFrituras" width="50px" height="50px">
+                        <img src="/static/img/boloico.png" alt="icoDoces" width="50px" height="50px">
+                        <img src="/static/img/cafeico.png" alt="icoBebidasHot" width="50px" height="50px">
+                        <img src="/static/img/icosand.png" alt="icoLanches" width="50px" height="50px">
+                        <img src="/static/img/pizzaico.png" alt="icoPizza" width="50px" height="50px">
+                        </h2>
                   </b-collapse>
                 </b-card>
             </b-card-group>
@@ -61,7 +69,7 @@
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo:200');
+    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800');
     
     #inicio-cover {
         height: 100vh;
@@ -91,7 +99,7 @@
     }
     
     .container .profile {
-        width: 270px;
+        width: 280px;
         height: 450px;
         background-color: #ecf0f1;
         border-style: hidden;
@@ -117,6 +125,42 @@
        height: 100%;
        width: 100%;
        background-image: url(/static/img/m5.jpg);
+    }
+    
+    #collapse2 {
+        background-color: #f7f7f7;
+        border-style: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 30px 20px rgba(0,0,0,.2);
+        text-align: center;
+        padding: 13px;
+    }
+    #collapse2 h1 {
+        font-family: 'Raleway:400', sans-serif;
+         padding: 7px;
+    }
+    #collapse2 h6 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+         padding: 7px;
+    }
+    #collapse2 p {
+        font-family: 'Raleway', sans-serif;
+        color: #3498db;
+        border-bottom: 0.5px solid;
+        border-bottom-color: #bdc3c7;
+        border-top: 0.5px solid;
+        border-top-color: #bdc3c7;
+        text-align: justify;
+        padding: 7px;
+    }
+    #collapse2 h2 {
+        color: #3498db;
+        border-top: 0.5px solid;
+        border-top-color: #bdc3c7;
+        text-align: center;
+        padding: 7px;
     }
   
     
