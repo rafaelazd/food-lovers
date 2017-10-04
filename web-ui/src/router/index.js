@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import Cadastro1 from '@/components/Cadastro1'
 import Cadastro2 from '@/components/Cadastro2'
 import Inicio from '@/components/Inicio'
+import Chat from '@/components/Chat'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
       path: '/inicio',
       name: 'Inicio',
       component: Inicio
+    },  {
+      path: '/chat',
+      name: 'Chat',
+      component: Chat
     }
   ]
 })
