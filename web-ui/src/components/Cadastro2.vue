@@ -29,7 +29,7 @@
                                 </div>
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
+                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-3">Confirmar</router-link>
                         </form>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
     .nb-login form .btn {
         border: 0px;
         border-radius: 25px;
-        padding: 10px 20px;
+        padding: 5px 10px;
         border: 1px solid #bdc3c7;
         color: #bdc3c7;
         text-transform: uppercase;

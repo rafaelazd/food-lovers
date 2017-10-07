@@ -124,7 +124,7 @@
     .nb-login form .btn {
         border: 0px;
         border-radius: 25px;
-        padding: 10px 20px;
+        padding: 5px 10px;
         border: 1px solid #bdc3c7;
         color: #bdc3c7;
         text-transform: uppercase;
