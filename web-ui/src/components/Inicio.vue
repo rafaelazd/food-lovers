@@ -70,7 +70,7 @@
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One');
     
     #inicio-cover {
         height: 100vh;
@@ -130,13 +130,14 @@
         text-align: center;
     }
     #collapse2 h1 {
-        font-family: 'Raleway:400', sans-serif;
-         padding: 7px;
+        font-family: 'Poiret One', cursive;
+        padding: 7px;
+        font-size: 40px;
     }
     #collapse2 h6 {
         font-family: 'Raleway', sans-serif;
         font-size: 15px;
-         padding: 7px;
+        padding: 7px;
     }
     #collapse2 p {
         font-family: 'Raleway', sans-serif;

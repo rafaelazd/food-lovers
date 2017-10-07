@@ -38,13 +38,26 @@
                        <i class="fa fa-comments-o"></i>
                        <span class="count">2</span>
                    </span>
-                   <span class="title">Messenger</span>
+                   <span class="title">Mensagens</span>
                </div>
                <div class="search-bar">
                    <b-input-group>
                     <b-form-input v-model="search" type="search" class="ip-search" placeholder="Procurar..."></b-form-input>
                     <button class="btn btn-secondary input-group-addon"><i class="fa fa-search"></i></button>
                   </b-input-group>
+               </div>
+               <div class="body">
+                   <div class="friend-list d-flex justify-content-around">
+                       <div class="idUsuario">
+                           <button id="usuFoto" class="btn btn-secondary float-left"></button> <br> <p>Mirella</p>
+                       </div>
+                       <div class="idUsuario">
+                           <button id="usuFoto2" class="btn btn-secondary float-left"></button> <br> <p>Yudi</p>
+                       </div>
+                        <div class="idUsuario">
+                           <button id="usuFoto3" class="btn btn-secondary float-left"></button> <br> <p>Karol</p>
+                       </div>
+                   </div>
                </div>
             </div>
         </div>
@@ -59,7 +72,7 @@
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800');
+     @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One|Open+Sans|Open+Sans+Condensed:300');
     
     #inicio-cover {
         height: 100vh;
@@ -176,8 +189,54 @@
     }
     
     .search-bar .ip-search {
-        background-color: rgba(255,255,255,0.25);
-        color: #34495e;
+        border-radius: 20px;
     }
-
+    
+    .search-bar .input-group-addon {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    
+    #usuFoto {
+        width: 65px;
+        height: 65px;
+        border-radius: 50px;
+        background-image: url(/static/img/M2.2.jpg);
+        background-size: cover;
+    }
+    
+    #usuFoto2 {
+        width: 65px;
+        height: 65px;
+        border-radius: 50px;
+        background-image: url(/static/img/H1.jpg);
+        background-size: cover;
+    }
+    
+    #usuFoto3 {
+        width: 65px;
+        height: 65px;
+        border-radius: 50px;
+        background-image: url(/static/img/M1.7.jpg);
+        background-size: cover;
+    }
+    
+    .friend-list {
+        margin-top:5px;
+        display: inline;
+    }
+    
+    .friend-list p {
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: #2c3e50;
+        border-bottom: 0.2px solid;
+        border-bottom-color: #ecf0f1;
+        border-top: 0.2px solid;
+        border-top-color: #ecf0f1;
+        font-size: 18px;
+        text-align:center;
+        padding: 7px;
+    }
+    
+    
 </style>
