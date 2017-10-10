@@ -12,7 +12,7 @@
                         <div class="row justify-content-center">
                             <div>
                                <b-card-group class="d-flex justify-content-center">
-                                    <b-card class="profile">
+                                    <b-card class="profile-custom">
                                         <div slot="footer" class="d-flex justify-content-around">
                                            <label class="input-group-btnd-inline-flex p-2">
                                                             <span class="btn btn-secondary">
@@ -33,7 +33,8 @@
                                             </p>
                                             <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-success m-1" type="submit"><i class="fa fa-check" aria-hidden="true"></i></b-button>
                                       </b-collapse>
-                                    </b-card> 
+                                    </b-card>
+                                     
                                 </b-card-group> <br> <br>
                                 <div class="buttons d-flex justify-content-center">
                                 <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
@@ -88,16 +89,11 @@
         height: 100vh;
     }
     
-    
     #cad-cover {
         height: 100vh;
         width: 100vw;
         background: #222 url('/static/img/boys.png') no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
-        display: flex;
         
     }
     
@@ -137,7 +133,7 @@
         color: #fff;
     }
 
-    .container .profile {
+    .container .profile-custom {
         max-width: 280px;
         height: 480px;
         background-color: #ecf0f1;
@@ -148,7 +144,7 @@
         box-shadow: 10px 20px 20px rgba(0,0,0,.5);
         background-size: cover;
     }
-    .container .profile .btn-circle {
+    .container .profile-custom .btn-circle {
         width: 45px;    
         height: 45px;
         vertical-align: bottom;
@@ -156,7 +152,7 @@
         border-radius: 25px;   
     }
     
-    .container .profile .close {
+    .container .profile-custom .close {
         margin: 0;
         font-size: 30px;
     }
