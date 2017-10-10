@@ -30,38 +30,85 @@
         </div> <br>    
         <!--END Nav -->
     
-        <!-- Perfil Card -->
-        <div class="row justify-content-center">
-            <div class="app">
-               <div class="head clearfix">
-                   <span class="messages-notification">
-                       <i class="fa fa-comments-o"></i>
-                       <span class="count">2</span>
-                   </span>
-                   <span class="title">Mensagens</span>
-               </div>
-               <div class="search-bar">
+        <!-- Chat Card -->
+        <div class="chat">
+            <b-row class="head d-inline-flex justify-content-around">
+                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span><counter>3</counter></b-col>
+                <b-col style="padding-top:10px"><span>Mensagens</span></b-col>
+                <b-col style="padding-top:3px"><b-btn v-b-toggle="'collapse-friend-list'" class="m-1"><i class="fa fa-address-book" aria-hidden="true"></i></b-btn></b-col>
+            </b-row>
+            
+            <b-collapse id="collapse-friend-list" class="mt-2">
+               <b-container>
+                    <b-row class="d-flex justify-content-around">
+                        <b-col class="image-cropper">
+                            <img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"><br>
+                            <span id="usuNome">Mateus Takeda</span>
+                        </b-col>
+                        <b-col class="image-cropper">
+                            <img id="usuFoto" src="/static/img/H2.4.jpg" class="img-fluid"><br>
+                            <span id="usuNome">Heron Dias</span>
+                        </b-col>
+                    </b-row>
+                    <b-row class="d-flex justify-content-around">
+                        <b-col class="image-cropper">
+                            <img id="usuFoto" src="/static/img/M3.jpg" class="img-fluid"><br>
+                            <span id="usuNome">Eva Miranda</span>
+                        </b-col>
+                        <b-col class="image-cropper">
+                            <img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"><br>
+                            <span id="usuNome">Raquel Salvatori</span>
+                        </b-col>
+                    </b-row>
+                    <b-row class="d-flex justify-content-around">
+                        <b-col class="image-cropper">
+                            <img id="usuFoto" src="/static/img/M1.3.jpg" class="img-fluid"><br>
+                            <span id="usuNome">Sofia Alter</span>
+                        </b-col>
+                        <b-col class="image-cropper">
+                            <img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"><br>
+                            <span id="usuNome">Maria Rosa</span>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </b-collapse>
+            
+            <div class="search-bar">
                    <b-input-group>
                     <b-form-input v-model="search" type="search" class="ip-search" placeholder="Procurar..."></b-form-input>
                     <button class="btn btn-secondary input-group-addon"><i class="fa fa-search"></i></button>
                   </b-input-group>
-               </div>
-               <div class="body">
-                   <div class="friend-list d-flex justify-content-around">
-                       <div class="idUsuario">
-                           <button id="usuFoto" class="btn btn-secondary float-left"></button> <br> <p>Mirella</p>
-                       </div>
-                       <div class="idUsuario">
-                           <button id="usuFoto2" class="btn btn-secondary float-left"></button> <br> <p>Yudi</p>
-                       </div>
-                        <div class="idUsuario">
-                           <button id="usuFoto3" class="btn btn-secondary float-left"></button> <br> <p>Karol</p>
-                       </div>
-                   </div>
-               </div>
+            </div>
+            
+            <div class="conversas">
+                <div class="msg-preview" id="idUsuario">
+                 <b-row>
+                    <b-col><img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"></b-col>
+                    <b-col cols="8">
+                      <div class="msg-head"><span id="usuNome">Raquel Salvatori</span></div><br>
+                      <div class="msg-body"><p>Oieeee</p></div></b-col>
+                </b-row>
+                </div>
+                <div class="msg-preview" id="idUsuario">
+                 <b-row>
+                    <b-col><img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"></b-col>
+                    <b-col cols="8">
+                      <div class="msg-head"><span id="usuNome">Maria Rosa</span></div><br>
+                      <div class="msg-body"><p>Tudo bem?</p></div></b-col>
+                </b-row>
+                </div>
+                <div class="msg-preview" id="idUsuario">
+                 <b-row>
+                    <b-col><img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"></b-col>
+                    <b-col cols="8">
+                      <div class="msg-head"><span id="usuNome">Mateus Takeda</span></div><br>
+                      <div class="msg-body"><p>Que bom! :D</p></div></b-col>
+                </b-row>
+                </div>
+                
             </div>
         </div>
-        <!-- END Perfil Card -->
+        <!-- END Chat Card -->
 
        </div>
   </section>
@@ -83,25 +130,171 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        
     }
     
+    .container {
+        min-width: 100vw;
+        left: 0px;
+        padding-left: 0;
+    }
     .container nav {
         background-color: #34495e;
-        display: block;
-        transform: translate(-9.4%);
-        width: 100vw;
-        margin-right: 0;
-        left: 0;
+        max-width: none;
+        min-width: 100vw;
         font-family: 'Exo', sans-serif;
     }
     
-     .app {
-        width: 280px;
-        height: 450px;
-        background-color: #ecf0f1;
-        border-radius: 10px;
+    .chat {
+        background-color: #f9f9f9;
+        background-size: cover;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .chat .head {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 2px;
+        font-size: 17.5px;
+        color: #34495e;
+        padding: 10px;
+        width: 100%;
+        border-bottom: 0.2px solid;
+        border-bottom-color: #bdc3c7;
+    }
+    
+    .chat .head .m-1 {
+        background-color: transparent;
+        color: #34495e;
+        border: 0px; 
+    }
+    
+    .chat .head .m-1:hover {
+        border: 0px;    
+    }
+    
+    .search-bar {
+        padding: 10px;
+        text-align: center;
+        z-index: 1;
+    }
+    
+    .search-bar .ip-search {
+        border-radius: 20px;
+        width: 100%;
+        height: 40px; 
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .search-bar .input-group-addon {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    
+    #collapse-friend-list {
+        background-color: white;
+        padding: 30px;
+    }
+    
+    #collapse-friend-list .image-cropper {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 0.8px solid;
+        border-bottom-color: #bdc3c7;
+        border-left: 0.8px solid;
+        border-left-color: #bdc3c7;
+}
+
+    #collapse-friend-list img {
+        
+        border-radius: 100%;
+}
+    
+    #collapse-friend-list .image-cropper span {
+        vertical-align: text-bottom;
+        text-align: center;
+        text-transform: uppercase;
+        color: #4c4d4f;
+        font-weight: 500;
+}
+    
+    .conversas .msg-preview {
+        width: 100%;
+        max-height: 150px;
+        border-bottom: 1px solid;
+        border-bottom-color: #7f8c8d;
+    }
+    
+    .conversas .msg-preview img {
+        width: 120px;
+        height: 120px;
+        text-align:center; 
+        padding:10px;
+    }
+    
+    .conversas .msg-preview .msg-head{
+        font-weight: 500;
+        margin-top: 20px;
+        text-transform: uppercase;
+        color: #2c3e50;
+    }
+    
+    .conversas .msg-preview .msg-body{
+        font-weight: 400;
+        color: #7f8c8d;
+    }
+    
+    .conversas .msg-preview .btn{
+        margin-top: 35px;
+    }
+    
+    @media (min-width: 576px) {
+        .chat {
         box-shadow: 10px 20px 20px rgba(0,0,0,.5);
-        position: relative;
+        margin: 30px;
+        border-radius: 15px;
+        }
+    } 
+    
+    @media (max-width: 576px) {
+        .chat {
+        width: 100vw;
+        border-radius: 5px;
+        }
+        
+        #usuFoto {
+        width: 110px;
+        height: 120px;
+        padding-left: 0px;
+        }
+        
+
+        .conversas .msg-preview #usuFoto {
+            width: 130px;
+            height: 100px;
+            float: left;
+            padding: 5px;
+        }
+        
+        
+    } 
+    
+     /*.app {
+        max-width: none;
+        padding: 20px 25px;
+        border-radius: 2px;
+        height: 100vh;
+        align-content: center;
+        background-color: #f9f9f9;
+        box-shadow: 10px 20px 20px rgba(0,0,0,.5);
         
     }
     
@@ -127,116 +320,98 @@
     }
     
     .app .head {
-        z-index: 1;
-        position: relative;
-        display: block;
+        padding: 10px;
         width: 100%;
         height: 50px;
-        line-height: 48px;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #fff;
-        background-color: #34495e;
-        box-shadow: inset 0 -15px 35px -5px rgba(0,0,0,0.3);
+        color: #34495e;
+        border-bottom: 0.2px solid;
+        border-bottom-color: #bdc3c7;
+    }
+    
+     .app .btn-circle {
+        width: 45px;    
+        height: 45px;
+        vertical-align: bottom;
+        font-size: 12px;
+        border-radius: 25px;
         
-    }
-    
-    .head span.title {
-        position: absolute;
-        width: 100%;
-        display: inline-block;
-        left: 0;
-        font-size: 15px;
-        font-weight: 500;
-        margin-top: 2px;
-        color: #fff;
-    }
-    
-    .head span.messages-notification {
-        position: relative;
-        float: left;
-        font-size: 15px;
-        font-weight: normal;
-        padding-left: 20px;
-        color: white;
-        padding-top: 2px;
-        
-    }
-    
-    .head span.messages-notification span.count {
-        position: absolute;
-        font-size: 10px;
-        width: 17px;
-        height: 17px;
-        display: inline-block;
-        background-color: #e74c3c;
-        line-height: 17px;
-        border-radius: 100%;
-        margin-top: -40px;  
-    }
-    
-    .clearfix::after {
-        content: '';
-        clear: both;
-        display: table;
-    }
-    
-    .search-bar {
-        padding: 10px;
-        text-align: center;
-        z-index: 1;
     }
     
     .search-bar .ip-search {
         border-radius: 20px;
+        width: 100%;
+        height: 40px; 
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
     }
     
     .search-bar .input-group-addon {
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    
+    .app .mensagem {
+        align-content: flex-start;
+        justify-content: flex-start;
+        padding: 5px;
+    }
+    
+    .app .mensagem p {
+        font-family: 'Raleway', sans-serif;
+        border-bottom: 0.2px solid;
+        border-bottom-color: #bdc3c7;
+        border-top: 0.2px solid;
+        border-top-color: #bdc3c7;
+        text-align: center;
+        padding: 7px;
+        height: 135px;
     }
     
     #usuFoto {
-        width: 65px;
-        height: 65px;
-        border-radius: 50px;
-        background-image: url(/static/img/M2.2.jpg);
-        background-size: cover;
+        width: 120px;
+        height: 130px;
+        padding: 9px;
     }
     
-    #usuFoto2 {
-        width: 65px;
-        height: 65px;
-        border-radius: 50px;
-        background-image: url(/static/img/H1.jpg);
-        background-size: cover;
+    #usuNome  {
+        text-transform: uppercase;
+        color: #34495e;
+        font-size: 20px;
+        align-content: flex-start;
+        padding: 10px;
     }
     
-    #usuFoto3 {
-        width: 65px;
-        height: 65px;
-        border-radius: 50px;
-        background-image: url(/static/img/M1.7.jpg);
-        background-size: cover;
+    #msg-preview  {
+        color: #7f8c8d;
+        font-size: 15px;
+        align-content: flex-start;
+        padding: 10px;
     }
     
-    .friend-list {
-        margin-top:5px;
-        display: inline;
+    @media (max-width: 767px) {
+      #usuFoto {
+        width: 70px;
+        height: 90px;
+        padding: 3px;
     }
-    
-    .friend-list p {
-        font-family: 'Open Sans Condensed', sans-serif;
-        color: #2c3e50;
-        border-bottom: 0.2px solid;
-        border-bottom-color: #ecf0f1;
-        border-top: 0.2px solid;
-        border-top-color: #ecf0f1;
-        font-size: 18px;
-        text-align:center;
-        padding: 7px;
+        .app {
+        padding: 20px 25px;
+        border-radius: 2px;
+        width: 100vw;
+        height: 100vh;
+        align-content: center;
+        background-color: #f9f9f9;
+        box-shadow: 10px 20px 20px rgba(0,0,0,.5);
+        
     }
-    
+    } 
+*/ 
     
 </style>
