@@ -54,14 +54,13 @@
 </script>
 
 <style>
+    /* TODO: colocar  o código em apenas um arquivo */ 
     #cad-cover {
         height: 100vh;
         width: 100vw;
         background: #222 url('/static/img/boys.png') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
+        overflow: auto;
     }
     
     .nb-login {
@@ -69,8 +68,8 @@
         padding: 20px 25px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
-        height: 100vh;
         align-content: center;
+        overflow: auto;
     }
     
     .nb-login h3 {

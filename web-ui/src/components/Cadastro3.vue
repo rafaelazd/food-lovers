@@ -94,6 +94,7 @@
         width: 100vw;
         background: #222 url('/static/img/boys.png') no-repeat center center fixed; 
         background-size: cover;
+        overflow: auto;
         
     }
     
@@ -101,9 +102,9 @@
         padding: 20px 25px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
-        height: 100vh;
         align-content: center;
         color: white;
+        overflow: auto;
     }
     
     .nb-login form {
