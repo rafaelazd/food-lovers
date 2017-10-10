@@ -41,9 +41,10 @@
                             <b-button class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></b-button> 
                         </div>
                         <b-collapse id="collapse2">
+                            <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-sm btn-secondary float-left m-1"><i class="fa fa-times" aria-hidden="true"></i></b-button>
                             <h1>Kali Meinar, 23</h1>
                             <p><i class="fa fa-map-marker" aria-hidden="true"></i>  São Paulo, SP - Brasil</p>
-                            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h6>
+                            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quo quia atque placeat quisquam eum, maxime molestiae. </h6>
                             <p>
                             <img src="/static/img/batataico.png" alt="icoFrituras" width="50px" height="50px">
                             <img src="/static/img/boloico.png" alt="icoDoces" width="50px" height="50px">
@@ -83,19 +84,15 @@
         background-size: cover;
     }
     
-    .container{
-        width: 100vw;
-        height: 100vh;
+    .container {
+        min-width: 100vw;
+        left: 0px;
+        padding-left: 0;
     }
-    
-    
     .container nav {
         background-color: #34495e;
-        display: block;
-        transform: translate(-9.4%);
-        width: 100vw;
-        margin-right: 0;
-        left: 0;
+        max-width: none;
+        min-width: 100vw;
         font-family: 'Exo', sans-serif;
     }
     
@@ -122,12 +119,25 @@
         
     }
     
+    .container .profile .btn-sm {
+        width: 20px;    
+        height: 20px;
+        font-size: 9px;
+        text-align: center;
+        border-radius: 25px;
+        padding: 2px;
+        margin-left: 4px;
+        margin-top: 2px;
+        
+    }
+    
     #collapse2 {
         background-color: #f7f7f7;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 30px 30px rgba(0,0,0,.6);
         text-align: center;
+        max-height: 450px;
     }
     #collapse2 h1 {
         font-family: 'Poiret One', cursive;
