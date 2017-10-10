@@ -58,7 +58,7 @@
         -o-background-size: cover;
         background-size: cover;
         display: flex;
-        
+        overflow: auto;
     }
 
     
@@ -66,8 +66,8 @@
         padding: 20px 25px;
         border-radius: 2px;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
-        height: 100vh;
         align-content: center;
+        overflow: auto;
     }
     
     .nb-login h3 {
