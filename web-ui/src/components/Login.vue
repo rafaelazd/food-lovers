@@ -13,7 +13,7 @@
                             <div class="form-group">
                             <input type="password" class="form-control" id="senha" required="" placeholder="Senha" autocomplete="new-password">
                             </div>
-                            <button type="submit" class="btn btn-block btn-outline-danger">Entrar</button>
+                            <router-link class="btn btn-block btn-outline-danger" role="button" aria-pressed="true" to="/inicio">Entrar</router-link>
                             <div class="center or">OU</div>
                             <h3 class="center">Entrar com</h3>
                             <div class="social">
