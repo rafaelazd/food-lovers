@@ -8,6 +8,7 @@ import Cadastro2 from '@/components/Cadastro2'
 import Cadastro3 from '@/components/Cadastro3'
 import Inicio from '@/components/Inicio'
 import Chat from '@/components/Chat'
+import Feed from '@/components/Feed'
 
 Vue.use(Router)
 
@@ -45,6 +46,10 @@ export default new Router({
       path: '/chat',
       name: 'Chat',
       component: Chat
+    },  {
+      path: '/feed',
+      name: 'Feed',
+      component: Feed
     }
   ]
 })
