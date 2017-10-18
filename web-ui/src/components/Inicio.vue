@@ -19,7 +19,7 @@
        <!-- Nav -->
         <div class="nav nav-pills nav-fill">
             <div class="nav-item">
-            <router-link class="nav-link" role="a" aria-pressed="true" to="/usuario-nao-autenticado"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
+            <router-link class="nav-link" role="a" aria-pressed="true" to="/feed"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
             </div>
             <div class="nav-item">
             <router-link class="nav-link active" role="a" aria-pressed="true" to="/inicio"><i class="fa fa-heart" aria-hidden="true"></i></router-link>

@@ -19,7 +19,7 @@
        <!-- Nav -->
         <div class="nav nav-pills nav-fill">
             <div class="nav-item">
-            <router-link class="nav-link" role="a" aria-pressed="true" to="/usuario-nao-autenticado"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
+            <router-link class="nav-link" role="a" aria-pressed="true" to="/feed"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
             </div>
             <div class="nav-item">
             <router-link class="nav-link" role="a" aria-pressed="true" to="/inicio"><i class="fa fa-heart" aria-hidden="true"></i></router-link>
@@ -33,44 +33,44 @@
         <!-- Chat Card -->
         <div class="chat">
             <b-row class="head d-inline-flex justify-content-around">
-                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span><counter>3</counter></b-col>
+                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span><count>3</count></b-col>
                 <b-col style="padding-top:10px"><span>Mensagens</span></b-col>
                 <b-col style="padding-top:3px"><b-btn v-b-toggle="'collapse-friend-list'" class="m-1"><i class="fa fa-address-book" aria-hidden="true"></i></b-btn></b-col>
             </b-row>
             
             <b-collapse id="collapse-friend-list" class="mt-2">
-               <b-container>
+                   <div class="agenda">
                     <b-row class="d-flex justify-content-around">
-                        <b-col class="image-cropper">
+                        <b-col class="contatos">
                             <img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"><br>
                             <span id="usuNome">Mateus Takeda</span>
                         </b-col>
-                        <b-col class="image-cropper">
+                        <b-col class="contatos">
                             <img id="usuFoto" src="/static/img/H2.4.jpg" class="img-fluid"><br>
                             <span id="usuNome">Heron Dias</span>
                         </b-col>
                     </b-row>
                     <b-row class="d-flex justify-content-around">
-                        <b-col class="image-cropper">
+                        <b-col class="contatos">
                             <img id="usuFoto" src="/static/img/M3.jpg" class="img-fluid"><br>
                             <span id="usuNome">Eva Miranda</span>
                         </b-col>
-                        <b-col class="image-cropper">
+                        <b-col class="contatos">
                             <img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"><br>
                             <span id="usuNome">Raquel Salvatori</span>
                         </b-col>
                     </b-row>
                     <b-row class="d-flex justify-content-around">
-                        <b-col class="image-cropper">
+                        <b-col class="contatos">
                             <img id="usuFoto" src="/static/img/M1.3.jpg" class="img-fluid"><br>
                             <span id="usuNome">Sofia Alter</span>
                         </b-col>
-                        <b-col class="image-cropper">
+                        <b-col class="contatos">
                             <img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"><br>
                             <span id="usuNome">Maria Rosa</span>
                         </b-col>
                     </b-row>
-                </b-container>
+                    </div>
             </b-collapse>
             
             <div class="search-bar">
@@ -82,12 +82,12 @@
             
             <div class="conversas">
                 <div class="msg-preview" id="idUsuario">
-                 <b-row>
+                <a href="Inicio.vue"><b-row>
                     <b-col><img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"></b-col>
                     <b-col cols="8">
                       <div class="msg-head"><span id="usuNome">Raquel Salvatori</span></div><br>
                       <div class="msg-body"><p>Oieeee</p></div></b-col>
-                </b-row>
+                </b-row></a>
                 </div>
                 <div class="msg-preview" id="idUsuario">
                  <b-row>
@@ -105,7 +105,6 @@
                       <div class="msg-body"><p>Que bom! :D</p></div></b-col>
                 </b-row>
                 </div>
-                
             </div>
         </div>
         <!-- END Chat Card -->
@@ -135,8 +134,10 @@
     
     .container {
         min-width: 100vw;
+        height: 100vh;
         left: 0px;
         padding-left: 0;
+        overflow: auto;
     }
     .container nav {
         background-color: #34495e;
@@ -148,7 +149,7 @@
     .chat {
         background-color: #f9f9f9;
         background-size: cover;
-        height: 100vh;
+        max-height: none;
         margin: 0;
     }
     
@@ -199,11 +200,14 @@
     }
     
     #collapse-friend-list {
-        background-color: white;
-        padding: 30px;
+        background-color: #fff;
+        padding: 10px;
+        max-height: 100%;
+        max-width: 100%;
+        margin-left: 0px;
     }
     
-    #collapse-friend-list .image-cropper {
+    #collapse-friend-list .contatos {
         text-align: center;
         width: 100%;
         padding: 20px;
@@ -214,11 +218,12 @@
 }
 
     #collapse-friend-list img {
-        
         border-radius: 100%;
+        width: 150px;
+        height: 150px;
 }
     
-    #collapse-friend-list .image-cropper span {
+    #collapse-friend-list .contatos span {
         vertical-align: text-bottom;
         text-align: center;
         text-transform: uppercase;
@@ -229,8 +234,9 @@
     .conversas .msg-preview {
         width: 100%;
         max-height: 150px;
-        border-bottom: 1px solid;
-        border-bottom-color: #7f8c8d;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-top: 10px;
     }
     
     .conversas .msg-preview img {
@@ -286,132 +292,5 @@
         
         
     } 
-    
-     /*.app {
-        max-width: none;
-        padding: 20px 25px;
-        border-radius: 2px;
-        height: 100vh;
-        align-content: center;
-        background-color: #f9f9f9;
-        box-shadow: 10px 20px 20px rgba(0,0,0,.5);
-        
-    }
-    
-    .app:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        display: inline-block;
-        z-index: 0;
-    }
-    
-    .app:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        display: inline-block;
-        bottom: 0;
-        z-index: 0;
-    }
-    
-    .app .head {
-        padding: 10px;
-        width: 100%;
-        height: 50px;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #34495e;
-        border-bottom: 0.2px solid;
-        border-bottom-color: #bdc3c7;
-    }
-    
-     .app .btn-circle {
-        width: 45px;    
-        height: 45px;
-        vertical-align: bottom;
-        font-size: 12px;
-        border-radius: 25px;
-        
-    }
-    
-    .search-bar .ip-search {
-        border-radius: 20px;
-        width: 100%;
-        height: 40px; 
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .search-bar .input-group-addon {
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-right: 10px;
-    }
-    
-    .app .mensagem {
-        align-content: flex-start;
-        justify-content: flex-start;
-        padding: 5px;
-    }
-    
-    .app .mensagem p {
-        font-family: 'Raleway', sans-serif;
-        border-bottom: 0.2px solid;
-        border-bottom-color: #bdc3c7;
-        border-top: 0.2px solid;
-        border-top-color: #bdc3c7;
-        text-align: center;
-        padding: 7px;
-        height: 135px;
-    }
-    
-    #usuFoto {
-        width: 120px;
-        height: 130px;
-        padding: 9px;
-    }
-    
-    #usuNome  {
-        text-transform: uppercase;
-        color: #34495e;
-        font-size: 20px;
-        align-content: flex-start;
-        padding: 10px;
-    }
-    
-    #msg-preview  {
-        color: #7f8c8d;
-        font-size: 15px;
-        align-content: flex-start;
-        padding: 10px;
-    }
-    
-    @media (max-width: 767px) {
-      #usuFoto {
-        width: 70px;
-        height: 90px;
-        padding: 3px;
-    }
-        .app {
-        padding: 20px 25px;
-        border-radius: 2px;
-        width: 100vw;
-        height: 100vh;
-        align-content: center;
-        background-color: #f9f9f9;
-        box-shadow: 10px 20px 20px rgba(0,0,0,.5);
-        
-    }
-    } 
-*/ 
     
 </style>
