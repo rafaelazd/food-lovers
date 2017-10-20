@@ -34,29 +34,21 @@
         <div class="feed">
            <div class="card-columns">
               <div class="card">
-                <p>hiiiii</p>
+                <div class="header d-flex justify-content-around">
+                    <img src="/static/img/H1.4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">_takedamateus</a>
+                    <count>3h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato1.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
               </div>
-              <div class="card p-3">
-                <h1>hello</h1>
-              </div>
-              <div class="card">
-                <h3>ei</h3>
-              </div>
-              <div class="card card-inverse card-primary p-3 text-center">
-                <h6>oie</h6>
-              </div>
-              <div class="card text-center">
-               <h4>lalalla</h4>
-              </div>
-              <div class="card">
-              <h3>asuhuahs</h3>
-              </div>
-              <div class="card p-3 text-right">
-                <h2>sextou</h2>
-              </div>
-              <div class="card">
-                <h1>top</h1>
-              </div>
+              
+              
             </div>
         </div>
         <!-- END Feed Card -->
@@ -72,37 +64,68 @@
 
 
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One|Open+Sans|Open+Sans+Condensed:300');
+    
      #inicio-cover {
             height: 100vh;
             width: 100vw;
             background-size: cover;
-            display: flex;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-
-        }
-
-        .container {
-            min-width: 100vw;
-            height: 100vh;
-            left: 0px;
-            padding-left: 0;
-            overflow: auto;
-        }
-        .container nav {
-            background-color: #34495e;
-            max-width: none;
-            min-width: 100vw;
-            font-family: 'Exo', sans-serif;
+            display: flex; 
         }
     
-        .feed {
+    .container {
+        min-width: 100vw;
+        height: 100vh;
+        left: 0px;
+        padding-left: 0;
+        overflow: auto;
+    }
+    
+    .container nav {
+        background-color: #34495e;
+        max-width: none;
+        min-width: 100vw;
+        font-family: 'Exo', sans-serif;
+    }
+    
+    .feed {
         background-color: #f9f9f9;
         background-size: cover;
         max-height: none;
         margin: 0;
+        padding: 15px;
+    }
+    
+    .feed .card {
+        border-radius: 8px;
+        max-width: 415px;
+        overflow: hidden;
+    }
+    
+    .feed .header {
+        background-color: #f4f4f4;
+        width: 100%;
+        color: #757575;
+    }
+    
+    .feed .header a {
+        text-decoration: underline;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .feed .header a,count {
+        margin: 9px;
+    }
+    
+    .feed .feed-foto  img {
+        
+    }
+    
+    .feed .reaction-bar button {
+        margin: 7px;
+        width: 50%;
+        border-radius: 15px;
+        
     }
     
     @media (min-width: 576px) {
