@@ -48,7 +48,104 @@
                 </div>
               </div>
               
-              
+              <div class="card">
+                <div class="header d-flex justify-content-around">
+                    <img src="/static/img/M2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">rosamaria89</a>
+                    <count>3h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato2.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="card">
+                <div class="header d-flex justify-content-around">
+                    <img src="/static/img/M1.3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">sosoalter</a>
+                    <count>5h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato3.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="card">
+                <div class="header d-flex justify-content-around">
+                    <img src="/static/img/M4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">raquelsalva_</a>
+                    <count>6h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato4.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="card">
+               <div class="header d-flex justify-content-around">
+                    <img src="/static/img/H2.4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">herondis</a>
+                    <count>6h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato5.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="card">
+              <div class="header d-flex justify-content-around">
+                    <img src="/static/img/M3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">mirandeva</a>
+                    <count>10h</count>
+                </div>
+                <div class="feed-foto">
+                    <img src="/static/img/prato6.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="card">
+                <div class="header d-flex justify-content-around">
+                    <img src="/static/img/M4.1.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">betemaravilha</a>
+                    <count>11h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato8.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="card">
+               <div class="header d-flex justify-content-around">
+                    <img src="/static/img/M1.2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
+                    <a href="usuario">kardashianlostsis</a>
+                    <count>11h</count>
+                </div>
+                <div class="feed-foto ">
+                    <img src="/static/img/prato7.jpg" class="img-fluid">
+                </div>
+                <div class="reaction-bar d-flex justify-content-around">
+                     <button type="button" class="btn btn-outline-danger btn-block"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                </div>
+              </div>
             </div>
         </div>
         <!-- END Feed Card -->
