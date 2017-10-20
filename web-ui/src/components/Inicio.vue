@@ -41,16 +41,20 @@
                             <b-button class="btn btn-circle btn-success"><i class="fa fa-check" aria-hidden="true"></i></b-button> 
                         </div>
                         <b-collapse id="collapse2">
-                            <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-sm btn-secondary float-left m-1"><i class="fa fa-times" aria-hidden="true"></i></b-button>
+                            <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-times btn-danger float-left m-1"><i class="fa fa-times" aria-hidden="true"></i></b-button><br>
                             <h1>Kali Meinar, 23</h1>
                             <p><i class="fa fa-map-marker" aria-hidden="true"></i>  São Paulo, SP - Brasil</p>
                             <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab saepe fugiat nesciunt laboriosam nemo quasi alias sit. Consequatur, quam debitis quibusdam eveniet sapiente. </h6>
                             <p>
-                            <img src="/static/img/batataico.png" alt="icoFrituras" width="50px" height="50px">
-                            <img src="/static/img/boloico.png" alt="icoDoces" width="50px" height="50px">
-                            <img src="/static/img/cafeico.png" alt="icoBebidasHot" width="50px" height="50px">
-                            <img src="/static/img/icosand.png" alt="icoLanches" width="50px" height="50px">
-                            <img src="/static/img/pizzaico.png" alt="icoPizza" width="50px" height="50px">
+                            <img src="/static/img/batataico.png" alt="icoFrituras" width="40px" height="40px">
+                            <img src="/static/img/boloico.png" alt="icoDoces" width="40px" height="40px">
+                            <img src="/static/img/cafeico.png" alt="icoBebidasHot" width="40px" height="40px">
+                            <img src="/static/img/icosand.png" alt="icoLanches" width="40px" height="40px">
+                            <img src="/static/img/pizzaico.png" alt="icoPizza" width="40px" height="40px">
+                            </p>
+                            <p>
+                            <b-button class="btn btn-sm btn-info"><i class="fa fa-rss" aria-hidden="true"></i> Seguir</b-button>
+                            <b-button class="btn btn-sm btn-secondary" href="#"><i class="fa fa-id-card-o" aria-hidden="true"></i> Ver Perfil</b-button>
                             </p>
                       </b-collapse>
                     </b-card>
@@ -119,7 +123,7 @@
         
     }
     
-    .container .profile .btn-sm {
+    .container .profile .btn-times {
         width: 20px;    
         height: 20px;
         font-size: 9px;
@@ -128,6 +132,11 @@
         padding: 2px;
         margin-left: 4px;
         margin-top: 2px;
+        
+    }
+    
+    .container .profile .btn-sm {
+        border-radius: 15px;
         
     }
     
