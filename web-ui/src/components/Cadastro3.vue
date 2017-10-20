@@ -23,7 +23,10 @@
                                         </div>
                                         <b-collapse id="collapse2">
                                             <h1 id="usuNome">Kali Meinar, <h1 id="usuIdade">23</h1></h1>
-                                            <textarea rows="4" cols="24" name="comment" placeholder="Conte-nos mais sobre você..."></textarea>
+                                            <textarea rows="4" cols="24" maxlength="170" name="comment" placeholder="Conte-nos mais sobre você..."></textarea>
+                                             <b-form-text id="input-help">
+                                              Máximo de 170 caracteres.
+                                            </b-form-text>
                                             <p>
                                             <img src="/static/img/batataico.png" alt="icoFrituras" width="50px" height="50px">
                                             <img src="/static/img/boloico.png" alt="icoDoces" width="50px" height="50px">
@@ -79,6 +82,7 @@
   });
   
 });
+    
 </script>
 
 <style>
