@@ -44,7 +44,7 @@
                             <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-sm btn-secondary float-left m-1"><i class="fa fa-times" aria-hidden="true"></i></b-button>
                             <h1>Kali Meinar, 23</h1>
                             <p><i class="fa fa-map-marker" aria-hidden="true"></i>  São Paulo, SP - Brasil</p>
-                            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quo quia atque placeat quisquam eum, maxime molestiae. </h6>
+                            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab saepe fugiat nesciunt laboriosam nemo quasi alias sit. Consequatur, quam debitis quibusdam eveniet sapiente. </h6>
                             <p>
                             <img src="/static/img/batataico.png" alt="icoFrituras" width="50px" height="50px">
                             <img src="/static/img/boloico.png" alt="icoDoces" width="50px" height="50px">
