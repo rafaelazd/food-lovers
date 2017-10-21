@@ -10,6 +10,7 @@ import Inicio from '@/components/Inicio'
 import Chat from '@/components/Chat'
 import Feed from '@/components/Feed'
 import Config from '@/components/Config'
+import Perfil from '@/components/Perfil'
 
 Vue.use(Router)
 
@@ -55,6 +56,10 @@ export default new Router({
       path: '/config',
       name: 'Config',
       component: Config
+    },  {
+      path: '/perfil',
+      name: 'Perfil',
+      component: Perfil
     }
   ]
 })

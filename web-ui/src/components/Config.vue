@@ -17,16 +17,16 @@
        <!-- END Navbar -->
    
        <!-- Back Button -->
-        <div class="backset float-left">
+        <div class="backset">
            <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/inicio"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar para Inicio</router-link> 
-        </div> <br><br><br>
+        </div>
         <!--END Back Button -->
     
         <!-- Config Card -->
         <div class="config-buttons">
             <b-row>
                 <b-col class="left">
-                   <router-link class="btn btn-outline-primary" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-user" aria-hidden="true"></i></h1><p>Perfil</p></router-link>  
+                   <router-link class="btn btn-outline-primary" role="button" aria-pressed="true" to="/perfil"><h1><i class="fa fa-user" aria-hidden="true"></i></h1><p>Perfil</p></router-link>  
                 </b-col>
                 <b-col class="right">
                      <router-link class="btn btn-outline-danger" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-heart" aria-hidden="true"></i></h1><p>Preferências</p></router-link> 
@@ -61,6 +61,13 @@
         width: 100vw;
         background-size: cover;
         display: flex;
+    }
+    
+    .container nav {
+        background-color: #34495e;
+        max-width: none;
+        min-width: 100vw;
+        font-family: 'Exo', sans-serif;
     }
     
     .backset {
