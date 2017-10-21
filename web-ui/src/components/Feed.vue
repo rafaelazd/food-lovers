@@ -5,10 +5,10 @@
         <nav class="navbar navbar-toggleable-md navbar-dark navbar-fixed-top d-flex justify-content-between">
                 <b-nav-toggle target="nav_collapse"></b-nav-toggle>
                 <img src="/static/img/foodlovers.png" width="158px">
-                <b-button class="btn btn-outline-secondary"><i class="fa fa-cog" aria-hidden="true"></i></b-button>    
+                <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/config"><i class="fa fa-cog" aria-hidden="true"></i></router-link>     
                 <b-collapse is-nav id="nav_collapse">
                     <b-nav is-nav-bar>
-                          <b-nav-item href="#">Perfil</b-nav-item>
+                          <b-nav-item href="#"> Perfil</b-nav-item>
                           <b-nav-item href="#">Preferências</b-nav-item>
                           <b-nav-item href="#">Combinações</b-nav-item>
                     </b-nav>
@@ -203,6 +203,7 @@
         background-color: #f4f4f4;
         width: 100%;
         color: #757575;
+        padding: 4px;
     }
     
     .feed .header a {
@@ -212,10 +213,6 @@
     
     .feed .header a,count {
         margin: 9px;
-    }
-    
-    .feed .feed-foto  img {
-        
     }
     
     .feed .reaction-bar button {
