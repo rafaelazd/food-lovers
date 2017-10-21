@@ -25,25 +25,20 @@
         <!-- Config Card -->
         <div class="config-buttons">
             <b-row>
-            <b-col cols="6">
-                <router-link class="btn btn-outline-primary" id="btn-profile" role="button" aria-pressed="true" to="#"><i class="fa fa-user" aria-hidden="true"></i></router-link>
-                <b-tooltip target="btn-profile" title="Personalizar perfil"></b-tooltip>
-            </b-col>
-            <b-col cols="6">
-                <router-link class="btn btn-outline-warning" id="btn-prefers" role="button" aria-pressed="true" to="#"><i class="fa fa-cutlery" aria-hidden="true"></i></router-link>
-                <b-tooltip target="btn-prefers" title="Configurar preferências"></b-tooltip>
-            </b-col>
-        </b-row>
-        <b-row>
-            <b-col cols="6">
-                <router-link class="btn btn-outline-danger"id="btn-FAQ" role="button" aria-pressed="true" to="#"><i class="fa fa-question" aria-hidden="true"></i></router-link>
-                <b-tooltip target="btn-FAQ" title="Envie-nos um feedback"></b-tooltip>
-            </b-col>
-            <b-col cols="6">
-                <router-link class="btn btn-outline-info" id="btn-sobre-nos" role="button" aria-pressed="true" to="#"><i class="fa fa-info" aria-hidden="true"></i></router-link>
-                <b-tooltip target="btn-sobre-nos" title="Sobre nós"></b-tooltip> 
-            </b-col>
-        </b-row>
+                <b-col class="left">
+                   <router-link class="btn btn-outline-primary" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-user" aria-hidden="true"></i></h1><p>Perfil</p></router-link>  
+                </b-col>
+                <b-col class="right">
+                     <router-link class="btn btn-outline-danger" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-heart" aria-hidden="true"></i></h1><p>Preferências</p></router-link> 
+                </b-col>
+                <div class="w-100"></div>
+                <b-col class="left">
+                     <router-link class="btn btn-outline-warning" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-question" aria-hidden="true"></i></h1><p>Envie-nos suas dúvidas</p></router-link> 
+                </b-col>
+                <b-col class="right">
+                     <router-link class="btn btn-outline-info" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-info-circle" aria-hidden="true"></i></h1><p>Sobre nós</p></router-link> 
+                </b-col>
+            </b-row>
         </div>
         <!-- END Config Card -->
 
@@ -74,29 +69,35 @@
     }
     
     .config-buttons {
-        background-size: cover;
         max-height: none;
         margin: 0;
         padding: 15px; 
         text-align: center;
     }
-    
-    .config-buttons .btn{
-        width: 350px;
-        height: 250px;
-        margin: 40px;
-        text-align: center;
-        vertical-align: middle;
-        border-radius: 20px; 
-        border: 2.4px solid;
-    }
-    .config-buttons i{
-        margin:25%;
-        font-size: 85px;
+    .config-buttons .col .btn {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        border-color: transparent;
     }
     
-    .config-buttons span{
-        font-size: 30px;
-        text-transform: uppercase;
+    .config-buttons .col .btn p {
+        font-size: 18px;
+        letter-spacing: 2.5px;
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 50px;
     }
+    
+    .config-buttons .col .btn .fa {
+        font-size: 180px;
+        padding: 50px;
+    }
+    
+    @media (max-width: 630px) {
+        .config-buttons .col {
+        border-bottom: 1px solid;
+        border-bottom-color: #ecf0f1;
+        }
+    }
+    
 </style>
