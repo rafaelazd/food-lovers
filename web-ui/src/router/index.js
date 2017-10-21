@@ -9,6 +9,7 @@ import Cadastro3 from '@/components/Cadastro3'
 import Inicio from '@/components/Inicio'
 import Chat from '@/components/Chat'
 import Feed from '@/components/Feed'
+import Config from '@/components/Config'
 
 Vue.use(Router)
 
@@ -50,6 +51,10 @@ export default new Router({
       path: '/feed',
       name: 'Feed',
       component: Feed
+    },  {
+      path: '/config',
+      name: 'Config',
+      component: Config
     }
   ]
 })
