@@ -27,25 +27,24 @@
             <h1>Alterando seus dados pessoais</h1> <br>
             <p>O que você deseja mudar em seu perfil?</p>
         </div> <br>
-        <b-row>
-            <b-col cols="3">
-                    <b-nav vertical fill pills>
-                      <b-nav-item active>Foto de Perfil</b-nav-item>
-                      <b-nav-item>Dados Pessoais</b-nav-item>
-                      <b-nav-item>E-mail</b-nav-item>
-                      <b-nav-item>Usuário</b-nav-item>
-                      <b-nav-item>Senha</b-nav-item>
-                    </b-nav>
-            </b-col>
-            <b-col cols="9">
-               <div class="body">
-                       <h4>Foto atual:</h4>
-                        <img src="/static/img/m7.png" id="usuFoto"> <br><br>
-                        <b-form-file id="input2" v-model="file2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                <b-tabs pills id="tabs">
+                  <b-tab title="Foto de Perfil" active><br>
+                      <div class="body">
+                            <h4>Foto atual:</h4>
+                            <img src="/static/img/m7.png" id="usuFoto"> <br><br>
+                            <b-form-file id="input2" v-model="file2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
                         <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
-              </div>
-            </b-col>
-        </b-row>
+                      </div>
+                  </b-tab>
+                  <b-tab title="Dados Pessoais"><br>
+                  </b-tab>
+                  <b-tab title="E-mail"><br>
+                  </b-tab>
+                  <b-tab title="Usuário"><br>
+                  </b-tab>
+                  <b-tab title="Senha"><br>
+                  </b-tab>
+                </b-tabs>
         <!-- END Perfil-->
 
        </div>
@@ -57,7 +56,7 @@
 export default {
  data: {
     file: null,
-    file2: null
+    file2: null,
   }
 }
 </script>
@@ -100,14 +99,30 @@ export default {
     }
     
     .body {
-        text-align: center
+        max-width: none;
+        padding: 20px 25px;
+        border-radius: 2px;
+        text-align: center;
     }
-    
+
     .body h4{
         color: #34495e;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300; 
         text-align: left;
-        margin-left: 10px;
+        margin-left: 20px;
+    }
+    
+    .body .btn-outline-success{
+        margin-left: 50px;
+        max-width: 100px;
+        max-height: 45px;
+    }
+    
+    @media (max-width:370px){
+        .body img {
+            max-width: 260px;
+            max-height: none;
+        }
     }
 </style>
