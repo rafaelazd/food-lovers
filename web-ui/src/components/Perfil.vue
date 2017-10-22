@@ -69,6 +69,19 @@
                       </div>
                   </b-tab>
                   <b-tab title="E-mail"><br>
+                      <div class="body d-flex flex-column justify-content-center">
+                            <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                              <b-row>
+                                 <b-col>
+                                     <h4>E-mail</h4>
+                                 </b-col>
+                              </b-row>
+                              <b-row class="inputs2">
+                                   <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                              </b-row>
+                            </form><br>
+                        <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
+                      </div>
                   </b-tab>
                   <b-tab title="Usuário"><br>
                   </b-tab>
