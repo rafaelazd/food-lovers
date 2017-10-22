@@ -84,6 +84,19 @@
                       </div>
                   </b-tab>
                   <b-tab title="Usuário"><br>
+                      <div class="body d-flex flex-column justify-content-center">
+                            <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                              <b-row>
+                                 <b-col>
+                                     <h4>Usuário</h4>
+                                 </b-col>
+                              </b-row>
+                              <b-row class="inputs2">
+                                   <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
+                              </b-row>
+                            </form><br>
+                        <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
+                      </div>
                   </b-tab>
                   <b-tab title="Senha"><br>
                   </b-tab>
