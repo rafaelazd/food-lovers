@@ -37,6 +37,36 @@
                       </div>
                   </b-tab>
                   <b-tab title="Dados Pessoais"><br>
+                      <div class="body d-flex flex-column justify-content-center">
+                            <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                              <b-row>
+                                 <b-col>
+                                     <h4>Dados Pessoais</h4><br>
+                                 </b-col>
+                              </b-row>
+                              <b-row class="inputs">
+                                   <b-col>
+                                       <input type="text" class="form-control" name="nome" required="" placeholder="Nome" id="nome">
+                                   </b-col>
+                                   <b-col>
+                                        <input type="text" class="form-control" name="sobrenome" required="" placeholder="Sobrenome" id="sobrenome">
+                                   </b-col>
+                                   <b-col>
+                                        <input type="number" class="form-control" name="idade" required="" placeholder="Idade" id="idade"><br>
+                                   </b-col>
+                               </b-row>
+                               <b-row>
+                                <h5>Preferência em:</h5><br>    
+                               </b-row>
+                               <b-row class="inputs2">
+                                    <b-form-checkbox-group buttons button-variant="primary" id="checkboxes2" name="btn-preferencia" v-model="selected">
+                                      <b-form-checkbox value="Homens">Homens</b-form-checkbox>
+                                      <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
+                                    </b-form-checkbox-group>
+                               </b-row>
+                            </form><br>
+                        <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
+                      </div>
                   </b-tab>
                   <b-tab title="E-mail"><br>
                   </b-tab>
@@ -111,6 +141,24 @@ export default {
         font-weight: 300; 
         text-align: left;
         margin-left: 20px;
+    }
+    
+    .body h5{
+        color: #34495e;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; 
+        text-align: left;
+        margin-left: 50px;
+    }
+    
+    .body .inputs{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .body .inputs2{
+        margin-left: 70px;
+        margin-top: 10px;
     }
     
     .body .btn-outline-success{
