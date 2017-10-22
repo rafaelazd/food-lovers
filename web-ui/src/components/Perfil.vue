@@ -99,6 +99,27 @@
                       </div>
                   </b-tab>
                   <b-tab title="Senha"><br>
+                      <div class="body d-flex flex-column justify-content-center">
+                            <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                              <b-row>
+                                 <b-col>
+                                     <h4>Senha</h4>
+                                 </b-col>
+                              </b-row>
+                              <b-row class="inputs3">
+                                   <input type="password" class="form-control" name="senha1" id="senha1" required="" placeholder="Senha" autocomplete="new-password"> <br><br>
+                              </b-row>
+                              <b-row>
+                                 <b-col>
+                                     <h5>Confirmar Senha</h5>
+                                 </b-col>
+                              </b-row>
+                              <b-row class="inputs2">
+                                   <input type="password" class="form-control" name="senha2" id="senha2" required="" placeholder="Senha" autocomplete="new-password">
+                              </b-row>
+                            </form> <br>
+                        <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
+                      </div>
                   </b-tab>
                 </b-tabs>
         <!-- END Perfil-->
@@ -185,6 +206,12 @@ export default {
     .body .inputs2{
         margin-left: 70px;
         margin-top: 10px;
+    }
+    
+    .body .inputs3{
+        margin-left: 70px;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
     
     .body .btn-outline-success{
