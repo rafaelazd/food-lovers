@@ -10,7 +10,7 @@
                     <p>Preencha o campo abaixo com seus dados pessoais.</p>
                     <!-- Formulario -->
                     <div class="card-block">
-                        <form class="form" role="form" autocomplete="off" id="formLogin" action="">
+                        <form class="form" role="form" autocomplete="off" id="formCad" action="">
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                             </div>
@@ -22,18 +22,22 @@
                             </div>
                             <div class="form-group">
                             <input type="number" class="form-control" name="idade" required="" placeholder="Idade" id="idade">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary">
-                                    <input type="checkbox" autocomplete="off"> Homens </label>
-                                    <label class="btn btn-primary">
-                                    <input type="checkbox" autocomplete="off"> Mulheres </label>
-                                </div>
+                            </div>
+                            <div class="form-group d-flex justify-content-center">
+                               <h5>Preferência em</h5>
+                                <b-form-checkbox-group buttons button-variant="primary" id="checkboxes1" name="btn-preferencia" v-model="selected">
+                                  <b-form-checkbox value="Homens">Homens</b-form-checkbox>
+                                  <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
+                                </b-form-checkbox-group>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="senha" required="" placeholder="Senha" autocomplete="new-password">
+                                <input type="password" class="form-control" name="senha1" id="senha1" required="" placeholder="Senha" autocomplete="new-password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="senha2" id="senha2" required="" placeholder="Confirmar Senha" autocomplete="new-password">
                             </div>
                             <div class="form-group">
                             <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
@@ -55,6 +59,8 @@
 
 <style>
     /* TODO: colocar  o código em apenas um arquivo */ 
+    @import url('https://fonts.googleapis.com/css?family=Exo|Open+Sans:300,400|Raleway:400,700,800|Poiret+One|Open+Sans+Condensed:300,300i');
+    
     #cad-cover {
         height: 100vh;
         width: 100vw;
@@ -81,21 +87,34 @@
     }
     
     .nb-login h2 {
-        font-family: 'Asap Condensed', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .nb-login h5 {
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; 
+        margin-top: 10px;
+    }
+    
+    .nb-login #checkboxes1 {
+        margin-left: 15px;
+        margin-top: 10px;
     }
     
     .nb-login p {
         color: #bdc3c7;
+        font-family: 'Open Sans', sans-serif;
     }
     
     .nb-login form {
         margin-bottom: 15px;
         color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
     }
     
     .nb-login form input,
     .nb-login form textarea {
-        box-shadow: none !important;
         padding: 6px 5px;
         color: #ffffff;
         border: 0px;
@@ -106,6 +125,7 @@
     
     .nb-login form input:focus {
         background: rgba(255, 255, 255, 0.05);
+        color: #ecf0f1;
     }
     
     .nb-login form ::-webkit-input-placeholder {

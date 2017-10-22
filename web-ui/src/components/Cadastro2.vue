@@ -10,7 +10,7 @@
                     <p>Selecione até 5 categorias culinárias de sua preferência.</p>
                     <!-- Formulario -->
                     <div class="card-block">
-                        <form class="form" role="form" autocomplete="off" id="formLogin" action="">
+                        <form class="form" role="form" autocomplete="off" id="formCad" action="">
                             
                             <div class="row">
                                 <div class="col"><label class="btn btn-primary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item1" value="val1" class="hidden" autocomplete="off"></label></div>
