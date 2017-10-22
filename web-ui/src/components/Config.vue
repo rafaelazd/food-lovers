@@ -36,7 +36,7 @@
                      <router-link class="btn btn-outline-warning" role="button" aria-pressed="true" to="/duvidas"><h1><i class="fa fa-question" aria-hidden="true"></i></h1><p>Envie-nos suas dúvidas</p></router-link> 
                 </b-col>
                 <b-col class="right">
-                     <router-link class="btn btn-outline-info" role="button" aria-pressed="true" to="/inicio"><h1><i class="fa fa-info-circle" aria-hidden="true"></i></h1><p>Sobre nós</p></router-link> 
+                     <router-link class="btn btn-outline-info" role="button" aria-pressed="true" to="/sobre"><h1><i class="fa fa-info-circle" aria-hidden="true"></i></h1><p>Sobre nós</p></router-link> 
                 </b-col>
             </b-row>
         </div>

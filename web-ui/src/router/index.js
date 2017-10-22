@@ -12,6 +12,7 @@ import Feed from '@/components/Feed'
 import Config from '@/components/Config'
 import Perfil from '@/components/Perfil'
 import Duvidas from '@/components/Duvidas'
+import Sobre from '@/components/Sobre'
 
 Vue.use(Router)
 
@@ -65,6 +66,10 @@ export default new Router({
       path: '/duvidas',
       name: 'Duvidas',
       component: Duvidas
+    },  {
+      path: '/sobre',
+      name: 'Sobre',
+      component: Sobre
     }
   ]
 })
