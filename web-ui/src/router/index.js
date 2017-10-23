@@ -13,6 +13,7 @@ import Config from '@/components/Config'
 import Perfil from '@/components/Perfil'
 import Duvidas from '@/components/Duvidas'
 import Sobre from '@/components/Sobre'
+import Preferencias from '@/components/Preferencias'
 
 Vue.use(Router)
 
@@ -70,6 +71,10 @@ export default new Router({
       path: '/sobre',
       name: 'Sobre',
       component: Sobre
+    },  {
+      path: '/preferencias',
+      name: 'Preferencias',
+      component: Preferencias
     }
   ]
 })
