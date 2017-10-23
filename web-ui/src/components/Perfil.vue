@@ -130,12 +130,7 @@
 
 
 <script>
-export default {
- data: {
-    file: null,
-    file2: null,
-  }
-}
+
 </script>
 
 
