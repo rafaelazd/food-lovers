@@ -12,6 +12,10 @@
         <!--END Back Button -->
     
         <!-- Config Card -->
+        <div class="head">
+            <h1>Configurações</h1><br>
+            <p>Modifique seu perfil, tire suas dúvidas e conheça mais sobre o aplicativo!</p>
+        </div> 
         <div class="config-buttons">
             <b-row>
                 <b-col class="left">
@@ -62,6 +66,21 @@
     .backset {
         margin: 20px;
         margin-left: 51px;
+    }
+    
+    .head h1 {
+        color: #2c3e50;
+        font-size: 35px;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+    }
+    
+    .head p {
+        color: #7f8c8d;
+        font-size: 19px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        text-align: center;
     }
     
     .config-buttons {
