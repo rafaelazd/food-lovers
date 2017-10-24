@@ -2,18 +2,7 @@
     <section id="inicio-cover">
        <div class="container">
        <!-- Navbar -->
-        <nav class="navbar navbar-toggleable-md navbar-dark navbar-fixed-top d-flex justify-content-between">
-                <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-                <img src="/static/img/foodlovers.png" width="158px">
-                <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/config"><i class="fa fa-cog" aria-hidden="true"></i></router-link>     
-                <b-collapse is-nav id="nav_collapse">
-                    <b-nav is-nav-bar>
-                          <b-nav-item href="#"> Perfil</b-nav-item>
-                          <b-nav-item href="#">Preferências</b-nav-item>
-                          <b-nav-item href="#">Combinações</b-nav-item>
-                    </b-nav>
-                </b-collapse>
-        </nav><br>
+        <nav-all></nav-all> <br>
        <!-- END Navbar -->
    
        <!-- Nav -->
@@ -37,7 +26,7 @@
                 <div class="header d-flex justify-content-around">
                     <img src="/static/img/H1.4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">_takedamateus</a>
-                    <count>3h</count>
+                    <small> 1h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato1.jpg" class="img-fluid">
@@ -52,7 +41,7 @@
                 <div class="header d-flex justify-content-around">
                     <img src="/static/img/M2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">rosamaria89</a>
-                    <count>3h</count>
+                    <small> 2h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato2.jpg" class="img-fluid">
@@ -66,7 +55,7 @@
                 <div class="header d-flex justify-content-around">
                     <img src="/static/img/M1.3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">sosoalter</a>
-                    <count>5h</count>
+                    <small> 2h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato3.jpg" class="img-fluid">
@@ -80,7 +69,7 @@
                 <div class="header d-flex justify-content-around">
                     <img src="/static/img/M4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">raquelsalva_</a>
-                    <count>6h</count>
+                    <small> 3h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato4.jpg" class="img-fluid">
@@ -94,7 +83,7 @@
                <div class="header d-flex justify-content-around">
                     <img src="/static/img/H2.4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">herondis</a>
-                    <count>6h</count>
+                    <small> 5h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato5.jpg" class="img-fluid">
@@ -108,7 +97,7 @@
               <div class="header d-flex justify-content-around">
                     <img src="/static/img/M3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">mirandeva</a>
-                    <count>10h</count>
+                    <small> 5h </small>
                 </div>
                 <div class="feed-foto">
                     <img src="/static/img/prato6.jpg" class="img-fluid">
@@ -122,7 +111,7 @@
                 <div class="header d-flex justify-content-around">
                     <img src="/static/img/M4.1.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">betemaravilha</a>
-                    <count>11h</count>
+                    <small> 6h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato8.jpg" class="img-fluid">
@@ -136,7 +125,7 @@
                <div class="header d-flex justify-content-around">
                     <img src="/static/img/M1.2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
                     <a href="usuario">kardashianlostsis</a>
-                    <count>11h</count>
+                    <small> 10h </small>
                 </div>
                 <div class="feed-foto ">
                     <img src="/static/img/prato7.jpg" class="img-fluid">
@@ -211,8 +200,13 @@
         font-family: 'Open Sans', sans-serif;
     }
     
-    .feed .header a,count {
+    .feed .header a,small {
         margin: 9px;
+    }
+    
+    .feed .header small {
+        font-size: 16px;
+        color: darkgray;
     }
     
     .feed .reaction-bar button {
