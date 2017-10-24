@@ -25,10 +25,7 @@
                             </div>
                             <div class="form-group d-flex justify-content-center">
                                <h5>Preferência em</h5>
-                                <b-form-checkbox-group buttons button-variant="primary" id="checkboxes1" name="btn-preferencia" v-model="selected">
-                                  <b-form-checkbox value="Homens">Homens</b-form-checkbox>
-                                  <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
-                                </b-form-checkbox-group>
+                                <app-checkbox></app-checkbox>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
