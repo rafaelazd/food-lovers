@@ -2,18 +2,7 @@
     <section id="inicio-cover">
        <div class="container">
        <!-- Navbar -->
-        <nav class="navbar navbar-toggleable-md navbar-dark navbar-fixed-top d-flex justify-content-between">
-                <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-                <img src="/static/img/foodlovers.png" width="158px">
-                <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/config"><i class="fa fa-cog" aria-hidden="true"></i></router-link>     
-                <b-collapse is-nav id="nav_collapse">
-                    <b-nav is-nav-bar>
-                          <b-nav-item href="#"> Perfil</b-nav-item>
-                          <b-nav-item href="#">Preferências</b-nav-item>
-                          <b-nav-item href="#">Combinações</b-nav-item>
-                    </b-nav>
-                </b-collapse>
-        </nav><br>
+        <nav-all></nav-all> <br>
        <!-- END Navbar -->
    
        <!-- Nav -->
