@@ -41,6 +41,7 @@
                    </row>
                </form>
            </div>
+           </div>
            <div class="footer d-flex justify-content-center">
                <form class="form-conf-pref form-inline" name="formConfPref" action="">
                    <b-row>
@@ -76,7 +77,7 @@
                
                </form>
            </div>
-        </div>
+        
         <!-- END Preferencias Card -->
 
        </div>
@@ -127,7 +128,7 @@
         margin-bottom: 30px;
     }
     
-    .preferencias .footer {
+    .footer {
         text-align: center;
         justify-content: center;
         position: absolute;
@@ -139,14 +140,14 @@
         box-shadow: 0 -6px 10px -4px #7f8c8d;
     }
     
-    .preferencias .footer img {
+    .footer img {
         width:110px;
         height: 110px;
         margin-right: 20px;
         margin-left: 20px;
     }
     
-    .preferencias .footer .btn {
+    .footer .btn {
         margin-left: 0px;
         margin-bottom: 90px;
         color: #fff;
@@ -166,7 +167,7 @@
     }
     
     @media (max-width: 320px) {
-        .preferencias .footer img {
+        .footer img {
             width:60px;
             height: 60px;
         }
@@ -182,11 +183,11 @@
             height: 150px;
         }
         
-        .preferencias .footer{
+        .footer{
             padding-left: 0px;
         }
         
-        .preferencias .footer .btn {
+        .footer .btn {
             margin-bottom: 0px;
             margin-left: 0px;
             margin-top: -125px;
@@ -210,8 +211,9 @@
             padding-left: 15px;
         }
     }
-     @media (min-width: 320px) and (max-width: 375px) {
-        .preferencias .footer img {
+    
+    @media (min-width: 320px) and (max-width: 375px) {
+        .footer img {
             width:60px;
             height: 60px;
         }
@@ -227,11 +229,11 @@
             height: 150px;
         }
         
-        .preferencias .footer{
+        .footer{
             padding-left: 0px;
         }
         
-        .preferencias .footer .btn {
+        .footer .btn {
             margin-bottom: 0px;
             margin-left: 0px;
             margin-top: -125px;
@@ -258,7 +260,7 @@
     }
     
     @media (min-width: 375px) and (max-width: 425px) {
-        .preferencias .footer img {
+        .footer img {
             width:70px;
             height: 70px;
         }
@@ -274,11 +276,11 @@
             height: 150px;
         }
         
-        .preferencias .footer{
+        .footer{
             padding-left: 0px;
         }
         
-        .preferencias .footer .btn {
+        .footer .btn {
             margin-bottom: 0px;
             margin-left: -15px;
             margin-top: -140px;
@@ -307,7 +309,7 @@
     }
     
     @media (min-width: 425px) and (max-width: 768px) {
-        .preferencias .footer img {
+        .footer img {
             width:90px;
             height: 90px;
         }
@@ -323,11 +325,11 @@
             height: 150px;
         }
         
-        .preferencias .footer{
+        .footer{
             padding-left: 0px;
         }
         
-        .preferencias .footer .btn {
+        .footer .btn {
             margin-bottom: 0px;
             margin-left: -60px;
             margin-top: -170px;
@@ -355,54 +357,5 @@
         
     }
     
-    @media (min-width: 768px)  {
-        .preferencias .footer img {
-            width:130px;
-            height: 130px;
-        }
-        
-        .preferencias .categorias .options {
-            margin: 5px;
-            text-align: center;
-            justify-content: center;
-        }
-        
-        .preferencias .categorias .options img {
-            width: 120px;
-            height: 150px;
-        }
-        
-        .preferencias .footer{
-            padding-left: 0px;
-        }
-        
-        .preferencias .footer .btn {
-            margin-bottom: 0px;
-            margin-left: -90px;
-            margin-top: -235px;
-            padding-left: 5px;
-            padding-top: 2px;
-            width: 40px;
-            height: 40px;
-            font-size: 15px;
-            justify-content: center;
-        }
-        
-        .footer .form-inline {
-            justify-content: center;
-            margin-left: 0px;
-            margin-bottom: -30px;
-        }
-        
-        .footer .form-inline .col {
-            width: 200px;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-bottom: 0px;
-            max-height: 30px;
-        }
-        
-    }
-    
-    
+   
 </style>
