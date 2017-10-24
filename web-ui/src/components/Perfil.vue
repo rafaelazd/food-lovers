@@ -2,23 +2,12 @@
    <section id="inicio-cover">
        <div class="container">
        <!-- Navbar -->
-        <nav class="navbar navbar-toggleable-md navbar-dark navbar-fixed-top d-flex justify-content-between">
-                <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-                <img src="/static/img/foodlovers.png" width="158px">
-                <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/config"><i class="fa fa-cog" aria-hidden="true"></i></router-link>     
-                <b-collapse is-nav id="nav_collapse">
-                    <b-nav is-nav-bar>
-                          <b-nav-item href="#"> Perfil</b-nav-item>
-                          <b-nav-item href="#">Preferências</b-nav-item>
-                          <b-nav-item href="#">Combinações</b-nav-item>
-                    </b-nav>
-                </b-collapse>
-        </nav><br>
+        <nav-all></nav-all> <br>
        <!-- END Navbar -->
    
        <!-- Back Button -->
         <div class="backset">
-           <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/inicio"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar para Inicio</router-link> 
+           <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/inicio"><i class="fa fa-arrow-left" aria-hidden="true"></i></router-link> 
         </div>
         <!--END Back Button -->
     
@@ -29,10 +18,10 @@
         </div> <br>
                 <b-tabs pills id="tabs">
                   <b-tab title="Foto de Perfil" active><br>
-                      <div class="body">
+                      <div class="body first">
                             <h4>Foto atual:</h4>
                             <img src="/static/img/m7.png" id="usuFoto"> <br><br>
-                            <b-form-file id="input2" v-model="file2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                            <b-form-file id="input2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
                         <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
                       </div>
                   </b-tab>
@@ -58,12 +47,12 @@
                                <b-row>
                                 <h5>Preferência em:</h5><br>    
                                </b-row>
-                               <b-row class="inputs2">
+                              <!-- <b-row class="inputs2">
                                     <b-form-checkbox-group buttons button-variant="primary" id="checkboxes2" name="btn-preferencia" v-model="selected">
                                       <b-form-checkbox value="Homens">Homens</b-form-checkbox>
                                       <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
-                                    </b-form-checkbox-group>
-                               </b-row>
+                                    </b-form-checkbox-group> 
+                               </b-row> -->
                             </form><br>
                         <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
                       </div>
@@ -215,10 +204,11 @@
         max-height: 45px;
     }
     
-    @media (max-width:370px){
-        .body img {
-            max-width: 260px;
-            max-height: none;
+    @media (max-width: 430px) {
+        #usuFoto {
+            width: 200px;
+            height: 200px;
+            padding-left: 0px;
         }
     }
 </style>
