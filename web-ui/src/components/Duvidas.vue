@@ -2,23 +2,12 @@
    <section id="inicio-cover">
        <div class="container">
        <!-- Navbar -->
-        <nav class="navbar navbar-toggleable-md navbar-dark navbar-fixed-top d-flex justify-content-between">
-                <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-                <img src="/static/img/foodlovers.png" width="158px">
-                <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/config"><i class="fa fa-cog" aria-hidden="true"></i></router-link>     
-                <b-collapse is-nav id="nav_collapse">
-                    <b-nav is-nav-bar>
-                          <b-nav-item href="#"> Perfil</b-nav-item>
-                          <b-nav-item href="#">Preferências</b-nav-item>
-                          <b-nav-item href="#">Combinações</b-nav-item>
-                    </b-nav>
-                </b-collapse>
-        </nav><br>
+        <nav-all></nav-all> <br>
        <!-- END Navbar -->
    
        <!-- Back Button -->
         <div class="backset">
-           <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/inicio"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar para Inicio</router-link> 
+           <router-link class="btn btn-outline-secondary" role="button" aria-pressed="true" to="/inicio"><i class="fa fa-arrow-left" aria-hidden="true"></i></router-link> 
         </div>
         <!--END Back Button -->
     
@@ -29,23 +18,16 @@
         </div> <br>
         <div class="question-body">
             <b-row>
-                <h4>Alguma pergunta?</h4>
-            </b-row>
-            <b-row>
                 <b-col>
                     <b-form-textarea id="textarea2"
-                     v-model="text"
                      placeholder="Digite a sua dúvida"
                      :rows="4"
                      :maxlength="900">
                     </b-form-textarea>
-                </b-col>
-                <div class="w-100"></div>
-                <b-col class="d-flex justify-content-center">
-                    <small>Máximo de 900 caracteres</small>
+                    <small class="float-right">Máximo de 900 caracteres</small>
                 </b-col>
             </b-row>
-            <b-row>
+            <b-row class="btn-small d-flex justify-content-start">
                 <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
             </b-row>
              
@@ -108,19 +90,21 @@
         width: 80%;
         background: #fff;
         padding: 10px;
-        background-color: #ecf0f1;
-        box-shadow: 10px 20px 20px rgba(0,0,0,.5);
         overflow: hidden;
     }
     
     .question-body #textarea2 {
         margin-top: 10px;
+        box-shadow: 10px 20px 20px rgba(0,0,0,.2);
     }
     
     .question-body .btn {
         margin-left: 25px;
         margin-bottom: 4px;
-        
+    }
+    
+    .question-body .btn-small {
+        margin-top: 15px;
     }
     
     .question-body small {
