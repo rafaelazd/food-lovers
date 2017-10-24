@@ -14,6 +14,7 @@ import Perfil from '@/components/Perfil'
 import Duvidas from '@/components/Duvidas'
 import Sobre from '@/components/Sobre'
 import Preferencias from '@/components/Preferencias'
+import UsuPerfil from '@/components/UsuPerfil'
 
 Vue.use(Router)
 
@@ -75,6 +76,10 @@ export default new Router({
       path: '/preferencias',
       name: 'Preferencias',
       component: Preferencias
+    },  {
+      path: '/usu-perfil',
+      name: 'UsuPerfil',
+      component: UsuPerfil
     }
   ]
 })
