@@ -150,7 +150,7 @@
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One|Open+Sans|Open+Sans+Condensed:300');
+    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One|Open+Sans|Lato|Questrial|Open+Sans+Condensed:300');
     
      #inicio-cover {
             height: 100vh;
@@ -200,13 +200,17 @@
         font-family: 'Open Sans', sans-serif;
     }
     
-    .feed .header a,small {
+    .feed .header a {
         margin: 9px;
+        font-family: 'Questrial', sans-serif;
+        font-size: 18px;
+        
     }
     
     .feed .header small {
         font-size: 16px;
         color: darkgray;
+        margin: 9px;
     }
     
     .feed .reaction-bar button {
