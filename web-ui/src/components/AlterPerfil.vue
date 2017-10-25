@@ -38,7 +38,7 @@
                                 <h4>Foto atual:</h4>
                                 <img src="/static/img/m7.png" id="usuFoto"> <br><br>
                                 <b-form-file id="input2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
-                                <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
+                                <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -69,11 +69,25 @@
                                           <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
                                       </b-form-checkbox-group> 
                                   </b-row>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
                                 </form> <br>
-                                <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
                             </div>
                          </div>
-                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.email, show: abaAtiva.email, fade: !abaAtiva.email }" id="#/alter-perfil/#email" role="tabpanel" aria-labelledby="v-pills-messages-tab">teste 3</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.email, show: abaAtiva.email, fade: !abaAtiva.email }" id="#/alter-perfil/#email" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                             <div class="body d-flex flex-column justify-content-center">
+                                <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                                  <b-row>
+                                     <b-col>
+                                         <h4>E-mail</h4>
+                                     </b-col>
+                                  </b-row>
+                                  <b-row class="inputs2">
+                                       <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                                  </b-row>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
+                                </form><br>
+                            </div>
+                         </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 4</div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 5</div>
                        </div>
@@ -211,12 +225,6 @@
         margin-left: 70px;
         margin-top: 10px;
         margin-bottom: 20px;
-    }
-    
-    .body .btn-outline-success{
-        margin-left: 50px;
-        max-width: 100px;
-        max-height: 45px;
     }
     
     @media (max-width: 430px) {
