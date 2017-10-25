@@ -16,14 +16,87 @@
             <h1>Alterando seus dados pessoais</h1> <br>
             <p>O que você deseja mudar em seu perfil?</p>
         </div> <br>
-                
+            <b-row>
+                <!-- Nav Vertical -->
+                <b-col cols="4">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" v-bind:href="fotoperfil" role="tab" aria-controls="v-pills-home" aria-selected="true" v-on:click="trocaSecao('foto-perfil', $event)">Foto de Perfil</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" v-bind:href="dadospessoais" role="tab" aria-controls="v-pills-profile" aria-selected="false"  v-on:click="trocaSecao('dados-pessoais', $event)">Dados Pessoais</a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" v-bind:href="email" role="tab" aria-controls="v-pills-messages" aria-selected="false" v-on:click="trocaSecao('email', $event)">E-mail</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" v-bind:href="usuario" role="tab" aria-controls="v-pills-settings" aria-selected="false" v-on:click="trocaSecao('usuario', $event)">Usuário</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" v-bind:href="senha" v-on:click="trocaSecao('senha', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Senha</a>
+                    </div>
+                </b-col>
+                <!-- END Nav Vertical -->
+                    
+                <!-- Conteúdo Nav Vertical -->
+                <b-col cols="8">
+                   <div class="body-alter">                         
+                      <div class="tab-content" id="v-pills-tabContent">
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">teste 1</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">teste 2</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.email, show: abaAtiva.email, fade: !abaAtiva.email }" id="#/alter-perfil/#email" role="tabpanel" aria-labelledby="v-pills-messages-tab">teste 3</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 4</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 5</div>
+                       </div>
+                   </div>
+                </b-col>
+                <!-- END Conteúdo Nav Vertical -->
+          </b-row>
        </div>
   </section>
 </template>
 
 
 <script>
-
+        export default {
+  methods: {
+      trocaSecao(secao, event) {
+          // previne que o link seja seguido
+          event.preventDefault();
+          this.abaAtiva.fotoPerfil = false;
+          this.abaAtiva.dadosPessoais = false;
+          this.abaAtiva.email = false;
+          this.abaAtiva.usuario = false;
+          this.abaAtiva.senha = false;
+          
+          switch(secao) {
+              case 'foto-perfil':
+                  this.abaAtiva.fotoPerfil = true;
+                  break;
+              case 'dados-pessoais':
+                  this.abaAtiva.dadosPessoais = true;
+                  break;
+              case 'email':
+                  this.abaAtiva.email = true;
+                  break;
+              case 'usuario':
+                  this.abaAtiva.usuario = true;
+                  break;
+              case 'senha':
+                  this.abaAtiva.senha = true;
+                  break;
+          }
+          //console.log(secao);
+      }
+  },    
+  data () {
+    return {
+      fotoperfil: '#/alter-perfil/#fotoperfil',
+      dadospessoais: '#/alter-perfil/#dadospessoais',
+      email: '#/alter-perfil/#email',
+      usuario: '#/alter-perfil/#usuario',
+      senha: '#/alter-perfil/#senha',
+      abaAtiva: {
+          fotoPerfil: true,
+          dadosPessoais: false,
+          email: false,
+          usuario: false,
+          senha: false
+      }
+    }
+  }
+}
 </script>
 
 
