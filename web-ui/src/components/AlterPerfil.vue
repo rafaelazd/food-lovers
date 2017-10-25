@@ -33,7 +33,14 @@
                 <b-col cols="8">
                    <div class="body-alter">                         
                       <div class="tab-content" id="v-pills-tabContent">
-                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">teste 1</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                             <div class="body first">
+                                <h4>Foto atual:</h4>
+                                <img src="/static/img/m7.png" id="usuFoto"> <br><br>
+                                <b-form-file id="input2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                                <b-button type="submit" class="btn btn-outline-success float-left">Confirmar</b-button>
+                             </div>
+                         </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">teste 2</div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.email, show: abaAtiva.email, fade: !abaAtiva.email }" id="#/alter-perfil/#email" role="tabpanel" aria-labelledby="v-pills-messages-tab">teste 3</div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 4</div>
