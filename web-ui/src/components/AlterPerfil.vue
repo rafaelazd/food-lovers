@@ -20,11 +20,11 @@
                 <!-- Nav Vertical -->
                 <b-col cols="4">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" v-bind:href="fotoperfil" role="tab" aria-controls="v-pills-home" aria-selected="true" v-on:click="trocaSecao('foto-perfil', $event)">Foto de Perfil</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" v-bind:href="dadospessoais" role="tab" aria-controls="v-pills-profile" aria-selected="false"  v-on:click="trocaSecao('dados-pessoais', $event)">Dados Pessoais</a>
-                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" v-bind:href="email" role="tab" aria-controls="v-pills-messages" aria-selected="false" v-on:click="trocaSecao('email', $event)">E-mail</a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" v-bind:href="usuario" role="tab" aria-controls="v-pills-settings" aria-selected="false" v-on:click="trocaSecao('usuario', $event)">Usuário</a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" v-bind:href="senha" v-on:click="trocaSecao('senha', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Senha</a>
+                        <a class="nav-link" id="Foto-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.fotoPerfil}" v-bind:href="fotoperfil" role="tab" aria-controls="v-pills-home" aria-selected="true" v-on:click="trocaSecao('foto-perfil', $event)">Foto de Perfil</a>
+                        <a class="nav-link" id="Dados-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.dadosPessoais}" v-bind:href="dadospessoais" role="tab" aria-controls="v-pills-profile" aria-selected="false"  v-on:click="trocaSecao('dados-pessoais', $event)">Dados Pessoais</a>
+                        <a class="nav-link" id="Email-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.email}" v-bind:href="email" role="tab" aria-controls="v-pills-messages" aria-selected="false" v-on:click="trocaSecao('email', $event)">E-mail</a>
+                        <a class="nav-link" id="Usuario-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.usuario}" v-bind:href="usuario" role="tab" aria-controls="v-pills-settings" aria-selected="false" v-on:click="trocaSecao('usuario', $event)">Usuário</a>
+                        <a class="nav-link" id="Senha-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.senha}" v-bind:href="senha" v-on:click="trocaSecao('senha', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Senha</a>
                     </div>
                 </b-col>
                 <!-- END Nav Vertical -->
@@ -148,6 +148,8 @@
           this.abaAtiva.usuario = false;
           this.abaAtiva.senha = false;
           
+
+          
           switch(secao) {
               case 'foto-perfil':
                   this.abaAtiva.fotoPerfil = true;
@@ -182,6 +184,7 @@
           usuario: false,
           senha: false
       }
+      
     }
   }
 }
