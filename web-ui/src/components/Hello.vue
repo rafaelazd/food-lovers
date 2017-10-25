@@ -6,11 +6,15 @@
 </template>
 
 <script>
+    function getHelloWorld() {
+        return "Hello migos AAAAAAAA"
+    }
+    
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to your bootstrap-vue App'
+      msg: getHelloWorld()
     }
   }
 }
