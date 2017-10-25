@@ -19,7 +19,7 @@
         <div class="config-buttons">
             <b-row>
                 <b-col class="left">
-                   <router-link class="btn btn-outline-primary" role="button" aria-pressed="true" to="/perfil"><h1><i class="fa fa-user" aria-hidden="true"></i></h1><p>Perfil</p></router-link>  
+                   <router-link class="btn btn-outline-primary" role="button" aria-pressed="true" to="/alter-perfil"><h1><i class="fa fa-user" aria-hidden="true"></i></h1><p>Perfil</p></router-link>  
                 </b-col>
                 <b-col class="right">
                      <router-link class="btn btn-outline-danger" role="button" aria-pressed="true" to="/preferencias"><h1><i class="fa fa-heart" aria-hidden="true"></i></h1><p>Preferências</p></router-link> 

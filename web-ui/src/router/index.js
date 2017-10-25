@@ -10,11 +10,11 @@ import Inicio from '@/components/Inicio'
 import Chat from '@/components/Chat'
 import Feed from '@/components/Feed'
 import Config from '@/components/Config'
-import Perfil from '@/components/Perfil'
+import AlterPerfil from '@/components/AlterPerfil'
 import Duvidas from '@/components/Duvidas'
 import Sobre from '@/components/Sobre'
 import Preferencias from '@/components/Preferencias'
-import UsuPerfil from '@/components/UsuPerfil'
+import Perfil from '@/components/Perfil'
 
 Vue.use(Router)
 
@@ -61,9 +61,9 @@ export default new Router({
       name: 'Config',
       component: Config
     },  {
-      path: '/perfil',
-      name: 'Perfil',
-      component: Perfil
+      path: '/alter-perfil',
+      name: 'AlterPerfil',
+      component: AlterPerfil
     },  {
       path: '/duvidas',
       name: 'Duvidas',
@@ -77,9 +77,9 @@ export default new Router({
       name: 'Preferencias',
       component: Preferencias
     },  {
-      path: '/usu-perfil',
-      name: 'UsuPerfil',
-      component: UsuPerfil
+      path: '/perfil',
+      name: 'Perfil',
+      component: Perfil
     }
   ]
 })
