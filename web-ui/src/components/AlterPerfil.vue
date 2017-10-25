@@ -103,7 +103,29 @@
                                 </form> <br>
                             </div>
                          </div>
-                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 5</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                             <div class="body d-flex flex-column justify-content-center">
+                                <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                                  <b-row>
+                                     <b-col>
+                                         <h4>Senha</h4>
+                                     </b-col>
+                                  </b-row>
+                                  <b-row class="inputs3">
+                                       <input type="password" class="form-control" name="senha1" id="senha1" required="" placeholder="Senha" autocomplete="new-password"> <br><br>
+                                  </b-row>
+                                  <b-row>
+                                     <b-col>
+                                         <h5>Confirmar Senha</h5>
+                                     </b-col>
+                                  </b-row>
+                                  <b-row class="inputs2">
+                                       <input type="password" class="form-control" name="senha2" id="senha2" required="" placeholder="Senha" autocomplete="new-password">
+                                  </b-row>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                </form> <br>
+                            </div>
+                         </div>
                        </div>
                    </div>
                 </b-col>
