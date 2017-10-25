@@ -88,7 +88,21 @@
                                 </form><br>
                             </div>
                          </div>
-                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 4</div>
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                             <div class="body d-flex flex-column justify-content-center">
+                                <form class="form" role="form" autocomplete="off" id="formConfig" action="">
+                                  <b-row>
+                                     <b-col>
+                                         <h4>Usuário</h4>
+                                     </b-col>
+                                  </b-row>
+                                  <b-row class="inputs2">
+                                       <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
+                                  </b-row>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                </form> <br>
+                            </div>
+                         </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">teste 5</div>
                        </div>
                    </div>
