@@ -51,6 +51,28 @@
                             </b-row>
                          </div>
                     </div>
+                    <div class="fotos-perfil">
+                        <div class="head-fotos">
+                          <h1>Fotos</h1>
+                        </div>
+                        <b-row>
+                             <b-col cols="6" sm="6" md="3" xl="3" >
+                                 <img src="/static/img/prato2.jpg" class="img-thumbnail" alt=""> 
+                             </b-col>
+                             <b-col cols="6" sm="6" md="3" xl="3" >
+                                 <img src="/static/img/prato3.jpg" class="img-thumbnail" alt=""> 
+                             </b-col>
+                             <b-col cols="6" sm="6" md="3" xl="3" >
+                                 <img src="/static/img/prato4.jpg" class="img-thumbnail" alt=""> 
+                             </b-col>
+                             <b-col cols="6" sm="6" md="3" xl="3" >
+                                 <img src="/static/img/prato6.jpg" class="img-thumbnail" alt=""> 
+                             </b-col>
+                             <b-col cols="6" sm="6" md="3" xl="3" >
+                                 <img src="/static/img/prato7.jpg" class="img-thumbnail" alt=""> 
+                             </b-col>
+                         </b-row>
+                  </div>
             </b-jumbotron>
         </div>
         <!-- END Perfil Card -->
@@ -72,7 +94,7 @@ export default {
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo|Open+Sans:300,400|Raleway:400,700,800|Poiret+One|Open+Sans+Condensed:300,700|Anonymous+Pro:400,700');
+    @import url('https://fonts.googleapis.com/css?family=Exo|Open+Sans:300,400|Raleway:200,300,400,700,800|Poiret+One|Open+Sans+Condensed:300,700|Anonymous+Pro:400,700');
     
     #inicio-cover {
         height: 100vh;
@@ -180,6 +202,45 @@ export default {
         visibility: hidden;
     }
     
+    .jumbotron .fotos-perfil{
+        background-color: white;
+        margin-top: 30px;
+        border-radius: 5px;
+        border: 1px solid;
+        border-color: #ecf0f1;
+        padding-bottom: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    .jumbotron .fotos-perfil h1{
+        text-align: center; 
+        margin-left:20px; 
+        color: #ffffff;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+        padding: 5px;
+    }
+    
+    .jumbotron .fotos-perfil img{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+    
+    .jumbotron .head-fotos{
+      background: linear-gradient(-45deg, #3498db, #1abc9c, #3498db, #9b59b6);
+      background-size: 400% 400%;
+      -webkit-animation: Gradient2 15s ease infinite;
+	  -moz-animation: Gradient2 15s ease infinite;
+	  animation: Gradient2 15s ease infinite;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      
+    }
+    
     .jumbotron .head-perfil .pt1{
       background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
       background-size: 400% 400%;
@@ -201,6 +262,24 @@ export default {
     }
 
     @keyframes Gradient {
+        0% {background-position: 0% 50%}
+        50% {background-position: 100% 50%}
+        100% {background-position: 0% 50%}
+    }
+    
+    @-webkit-keyframes Gradient2 {
+        0% { background-position: 0% 50% }
+        50% {background-position: 100% 50%}
+        100% {background-position: 0% 50%}
+    }
+
+    @-moz-keyframes Gradient2 {
+        0% {background-position: 0% 50%}
+        50% {background-position: 100% 50%}
+        100% {background-position: 0% 50%}
+    }
+
+    @keyframes Gradient2 {
         0% {background-position: 0% 50%}
         50% {background-position: 100% 50%}
         100% {background-position: 0% 50%}
