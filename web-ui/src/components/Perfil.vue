@@ -27,51 +27,30 @@
                         <h1>invisible</h1>
                     </b-row>
                     <img src="/static/img/m7.png" class="img-fluid" id="usuFoto" alt="">
-                        <h1>Thea Queen</h1>
-                         <div class="w-100"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas amet reprehenderit dicta mollitia asperiores numquam saepe!.</p>
-                    <div class="body-perfil">
-                        <b-card class="details" title="Sobre">
-                          <dl class="row">
-                              <dt class="col-sm-3"><i class="fa fa-map-marker" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-9"><u>Curitiba - PR</u></dd>
-
-                              <dt class="col-sm-3"><i class="fa fa-birthday-cake" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-9">19 anos</dd>
-
-                              <dt class="col-sm-3"><i class="fa fa-venus-mars" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-9">Feminino</dd>
-                         </dl>
-                        </b-card>
-                    </div>
                 </div>
-             <!--
-              <b-row>
-                 <b-col class="d-flex justify-content-center">
-                     <img src="/static/img/m7.png" id="usuFoto" class="" alt="">
-                 </b-col>
-                 <b-col>
-                      <h1 class="display-3">Thea Queen</h1>
-                      <blockquote class="blockquote">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores impedit itaque praesentium voluptatibus, obcaecati harum excepturi et pariatur consequuntur quibusdam. Recusandae eaque, iste ipsam nostrum voluptate, tempora tempore. Quasi, consequuntur!</p>
-                      </blockquote>
-                      <div class="details">
-                       <b-row>
-                            <b-col class="atributos">
-                                <p>Local</p> <br>
-                                <p>Idade</p> <br>
-                                <p>Sexo</p> <br>
-                            </b-col>
-                            <b-col class="dados-atributos">
-                                <p>Curitiba - PR</p><br>
-                                <p>19 anos</p><br>
-                                <p>Feminino</p><br>
-                            </b-col>
-                        </b-row>
-                      </div>
-                 </b-col>
-              </b-row>
--->
+                <div class="body-perfil">
+                         <h1>Thea Queen, 19</h1>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas amet reprehenderit dicta mollitia asperiores numquam saepe!</p>
+                          <dl class="row">
+                              <dt class="col-sm-6 left"><i class="fa fa-map-marker" aria-hidden="true"></i></dt>
+                              <dd class="col-sm-6 right"><a href="#">Curitiba - PR</a></dd>
+
+                              <dt class="col-sm-6 left"><i class="fa fa-birthday-cake" aria-hidden="true"></i></dt>
+                              <dd class="col-sm-6 right">19 anos</dd>
+
+                              <dt class="col-sm-6 left"><i class="fa fa-venus-mars" aria-hidden="true"></i></dt>
+                              <dd class="col-sm-6 right">Feminino</dd>
+                         </dl>
+                         <div class="preferencias">
+                            <b-row>
+                                <b-col cols="6" sm="6" md="2" xl="2" id="pref1"><img src="/static/img/batataico.png" class="img-fluid" alt=""></b-col>
+                                <b-col cols="6" sm="6" md="3" xl="3" id="pref2"><img src="/static/img/pizzaico.png" class="img-fluid" alt=""></b-col>
+                                <b-col cols="6" sm="6" md="2" xl="2" id="pref3"><img src="/static/img/macarraoico.png" class="img-fluid" alt=""></b-col>
+                                <b-col cols="6" sm="6" md="3" xl="3" id="pref4"><img src="/static/img/nachosico.png" class="img-fluid" alt=""></b-col>
+                                <b-col cols="12" sm="12" md="2" xl="2" id="pref5"><img src="/static/img/cafeico.png" class="img-fluid" alt=""></b-col>
+                            </b-row>
+                         </div>
+                    </div>
             </b-jumbotron>
         </div>
         <!-- END Perfil Card -->
@@ -113,16 +92,17 @@ export default {
     }
     
     .jumbotron {
-        background-color: #fcfcfc;
-        box-shadow: 10px 10px 15px #7f8c8d;
+        background-color: #f9fbfc;
+        margin-top: -15px;
     }
     
-    .jumbotron h4{
+    .jumbotron h1{
         color: #34495e;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         font-size: 39px;
-        text-align: left;
+        text-align: center;
+        padding-top: 20px;
     }
     
     .jumbotron p {
@@ -130,20 +110,34 @@ export default {
         font-size: 18px;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
-        margin-left: 5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     
-    .jumbotron .details {
+    .jumbotron .body-perfil {
         background-color: white;
         padding: 10px;
+        text-align: center;
         border-radius: 5px;
-        box-shadow: 8px 4px 10px #7f8c8d;
+        border: 1px solid;
+        border-color: #ecf0f1;
         justify-content: center;
         padding-bottom: 0px;
-        margin: 70px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     
-    .jumbotron .details .col-sm-3 {
+    .jumbotron .preferencias {
+        margin-top: 50px;
+        padding: 10px;
+    }
+    
+    .jumbotron .preferencias img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .jumbotron .body-perfil .left {
         text-align: center;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -152,13 +146,14 @@ export default {
         color: #2c3e50;
     }
     
-    .jumbotron .details .col-sm-9 {
+    .jumbotron .body-perfil .right {
         margin-top: 5px;
         margin-bottom: 5px;
         text-align: center;
         font-size: 18px;
         border-left: 1px solid;
         border-left-color: #ecf0f1;
+        font-family: 'Raleway', sans-serif;
     }
     
     .jumbotron .head-perfil{
@@ -168,6 +163,8 @@ export default {
         text-align: center;
         padding-bottom: 10px;
         margin-bottom: 20px;
+        margin-top: -65px;
+        width: 100%;
     }
     
     .jumbotron .head-perfil .pt1{
@@ -190,7 +187,7 @@ export default {
 	  -moz-animation: Gradient 15s ease infinite;
 	  animation: Gradient 15s ease infinite;
     }
-
+    
     @-webkit-keyframes Gradient {
         0% { background-position: 0% 50% }
         50% {background-position: 100% 50%}
@@ -216,5 +213,24 @@ export default {
         border-radius: 200px;
         border-color: white;
         margin-top: -200px;
+    }
+    
+    @media (max-width: 474px) {
+        #usuFoto {
+        width: 310px;
+        height: 310px;
+        }
+        
+        .jumbotron {
+        margin-top: 20px;
+        }
+    
+    }
+    
+    @media (max-width: 575px) {
+        .jumbotron {
+        margin-top: 30px;
+        }
+    
     }
 </style>
