@@ -60,8 +60,8 @@
                                 <input type="password" class="form-control" name="senha2" id="senha2" required="" placeholder="Confirmar Senha" autocomplete="new-password">
                             </div>
                             <div class="form-group">
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Confirmar</router-link>
+                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
+                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Confirmar</router-link>
                             </div>
                         </form>
                     </div>
@@ -173,18 +173,11 @@ export default {
     }
     
     .nb-login form .btn {
-        border: 0px;
         border-radius: 25px;
-        padding: 5px 10px;
-        border: 1px solid #bdc3c7;
-        color: #bdc3c7;
-        text-transform: uppercase;
-        font-weight: 600;
-        margin-top: 15px;
     }
     
     .nb-login form .btn:hover {
-        background: #bdc3c7;
+        background: #7f8c8d;
         color: #fff;
     }
     
@@ -218,10 +211,6 @@ export default {
     }
 
     .option-input {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
       appearance: none;
       position: relative;
       top: 7px;
@@ -237,7 +226,6 @@ export default {
       display: inline-block;
       margin-right: 0.5rem;
       outline: none;
-      position: relative;
       z-index: 1000;
     }
     .option-input:hover {

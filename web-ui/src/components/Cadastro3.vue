@@ -40,9 +40,9 @@
                                      
                                 </b-card-group> <br> <br>
                                 <div class="buttons d-flex justify-content-center">
-                                <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                                <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
-                                <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
+                                <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
+                                <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
+                                <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
                                 </div>
                             </div>
                         </div>
@@ -117,24 +117,13 @@
     }
     
     .nb-login .btn-lg {
-        border: 0px;
         border-radius: 25px;
-        padding: 5px 10px;
-        border: 1px solid #bdc3c7;
-        color: #bdc3c7;
-        text-transform: uppercase;
-        font-weight: 600;
-        background: transparent;
-        margin-top: 15px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+        margin-left: 2px;
+        margin-right: 2px;
     }
     
     .nb-login .btn-lg:hover {
-        background: #bdc3c7;
+        background: #7f8c8d;
         color: #fff;
     }
 

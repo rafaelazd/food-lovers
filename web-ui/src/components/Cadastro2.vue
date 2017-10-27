@@ -13,23 +13,23 @@
                         <form class="form" role="form" autocomplete="off" id="formCad" action="">
                             
                             <div class="row">
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item1" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item2" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/cafe.png" alt="Café" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item3" value="val3" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item1" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item2" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/cafe.png" alt="Café" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item3" value="val3" class="hidden" autocomplete="off"></label></div>
                             </div>
                             <div class="row">
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/macarrao.png" alt="Macarrão" class="img-thumbnail img-check"><input type="checkbox" name="chk4" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/nachos.png" alt="Nachos" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item5" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/pizza.png" alt="Pizza" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item6" value="val3" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/macarrao.png" alt="Macarrão" class="img-thumbnail img-check"><input type="checkbox" name="chk4" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/nachos.png" alt="Nachos" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item5" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/pizza.png" alt="Pizza" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item6" value="val3" class="hidden" autocomplete="off"></label></div>
                             </div>
                                <div class="row">
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/sanduiche.png" alt="Sanduíche" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item7" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/sushi.png" alt="Sushi" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item8" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-primary"><img src="/static/img/tacos.png" alt="Tacos" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item9" value="val3" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/sanduiche.png" alt="Sanduíche" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item7" value="val1" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/sushi.png" alt="Sushi" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item8" value="val2" class="hidden" autocomplete="off"></label></div>
+                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/tacos.png" alt="Tacos" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item9" value="val3" class="hidden" autocomplete="off"></label></div>
                                 </div>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
-                            <router-link class="btn btn-outline-danger btn-lg" role="button" aria-pressed="true" to="/cadastro-3">Confirmar</router-link>
+                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
+                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
+                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-3">Confirmar</router-link>
                         </form>
                     </div>
                 </div>
@@ -53,9 +53,6 @@
         height: 100vh;
         width: 100vw;
         background: #222 url('/static/img/boys.png') no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
         display: flex;
         overflow: auto;
@@ -119,24 +116,11 @@
     }
     
     .nb-login form .btn {
-        border: 0px;
         border-radius: 25px;
-        padding: 5px 10px;
-        border: 1px solid #bdc3c7;
-        color: #bdc3c7;
-        text-transform: uppercase;
-        font-weight: 600;
-        background: transparent;
-        margin-top: 15px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        transition: all 0.5s ease;
     }
     
     .nb-login form .btn:hover {
-        background: #bdc3c7;
+        background: #7f8c8d;
         color: #fff;
     }
     
