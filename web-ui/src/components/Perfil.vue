@@ -26,12 +26,14 @@
                     <b-row class="pt1">
                         <h1>invisible</h1>
                     </b-row>
-                    <img src="/static/img/m7.png" class="img-fluid" id="usuFoto" alt="">
+                    <div class="foto-margin">
+                        <img src="/static/img/m7.png" class="img-fluid img-perfil" id="usuFoto" alt="">
+                    </div>
                 </div>
                 <div class="body-perfil">
                          <h1>Thea Queen, 19</h1>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas amet reprehenderit dicta mollitia asperiores numquam saepe!</p>
-                          <dl class="row">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas amet reprehenderit dicta mollitia asperiores numquam saepe!</p>
+                         <dl class="row">
                               <dt class="col-sm-6 left"><i class="fa fa-map-marker" aria-hidden="true"></i></dt>
                               <dd class="col-sm-6 right"><a href="#">Curitiba - PR</a></dd>
 
@@ -285,12 +287,15 @@ export default {
         100% {background-position: 0% 50%}
     }
     
-     #usuFoto {
+     .foto-margin #usuFoto {
         width: 390px;
         height: 390px;
         border: 15px solid;
         border-radius: 200px;
         border-color: white;
+    }
+    
+    .foto-margin {
         margin-top: -200px;
     }
     
