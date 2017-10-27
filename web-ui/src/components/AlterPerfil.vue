@@ -69,6 +69,31 @@
                                           <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
                                       </b-form-checkbox-group> 
                                   </b-row>
+                                  <b-row>
+                                       <h5>Sexo:</h5><br>    
+                                  </b-row>
+                                  <b-row class="inputs4">
+                                       <p>
+                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
+                                       </p>
+                                       <p>
+                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
+                                       </p>
+                                       <p>
+                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
+                                       </p>
+                                       <p>
+                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
+                                       </p>
+                                       <p>
+                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                       <i class="fa fa-venus" aria-hidden="true"></i> Feminino
+                                       </p>
+                                  </b-row>
                                   <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
                                 </form> <br>
                             </div>
@@ -182,9 +207,8 @@
           dadosPessoais: false,
           email: false,
           usuario: false,
-          senha: false
+          senha: false,
       }
-      
     }
   }
 }
@@ -265,6 +289,86 @@
         margin-top: 10px;
         margin-bottom: 20px;
     }
+    
+    .body .inputs4{
+        justify-content: center;
+    }
+
+    @keyframes click-wave {
+      0% {
+        height: 40px;
+        width: 40px;
+        opacity: 0.35;
+        position: relative;
+      }
+      100% {
+        height: 200px;
+        width: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0;
+      }
+    }
+
+    .option-input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      position: relative;
+      top: 7px;
+      right: 0;
+      bottom: 0;
+      margin-left: 15px;
+      margin-right: 15px;
+      height: 25px;
+      width: 25px;
+      transition: all 0.15s ease-out 0s;
+      background: #cbd1d8;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 0.5rem;
+      outline: none;
+      position: relative;
+      z-index: 1000;
+    }
+    .option-input:hover {
+      background: #9faab7;
+    }
+    .option-input:checked {
+      background: #40e0d0;
+    }
+    .option-input:checked::before {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      content: '✔';
+      display: inline-block;
+      font-size: 15px;
+      text-align: center;
+      line-height: 25px;
+      margin-left: -7px;
+    }
+    .option-input:checked::after {
+      -webkit-animation: click-wave 0.65s;
+      -moz-animation: click-wave 0.65s;
+      animation: click-wave 0.65s;
+      background: #40e0d0;
+      content: '';
+      display: block;
+      position: relative;
+      z-index: 100;
+    }
+    .option-input.radio {
+      border-radius: 50%;
+    }
+    .option-input.radio::after {
+      border-radius: 50%;
+    }
+
     
     @media (max-width: 430px) {
         #usuFoto {
