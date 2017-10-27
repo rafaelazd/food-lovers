@@ -135,6 +135,9 @@
                      <button type="button" class="btn btn-outline-primary btn-block"><i class="fa fa-commenting-o" aria-hidden="true"></i></button>
                 </div>
               </div>
+              <div class="footer">
+                  <b-button class="btn btn-danger btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></b-button>
+              </div>
             </div>
         </div>
         <!-- END Feed Card -->
@@ -217,7 +220,24 @@
         margin: 7px;
         width: 50%;
         border-radius: 15px;
-        
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom:0;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        width:100%;
+        background-color:  transparent;
+    }
+    
+    .footer .btn-circle {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+        font-size: 30px;
+        font-weight: 200
     }
     
     @media (min-width: 576px) {
