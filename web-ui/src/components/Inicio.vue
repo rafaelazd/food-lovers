@@ -36,9 +36,7 @@
                             <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab saepe fugiat nesciunt laboriosam nemo quasi alias sit. Consequatur, quam debitis quibusdam eveniet sapiente. </h6>
                             <p>
                             <img src="/static/img/batataico.png" alt="icoFrituras" width="40px" height="40px">
-                            <img src="/static/img/boloico.png" alt="icoDoces" width="40px" height="40px">
                             <img src="/static/img/cafeico.png" alt="icoBebidasHot" width="40px" height="40px">
-                            <img src="/static/img/icosand.png" alt="icoLanches" width="40px" height="40px">
                             <img src="/static/img/pizzaico.png" alt="icoPizza" width="40px" height="40px">
                             </p>
                             <p>
