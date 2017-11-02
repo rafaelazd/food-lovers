@@ -74,19 +74,19 @@
 
 <script>
 export default {
-    data: {
+    data() { 
+        return {
             selected: 'first',
             options: [
-            { text: '<i class="fa fa-genderless" aria-hidden="true"></i> Agênero', value: 'first' },
-            { text: '<i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero', value: 'second' },
-            { text: '<i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero', value: 'third' },
-            { text: '<i class="fa fa-mars" aria-hidden="true"></i> Masculino', value: 'fourth' },
-            { text: '<i class="fa fa-venus" aria-hidden="true"></i> Feminino', value: 'fifth' },
-          ]
-        
-    }
-    
-  }
+                { text: '<i class="fa fa-genderless" aria-hidden="true"></i> Agênero', value: 'first' },
+                { text: '<i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero', value: 'second' },
+                { text: '<i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero', value: 'third' },
+                { text: '<i class="fa fa-mars" aria-hidden="true"></i> Masculino', value: 'fourth' },
+                { text: '<i class="fa fa-venus" aria-hidden="true"></i> Feminino', value: 'fifth' }
+            ]
+        }
+    }    
+}
 </script>
 
 <style>

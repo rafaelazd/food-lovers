@@ -8,12 +8,12 @@
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formLogin" action="">
                             <div class="form-group">
-                            <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
+                            <input type="text" class="form-control" name="usuario" required placeholder="Usuário" id="usuario">
                             </div>
                             <div class="form-group">
-                            <input type="password" class="form-control" id="senha" required="" placeholder="Senha" autocomplete="new-password">
+                            <input type="password" class="form-control" id="senha" required placeholder="Senha" autocomplete="new-password">
                             </div>
-                            <router-link class="btn btn-block btn-outline-danger" role="button" aria-pressed="true" to="/inicio">Entrar</router-link>
+                            <router-link class="btn btn-block btn-outline-danger" role="button" aria-pressed="true" to="/inicio" v-on:click="realizaLogin">Entrar</router-link>
                             <div class="center or">OU</div>
                             <h3 class="center">Entrar com</h3>
                             <div class="social">
@@ -32,7 +32,14 @@
 
 
 <script>
-
+export default {
+    methods: {
+        realizaLogin(event) {
+            debugger;
+            console.log("Login!");
+        }
+    }
+}
 
 </script>
 
