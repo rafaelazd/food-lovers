@@ -8,12 +8,12 @@
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formLogin" action="">
                             <div class="form-group">
-                            <input type="text" class="form-control" name="usuario" required placeholder="Usuário" id="usuario">
+                            <input type="text" class="form-control" ref="usuario" name="usuario" required placeholder="Usuário" id="usuario">
                             </div>
                             <div class="form-group">
-                            <input type="password" class="form-control" id="senha" required placeholder="Senha" autocomplete="new-password">
+                            <input type="password" name="senha" ref="senha" class="form-control" id="senha" required placeholder="Senha" autocomplete="new-password">
                             </div>
-                            <router-link class="btn btn-block btn-outline-danger" role="button" aria-pressed="true" to="/inicio" v-on:click="realizaLogin">Entrar</router-link>
+                            <b-button class="btn btn-block btn-outline-danger" v-on:click="realizaLogin" >Entrar</b-button>
                             <div class="center or">OU</div>
                             <h3 class="center">Entrar com</h3>
                             <div class="social">
@@ -35,8 +35,15 @@
 export default {
     methods: {
         realizaLogin(event) {
-            debugger;
-            console.log("Login!");
+            console.log(this.$refs.usuario);
+            console.log(this.$refs.senha);
+            if (this.$refs.usuario.value == "rafa" && this.$refs.senha.value == "123") {
+                // soh se o usuario autenticar com sucesso!
+                this.$router.push('inicio');
+                console.log('Login!');
+            } else {
+                console.log('Falha no login');
+            }
         }
     }
 }
