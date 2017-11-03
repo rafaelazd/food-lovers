@@ -63,16 +63,14 @@
                                   <b-row>
                                        <h5>Preferência em:</h5><br>    
                                   </b-row>
-                                  <b-row class="inputs2">
-                                      <b-form-checkbox-group buttons button-variant="primary" id="checkboxes2" name="btn-preferencia" v-model="selected">
-                                          <b-form-checkbox value="Homens">Homens</b-form-checkbox>
-                                          <b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox>
-                                      </b-form-checkbox-group> 
+                                  <b-row class="inputs2 form-inline">
+                                      <b-form-checkbox id="checkbox" value="Homens"> Homens </b-form-checkbox>
+                                      <b-form-checkbox id="checkbox" value="Mulheres"> Mulheres </b-form-checkbox>
                                   </b-row>
                                   <b-row>
                                        <h5>Sexo:</h5><br>    
                                   </b-row>
-                                  <b-row class="inputs4">
+                                  <b-row class="inputs4" id="radio-alterperfil">
                                        <p>
                                         <input type="radio" class="option-input radio" name="example" checked/>
                                         <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
@@ -106,8 +104,8 @@
                                          <h4>E-mail</h4>
                                      </b-col>
                                   </b-row>
-                                  <b-row class="inputs2">
-                                       <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+                                  <b-row class="inputs2">'
+                                       <input type="email" class="form-control" name="email" required="" id="email" placeholder="E-mail">
                                   </b-row>
                                   <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
                                 </form><br>
@@ -282,6 +280,11 @@
     .body .inputs2{
         margin-left: 70px;
         margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .body .inputs2 #mulheres{
+        margin-left: 30px;
     }
     
     .body .inputs3{
@@ -339,9 +342,9 @@
       background: #9faab7;
     }
     .option-input:checked {
-      background: #40e0d0;
+      background: #007bff;
     }
-    .option-input:checked::before {
+    .option-input:checked::before #radio-alterperfil{
       height: 40px;
       width: 40px;
       position: absolute;
@@ -349,14 +352,14 @@
       display: inline-block;
       font-size: 15px;
       text-align: center;
-      line-height: 25px;
+      line-height: 90px;
       margin-left: -7px;
     }
     .option-input:checked::after {
       -webkit-animation: click-wave 0.65s;
       -moz-animation: click-wave 0.65s;
       animation: click-wave 0.65s;
-      background: #40e0d0;
+      background: #007bff;
       content: '';
       display: block;
       position: relative;

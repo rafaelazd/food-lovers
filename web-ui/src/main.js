@@ -25,10 +25,6 @@ Vue.component('nav-all', {
     }
 });
 
-Vue.component('app-checkbox', {
-    template: '<b-form-checkbox-group buttons button-variant="primary" id="checkboxes1" name="btnprefs" v-model="selected"><b-form-checkbox value="Homens">Homens</b-form-checkbox><b-form-checkbox value="Mulheres">Mulheres</b-form-checkbox></b-form-checkbox-group>'
-});
-
 new Vue({
   el: '#app',
   router,

@@ -12,56 +12,57 @@
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formCad" action="">
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" required="" id="email" placeholder="E-mail">
+                                <input type="email" class="form-control" name="email" ref="email" placeholder="E-mail">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nome" required="" placeholder="Nome" id="nome">
+                                <input type="text" class="form-control" name="nome" ref="nome" required placeholder="Nome">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="sobrenome" required="" placeholder="Sobrenome" id="sobrenome">
+                                <input type="text" class="form-control" name="sobrenome" ref="sobrenome" required placeholder="Sobrenome" id="sobrenome">
                             </div>
                             <div class="form-group">
-                            <input type="number" class="form-control" name="idade" required="" placeholder="Idade" id="idade">
+                            <input type="number" class="form-control" name="idade" ref="idade" required placeholder="Idade">
                             </div>
-                            <div class="form-group d-flex justify-content-center">
+                            <div class="form-group d-flex justify-content-center form-inline">
                                <h5>Preferência em</h5>
-                                <app-checkbox></app-checkbox>
+                                 <b-form-checkbox id="checkbox" value="Homens"> Homens </b-form-checkbox>
+                                 <b-form-checkbox id="checkbox" value="Mulheres"> Mulheres </b-form-checkbox>
                             </div>
                             <div class="d-flex justify-content-center">
                                <h5>Sexo</h5>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="example" checked/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio"/>
                                       <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="example" checked/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio"/>
                                       <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="example" checked/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio"/>
                                       <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="example" checked/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio"/>
                                       <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="example" checked/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio"/>
                                       <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                     </p>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
+                                <input type="text" class="form-control" name="usuario" ref="usuario" required placeholder="Usuário">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="senha1" id="senha1" required="" placeholder="Senha" autocomplete="new-password">
+                                <input type="password" class="form-control" name="senha" ref="senha" required placeholder="Senha">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="senha2" id="senha2" required="" placeholder="Confirmar Senha" autocomplete="new-password">
+                                <input type="password" class="form-control" name="senha2" ref="senha2" required placeholder="Confirmar Senha">
                             </div>
                             <div class="form-group">
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Confirmar</router-link>
+                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin" >Entrar</b-button>
                             </div>
                         </form>
                     </div>
@@ -74,18 +75,26 @@
 
 <script>
 export default {
-    data() { 
-        return {
-            selected: 'first',
-            options: [
-                { text: '<i class="fa fa-genderless" aria-hidden="true"></i> Agênero', value: 'first' },
-                { text: '<i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero', value: 'second' },
-                { text: '<i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero', value: 'third' },
-                { text: '<i class="fa fa-mars" aria-hidden="true"></i> Masculino', value: 'fourth' },
-                { text: '<i class="fa fa-venus" aria-hidden="true"></i> Feminino', value: 'fifth' }
-            ]
+     methods: {
+        realizaLogin(event) {
+            console.log(this.$refs.email);
+            console.log(this.$refs.nome);
+            console.log(this.$refs.sobrenome);
+            console.log(this.$refs.idade);
+            console.log(this.$refs.checkboxes);
+            console.log(this.$refs.radio);
+            console.log(this.$refs.usuario);
+            console.log(this.$refs.senha);
+            console.log(this.$refs.senha2);
+            if (this.$refs.nome.value == "Rafaela" && this.$refs.sobrenome.value == "Dias" && this.$refs.email.value == "rafazd" && this.$refs.idade.value == "17" && this.$refs.usuario.value == "rafaelazd" && this.$refs.senha.value == "123") {
+                // soh se o usuario autenticar com sucesso!
+                this.$router.push('cadastro-2');
+                console.log('Login!');
+            } else {
+                console.log('Falha no login');
+            }
         }
-    }    
+    }   
 }
 </script>
 
@@ -194,6 +203,10 @@ export default {
         text-align: center;
     }
     
+    .form-group h5 {
+        margin-right: 10px;
+    }
+    
     @keyframes click-wave {
       0% {
         height: 40px;
@@ -261,6 +274,4 @@ export default {
     .option-input.radio::after {
       border-radius: 50%;
     }
-
-
 </style>
