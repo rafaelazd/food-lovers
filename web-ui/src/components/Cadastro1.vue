@@ -25,29 +25,29 @@
                             </div>
                             <div class="form-group d-flex justify-content-center form-inline">
                                <h5>Preferência em</h5>
-                                 <b-form-checkbox id="checkbox" value="Homens"> Homens </b-form-checkbox>
-                                 <b-form-checkbox id="checkbox" value="Mulheres"> Mulheres </b-form-checkbox>
+                                 <b-form-checkbox id="checkbox" ref="checkbox1" value="Homens"> Homens </b-form-checkbox>
+                                 <b-form-checkbox id="checkbox" ref="checkbox2" value="Mulheres"> Mulheres </b-form-checkbox>
                             </div>
                             <div class="d-flex justify-content-center">
                                <h5>Sexo</h5>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio"/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio1"/>
                                       <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio"/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio2"/>
                                       <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio"/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio3"/>
                                       <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio"/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio4"/>
                                       <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                     </p>
                                     <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio"/>
+                                      <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio5"/>
                                       <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                     </p>
                             </div>
@@ -62,8 +62,10 @@
                             </div>
                             <div class="form-group">
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin" >Entrar</b-button>
+                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin" >Confirmar</b-button>
                             </div>
+                            <!-- Alerta -->
+                            <b-alert variant="danger" id="alert1">Todos os campos devem ser preenchidos!</b-alert>
                         </form>
                     </div>
                 </div>
@@ -77,24 +79,64 @@
 export default {
      methods: {
         realizaLogin(event) {
-            console.log(this.$refs.email);
-            console.log(this.$refs.nome);
-            console.log(this.$refs.sobrenome);
-            console.log(this.$refs.idade);
-            console.log(this.$refs.checkboxes);
-            console.log(this.$refs.radio);
-            console.log(this.$refs.usuario);
-            console.log(this.$refs.senha);
-            console.log(this.$refs.senha2);
-            if (this.$refs.nome.value == "Rafaela" && this.$refs.sobrenome.value == "Dias" && this.$refs.email.value == "rafazd" && this.$refs.idade.value == "17" && this.$refs.usuario.value == "rafaelazd" && this.$refs.senha.value == "123") {
-                // soh se o usuario autenticar com sucesso!
+            if (this.$refs.nome.value=="" && this.$refs.email.value=="" && this.$refs.sobrenome.value=="" && this.$refs.idade.value=="" && this.$refs.usuario.value=="" && this.$refs.senha.value=="" && this.$refs.senha2.value=="") {
+                 console.log('Falha no login');
+                 alert("Todos os campos devem ser preenchidos!");
+            } 
+            
+            else if (this.$refs.checkbox1.checked==false && this.$refs.checkbox2.checked==false ) {
+                     console.log('Falha no login');
+                     alert("Você deve selecionar pelo menos uma das Preferências!");
+            }
+            
+            else if (this.$refs.email.value.indexOf('@')==-1 || this.$refs.email.value.indexOf('.')==-1 ) {
+                     console.log('Falha no login');
+                     alert("Você deve digitar um endereço de e-mail válido!");
+                     this.$refs.email.focus();
+            }
+            
+            else if (this.$refs.usuario.value.length<4 ) {
+                     console.log('Falha no login');
+                     alert("Seu usuário tem que ter no mínimo 4 caracteres!");
+                     this.$refs.usuario.focus();
+            }
+           
+            else if (this.$refs.usuario.value.length>10 ) {
+                     console.log('Falha no login');
+                     alert("Seu usuário tem que ter no máximo 10 caracteres!");
+                     this.$refs.usuario.focus();
+            }
+           
+            else if (this.$refs.senha.value.length<7 ) {
+                     console.log('Falha no login');
+                     alert("Sua Senha tem que ter no mínimo 7 caracteres!");
+                     this.$refs.senha.focus();
+            }
+           
+            else if (this.$refs.senha.value.length>20 ) {
+                     console.log('Falha no login');
+                     alert("Sua Senha tem que ter no máximo 20 caracteres!");
+                     this.$refs.senha.focus();
+            }
+            
+            else if(this.$refs.senha.value != this.$refs.senha2.value) {
+                    console.log('Falha no login');
+                     alert("As senhas informadas precisam ser iguais!");
+                     this.$refs.senha2.focus();
+            }
+            
+            else if (this.$refs.radio1.checked==false && this.$refs.radio2.checked==false && this.$refs.radio3.checked==false && this.$refs.radio4.checked==false && this.$refs.radio5.checked==false) {
+                     console.log('Falha no login');
+                     alert("Você deve selecionar pelo menos uma das opções de Gênero!");
+            } 
+            
+            else {
                 this.$router.push('cadastro-2');
                 console.log('Login!');
-            } else {
-                console.log('Falha no login');
             }
-        }
+            
     }   
+  }
 }
 </script>
 
