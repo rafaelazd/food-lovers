@@ -15,13 +15,13 @@
                                 <input type="email" class="form-control" name="email" ref="email" placeholder="E-mail">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nome" ref="nome" required placeholder="Nome">
+                                <input type="text" class="form-control" name="nome" ref="nome"  placeholder="Nome">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="sobrenome" ref="sobrenome" required placeholder="Sobrenome" id="sobrenome">
+                                <input type="text" class="form-control" name="sobrenome" ref="sobrenome"  required placeholder="Sobrenome" id="sobrenome">
                             </div>
                             <div class="form-group">
-                            <input type="number" class="form-control" name="idade" ref="idade" required placeholder="Idade">
+                            <input type="number" class="form-control" name="idade" ref="idade"  placeholder="Idade">
                             </div>
                             <div class="form-group d-flex justify-content-center form-inline">
                                <h5>Preferência em</h5>

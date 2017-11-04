@@ -19,31 +19,105 @@
         <div class="preferencias">
            <div class="categorias">
                <form action="" name="formChangePref" class="change-pref">
-                   <row class="d-flex justify-content-center">
-                   <b-col class="options"><img src="/static/img/hotdog.png" alt=""></b-col>
-                   <b-col class="options"><img src="/static/img/bolo.png" alt=""></b-col>
-                   <b-col class="options"><img src="/static/img/cafe.png" alt=""></b-col>
-                   </row>
-                   <row class="d-flex justify-content-center">
-                       <b-col class="options"><img src="/static/img/sorvete.png" alt=""></b-col>
-                       <b-col class="options"><img src="/static/img/pizza.png" alt=""></b-col>
-                       <b-col class="options"><img src="/static/img/nachos.png" alt=""></b-col>
-                   </row>
-                   <row class="d-flex justify-content-center">
-                       <b-col class="options"><img src="/static/img/churrasco.png" alt=""></b-col>
-                       <b-col class="options"><img src="/static/img/spaghetti.png" alt=""></b-col>
-                       <b-col class="options"><img src="/static/img/sopa.png" alt=""></b-col>
-                   </row>
-                   <row class="d-flex justify-content-center">
-                       <b-col class="options"><img src="/static/img/salada.png" alt=""></b-col>
-                       <b-col class="options"><img src="/static/img/panquecas.png" alt=""></b-col>
-                       <b-col class="options"><img src="/static/img/sushi.png" alt=""></b-col>
-                   </row>
+                   <b-row class="d-flex justify-content-center">
+                       <b-col class="options">
+                           <label for="check1" class="btn">
+                                <img src="/static/img/hotdog.png" class="select-img" id="hotdog" alt="Hot Dog">
+                                <b-form-checkbox v-model="selected" id="check1" value="HotDog"></b-form-checkbox>
+                           </label>
+                       </b-col>
+                       <b-col class="options">
+                           <label for="check2" class="btn">
+                                <img src="/static/img/bolo.png" class="select-img" id="bolo" alt="Bolo">
+                                <b-form-checkbox v-model="selected" id="check2" value="Bolo"></b-form-checkbox>
+                           </label>
+                       </b-col>
+                       <b-col class="options">
+                           <label for="check3" class="btn">
+                                 <img src="/static/img/cafe.png" class="select-img" id="cafe" alt="Café">
+                                 <b-form-checkbox v-model="selected" id="check3" value="Café"></b-form-checkbox>
+                           </label>
+                       </b-col>
+                   </b-row>
+                   <b-row class="d-flex justify-content-center">
+                       <b-col class="options">
+                          <label for="check4" class="btn">
+                                 <img src="/static/img/sorvete.png" class="select-img" id="sorvete" alt="Sorvete">
+                                 <b-form-checkbox v-model="selected" id="check4" value="Sorvete"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                       <b-col class="options">
+                           <label for="check5" class="btn">
+                                <img src="/static/img/pizza.png" class="select-img" id="pizza" alt="Pizza">
+                                <b-form-checkbox v-model="selected" id="check5" value="Pizza"></b-form-checkbox>
+                           </label>
+                       </b-col>
+                       <b-col class="options">
+                          <label for="check6" class="btn">
+                                <img src="/static/img/nachos.png" class="select-img" id="nachos" alt="Nachos">
+                                <b-form-checkbox v-model="selected" id="check6" value="Nachos"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                   </b-row>
+                   <b-row class="d-flex justify-content-center">
+                       <b-col class="options">
+                          <label for="check7" class="btn">
+                                 <img src="/static/img/churrasco.png" class="select-img" id="churrasco" alt="Churrasco">
+                                 <b-form-checkbox v-model="selected" id="check7" value="Churrasco"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                       <b-col class="options">
+                          <label for="check8" class="btn">
+                                 <img src="/static/img/spaghetti.png" class="select-img" id="spaghetti" alt="Spaghetti">
+                                 <b-form-checkbox v-model="selected" id="check8" value="Spaghetti"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                       <b-col class="options">
+                          <label for="check9" class="btn">
+                                 <img src="/static/img/sopa.png" class="select-img" id="sopa" alt="Sopa">
+                                 <b-form-checkbox v-model="selected" id="check9" value="Sopa"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                   </b-row>
+                   <b-row class="d-flex justify-content-center">
+                       <b-col class="options">
+                          <label for="check10" class="btn">
+                                 <img src="/static/img/salada.png" class="select-img" id="salada" alt="Salada">
+                                 <b-form-checkbox v-model="selected" id="check10" value="Salada"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                       <b-col class="options">
+                          <label for="check11" class="btn">
+                                 <img src="/static/img/sanduiche.png" class="select-img" id="sanduiche" alt="Sanduiche">
+                                 <b-form-checkbox v-model="selected" id="check11" value="Sanduiche"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                       <b-col class="options">
+                          <label for="check12" class="btn">
+                                 <img src="/static/img/sushi.png" class="select-img" id="sushi" alt="Sushi">
+                                 <b-form-checkbox v-model="selected" id="check12" value="Sushi"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                   </b-row>
+                   <b-row class="d-flex justify-content-center">
+                       <b-col class="options">
+                          <label for="check13" class="btn">
+                                 <img src="/static/img/batata.png" class="select-img" id="batata" alt="Batata Frita">
+                                 <b-form-checkbox v-model="selected" id="check13" value="Batata Frita"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                       <b-col class="options">
+                          <label for="check14" class="btn">
+                                 <img src="/static/img/tacos.png" class="select-img" id="tacos" alt="Tacos">
+                                 <b-form-checkbox v-model="selected" id="check14" value="Tacos"></b-form-checkbox>
+                          </label>
+                       </b-col>
+                   </b-row>
                </form>
            </div>
-           </div>
-           <div class="footer d-flex justify-content-center">
-               <form class="form-conf-pref form-inline" name="formConfPref" action="">
+           </div>    
+           <div class="footer d-flex justify-content-center" id="footerPref">
+               <form class="form-conf-pref form-inline" name="formFooterPref" action="">
                    <b-row>
                    <b-col>
                         <img src="/static/img/batataico.png" id="" class="img-fluid" alt="icoFrituras">
@@ -86,13 +160,18 @@
 
 
 <script>
-
+export default {
+    data () {
+        return {
+            selected: []
+        }
+    }
+}
 </script>
 
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One|Open+Sans+Condensed:300,300i');
-    
     #inicio-cover {
         height: 100vh;
         width: 100vw;
@@ -128,26 +207,26 @@
         margin-bottom: 30px;
     }
     
-    .footer {
+    #footerPref {
         text-align: center;
         justify-content: center;
-        position: absolute;
-        bottom:0;
-        width:100%;
-        background-color:  #fff;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        background-color: #fff;
         border-top: 1.5px solid;
         border-top-color: #ecf0f1;
         box-shadow: 0 -6px 10px -4px #7f8c8d;
     }
     
-    .footer img {
-        width:110px;
+    #footerPref img {
+        width: 110px;
         height: 110px;
         margin-right: 20px;
         margin-left: 20px;
     }
     
-    .footer .btn {
+    #footerPref .btn {
         margin-left: 0px;
         margin-bottom: 90px;
         color: #fff;
@@ -161,33 +240,63 @@
         justify-content: center;
     }
     
-    .preferencias .categorias .options img {
-        width: 160px;
+    .preferencias .categorias .options .btn {
+        background-color: transparent;
+        border-color: transparent;
+        width: 180px;
         height: 210px;
+        cursor: pointer;
+    }
+    
+    .preferencias .categorias .options .btn:focus {
+        background-color: #7db0e8;
+        font-size: 15px;
+    }
+    
+    .preferencias .categorias .select-img:hover {
+        box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+        margin-top: -5px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .preferencias .categorias .options img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .custom-control {
+        position: relative;
+        margin-left: -30px;
+        bottom: -84px;
+        display: inline-flex;
+        min-height: 1.5rem;
+        padding-left: 1.5rem;
+        margin-right: 1rem;
     }
     
     @media (max-width: 320px) {
-        .footer img {
-            width:60px;
+        #footerPref img {
+            width: 60px;
             height: 60px;
         }
-        
         .preferencias .categorias .options {
             margin: 5px;
             text-align: center;
             justify-content: center;
         }
-        
-        .preferencias .categorias .options img {
-            width: 135px;
-            height: 150px;
+        .preferencias .categorias .options .btn {
+            width: 180px;
+            height: 210px;
         }
-        
-        .footer{
+        #footerPref {
             padding-left: 0px;
+            position: fixed;
         }
-        
-        .footer .btn {
+        #footerPref .btn {
             margin-bottom: 0px;
             margin-left: 0px;
             margin-top: -125px;
@@ -198,13 +307,11 @@
             font-size: 9px;
             justify-content: center;
         }
-        
         .form-inline {
             justify-content: center;
             margin-left: -30px;
             margin-bottom: -20px;
         }
-        
         .form-inline .col {
             width: 90px;
             padding-right: 15px;
@@ -213,27 +320,24 @@
     }
     
     @media (min-width: 320px) and (max-width: 375px) {
-        .footer img {
-            width:60px;
+        #footerPref img {
+            width: 60px;
             height: 60px;
         }
-        
         .preferencias .categorias .options {
             margin: 5px;
             text-align: center;
             justify-content: center;
         }
-        
-        .preferencias .categorias .options img {
-            width: 120px;
-            height: 150px;
+        .preferencias .categorias .options .btn {
+            width: 180px;
+            height: 210px;
         }
-        
-        .footer{
+        #footerPref {
             padding-left: 0px;
+            position: fixed;
         }
-        
-        .footer .btn {
+        #footerPref .btn {
             margin-bottom: 0px;
             margin-left: 0px;
             margin-top: -125px;
@@ -244,43 +348,37 @@
             font-size: 9px;
             justify-content: center;
         }
-        
         .form-inline {
             justify-content: center;
             margin-left: -30px;
             margin-bottom: -20px;
         }
-        
         .form-inline .col {
             width: 90px;
             padding-right: 15px;
             padding-left: 15px;
         }
-        
     }
     
     @media (min-width: 375px) and (max-width: 425px) {
-        .footer img {
-            width:70px;
+        #footerPref img {
+            width: 70px;
             height: 70px;
         }
-        
         .preferencias .categorias .options {
             margin: 5px;
             text-align: center;
             justify-content: center;
         }
-        
-        .preferencias .categorias .options img {
-            width: 120px;
-            height: 150px;
+        .preferencias .categorias .options .btn {
+            width: 180px;
+            height: 210px;
         }
-        
-        .footer{
+        #footerPref {
             padding-left: 0px;
+            position: fixed;
         }
-        
-        .footer .btn {
+        #footerPref .btn {
             margin-bottom: 0px;
             margin-left: -15px;
             margin-top: -140px;
@@ -291,45 +389,39 @@
             font-size: 9px;
             justify-content: center;
         }
-        
-        .footer .form-inline {
+        #footerPref .form-inline {
             justify-content: center;
             margin-left: -30px;
             margin-bottom: -30px;
         }
-        
-        .footer .form-inline .col {
+        #footerPref .form-inline .col {
             width: 110px;
             padding-right: 15px;
             padding-left: 15px;
             margin-bottom: 0px;
             max-height: 30px;
         }
-        
     }
     
     @media (min-width: 425px) and (max-width: 768px) {
-        .footer img {
-            width:90px;
+        #footerPref img {
+            width: 90px;
             height: 90px;
         }
-        
         .preferencias .categorias .options {
             margin: 5px;
             text-align: center;
             justify-content: center;
         }
-        
-        .preferencias .categorias .options img {
-            width: 120px;
-            height: 150px;
+        .preferencias .categorias .options .btn {
+            width: 180px;
+            height: 210px;
         }
-        
-        .footer{
+        #footerPref {
             padding-left: 0px;
+            position: fixed;
         }
-        
-        .footer .btn {
+        #footerPref .btn {
             margin-bottom: 0px;
             margin-left: -60px;
             margin-top: -170px;
@@ -340,22 +432,18 @@
             font-size: 9px;
             justify-content: center;
         }
-        
-        .footer .form-inline {
+        #footerPref .form-inline {
             justify-content: center;
             margin-left: 0px;
             margin-bottom: -30px;
         }
-        
-        .footer .form-inline .col {
+        #footerPref .form-inline .col {
             width: 160px;
             padding-right: 15px;
             padding-left: 15px;
             margin-bottom: 0px;
             max-height: 30px;
         }
-        
     }
-    
-   
+
 </style>
