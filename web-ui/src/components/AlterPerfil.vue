@@ -36,9 +36,9 @@
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">
                              <div class="body first">
                                 <h4>Foto atual:</h4>
-                                <img src="/static/img/m7.png" id="usuFoto"> <br><br>
-                                <b-form-file id="input2"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
-                                <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
+                                    <img src="/static/img/m7.png" id="usuFoto"> <br><br>
+                                    <b-form-file id="input2"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                                    <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
