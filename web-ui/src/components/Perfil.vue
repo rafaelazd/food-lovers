@@ -299,10 +299,22 @@ export default {
         margin-top: -200px;
     }
     
-    @media (max-width: 474px) {
-        #usuFoto {
-        width: 310px;
-        height: 310px;
+    @media (min-width: 222px) and (max-width: 331px) {
+        .foto-margin #usuFoto {
+        width: 210px;
+        height: 210px;
+        }
+        
+        .jumbotron {
+        margin-top: 20px;
+        }
+    
+    }
+    
+    @media (min-width: 332px) and (max-width: 436px) {
+        .foto-margin #usuFoto {
+        width: 300px;
+        height: 300px;
         }
         
         .jumbotron {
