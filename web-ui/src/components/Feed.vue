@@ -135,11 +135,13 @@
                     </div>
               </div>
               <div class="footer">
-                  <b-button  v-on:click="shownHide = !shownHide" class="btn btn-danger btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></b-button>
+                  <b-button  v-on:click="showhide" class="btn btn-danger btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></b-button>
               </div>
             </div>
-            <div id="show-n-hide" v-show="!shownHide">
-                <h2>Area title</h2>
+            <div id="addFoto">
+                <h4>Escolha a Foto:</h4>
+                <b-form-file class="inout"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br>
+                <b-button type="submit"class="btn btn-outline-success">Confirmar</b-button>
             </div>
         </div>
         <!-- END Feed Card -->
@@ -151,9 +153,20 @@
 
 <script>
 export default {
+    methods: {
+        showhide() {
+       var div = document.getElementById("addFoto");
+        if (div.style.display !== "block") {
+            div.style.display = "block";
+        }
+        else {
+            div.style.display = "none";
+        }
+    }
+},
+    
     data() {
       return { 
-          shownHide: true,
           counter: 0
       }
     }
@@ -162,7 +175,7 @@ export default {
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One|Open+Sans|Lato|Questrial|Open+Sans+Condensed:300');
+   @import url('https://fonts.googleapis.com/css?family=Exo|Open+Sans:300,400|Raleway:400,700,800|Poiret+One|Open+Sans+Condensed:300,300i');
     
      #inicio-cover {
             height: 100vh;
@@ -256,31 +269,42 @@ export default {
         font-weight: 200
     }
     
-/*
-    #show-n-hide {
-        display:none;
-        position:absolute;
-        z-index:1000;
-        background-color: rgba(0, 0, 0, .5);
-        width:100%;
-        height:100%;
+    #addFoto {
+        position: fixed;
+        background-color:  white;
+        border: 1px solid;
+        border-color: #bdc3c7;
+        z-index: 1;
+        top: 40%;
+        left: 40%;
+        width:50%;
+        height:75%;
+        margin-top: -9em;
+        margin-left: -15em;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
     }
     
-    .is-collapsed {
-        display: block;
+    #addFoto h4 {
+        color: #34495e;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; 
+        text-align: left;
+        margin-left: 20px;
+        margin: 10px;
     }
-    
-    #shownhide-area {
-        position:relative;
-        margin:50px auto;
-        background:#fff;
-        width:400px;
-        height:300px;
-        padding:23px;
-        border-radius:20px;
-    }
-*/
 
+    #addFoto .inout {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    
+    #addFoto button {
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+    
     @media (min-width: 576px) {
         .feed {
         box-shadow: 10px 20px 20px rgba(0,0,0,.5);
