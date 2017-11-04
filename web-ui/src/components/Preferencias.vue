@@ -112,6 +112,12 @@
                                  <b-form-checkbox v-model="selected" id="check14" value="Tacos"></b-form-checkbox>
                           </label>
                        </b-col>
+                       <b-col class="options">
+                          <label for="check15" class="btn">
+                                 <img src="/static/img/panquecas.png" class="select-img" id="panquecas" alt="Panquecas">
+                                 <b-form-checkbox v-model="selected" id="check15" value="Panquecas"></b-form-checkbox>
+                          </label>
+                       </b-col>
                    </b-row>
                </form>
            </div>
@@ -234,6 +240,10 @@ export default {
         font-size: 10px;
     }
     
+    .categorias {
+        margin-bottom: 70px;
+    }
+    
     .preferencias .categorias .options {
         margin: 40px;
         text-align: center;
@@ -246,11 +256,6 @@ export default {
         width: 180px;
         height: 210px;
         cursor: pointer;
-    }
-    
-    .preferencias .categorias .options .btn:focus {
-        background-color: #7db0e8;
-        font-size: 15px;
     }
     
     .preferencias .categorias .select-img:hover {
@@ -267,8 +272,7 @@ export default {
         height: 100%;
     }
     
-    
-    .custom-control {
+    .options .custom-control {
         position: relative;
         margin-left: -30px;
         bottom: -84px;
