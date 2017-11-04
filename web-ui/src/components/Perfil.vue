@@ -59,19 +59,10 @@
                         </div>
                         <b-row>
                              <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato2.jpg" class="img-thumbnail" alt=""> 
+                                 <img src="/static/img/prato10.jpg" class="img-thumbnail" alt=""> 
                              </b-col>
                              <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato3.jpg" class="img-thumbnail" alt=""> 
-                             </b-col>
-                             <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato4.jpg" class="img-thumbnail" alt=""> 
-                             </b-col>
-                             <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato6.jpg" class="img-thumbnail" alt=""> 
-                             </b-col>
-                             <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato7.jpg" class="img-thumbnail" alt=""> 
+                                 <img src="/static/img/prato9.jpg" class="img-thumbnail" alt=""> 
                              </b-col>
                          </b-row>
                   </div>
@@ -226,9 +217,9 @@ export default {
         padding: 5px;
     }
     
-    .jumbotron .fotos-perfil img{
-        width: 100%;
-        height: 100%;
+    .jumbotron .fotos-perfil .img-thumbnail{
+        width: 300px;
+        height: 300px;
         margin: 0px;
     }
     
