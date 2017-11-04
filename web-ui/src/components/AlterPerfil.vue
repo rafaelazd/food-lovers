@@ -37,8 +37,8 @@
                              <div class="body first">
                                 <h4>Foto atual:</h4>
                                 <img src="/static/img/m7.png" id="usuFoto"> <br><br>
-                                <b-form-file id="input2" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
-                                <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
+                                <b-form-file id="input2"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                                <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -51,48 +51,48 @@
                                   </b-row>
                                   <b-row class="inputs">
                                      <b-col>
-                                         <input type="text" class="form-control" name="nome" required="" placeholder="Nome" id="nome">
+                                         <input type="text" class="form-control" name="nome" ref="nome" required="" placeholder="Nome" id="nome">
                                      </b-col>
                                      <b-col>
-                                         <input type="text" class="form-control" name="sobrenome" required="" placeholder="Sobrenome" id="sobrenome">
+                                         <input type="text" class="form-control" name="sobrenome" ref="sobrenome" required="" placeholder="Sobrenome" id="sobrenome">
                                      </b-col>
                                      <b-col>
-                                         <input type="number" class="form-control" name="idade" required="" placeholder="Idade" id="idade"><br>
+                                         <input type="number" class="form-control" name="idade" ref="idade" required="" placeholder="Idade" id="idade"><br>
                                      </b-col>
                                   </b-row>
                                   <b-row>
                                        <h5>Preferência em:</h5><br>    
                                   </b-row>
                                   <b-row class="inputs2 form-inline">
-                                      <b-form-checkbox id="checkbox" value="Homens"> Homens </b-form-checkbox>
-                                      <b-form-checkbox id="checkbox" value="Mulheres"> Mulheres </b-form-checkbox>
+                                      <b-form-checkbox id="checkboxes" value="Homens" ref="checkbox"> Homens </b-form-checkbox>
+                                      <b-form-checkbox id="checkboxes" value="Mulheres" ref="checkbox"> Mulheres </b-form-checkbox>
                                   </b-row>
                                   <b-row>
                                        <h5>Sexo:</h5><br>    
                                   </b-row>
                                   <b-row class="inputs4" id="radio-alterperfil">
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <input type="radio" class="option-input radio" name="example" ref="radio1"/>
                                         <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <input type="radio" class="option-input radio" name="example" ref="radio2"/>
                                         <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <input type="radio" class="option-input radio" name="example" ref="radio3"/>
                                         <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <input type="radio" class="option-input radio" name="example" ref="radio4"/>
                                         <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" checked/>
+                                        <input type="radio" class="option-input radio" name="example" ref="radio5"/>
                                        <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                        </p>
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
+                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
@@ -105,9 +105,9 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs2">'
-                                       <input type="email" class="form-control" name="email" required="" id="email" placeholder="E-mail">
+                                       <input type="email" class="form-control" name="email" ref="email" required="" id="email" placeholder="E-mail">
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
+                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
                                 </form><br>
                             </div>
                          </div>
@@ -120,9 +120,9 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs2">
-                                       <input type="text" class="form-control" name="usuario" required="" placeholder="Usuário" id="usuario">
+                                       <input type="text" class="form-control" name="usuario" ref="usuario" required="" placeholder="Usuário" id="usuario">
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
@@ -135,7 +135,7 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs3">
-                                       <input type="password" class="form-control" name="senha1" id="senha1" required="" placeholder="Senha" autocomplete="new-password"> <br><br>
+                                       <input type="password" class="form-control" name="senha" ref="senha" id="senha" required="" placeholder="Senha" autocomplete="new-password"> <br><br>
                                   </b-row>
                                   <b-row>
                                      <b-col>
@@ -143,9 +143,9 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs2">
-                                       <input type="password" class="form-control" name="senha2" id="senha2" required="" placeholder="Senha" autocomplete="new-password">
+                                       <input type="password" class="form-control" name="senha2" ref="senha2" id="senha2" required="" placeholder="Senha" autocomplete="new-password">
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
@@ -160,8 +160,9 @@
 
 
 <script>
-        export default {
+export default {
   methods: {
+      
       trocaSecao(secao, event) {
           // previne que o link seja seguido
           event.preventDefault();
@@ -191,7 +192,66 @@
                   break;
           }
           //console.log(secao);
-      }
+      },
+      
+     realizaLogin(event) {
+            if (this.$refs.nome.value=="" && this.$refs.email.value=="" && this.$refs.sobrenome.value=="" && this.$refs.idade.value=="" && this.$refs.usuario.value=="" && this.$refs.senha.value=="" && this.$refs.senha2.value=="") {
+                 console.log('Falha no login');
+                 alert("Todos os campos devem ser preenchidos!");
+            } 
+            
+            else if (this.$refs.checkbox1.checked==false && this.$refs.checkbox2.checked==false ) {
+                     console.log('Falha no login');
+                     alert("Você deve selecionar pelo menos uma das Preferências!");
+            }
+            
+            else if (this.$refs.email.value.indexOf('@')==-1 || this.$refs.email.value.indexOf('.')==-1 ) {
+                     console.log('Falha no login');
+                     alert("Você deve digitar um endereço de e-mail válido!");
+                     this.$refs.email.focus();
+            }
+            
+            else if (this.$refs.usuario.value.length<4 ) {
+                     console.log('Falha no login');
+                     alert("Seu usuário tem que ter no mínimo 4 caracteres!");
+                     this.$refs.usuario.focus();
+            }
+           
+            else if (this.$refs.usuario.value.length>10 ) {
+                     console.log('Falha no login');
+                     alert("Seu usuário tem que ter no máximo 10 caracteres!");
+                     this.$refs.usuario.focus();
+            }
+           
+            else if (this.$refs.senha.value.length<7 ) {
+                     console.log('Falha no login');
+                     alert("Sua Senha tem que ter no mínimo 7 caracteres!");
+                     this.$refs.senha.focus();
+            }
+           
+            else if (this.$refs.senha.value.length>20 ) {
+                     console.log('Falha no login');
+                     alert("Sua Senha tem que ter no máximo 20 caracteres!");
+                     this.$refs.senha.focus();
+            }
+            
+            else if(this.$refs.senha.value != this.$refs.senha2.value) {
+                    console.log('Falha no login');
+                     alert("As senhas informadas precisam ser iguais!");
+                     this.$refs.senha2.focus();
+            }
+            
+            else if (this.$refs.radio1.checked==false && this.$refs.radio2.checked==false && this.$refs.radio3.checked==false && this.$refs.radio4.checked==false && this.$refs.radio5.checked==false) {
+                     console.log('Falha no login');
+                     alert("Você deve selecionar pelo menos uma das opções de Gênero!");
+            } 
+            
+            else {
+                this.$router.push('cadastro-2');
+                console.log('Login!');
+            }
+            
+    } 
   },    
   data () {
     return {
