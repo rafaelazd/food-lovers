@@ -22,7 +22,7 @@
         <!-- Chat Card -->
         <div class="chat">
             <b-row class="head d-inline-flex justify-content-around">
-                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span><count>3</count></b-col>
+                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span><small>{{counter}}</small></b-col>
                 <b-col style="padding-top:10px"><span>Mensagens</span></b-col>
                 <b-col style="padding-top:3px"><b-btn v-b-toggle="'collapse-friend-list'" class="m-1"><i class="fa fa-address-book" aria-hidden="true"></i></b-btn></b-col>
             </b-row>
@@ -71,28 +71,28 @@
             
             <div class="conversas">
                 <div class="msg-preview" id="idUsuario">
-                <a href="Inicio.vue"><b-row>
-                    <b-col><img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"></b-col>
-                    <b-col cols="8">
-                      <div class="msg-head"><span id="usuNome">Raquel Salvatori</span></div><br>
-                      <div class="msg-body"><p>Oieeee</p></div></b-col>
-                </b-row></a>
+                    <b-button variant="light" class="btn-block" v-on:click="counter -= 1">
+                        <b-row>
+                            <b-col cols="2"><img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"></b-col>
+                            <b-col cols="10"><p id="usuNome">Raquel Salvatori</p></b-col>
+                        </b-row>
+                    </b-button>
                 </div>
                 <div class="msg-preview" id="idUsuario">
-                 <b-row>
-                    <b-col><img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"></b-col>
-                    <b-col cols="8">
-                      <div class="msg-head"><span id="usuNome">Maria Rosa</span></div><br>
-                      <div class="msg-body"><p>Tudo bem?</p></div></b-col>
-                </b-row>
+                    <b-button variant="light" class="btn-block" v-on:click="counter -= 1">
+                        <b-row>
+                            <b-col cols="2"><img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"></b-col>
+                            <b-col cols="10"><p id="usuNome">Maria Rosa</p></b-col>
+                        </b-row>
+                    </b-button>
                 </div>
                 <div class="msg-preview" id="idUsuario">
-                 <b-row>
-                    <b-col><img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"></b-col>
-                    <b-col cols="8">
-                      <div class="msg-head"><span id="usuNome">Mateus Takeda</span></div><br>
-                      <div class="msg-body"><p>Que bom! :D</p></div></b-col>
-                </b-row>
+                 <b-button variant="light" class="btn-block" v-on:click="counter -= 1">
+                        <b-row>
+                            <b-col cols="2"><img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"></b-col>
+                            <b-col cols="10"><p id="usuNome">Mateus Takeda</p></b-col>
+                        </b-row>
+                    </b-button>
                 </div>
             </div>
         </div>
@@ -103,6 +103,13 @@
 </template>
 
 <script>
+export default {
+    data() {
+      return { 
+          counter: 3
+      }
+    }
+}
 </script>
 
 
@@ -153,6 +160,13 @@
         width: 100%;
         border-bottom: 0.2px solid;
         border-bottom-color: #bdc3c7;
+    }
+    
+    .chat .head small {
+        font-size: 19px;
+        font-weight: 400;
+        color: #34495e;
+        margin: 9px;
     }
     
     .chat .head .m-1 {
@@ -231,20 +245,16 @@
     .conversas .msg-preview img {
         width: 120px;
         height: 120px;
-        text-align:center; 
         padding:10px;
     }
     
-    .conversas .msg-preview .msg-head{
+    .conversas .msg-preview .btn-block p{
         font-weight: 500;
-        margin-top: 20px;
+        font-size: 19px;
         text-transform: uppercase;
         color: #2c3e50;
-    }
-    
-    .conversas .msg-preview .msg-body{
-        font-weight: 400;
-        color: #7f8c8d;
+        margin-left: -700px;
+        margin-top: 40px;
     }
     
     .conversas .msg-preview .btn{
@@ -270,16 +280,13 @@
         height: 120px;
         padding-left: 0px;
         }
-        
 
         .conversas .msg-preview #usuFoto {
-            width: 130px;
-            height: 100px;
-            float: left;
-            padding: 5px;
-        }
-        
-        
+        width: 130px;
+        height: 100px;
+        float: left;
+        padding: 5px;
+        } 
     } 
     
 </style>
