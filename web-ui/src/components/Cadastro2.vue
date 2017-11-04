@@ -11,22 +11,66 @@
                     <!-- Formulario -->
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" id="formCad" action="">
-                            
-                            <div class="row">
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/batata.png" alt="Batata Frita" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item1" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/bolo.png" alt="Bolo" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item2" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/cafe.png" alt="Café" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item3" value="val3" class="hidden" autocomplete="off"></label></div>
-                            </div>
-                            <div class="row">
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/macarrao.png" alt="Macarrão" class="img-thumbnail img-check"><input type="checkbox" name="chk4" id="item4" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/nachos.png" alt="Nachos" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item5" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/pizza.png" alt="Pizza" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item6" value="val3" class="hidden" autocomplete="off"></label></div>
-                            </div>
-                               <div class="row">
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/sanduiche.png" alt="Sanduíche" class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item7" value="val1" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/sushi.png" alt="Sushi" class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item8" value="val2" class="hidden" autocomplete="off"></label></div>
-                                <div class="col"><label class="btn btn-outline-secondary"><img src="/static/img/tacos.png" alt="Tacos" class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item9" value="val3" class="hidden" autocomplete="off"></label></div>
-                                </div>
+                           <b-row class="d-flex justify-content-center">
+                               <b-col class="options">
+                                   <label for="check1" class="btn">
+                                       <img src="/static/img/hotdog.png" class="select-img" id="hotdog" alt="Hot Dog">
+                                       <b-form-checkbox v-model="selected" id="check1" value="HotDog"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                               <b-col class="options">
+                                   <label for="check2" class="btn">
+                                       <img src="/static/img/bolo.png" class="select-img" id="bolo" alt="Bolo">
+                                       <b-form-checkbox v-model="selected" id="check2" value="Bolo"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                               <b-col class="options">
+                                   <label for="check3" class="btn">
+                                       <img src="/static/img/cafe.png" class="select-img" id="cafe" alt="Café">
+                                       <b-form-checkbox v-model="selected" id="check3" value="Café"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                           </b-row>
+                           <b-row class="d-flex justify-content-center">
+                               <b-col class="options">
+                                  <label for="check4" class="btn">
+                                       <img src="/static/img/sorvete.png" class="select-img" id="sorvete" alt="Sorvete">
+                                       <b-form-checkbox v-model="selected" id="check4" value="Sorvete"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                               <b-col class="options">
+                                   <label for="check5" class="btn">
+                                       <img src="/static/img/pizza.png" class="select-img" id="pizza" alt="Pizza">
+                                       <b-form-checkbox v-model="selected" id="check5" value="Pizza"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                               <b-col class="options">
+                                 <label for="check6" class="btn">
+                                       <img src="/static/img/nachos.png" class="select-img" id="nachos" alt="Nachos">
+                                       <b-form-checkbox v-model="selected" id="check6" value="Nachos"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                           </b-row>
+                           <b-row class="d-flex justify-content-center">
+                               <b-col class="options">
+                                  <label for="check7" class="btn">
+                                       <img src="/static/img/churrasco.png" class="select-img" id="churrasco" alt="Churrasco">
+                                       <b-form-checkbox v-model="selected" id="check7" value="Churrasco"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                               <b-col class="options">
+                                  <label for="check8" class="btn">
+                                       <img src="/static/img/spaghetti.png" class="select-img" id="spaghetti" alt="Spaghetti">
+                                       <b-form-checkbox v-model="selected" id="check8" value="Spaghetti"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                               <b-col class="options">
+                                  <label for="check9" class="btn">
+                                       <img src="/static/img/sopa.png" class="select-img" id="sopa" alt="Sopa">
+                                       <b-form-checkbox v-model="selected" id="check9" value="Sopa"></b-form-checkbox>
+                                   </label>
+                               </b-col>
+                           </b-row>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-3">Confirmar</router-link>
@@ -40,15 +84,16 @@
 
 
 <script>
-    $(document).ready(function(e) {
-        $(".img-check").click(function() {
-            $(this).toggleClass("check");
-        });
-    });
-
+export default {
+    data () {
+        return {
+            selected: []
+        }
+    }
+}
 </script>
 
-<style>
+<style scoped>
    #cad-cover {
         height: 100vh;
         width: 100vw;
@@ -115,11 +160,11 @@
         color: #ffffff;
     }
     
-    .nb-login form .btn {
+    .nb-login form .btn-lg {
         border-radius: 25px;
     }
     
-    .nb-login form .btn:hover {
+    .nb-login form .btn-lg:hover {
         background: #7f8c8d;
         color: #fff;
     }
@@ -136,5 +181,36 @@
         align-items: center;
         text-align: center;
     }
-
+    
+    .nb-login .options .btn {
+        background-color: transparent;
+        border-color: transparent;
+        width: 180px;
+        height: 210px;
+        cursor: pointer;
+    }
+    
+    .nb-login .select-img:hover {
+        box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
+        margin-top: -5px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .nb-login .options img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nb-login .custom-control {
+        position: relative;
+        margin-left: -30px;
+        bottom: -84px;
+        display: inline-flex;
+        min-height: 1.5rem;
+        padding-left: 1.5rem;
+        margin-right: 1rem;
+    }
 </style>
