@@ -38,7 +38,7 @@
                                 <h4>Foto atual:</h4>
                                     <img src="/static/img/m7.png" id="usuFoto"> <br><br>
                                     <b-form-file id="input2"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
-                                    <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
+                                    <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -92,7 +92,7 @@
                                        <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                        </p>
                                   </b-row>
-                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
@@ -107,7 +107,7 @@
                                   <b-row class="inputs2">'
                                        <input type="email" class="form-control" name="email" ref="email" required="" id="email" placeholder="E-mail">
                                   </b-row>
-                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
                                 </form><br>
                             </div>
                          </div>
@@ -122,7 +122,7 @@
                                   <b-row class="inputs2">
                                        <input type="text" class="form-control" name="usuario" ref="usuario" required="" placeholder="Usuário" id="usuario">
                                   </b-row>
-                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
@@ -145,7 +145,7 @@
                                   <b-row class="inputs2">
                                        <input type="password" class="form-control" name="senha2" ref="senha2" id="senha2" required="" placeholder="Senha" autocomplete="new-password">
                                   </b-row>
-                                  <b-button type="submit" v-on:click="realizaLogin" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
@@ -194,64 +194,7 @@ export default {
           //console.log(secao);
       },
       
-     realizaLogin(event) {
-            if (this.$refs.nome.value=="" && this.$refs.email.value=="" && this.$refs.sobrenome.value=="" && this.$refs.idade.value=="" && this.$refs.usuario.value=="" && this.$refs.senha.value=="" && this.$refs.senha2.value=="") {
-                 console.log('Falha no login');
-                 alert("Todos os campos devem ser preenchidos!");
-            } 
-            
-            else if (this.$refs.checkbox1.checked==false && this.$refs.checkbox2.checked==false ) {
-                     console.log('Falha no login');
-                     alert("Você deve selecionar pelo menos uma das Preferências!");
-            }
-            
-            else if (this.$refs.email.value.indexOf('@')==-1 || this.$refs.email.value.indexOf('.')==-1 ) {
-                     console.log('Falha no login');
-                     alert("Você deve digitar um endereço de e-mail válido!");
-                     this.$refs.email.focus();
-            }
-            
-            else if (this.$refs.usuario.value.length<4 ) {
-                     console.log('Falha no login');
-                     alert("Seu usuário tem que ter no mínimo 4 caracteres!");
-                     this.$refs.usuario.focus();
-            }
-           
-            else if (this.$refs.usuario.value.length>10 ) {
-                     console.log('Falha no login');
-                     alert("Seu usuário tem que ter no máximo 10 caracteres!");
-                     this.$refs.usuario.focus();
-            }
-           
-            else if (this.$refs.senha.value.length<7 ) {
-                     console.log('Falha no login');
-                     alert("Sua Senha tem que ter no mínimo 7 caracteres!");
-                     this.$refs.senha.focus();
-            }
-           
-            else if (this.$refs.senha.value.length>20 ) {
-                     console.log('Falha no login');
-                     alert("Sua Senha tem que ter no máximo 20 caracteres!");
-                     this.$refs.senha.focus();
-            }
-            
-            else if(this.$refs.senha.value != this.$refs.senha2.value) {
-                    console.log('Falha no login');
-                     alert("As senhas informadas precisam ser iguais!");
-                     this.$refs.senha2.focus();
-            }
-            
-            else if (this.$refs.radio1.checked==false && this.$refs.radio2.checked==false && this.$refs.radio3.checked==false && this.$refs.radio4.checked==false && this.$refs.radio5.checked==false) {
-                     console.log('Falha no login');
-                     alert("Você deve selecionar pelo menos uma das opções de Gênero!");
-            } 
-            
-            else {
-                this.$router.push('cadastro-2');
-                console.log('Login!');
-            }
-            
-    } 
+     
   },    
   data () {
     return {
@@ -283,6 +226,10 @@ export default {
         display: flex;
     }
     
+    .container {
+    padding: 0px;  
+    }
+    
     .container nav {
         background-color: #34495e;
         max-width: none;
@@ -307,6 +254,14 @@ export default {
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         text-align: center;
+    }
+    
+    .nav-pills {
+        padding-left: 10px;    
+    }
+    
+    .body-alter {
+        padding-right: 10px;
     }
     
     .body {

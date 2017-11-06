@@ -12,7 +12,7 @@
         <!--END Back Button -->
     
         <!-- Sobre nós -->
-        <div class="head">
+        <div class="head-about">
             <h1>Sobre nós</h1><br>
             <p>Conheça mais sobre o App <i>Food Lovers</i> e todo seu processo de criação! </p>
         </div> 
@@ -80,6 +80,14 @@
         align-items: center;
     }
     
+    .container {
+        min-width: 100vw;
+        height: 100vh;
+        left: 0px;
+        padding: 0px;
+        overflow: auto;
+    }
+    
     .container nav {
         background-color: #34495e;
         max-width: none;
@@ -91,14 +99,14 @@
         margin: 20px;
         margin-left: 51px;
     }
-    .head h1 {
+    .head-about h1 {
         color: #2c3e50;
         font-size: 35px;
         font-family: 'Raleway', sans-serif;
         text-align: center;
     }
     
-    .head p {
+    .head-about p {
         color: #7f8c8d;
         font-size: 19px;
         font-family: 'Open Sans', sans-serif;
@@ -114,6 +122,8 @@
         font-weight: 500;
         letter-spacing: 1px;
         margin-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     .body-about img {

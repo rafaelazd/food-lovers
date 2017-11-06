@@ -102,6 +102,16 @@ export default {
     
     .container {
         min-width: 100vw;
+        height: 100vh;
+        left: 0px;
+        padding-right: 10px;
+        padding-left: 10px;
+        overflow: auto;
+    }
+    
+    
+    .container {
+        min-width: 100vw;
         left: 0px;
         padding-left: 0;
     }

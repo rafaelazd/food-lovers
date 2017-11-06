@@ -56,6 +56,14 @@
         display: flex;
     }
     
+    .container {
+        min-width: 100vw;
+        height: 100vh;
+        left: 0px;
+        padding: 0px;
+        overflow: auto;
+    }
+    
     .container nav {
         background-color: #34495e;
         max-width: none;

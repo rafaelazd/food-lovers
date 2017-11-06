@@ -59,6 +59,14 @@
         align-items: center;
     }
     
+    .container {
+        min-width: 100vw;
+        height: 100vh;
+        left: 0px;
+        padding: 0px;
+        overflow: auto;
+    }
+    
     .container nav {
         background-color: #34495e;
         max-width: none;
@@ -89,7 +97,8 @@
         margin: auto;
         width: 80%;
         background: #fff;
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
         overflow: hidden;
     }
     
