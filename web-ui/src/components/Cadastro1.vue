@@ -125,6 +125,12 @@ export default {
                      this.$refs.email.focus();
             }
             
+            else if (this.$refs.idade.value<14 ) {
+                     console.log('Falha no login');
+                     document.getElementById("valIdade").style.display = "block";
+                     this.$refs.usuario.focus();
+            }
+           
             else if (this.$refs.usuario.value.length<4 ) {
                      console.log('Falha no login');
                      document.getElementById("valUsuario1").style.display = "block";
