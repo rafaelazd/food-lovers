@@ -13,59 +13,85 @@
                         <form class="form" role="form" autocomplete="off" id="formCad" action="">
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" ref="email" placeholder="E-mail">
+                                <small id="valEmail" class="danger">Você deve digitar um E-mail válido!</small>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nome" ref="nome"  placeholder="Nome">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="sobrenome" ref="sobrenome"  required placeholder="Sobrenome" id="sobrenome">
+                                <input type="text" class="form-control" name="sobrenome" ref="sobrenome" placeholder="Sobrenome">
                             </div>
                             <div class="form-group">
-                            <input type="number" class="form-control" name="idade" ref="idade"  placeholder="Idade">
+                                <input type="number" class="form-control" name="idade" ref="idade"  placeholder="Idade">
+                                <small id="valIdade" class="danger">Nenês não podem usar esse tipo de aplicativo!</small>
                             </div>
                             <div class="form-group d-flex justify-content-center form-inline">
                                <h5>Preferência em</h5>
-                                 <b-form-checkbox id="checkbox" ref="checkbox1" value="Homens"> Homens </b-form-checkbox>
-                                 <b-form-checkbox id="checkbox" ref="checkbox2" value="Mulheres"> Mulheres </b-form-checkbox>
+                                 <b-form-checkbox type="checkbox" name="check" ref="checkbox1" value="Homens"> Homens </b-form-checkbox>
+                                 <b-form-checkbox name="check" ref="checkbox2" value="Mulheres"> Mulheres </b-form-checkbox>
                             </div>
+                                <small id="valCheckboxes" class="danger">Você deve escolher ao menos uma das Preferências!</small>
                             <div class="d-flex justify-content-center">
-                               <h5>Sexo</h5>
-                                    <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio1"/>
-                                      <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
-                                    </p>
-                                    <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio2"/>
-                                      <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
-                                    </p>
-                                    <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio3"/>
-                                      <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
-                                    </p>
-                                    <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio4"/>
-                                      <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
-                                    </p>
-                                    <p>
-                                      <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio5"/>
-                                      <i class="fa fa-venus" aria-hidden="true"></i> Feminino
-                                    </p>
+                              <b-row>
+                               <b-col cols="12"><h5>Sexo</h5></b-col>
+                                   <b-col cols="6" sm="4">
+                                       <p>
+                                          <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio1"/>
+                                          <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
+                                       </p>
+                                   </b-col>
+                                   <b-col cols="6" sm="4">
+                                        <p>
+                                          <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio2"/>
+                                          <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
+                                       </p>
+                                   </b-col>
+                                   <b-col cols="6" sm="4">
+                                       <p>
+                                          <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio3"/>
+                                          <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
+                                       </p>
+                                   </b-col>
+                                   <b-col cols="6" sm="4">
+                                       <p>
+                                          <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio4"/>
+                                          <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
+                                       </p>
+                                   </b-col>
+                                   <b-col cols="12" sm="4">
+                                       <p>
+                                          <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio5"/>
+                                          <i class="fa fa-venus" aria-hidden="true"></i> Feminino
+                                       </p>
+                                   </b-col>
+                                </b-row>
+                            </div>
+                                <small id="valRadios" class="danger">Você deve escolher ao menos uma das opções!</small>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="usuario" ref="usuario"  placeholder="Usuário">
+                                <small id="valUsuario1" class="danger">Seu usuário tem que ter no mínimo 4 caracteres!</small>
+                                <small id="valUsuario2" class="danger">Seu usuário tem que ter no máximo 10 caracteres!</small>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="usuario" ref="usuario" required placeholder="Usuário">
+                                <input type="password" class="form-control" name="senha" ref="senha"  placeholder="Senha">
+                                <small id="valSenha1" class="danger">Sua Senha tem que ter no mínimo 7 caracteres!</small>
+                                <small id="valSenha11" class="danger">Sua Senha tem que ter no máximo 20 caracteres!</small>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="senha" ref="senha" required placeholder="Senha">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="senha2" ref="senha2" required placeholder="Confirmar Senha">
+                                <input type="password" class="form-control" name="senha2" ref="senha2"  placeholder="Confirmar Senha">
+                                <small id="valSenha2" class="danger">As senhas informadas precisam ser iguais!</small>
                             </div>
                             <div class="form-group">
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin" >Confirmar</b-button>
+                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin">Confirmar</b-button>
                             </div>
-                            <!-- Alerta -->
-                            <b-alert variant="danger" id="alert1">Todos os campos devem ser preenchidos!</b-alert>
+                            <div id="valRequired"class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Opa!</h4>
+                                <p class="card-text">Todos os campos devem ser preenchidos!</p>
+                                <b-button variant="warning" id="close-card">Voltar</b-button>
+                              </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -75,67 +101,71 @@
 </template>
 
 
-<script>
+<script>  
 export default {
      methods: {
         realizaLogin(event) {
-            if (this.$refs.nome.value=="" && this.$refs.email.value=="" && this.$refs.sobrenome.value=="" && this.$refs.idade.value=="" && this.$refs.usuario.value=="" && this.$refs.senha.value=="" && this.$refs.senha2.value=="") {
+            if (this.$refs.nome.value=="" || this.$refs.email.value=="" || this.$refs.sobrenome.value=="" || this.$refs.idade.value=="" || this.$refs.usuario.value=="" || this.$refs.senha.value=="" || this.$refs.senha2.value=="") {
                  console.log('Falha no login');
-                 alert("Todos os campos devem ser preenchidos!");
+                 document.getElementById("valRequired").style.display = "block";
+                 document.getElementById('close-card').onclick = function(){
+                    document.getElementById("valRequired").style.display = "none";
+                };
+                    
             } 
             
             else if (this.$refs.checkbox1.checked==false && this.$refs.checkbox2.checked==false ) {
                      console.log('Falha no login');
-                     alert("Você deve selecionar pelo menos uma das Preferências!");
+                      document.getElementById("valCheckboxes").style.display = "block";
             }
             
             else if (this.$refs.email.value.indexOf('@')==-1 || this.$refs.email.value.indexOf('.')==-1 ) {
                      console.log('Falha no login');
-                     alert("Você deve digitar um endereço de e-mail válido!");
+                     document.getElementById("valEmail").style.display = "block";
                      this.$refs.email.focus();
             }
             
             else if (this.$refs.usuario.value.length<4 ) {
                      console.log('Falha no login');
-                     alert("Seu usuário tem que ter no mínimo 4 caracteres!");
+                     document.getElementById("valUsuario1").style.display = "block";
                      this.$refs.usuario.focus();
             }
            
             else if (this.$refs.usuario.value.length>10 ) {
                      console.log('Falha no login');
-                     alert("Seu usuário tem que ter no máximo 10 caracteres!");
+                     document.getElementById("valUsuario2").style.display = "block";
                      this.$refs.usuario.focus();
             }
            
             else if (this.$refs.senha.value.length<7 ) {
                      console.log('Falha no login');
-                     alert("Sua Senha tem que ter no mínimo 7 caracteres!");
+                     document.getElementById("valSenha1").style.display = "block";
                      this.$refs.senha.focus();
             }
            
             else if (this.$refs.senha.value.length>20 ) {
                      console.log('Falha no login');
-                     alert("Sua Senha tem que ter no máximo 20 caracteres!");
+                     document.getElementById("valSenha11").style.display = "block";
                      this.$refs.senha.focus();
             }
             
             else if(this.$refs.senha.value != this.$refs.senha2.value) {
                     console.log('Falha no login');
-                     alert("As senhas informadas precisam ser iguais!");
+                     document.getElementById("valSenha2").style.display = "block";
                      this.$refs.senha2.focus();
             }
             
             else if (this.$refs.radio1.checked==false && this.$refs.radio2.checked==false && this.$refs.radio3.checked==false && this.$refs.radio4.checked==false && this.$refs.radio5.checked==false) {
                      console.log('Falha no login');
-                     alert("Você deve selecionar pelo menos uma das opções de Gênero!");
-            } 
+                     document.getElementById("valRadios").style.display = "block";
+            }
             
             else {
                 this.$router.push('cadastro-2');
                 console.log('Login!');
             }
             
-    }   
+    }
   }
 }
 </script>
@@ -211,33 +241,36 @@ export default {
         color: #ecf0f1;
     }
     
-    .nb-login form ::-webkit-input-placeholder {
-        color: #ffffff;
-    }
-    
-    .nb-login form ::-moz-placeholder {
-        color: #ffffff;
-    }
-    
-    .nb-login form :-ms-input-placeholder {
-        color: #ffffff;
-    }
-    
     .nb-login form .btn {
         border-radius: 25px;
-    }
-    
-    .nb-login form .btn:hover {
-        background: #7f8c8d;
-        color: #fff;
     }
     
     .nb-login .center {
         text-align: center;
     }
     
-    .nb-login .or {
-        color: #FFF;
+    .nb-login small {
+        color: #c0392b;
+        font-size: 14px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        display: none;
+    }
+    
+    #valRequired {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+    }
+    
+    #close-card:hover {
+        background-color: #34495e;
+        border-color: #34495e;
+        
     }
     
     .vertical-center {
@@ -247,6 +280,42 @@ export default {
     
     .form-group h5 {
         margin-right: 10px;
+    }
+    
+    @media (max-width:700px) {
+        #valRequired {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 29%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+        }
+    }
+    
+    @media (max-width:490px) {
+        #valRequired {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 19%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+        }
+    }
+     
+    @media (max-width:378px) {
+        #valRequired {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 9%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+        }
     }
     
     @keyframes click-wave {
