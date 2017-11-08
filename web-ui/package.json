@@ -10,12 +10,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.17.0",
     "bootstrap-vue": "^1.0.0-beta.7",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
     "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4",
+    "tether-shepherd": "^1.8.1",
     "vee-validate": "^2.0.0-rc.21",
     "vue": "^2.4.2",
     "vue-countup-v2": "^0.1.2",
