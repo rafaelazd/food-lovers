@@ -22,7 +22,7 @@
         <!-- Chat Card -->
         <div class="chat">
             <b-row class="head d-inline-flex justify-content-around">
-                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span><small>{{counter}}</small></b-col>
+                <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span></b-col>
                 <b-col style="padding-top:10px"><span>Mensagens</span></b-col>
                 <b-col style="padding-top:3px"><b-btn v-b-toggle="'collapse-friend-list'" class="m-1"><i class="fa fa-address-book" aria-hidden="true"></i></b-btn></b-col>
             </b-row>
@@ -64,14 +64,14 @@
             
             <div class="search-bar">
                    <b-input-group>
-                    <b-form-input v-model="search" type="search" class="ip-search" placeholder="Procurar..."></b-form-input>
+                    <b-form-input type="search" class="ip-search" placeholder="Procurar..."></b-form-input>
                     <button class="btn btn-secondary input-group-addon"><i class="fa fa-search"></i></button>
                   </b-input-group>
             </div>
             
             <div class="conversas">
                 <div class="msg-preview" id="idUsuario">
-                    <b-button variant="light" class="btn-block" v-on:click="counter -= 1">
+                    <b-button variant="light" class="btn-block" v-on:click="showhide">
                         <b-row>
                             <b-col cols="2"><img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"></b-col>
                             <b-col cols="10"><p id="usuNome">Raquel Salvatori</p></b-col>
@@ -79,7 +79,7 @@
                     </b-button>
                 </div>
                 <div class="msg-preview" id="idUsuario">
-                    <b-button variant="light" class="btn-block" v-on:click="counter -= 1">
+                    <b-button variant="light" class="btn-block" v-on:click="showhide">
                         <b-row>
                             <b-col cols="2"><img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"></b-col>
                             <b-col cols="10"><p id="usuNome">Maria Rosa</p></b-col>
@@ -87,13 +87,19 @@
                     </b-button>
                 </div>
                 <div class="msg-preview" id="idUsuario">
-                 <b-button variant="light" class="btn-block" v-on:click="counter -= 1">
+                 <b-button variant="light" class="btn-block" v-on:click="showhide">
                         <b-row>
                             <b-col cols="2"><img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"></b-col>
                             <b-col cols="10"><p id="usuNome">Mateus Takeda</p></b-col>
                         </b-row>
                     </b-button>
                 </div>
+            </div>
+            <div v-if="isConnected"class="message-box" id="message-box">
+                <ul id="messages"></ul>
+                <form action="">
+                  <input id="m" autocomplete="off" /><b-button class="btn btn-success">Enviar</b-button>
+                </form>
             </div>
         </div>
         <!-- END Chat Card -->
@@ -102,12 +108,18 @@
   </section>
 </template>
 
-<script>
+<script type="text/javascript">
 export default {
-    data() {
-      return { 
-          counter: 3
-      }
+    methods: {
+        showhide() {
+           var div = document.getElementById("message-box");
+            if (div.style.display !== "block") {
+                div.style.display = "block";
+            }
+            else {
+                div.style.display = "none";
+            }
+        }
     }
 }
 </script>
@@ -135,6 +147,7 @@ export default {
         padding-left: 0;
         overflow: auto;
     }
+    
     .container nav {
         background-color: #34495e;
         max-width: none;
@@ -259,6 +272,65 @@ export default {
     
     .conversas .msg-preview .btn{
         margin-top: 35px;
+    }
+    
+    #message-box {
+        display: none;
+        position: fixed;
+        background-color:  white;
+        border: 1px solid;
+        border-color: #bdc3c7;
+        z-index: 100000;
+        top: 40%;
+        left: 40%;
+        width:50%;
+        height:75%;
+        margin-top: -9em;
+        margin-left: -15em;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    #message-box form {
+        background-color: transparent;
+        padding: 3px; 
+        position: fixed; 
+        bottom: 0; 
+        left: 22.5%;
+        width:50%;
+    }
+    
+    #message-box form input {
+        border: 0.5px solid; 
+        border-color: #7f8c8d; 
+        padding: 10px; 
+        width: 90%; 
+        margin-right: .5%; 
+        border-radius: 10px;
+    }
+    
+    #message-box form button {
+        width: 9.5%;
+        height: 42px;
+        margin-bottom: 4px;
+        font-family: 'Open Sans', sans-serif;
+        padding-left: 9px;
+    }
+    
+    #messages { 
+        list-style-type: none; 
+        margin: 0; 
+        padding: 0; 
+    }
+    
+    #messages li { 
+          padding: 5px 10px; 
+    }
+    
+    #messages li:nth-child(odd) { 
+        background: #eee; 
     }
     
     @media (min-width: 576px) {
