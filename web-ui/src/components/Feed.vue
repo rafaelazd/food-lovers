@@ -313,10 +313,40 @@ export default {
         }
     } 
     
+    @media (min-width: 578px) and (max-width:1000px) {
+        #addFoto {
+        top: 40%;
+        left: 55%;
+        width: 400px;
+        }
+    } 
+    
     @media (max-width: 576px) {
         .feed {
         width: 100vw;
         border-radius: 5px;
         }  
+        
+        #addFoto {
+        top: 40%;
+        left: 59%;
+        width: 400px;
+        padding: 20px;
+        }
+    }
+    
+    @media (max-width: 388px) {
+        .feed {
+        width: 100vw;
+        border-radius: 5px;
+        }  
+        
+        #addFoto {
+        top: 40%;
+        left: 100%;
+        width: 200px;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        display: none;
+        }
     }
 </style>
