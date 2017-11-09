@@ -6,12 +6,15 @@ import App from './App'
 import router from './router'
 
 import BootstrapVue from 'bootstrap-vue'
+import TetherShepherd from 'tether-shepherd'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'font-awesome/css/font-awesome.css'
+import 'tether-shepherd/dist/css/shepherd-theme-arrows.css'
 
 Vue.use(BootstrapVue);
+Vue.use(TetherShepherd);
 
 Vue.config.productionTip = false
 
