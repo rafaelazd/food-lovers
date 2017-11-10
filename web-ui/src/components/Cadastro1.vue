@@ -34,31 +34,31 @@
                             <div class="d-flex justify-content-center">
                               <b-row>
                                <b-col cols="12"><h5>Sexo</h5></b-col>
-                                   <b-col cols="6" sm="4">
+                                   <b-col cols="6" sm="4" lg="3">
                                        <p>
                                           <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio1"/>
                                           <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
                                        </p>
                                    </b-col>
-                                   <b-col cols="6" sm="4">
+                                   <b-col cols="6" sm="4" lg="3">
                                         <p>
                                           <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio2"/>
                                           <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                        </p>
                                    </b-col>
-                                   <b-col cols="6" sm="4">
+                                   <b-col cols="6" sm="4" lg="3">
                                        <p>
                                           <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio3"/>
                                           <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                        </p>
                                    </b-col>
-                                   <b-col cols="6" sm="4">
+                                   <b-col cols="6" sm="4" lg="3">
                                        <p>
                                           <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio4"/>
                                           <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                        </p>
                                    </b-col>
-                                   <b-col cols="12" sm="4">
+                                   <b-col cols="12" sm="4" lg="12">
                                        <p>
                                           <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio5"/>
                                           <i class="fa fa-venus" aria-hidden="true"></i> Feminino
@@ -272,13 +272,6 @@ export default {
         padding: 20px;
         display: none;
     }
-    
-    #close-card:hover {
-        background-color: #34495e;
-        border-color: #34495e;
-        
-    }
-    
     .vertical-center {
         align-items: center;
         text-align: center;
@@ -305,7 +298,7 @@ export default {
         position: fixed;
         z-index: 10000000;
         top:30%;
-        left: 19%;
+        left: 8%;
         box-shadow: 10px 30px 20px rgba(0,0,0,.5);
         padding: 20px;
         display: none;
