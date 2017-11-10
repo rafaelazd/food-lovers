@@ -8,7 +8,7 @@
        <!-- Nav -->
         <div class="nav nav-pills nav-fill">
             <div class="nav-item">
-            <router-link class="nav-link active" role="a" aria-pressed="true" to="/feed"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
+            <router-link class="nav-link active" role="a" aria-pressed="true" to="/feed"><i class="fa fa-th" aria-hidden="true"></i></router-link>
             </div>
             <div class="nav-item">
             <router-link class="nav-link" role="a" aria-pressed="true" to="/inicio"><i class="fa fa-heart" aria-hidden="true"></i></router-link>
@@ -25,7 +25,7 @@
               <div class="card">
                     <div class="header d-flex justify-content-around">
                         <img src="/static/img/m7.png" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">theaqueen</a>
+                        <a id="idUsuario" v-bind:href="url">theaqueen</a>
                         <small> 1h </small>
                     </div>
                     <div class="feed-foto ">
@@ -39,7 +39,7 @@
               <div class="card">
                     <div class="header d-flex justify-content-around">
                         <img src="/static/img/M2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">rosamaria89</a>
+                        <a id="idUsuario" v-bind:href="url">rosamaria89</a>
                         <small> 2h </small>
                     </div>
                     <div class="feed-foto ">
@@ -53,7 +53,7 @@
               <div class="card">
                     <div class="header d-flex justify-content-around">
                         <img src="/static/img/M1.3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">sosoalter</a>
+                        <a id="idUsuario" v-bind:href="url">sosoalter</a>
                         <small> 2h </small>
                     </div>
                     <div class="feed-foto ">
@@ -67,7 +67,7 @@
               <div class="card">
                     <div class="header d-flex justify-content-around">
                         <img src="/static/img/M4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">raquelsalva_</a>
+                        <a id="idUsuario" v-bind:href="url">raquelsalva_</a>
                         <small> 3h </small>
                     </div>
                     <div class="feed-foto ">
@@ -81,7 +81,7 @@
               <div class="card">
                    <div class="header d-flex justify-content-around">
                         <img src="/static/img/H2.4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">herondis</a>
+                        <a id="idUsuario" v-bind:href="url">herondis</a>
                         <small> 5h </small>
                     </div>
                     <div class="feed-foto ">
@@ -95,7 +95,7 @@
               <div class="card">
                   <div class="header d-flex justify-content-around">
                         <img src="/static/img/M3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">mirandeva</a>
+                        <a id="idUsuario" v-bind:href="url">mirandeva</a>
                         <small> 5h </small>
                     </div>
                     <div class="feed-foto">
@@ -109,7 +109,7 @@
               <div class="card">
                     <div class="header d-flex justify-content-around">
                         <img src="/static/img/m7.png" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">theaqueen</a>
+                        <a id="idUsuario" v-bind:href="url">theaqueen</a>
                         <small> 6h </small>
                     </div>
                     <div class="feed-foto ">
@@ -123,7 +123,7 @@
               <div class="card">
                    <div class="header d-flex justify-content-around">
                         <img src="/static/img/M1.2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a href="usuario">kardashianlostsis</a>
+                        <a id="idUsuario" v-bind:href="url">kardashianlostsis</a>
                         <small> 10h </small>
                     </div>
                     <div class="feed-foto ">
@@ -167,7 +167,8 @@ export default {
     
     data() {
       return { 
-          counter: 0
+          counter: 0, 
+          url: '#/perfil'
       }
     }
 }
