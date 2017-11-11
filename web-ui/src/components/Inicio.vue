@@ -37,9 +37,8 @@
 <script>
 import Profile from '@/components/Profile'
 import axios from 'axios'
-    
-    export default {
-        
+
+    export default {      
         components: {
             'profile': Profile
         },
@@ -101,25 +100,24 @@ import axios from 'axios'
     
     .container .profile {
         width: 280px;
-        height: 450px;
+        min-height: 450px;
         background-color: #ecf0f1;
         border-style: hidden;
-        box-sizing: border-box;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 10px 20px 20px rgba(0,0,0,.5);
-        background-image: url('/static/img/m5.jpg');
         background-size: cover;
-        align-content: stretch;
-        
     }
+    
+    .container .profile .btn {
+        margin: 2px;
+    }
+    
     .container .profile .btn-circle {
         width: 45px;    
         height: 45px;
-        vertical-align: bottom;
         font-size: 12px;
         border-radius: 25px;
-        
     }
     
     .container .profile .btn-times {
@@ -131,12 +129,10 @@ import axios from 'axios'
         padding: 2px;
         margin-left: 4px;
         margin-top: 2px;
-        
     }
     
     .container .profile .btn-sm {
         border-radius: 15px;
-        
     }
     
     #collapse2 {
