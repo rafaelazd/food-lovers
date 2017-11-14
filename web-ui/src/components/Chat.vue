@@ -24,82 +24,33 @@
             <b-row class="head d-inline-flex justify-content-around">
                 <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span></b-col>
                 <b-col style="padding-top:10px"><span>Mensagens</span></b-col>
-                <b-col style="padding-top:3px"><b-btn v-b-toggle="'collapse-friend-list'" class="m-1"><i class="fa fa-address-book" aria-hidden="true"></i></b-btn></b-col>
+                <b-col></b-col>
             </b-row>
-            
-            <b-collapse id="collapse-friend-list" class="mt-2">
-                   <div class="agenda">
-                    <b-row class="d-flex justify-content-around">
-                        <b-col class="contatos">
-                            <img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"><br>
-                            <span id="usuNome">Mateus Takeda</span>
-                        </b-col>
-                        <b-col class="contatos">
-                            <img id="usuFoto" src="/static/img/H2.4.jpg" class="img-fluid"><br>
-                            <span id="usuNome">Heron Dias</span>
-                        </b-col>
-                    </b-row>
-                    <b-row class="d-flex justify-content-around">
-                        <b-col class="contatos">
-                            <img id="usuFoto" src="/static/img/M3.jpg" class="img-fluid"><br>
-                            <span id="usuNome">Eva Miranda</span>
-                        </b-col>
-                        <b-col class="contatos">
-                            <img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"><br>
-                            <span id="usuNome">Raquel Salvatori</span>
-                        </b-col>
-                    </b-row>
-                    <b-row class="d-flex justify-content-around">
-                        <b-col class="contatos">
-                            <img id="usuFoto" src="/static/img/M1.3.jpg" class="img-fluid"><br>
-                            <span id="usuNome">Sofia Alter</span>
-                        </b-col>
-                        <b-col class="contatos">
-                            <img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"><br>
-                            <span id="usuNome">Maria Rosa</span>
-                        </b-col>
-                    </b-row>
-                    </div>
-            </b-collapse>
-            
             <div class="search-bar">
                    <b-input-group>
                     <b-form-input type="search" class="ip-search" placeholder="Procurar..."></b-form-input>
                     <button class="btn btn-secondary input-group-addon"><i class="fa fa-search"></i></button>
                   </b-input-group>
             </div>
-            
             <div class="conversas">
-                <div class="msg-preview" id="idUsuario">
-                    <b-button variant="light" class="btn-block" v-on:click="showhide">
+                <div class="conversas-head">
+                    <p>Recentes</p>
+                    <div class="recentes">
                         <b-row>
-                            <b-col cols="2"><img id="usuFoto" src="/static/img/M4.jpg" class="img-fluid"></b-col>
-                            <b-col cols="10"><p id="usuNome">Raquel Salvatori</p></b-col>
+                            <img src="/static/img/M2.jpg" class="back-left-circle img-rounded img-fluid" alt="">
+                            <img src="/static/img/M3.jpg" class="front-circle img-rounded img-fluid" alt="">
+                            <img src="/static/img/H2.4.jpg" class="back-right-circle img-rounded img-fluid" alt="">
                         </b-row>
-                    </b-button>
-                </div>
-                <div class="msg-preview" id="idUsuario">
-                    <b-button variant="light" class="btn-block" v-on:click="showhide">
-                        <b-row>
-                            <b-col cols="2"><img id="usuFoto" src="/static/img/M2.jpg" class="img-fluid"></b-col>
-                            <b-col cols="10"><p id="usuNome">Maria Rosa</p></b-col>
+                           <b-row>
+                            <small>Maria Rosa</small>
+                            <small>Eva Miranda</small>
+                            <small>Heitor</small>
                         </b-row>
-                    </b-button>
+                    </div>
+                    <div class="combinacoes">
+                        <p>hi</p>
+                    </div>
                 </div>
-                <div class="msg-preview" id="idUsuario">
-                 <b-button variant="light" class="btn-block" v-on:click="showhide">
-                        <b-row>
-                            <b-col cols="2"><img id="usuFoto" src="/static/img/H1.4.jpg" class="img-fluid"></b-col>
-                            <b-col cols="10"><p id="usuNome">Mateus Takeda</p></b-col>
-                        </b-row>
-                    </b-button>
-                </div>
-            </div>
-            <div v-if="isConnected"class="message-box" id="message-box">
-                <ul id="messages"></ul>
-                <form action="">
-                  <input id="m" autocomplete="off" /><b-button class="btn btn-success">Enviar</b-button>
-                </form>
             </div>
         </div>
         <!-- END Chat Card -->
@@ -111,15 +62,7 @@
 <script type="text/javascript">
 export default {
     methods: {
-        showhide() {
-           var div = document.getElementById("message-box");
-            if (div.style.display !== "block") {
-                div.style.display = "block";
-            }
-            else {
-                div.style.display = "none";
-            }
-        }
+        
     }
 }
 </script>
@@ -160,6 +103,7 @@ export default {
         background-size: cover;
         max-height: none;
         margin: 0;
+        z-index: -10;
     }
     
     .chat .head {
@@ -215,123 +159,57 @@ export default {
         margin-right: 10px;
     }
     
-    #collapse-friend-list {
-        background-color: #fff;
+    .conversas .recentes {
+        padding-left: 25%;
+        border-bottom: 0.5px solid;
+        border-bottom-color: #ecf0f1;
+        border-bottom-width: thin;
+    }
+    
+    .conversas p {
+       font-family: 'Raleway', sans-serif;
+        color: #7f8c8d;
+        font-size: 20px;
+        margin-left: 25px;
+        margin-top: 20px;
+        border-bottom: 0.5px solid;
+        border-bottom-color: #ecf0f1;
+        border-bottom-width: thin;
+        margin-right: 25px;
+    }
+    
+    .conversas .recentes small {
+       font-family: 'Raleway', sans-serif;
+        color: #7f8c8d;
+        font-size: 15px;
+        margin-left: 100px;
         padding: 10px;
-        max-height: 100%;
-        max-width: 100%;
+    }
+    
+    .conversas .back-left-circle {
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+        z-index: 1;
+    }
+    
+    .conversas .back-right-circle {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+        z-index: 1;
+    }
+    
+    .conversas .front-circle {
+        width: 215px;
+        height: 215px;
+        z-index: 10;
+        margin-right: 0px;
         margin-left: 0px;
+        box-shadow: 10px 7px 10px rgba(0,0,0,.3);
+        border-radius: 130px;
     }
     
-    #collapse-friend-list .contatos {
-        text-align: center;
-        width: 100%;
-        padding: 20px;
-        border-bottom: 0.8px solid;
-        border-bottom-color: #bdc3c7;
-        border-left: 0.8px solid;
-        border-left-color: #bdc3c7;
-}
-
-    #collapse-friend-list img {
-        border-radius: 100%;
-        width: 150px;
-        height: 150px;
-}
-    
-    #collapse-friend-list .contatos span {
-        vertical-align: text-bottom;
-        text-align: center;
-        text-transform: uppercase;
-        color: #4c4d4f;
-        font-weight: 500;
-}
-    
-    .conversas .msg-preview {
-        width: 100%;
-        max-height: 150px;
-        background-color: #fff;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
-    
-    .conversas .msg-preview img {
-        width: 120px;
-        height: 120px;
-        padding:10px;
-    }
-    
-    .conversas .msg-preview .btn-block p{
-        font-weight: 500;
-        font-size: 19px;
-        text-transform: uppercase;
-        color: #2c3e50;
-        margin-left: -700px;
-        margin-top: 40px;
-    }
-    
-    .conversas .msg-preview .btn{
-        margin-top: 35px;
-    }
-    
-    #message-box {
-        display: none;
-        position: fixed;
-        background-color:  white;
-        border: 1px solid;
-        border-color: #bdc3c7;
-        z-index: 100000;
-        top: 40%;
-        left: 40%;
-        width:50%;
-        height:75%;
-        margin-top: -9em;
-        margin-left: -15em;
-        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
-        padding: 20px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    
-    #message-box form {
-        background-color: transparent;
-        padding: 3px; 
-        position: fixed; 
-        bottom: 0; 
-        left: 22.5%;
-        width:50%;
-    }
-    
-    #message-box form input {
-        border: 0.5px solid; 
-        border-color: #7f8c8d; 
-        padding: 10px; 
-        width: 90%; 
-        margin-right: .5%; 
-        border-radius: 10px;
-    }
-    
-    #message-box form button {
-        width: 9.5%;
-        height: 42px;
-        margin-bottom: 4px;
-        font-family: 'Open Sans', sans-serif;
-        padding-left: 9px;
-    }
-    
-    #messages { 
-        list-style-type: none; 
-        margin: 0; 
-        padding: 0; 
-    }
-    
-    #messages li { 
-          padding: 5px 10px; 
-    }
-    
-    #messages li:nth-child(odd) { 
-        background: #eee; 
-    }
     
     @media (min-width: 576px) {
         .chat {
@@ -346,19 +224,6 @@ export default {
         width: 100vw;
         border-radius: 5px;
         }
-        
-        #usuFoto {
-        width: 110px;
-        height: 120px;
-        padding-left: 0px;
-        }
-
-        .conversas .msg-preview #usuFoto {
-        width: 130px;
-        height: 100px;
-        float: left;
-        padding: 5px;
-        } 
     } 
     
 </style>
