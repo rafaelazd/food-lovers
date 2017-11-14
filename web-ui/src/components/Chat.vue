@@ -37,9 +37,9 @@
                     <p>Recentes</p>
                     <div class="recentes">
                         <b-row>
-                            <img src="/static/img/M2.jpg" class="back-left-circle img-rounded img-fluid" alt="">
-                            <img src="/static/img/M3.jpg" class="front-circle img-rounded img-fluid" alt="">
-                            <img src="/static/img/H2.4.jpg" class="back-right-circle img-rounded img-fluid" alt="">
+                            <img src="/static/img/M2.jpg" class="back-left-circle rounded-circle img-fluid" alt="">
+                            <img src="/static/img/M3.jpg" class="front-circle rounded-circle img-fluid" alt="">
+                            <img src="/static/img/H2.4.jpg" class="back-right-circle rounded-circle img-fluid" alt="">
                         </b-row>
                            <b-row>
                             <small>Maria Rosa</small>
@@ -48,7 +48,16 @@
                         </b-row>
                     </div>
                     <div class="combinacoes">
-                        <p>hi</p>
+                        <b-row  class="d-flex justify-content-around">
+                            <img src="/static/img/H1.4.jpg" class="rounded-circle img-fluid" alt="">
+                            <img src="/static/img/M4.jpg" class="rounded-circle img-fluid" alt="">
+                            <img src="/static/img/M1.3.jpg" class="rounded-circle img-fluid" alt="">
+                        </b-row>
+                        <b-row class="d-flex justify-content-around">
+                            <small>Mateus Takeda</small>
+                            <small>Raquel Salvatori</small>
+                            <small>Sofia Alter</small>
+                        </b-row>    
                     </div>
                 </div>
             </div>
@@ -210,7 +219,22 @@ export default {
         border-radius: 130px;
     }
     
+    .combinacoes {
+        padding: 60px;
+    }
     
+    .combinacoes img{
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .combinacoes small {
+       font-family: 'Raleway', sans-serif;
+       color: #7f8c8d;
+       font-size: 15px;
+    }
     @media (min-width: 576px) {
         .chat {
         box-shadow: 10px 20px 20px rgba(0,0,0,.5);
