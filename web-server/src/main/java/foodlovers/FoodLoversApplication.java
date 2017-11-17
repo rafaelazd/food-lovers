@@ -5,9 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
+import foodlovers.storage.StorageProperties;
+import foodlovers.storage.StorageService;
+
 @SpringBootApplication
+@EnableConfigurationProperties(StorageProperties.class)
 public class FoodLoversApplication {
 	private static final Logger log = LoggerFactory.getLogger(FoodLoversApplication.class);
 
@@ -16,7 +21,7 @@ public class FoodLoversApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository) {
+	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, StorageService storageService) {
 		return (args) -> {
 			log.info("Antes de criar os registros");
 			usuariosRepository.save(new Usuario("Kali", "Meinar", "kalimeinar@gmail.com", 19, "kardashianlostsis", "kalimeinar", "kalimeinar", "Cinema, arte e fotografia <3"));
@@ -29,6 +34,9 @@ public class FoodLoversApplication {
 			preferenciasRepository.save(new Preferencias("Bolo", "/static/img/boloico.png"));
 			preferenciasRepository.save(new Preferencias("Sorvete", "/static/img/sorveteico.png"));
 			log.info("Depois de criar os registros");
+			
+			storageService.deleteAll();
+            storageService.demo();
 		};
 	}
 }
