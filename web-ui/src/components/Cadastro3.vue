@@ -9,42 +9,26 @@
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
                     <p>Personaliza o seu Perfil.</p>
                     <!-- Perfil Card -->
-                        <div class="row justify-content-center">
-                            <div>
-                               <b-card-group class="d-flex justify-content-center">
-                                    <b-card class="profile-custom">
-                                        <div slot="footer" class="d-flex justify-content-around">
-                                           <label class="input-group-btnd-inline-flex p-2">
-                                                            <span class="btn btn-secondary">
-                                                                Procurar Imagem&hellip; <input type="file" style="display: none;" multiple>
-                                                            </span>
-                                                        </label>
-                                            <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-info m-1"><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
-                                        </div>
-                                        <b-collapse id="collapse2">
-                                            <h1 id="usuNome">Kali Meinar, <h1 id="usuIdade">23</h1></h1>
-                                            <textarea rows="4" cols="24" maxlength="170" name="comment" placeholder="Conte-nos mais sobre você..."></textarea>
-                                             <b-form-text id="input-help">
-                                              Máximo de 170 caracteres.
-                                            </b-form-text>
-                                            <p>
-                                            <img src="/static/img/batataico.png" alt="icoFrituras" width="50px" height="50px">
-                                            <img src="/static/img/boloico.png" alt="icoDoces" width="50px" height="50px">
-                                            <img src="/static/img/cafeico.png" alt="icoBebidasHot" width="50px" height="50px">
-                                            <img src="/static/img/icosand.png" alt="icoLanches" width="50px" height="50px">
-                                            <img src="/static/img/pizzaico.png" alt="icoPizza" width="50px" height="50px">
-                                            </p>
-                                            <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-success m-1" type="submit"><i class="fa fa-check" aria-hidden="true"></i></b-button>
-                                      </b-collapse>
-                                    </b-card>
-                                     
-                                </b-card-group> <br> <br>
-                                <div class="buttons d-flex justify-content-center">
-                                <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                                <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
-                                <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
-                                </div>
-                            </div>
+                        <h5>Selecione sua foto de Perfil</h5>
+                        <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
+                        
+                        <h5>Biografia</h5>
+                        <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="4" :maxlength="900"></b-form-textarea>
+                        <small class="float-right">Máximo de 900 caracteres</small>
+                        
+                        <h6>Localização</h6>
+                        <b-row>
+                            <b-col cols="6" lg="4"><i class="fa fa-map-marker" aria-hidden="true"></i></b-col>
+                            <b-col cols="6" lg="4" id="location-col"><b-button class="btn btn-light" v-on:click="getLocalizacao">Localização</b-button></b-col>
+                        </b-row>
+                        <div id="locConfirma" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Você deseja compartilhar sua localização com seus amigos?</h4>
+                                <p class="card-text">
+                                    <b-button id="nope" variant="dark">Não</b-button>
+                                    <b-button id="yes" variant="success">Sim</b-button>
+                                </p>
+                              </div>
                         </div>
                  <!-- END Perfil Card -->
                 </div>
@@ -55,38 +39,33 @@
 
 
 <script>
-    $(function() {
-
-  // We can attach the `fileselect` event to all file inputs on the page
-  $(document).on('change', ':file', function() {
-    var input = $(this),
-        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    input.trigger('fileselect', [numFiles, label]);
-  });
-
-  // We can watch for our custom `fileselect` event like this
-  $(document).ready( function() {
-      $(':file').on('fileselect', function(event, numFiles, label) {
-
-          var input = $(this).parents('.input-group').find(':text'),
-              log = numFiles > 1 ? numFiles + ' files selected' : label;
-
-          if( input.length ) {
-              input.val(log);
-          } else {
-              if( log ) alert(log);
-          }
-
-      });
-  });
-  
-});
-    
+export default {
+  methods: {
+            getLocalizacao() {
+                document.getElementById("locConfirma").style.display = "block";
+                 /*if (document.getElementById('nope').onclick) {
+                        document.getElementById("locConfirma").style.display = "none";
+                 } else if (document.getElementById('yes').onclick) {
+                        $.get("http://ipinfo.io/?token=ecc895cca16b9f", function(response) {
+                          document.getElementById("location-col").innerHTML = (response.city + ", " + response.country);
+                        }, "jsonp")
+                 }*/
+                document.getElementById('nope').onclick = function(){
+                    document.getElementById("locConfirma").style.display = "none";
+                };
+                document.getElementById('yes').onclick = function(){
+                    $.get("http://ipinfo.io/?token=ecc895cca16b9f", function(response) {
+                          document.getElementById("location-col").innerHTML = (response.city + ", " + response.country);
+                          document.getElementById("locConfirma").style.display = "none";
+                    }, "jsonp")
+                };
+            }
+        }
+}
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One');
+     @import url('https://fonts.googleapis.com/css?family=Exo|Open+Sans:300,400|Raleway:400,700,800|Poiret+One|Open+Sans+Condensed:300,300i');
     
     .container {
         width: 100vw;
@@ -109,11 +88,94 @@
         align-content: center;
         color: white;
         overflow: auto;
+        font-family: 'Open Sans', sans-serif;
     }
     
     .nb-login form {
         margin-bottom: 15px;
         color: #ffffff;
+    }
+    
+    .nb-login .custom-file {
+        text-align: left;
+        margin: 10px;
+    }
+    
+    .nb-login textarea {
+        margin: 10px;
+        background-color: transparent;
+        color: white;
+        border-color: white;
+    }
+    
+    .nb-login textarea:focus {
+        background-color: rgba(0,0,0,.3);
+        border-color: transparent;
+        color: white;
+    }
+    
+    .nb-login textarea::-webkit-input-placeholder { /* WebKit browsers */
+        color: #bdc3c7;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .nb-login small { 
+        color: #bdc3c7;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .nb-login p {
+        color: #bdc3c7;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .nb-login h5 {
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; 
+        margin-left: 15px;
+        text-align: left;
+    }
+    
+    .nb-login h6 {
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; 
+        font-size: 21px;
+        margin-left: 15px;
+        text-align: left;
+        margin-top: 70px;
+    }
+    
+    .nb-login .row {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+    }
+    
+    .nb-login .row #location-col {
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: underline;
+        color: #3498db;
+        font-size: 20px;
+        cursor: pointer;
+        font-size: 19px;
+        text-align: left;
+    }
+    
+    .nb-login .row .btn {
+        box-shadow: 10px 20px 20px rgba(0,0,0,.2);
+        border-radius: 20px;
+    }
+    
+    .nb-login .row .btn:active {
+        border: 4px solid;
+        cursor: pointer;
+    }
+    
+    .nb-login .row .btn:hover {
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
     }
     
     .nb-login .btn-lg {
@@ -126,74 +188,21 @@
         background: #7f8c8d;
         color: #fff;
     }
-
-    .container .profile-custom {
-        max-width: 280px;
-        height: 480px;
-        background-color: #ecf0f1;
-        border-style: hidden;
-        box-sizing: border-box;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 10px 20px 20px rgba(0,0,0,.5);
-        background-size: cover;
-    }
-    .container .profile-custom .btn-circle {
-        width: 45px;    
-        height: 45px;
-        vertical-align: bottom;
-        font-size: 12px;
-        border-radius: 25px;   
-    }
-    
-    .container .profile-custom .close {
-        margin: 0;
-        font-size: 30px;
-    }
-    
-    #collapse2 {
-        background-color: #f7f7f7;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 30px 30px rgba(0,0,0,.6);
-        text-align: center;
-    }
-    #collapse2 h1 {
-        font-family: 'Poiret One', cursive;
-        padding: 7px;
-        font-size: 40px;
-        color: #2c3e50;
-    }
-    #collapse2 h6 {
-        font-family: 'Raleway', sans-serif;
-        font-size: 15px;
-        padding: 7px;
-    }
-    #collapse2 p {
-        font-family: 'Raleway', sans-serif;
-        color: #3498db;
-        border-bottom: 0.2px solid;
-        border-bottom-color: #ecf0f1;
-        border-top: 0.2px solid;
-        border-top-color: #ecf0f1;
-        text-align: center;
-        padding: 7px;
-    }
-    
-    #collapse2 textarea {
-        font-family: 'Raleway', sans-serif;
-        padding: 10px;
-    }
     
     .horizontal-center {
         align-items: center;
         text-align: center;
     }
     
-    #inputfile {
-        height: 30px;
-        background-color: transparent;
-        color: white;
+    #locConfirma {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
     }
+    
 
 </style>
