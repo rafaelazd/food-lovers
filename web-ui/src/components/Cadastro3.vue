@@ -13,8 +13,8 @@
                         <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
                         
                         <h5>Biografia</h5>
-                        <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="4" :maxlength="900"></b-form-textarea>
-                        <small class="float-right">Máximo de 900 caracteres</small>
+                        <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
+                        <small class="float-right">Máximo de 170 caracteres</small>
                         
                         <h6>Localização</h6>
                         <b-row>
@@ -25,12 +25,17 @@
                               <div class="card-body">
                                 <h4 class="card-title">Você deseja compartilhar sua localização com seus amigos?</h4>
                                 <p class="card-text">
-                                    <b-button id="nope" variant="dark">Não</b-button>
+                                    <b-button id="nope" variant="danger">Não</b-button>
                                     <b-button id="yes" variant="success">Sim</b-button>
                                 </p>
                               </div>
                         </div>
                  <!-- END Perfil Card -->
+                    <div class="buttons d-flex justify-content-center">
+                        <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
+                        <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
+                        <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
+                    </div>
                 </div>
          </div>
         </div>
@@ -43,13 +48,6 @@ export default {
   methods: {
             getLocalizacao() {
                 document.getElementById("locConfirma").style.display = "block";
-                 /*if (document.getElementById('nope').onclick) {
-                        document.getElementById("locConfirma").style.display = "none";
-                 } else if (document.getElementById('yes').onclick) {
-                        $.get("http://ipinfo.io/?token=ecc895cca16b9f", function(response) {
-                          document.getElementById("location-col").innerHTML = (response.city + ", " + response.country);
-                        }, "jsonp")
-                 }*/
                 document.getElementById('nope').onclick = function(){
                     document.getElementById("locConfirma").style.display = "none";
                 };
@@ -204,5 +202,7 @@ export default {
         display: none;
     }
     
-
+    .buttons {
+        margin-top: 25px;
+    }
 </style>
