@@ -27,8 +27,8 @@
                             </div>
                             <div class="form-group d-flex justify-content-center form-inline">
                                <h5>Preferência em</h5>
-                                 <b-form-checkbox type="checkbox" name="check" ref="checkbox1" value="Homens"> Homens </b-form-checkbox>
-                                 <b-form-checkbox name="check" ref="checkbox2" value="Mulheres"> Mulheres </b-form-checkbox>
+                                 <b-form-checkbox name="prefsex" ref="checkbox1" value="Homens"> Homens </b-form-checkbox>
+                                 <b-form-checkbox name="prefsex" ref="checkbox2" value="Mulheres"> Mulheres </b-form-checkbox>
                             </div>
                                 <small id="valCheckboxes" class="danger">Você deve escolher ao menos uma das Preferências!</small>
                             <div class="d-flex justify-content-center">
@@ -36,31 +36,31 @@
                                <b-col cols="12"><h5>Sexo</h5></b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="radio" id="radio1" ref="radio1"/>
+                                          <input type="radio" class="option-input radio" name="agenero" id="radio1" ref="radio1"/>
                                           <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
                                        </p>
                                    </b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                         <p>
-                                          <input type="radio" class="option-input radio" name="radio" id="radio2" ref="radio2"/>
+                                          <input type="radio" class="option-input radio" name="bigenero" id="radio2" ref="radio2"/>
                                           <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                        </p>
                                    </b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="radio" id="radio3" ref="radio3"/>
+                                          <input type="radio" class="option-input radio" name="transgenero" id="radio3" ref="radio3"/>
                                           <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                        </p>
                                    </b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="radio" id="radio4" ref="radio4"/>
+                                          <input type="radio" class="option-input radio" name="masculino" id="radio4" ref="radio4"/>
                                           <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                        </p>
                                    </b-col>
                                    <b-col cols="12" sm="4" lg="12">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="radio" id="radio5" ref="radio5"/>
+                                          <input type="radio" class="option-input radio" name="feminino" id="radio5" ref="radio5"/>
                                           <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                        </p>
                                    </b-col>
