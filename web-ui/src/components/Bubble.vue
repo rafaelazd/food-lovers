@@ -10,40 +10,28 @@
             <div id="info">
                <b-button v-b-toggle="'collapse'" id="close" class="btn-circle btn-sm float-left" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
                 <h4>{{bubble.nome}} {{bubble.sobrenome}}</h4>
-                   <b-row id="facebook">
-                       <b-col lg="4">
-                           <b-button class="btn-circle" variant="primary"><i class="fa fa-facebook" aria-hidden="true"></i></b-button>
-                       </b-col>
-                       <b-col lg="8" ref="facebook">
-                           <p>facebook.com/</p>
-                       </b-col>
-                   </b-row>
-                   <b-row id="whats">
-                       <b-col lg="4">
-                           <b-button class="btn-circle" variant="success"><i class="fa fa-whatsapp" aria-hidden="true"></i></b-button>
-                       </b-col>
-                       <b-col lg="8" ref="whats">
-                          <p>(xx) xxxxx-xxxx </p>  
-                       </b-col>
-                   </b-row>
-                   <b-row id="snap">
-                       <b-col lg="4">
-                           <b-button class="btn-circle" variant="warning"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></b-button>
-                       </b-col>
-                       <b-col lg="8" ref="snap">
-                           <p>@snapUser</p> 
-                       </b-col>
-                   </b-row>
-                   <b-row id="twitter">
-                       <b-col lg="4">
-                           <b-button class="btn-circle" variant="info"><i class="fa fa-twitter" aria-hidden="true"></i></b-button>
-                       </b-col>
-                       <b-col lg="8" ref="twitter">
-                           <p>@mytwaccount</p> 
-                       </b-col>
-                   </b-row>
+                   <p>Combinado em: dd/mm/aaaa</p>
+                <div class="social">
+                    <b-list-group>
+                      <b-list-group-item class="bg-primary">
+                        <i class="fa fa-facebook" aria-hidden="true"></i> | facebook.com/
+                      </b-list-group-item>
+                       <b-list-group-item class="bg-success">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i> | 
+                      </b-list-group-item>
+                      <b-list-group-item class="bg-warning">
+                        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i> | @
+                      </b-list-group-item>
+                      <b-list-group-item class="bg-info">
+                        <i class="fa fa-twitter" aria-hidden="true"></i> | @
+                      </b-list-group-item>
+                      <b-list-group-item class="bg-gradient">
+                        <i class="fa fa-instagram" aria-hidden="true"></i> | @
+                      </b-list-group-item>
+                    </b-list-group>
+                </div>
             </div>
-        </b-collapse>
+        </b-collapse> 
     </div>
 </template>
 
@@ -61,11 +49,6 @@ export default {
      
      created() {
          console.log(this.bubble.id);
-         this.validateSocial();
-     },
-    
-     methods: {
-        
      }
 }
 </script>
@@ -97,18 +80,30 @@ export default {
         margin-left: 27px;
     }
     
+    #bubble p {
+        font-family: 'Raleway', sans-serif;
+        color: #7f8c8d;
+        font-size: 13px;
+        margin-top: 0px;
+        justify-content: center;
+    }
+    
     #bubble button {
         padding: 60px;
     }
-    
-    #bubble .btn-circle {
-         width: 50px;
-         height: 50px;
-         text-align: center;
-         padding: 10px 0;
-         font-size: 17px;
-         line-height: 1.428571429;
-         border-radius: 30px;
+
+    #bubble .list-group-item {
+        color: white;
+        cursor: pointer;
+    }
+
+    #bubble .list-group-item small {
+        color: white;
+        margin-left: 0px;
+    }
+
+    #bubble .bg-gradient{
+        background: linear-gradient(-45deg, #F89406, #DB0A5B);
     }
     
     #bubble .btn-sm {
@@ -125,4 +120,5 @@ export default {
         padding: 7px;
         font-size: 30px;
     }
+    
 </style>
