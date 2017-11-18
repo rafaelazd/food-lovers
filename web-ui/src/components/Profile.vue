@@ -1,5 +1,5 @@
 <template> 
-    <b-card class="profile" id="profile"  style="background-image: url('/static/img/m5.jpg')">
+    <b-card class="profile" id="profile"  :style="{backgroundImage: 'url(' + image + ')' }">
          <div slot="footer" class="d-flex justify-content-around">
             <b-button class="btn btn-circle btn-danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
             <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-info m-1"><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
@@ -8,7 +8,7 @@
         <b-collapse id="collapse2">
             <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-times btn-danger float-left m-1"><i class="fa fa-times" aria-hidden="true"></i></b-button><br>
             <h1>{{profile.nome}} {{profile.sobrenome}}, {{profile.idade}}</h1>
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i>  São Paulo, SP - Brasil</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{profile.local}}</p>
             <h6>{{profile.biografia}}</h6>
             <p>
             <img src="/static/img/batataico.png" alt="icoFrituras" width="40px" height="40px">
@@ -37,7 +37,20 @@
      
      created() {
          console.log(this.profile.id);
-     }
+     },
+     
+     data() {
+         return {
+             image: "/static/img/m5.jpg"
+         }
+     }/*,
+     
+     methods: {
+         nextCard(event) {
+             var x = document.getElementById('profile'), 
+             
+         }
+     }*/
 };
 </script>
 
