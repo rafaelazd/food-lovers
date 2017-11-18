@@ -24,15 +24,15 @@ public class FoodLoversApplication {
 	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, StorageService storageService) {
 		return (args) -> {
 			log.info("Antes de criar os registros");
-			usuariosRepository.save(new Usuario("Kali", "Meinar", "kalimeinar@gmail.com", 19, "kardashianlostsis", "kalimeinar", "kalimeinar", "Cinema, arte e fotografia <3"));
-			usuariosRepository.save(new Usuario("Mateus", "Takeda", "MateusTakeda@outlook.com", 21, "_mateustakeda", "mateustakeda", "mateustakeda", "'O que é melhor - nascer bom, ou superar sua natureza maligna através de grande esforço?' - Paarthurnax"));
+			usuariosRepository.save(new Usuario("Kali", "Meinar", "kalimeinar@gmail.com", 19, "Homens e Mulheres", "Feminino", "kardashianlostsis", "kalimeinar", "kalimeinar", "Cinema, arte e fotografia <3","Campinas, São Paulo"));
+			usuariosRepository.save(new Usuario("Mateus", "Takeda", "MateusTakeda@outlook.com", 21, "Homens", "Masculino", "_mateustakeda", "mateustakeda", "mateustakeda", "'O que é melhor - nascer bom, ou superar sua natureza maligna através de grande esforço?' - Paarthurnax","Joinville, Santa Catarina"));
 			log.info("Depois de criar os registros");
 			
 
 			log.info("Antes de criar os registros");
-			preferenciasRepository.save(new Preferencias("Hot Dog", "/static/img/hotdogico.png"));
-			preferenciasRepository.save(new Preferencias("Bolo", "/static/img/boloico.png"));
-			preferenciasRepository.save(new Preferencias("Sorvete", "/static/img/sorveteico.png"));
+			preferenciasRepository.save(new Preferencias("Hot Dog"));
+			preferenciasRepository.save(new Preferencias("Bolo"));
+			preferenciasRepository.save(new Preferencias("Sorvete"));
 			log.info("Depois de criar os registros");
 			
 			storageService.deleteAll();

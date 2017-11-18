@@ -53,7 +53,7 @@ export default {
                 };
                 document.getElementById('yes').onclick = function(){
                     $.get("http://ipinfo.io/?token=ecc895cca16b9f", function(response) {
-                          document.getElementById("location-col").innerHTML = (response.city + ", " + response.country);
+                          document.getElementById("location-col").innerHTML = (response.city + ", " + response.region);
                           document.getElementById("locConfirma").style.display = "none";
                     }, "jsonp")
                 };
