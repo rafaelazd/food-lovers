@@ -42,7 +42,7 @@
                             <b-input-group id="whatsapp">
                                 <b-input-group-addon class="bg-success"><i class="fa fa-whatsapp" aria-hidden="true"></i></b-input-group-addon>
                                 <b-input-group-addon class="bg-success whatsapp">+ 55</b-input-group-addon>
-                                <b-form-input placeholder="(xx) xxxxx-xxxx"></b-form-input>
+                                <the-mask id="number" :mask="['(##) ####-####', '(##) #####-####']" placeholder="(xx) xxxxx-xxxx"/>
                             </b-input-group>
                             <b-input-group id="snapchat">
                                 <b-input-group-addon class="bg-warning"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></b-input-group-addon>
@@ -279,6 +279,19 @@ export default {
     .social .whatsapp {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    
+    .social #number {
+        width: 900px;
+        border-radius: 10px;
+        border-style: solid;
+        border-width: thin;
+    }
+    
+    .social #number:focus {
+        background-color: rgba(0,0,0,.3);
+        border-color: transparent;
+        color: white;
     }
     
     .social .arroba {
