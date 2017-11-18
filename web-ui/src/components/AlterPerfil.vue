@@ -38,7 +38,11 @@
                                 <h4>Foto atual:</h4>
                                     <img src="/static/img/m7.png" id="usuFoto"> <br><br>
                                     <b-form-file id="input2"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
-                                    <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
+                                  <h5>Biografia</h5>
+                                    <b-form-textarea id="textarea2" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
+                                    <small class="float-right">Máximo de 170 caracteres</small>
+                                    <br>
+                                <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -50,13 +54,13 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs">
-                                     <b-col>
+                                     <b-col cols="4" sm="4" lg="4">
                                          <input type="text" class="form-control" name="nome" ref="nome" required="" placeholder="Nome" id="nome">
                                      </b-col>
-                                     <b-col>
+                                     <b-col cols="4" sm="4" lg="4">
                                          <input type="text" class="form-control" name="sobrenome" ref="sobrenome" required="" placeholder="Sobrenome" id="sobrenome">
                                      </b-col>
-                                     <b-col>
+                                     <b-col cols="4" sm="4" lg="4">
                                          <input type="number" class="form-control" name="idade" ref="idade" required="" placeholder="Idade" id="idade"><br>
                                      </b-col>
                                   </b-row>
@@ -264,6 +268,22 @@ export default {
         padding-right: 10px;
     }
     
+    .body .custom-file {
+        text-align: left;
+        margin: 10px;
+    } 
+    
+    .body #textarea2 {
+       width: 70%;
+       margin-left: 100px;
+    }
+    
+    .body small{
+       margin-right: 150px;
+       color: #7f8c8d;
+       font-family: 'Open Sans', sans-serif;
+    }
+    
     .body {
         max-width: none;
         padding: 20px 25px;
@@ -380,19 +400,43 @@ export default {
       position: relative;
       z-index: 100;
     }
+    
     .option-input.radio {
       border-radius: 50%;
     }
+    
     .option-input.radio::after {
       border-radius: 50%;
     }
 
-    
-    @media (max-width: 430px) {
+    @media (max-width: 594px) {
         #usuFoto {
             width: 200px;
             height: 200px;
             padding-left: 0px;
+        }
+        
+        .body small{
+           margin-right: 0px;
+        }
+        
+        .body #textarea2{
+           width: 100%;
+            margin-left: 15px;
+        }
+        
+        .body .inputs{
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+    }
+    
+    @media (min-width: 595px) and (max-width: 780px) {
+        .body small{
+           margin-right: 10px;
+        }
+        .body #textarea2{
+           margin-left: 10px;
         }
     }
     
