@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = {"http://localhost", "http://localhost:8000"})
-@RepositoryRestResource(collectionResourceRel = "categorias", path = "categorias")
+@RepositoryRestResource(collectionResourceRel = "preferencias", path = "preferencias")
 public interface PreferenciasRepository extends PagingAndSortingRepository<Preferencias, Long> {
 
 	List<Preferencias> findByNome(@Param("nome") String nome);
