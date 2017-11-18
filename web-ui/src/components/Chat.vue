@@ -23,7 +23,7 @@
         <div class="chat">
             <b-row class="head d-inline-flex justify-content-around">
                 <b-col style="padding-top:10px"><span><i class="fa fa-comments" aria-hidden="true"></i></span></b-col>
-                <b-col style="padding-top:10px"><span>Mensagens</span></b-col>
+                <b-col style="padding-top:10px"><span>Combinações</span></b-col>
                 <b-col></b-col>
             </b-row>
             <div class="search-bar">
@@ -33,33 +33,9 @@
                   </b-input-group>
             </div>
             <div class="conversas">
-                <div class="conversas-head">
-                    <p>Recentes</p>
-                    <div class="recentes">
-                        <b-row>
-                            <img src="/static/img/M2.jpg" class="back-left-circle rounded-circle img-fluid" alt="">
-                            <img src="/static/img/M3.jpg" class="front-circle rounded-circle img-fluid" alt="">
-                            <img src="/static/img/H2.4.jpg" class="back-right-circle rounded-circle img-fluid" alt="">
-                        </b-row>
-                           <b-row>
-                            <small>Maria Rosa</small>
-                            <small>Eva Miranda</small>
-                            <small>Heitor</small>
-                        </b-row>
-                    </div>
-                    <div class="combinacoes">
-                        <b-row  class="d-flex justify-content-around">
-                            <img src="/static/img/H1.4.jpg" class="rounded-circle img-fluid" alt="">
-                            <img src="/static/img/M4.jpg" class="rounded-circle img-fluid" alt="">
-                            <img src="/static/img/M1.3.jpg" class="rounded-circle img-fluid" alt="">
-                        </b-row>
-                        <b-row class="d-flex justify-content-around">
-                            <small>Mateus Takeda</small>
-                            <small>Raquel Salvatori</small>
-                            <small>Sofia Alter</small>
-                        </b-row>    
-                    </div>
-                </div>
+                <b-row>
+                    <chatbubbles v-for="bubble in bubbles"  :key="bubble.id" :bubble="bubble"></chatbubbles>
+                </b-row>
             </div>
         </div>
         <!-- END Chat Card -->
@@ -68,12 +44,41 @@
   </section>
 </template>
 
-<script type="text/javascript">
-export default {
-    methods: {
+<script>
+import Bubble from '@/components/Bubble'
+import axios from 'axios'
+
+    export default {      
+        components: {
+            'chatbubbles': Bubble
+        },
         
+        data() {
+            return {
+                bubbles: []
+            }
+        },
+        
+        created() {
+            console.log(this.id);
+            this.buscarDados();  
+        },
+
+        methods: {
+            buscarDados() {
+                axios.get('http://localhost:8060/pessoas')
+                    .then((resp) => {
+                        this.erro = false;
+                        this.bubbles = resp.data._embedded.pessoas;
+                        console.log(resp)
+                    })
+                    .catch((err) => {
+                        this.erro = true;
+                        console.log(err)
+                    });
+            }
+        }
     }
-}
 </script>
 
 
@@ -186,55 +191,8 @@ export default {
         border-bottom-width: thin;
         margin-right: 25px;
     }
+
     
-    .conversas .recentes small {
-       font-family: 'Raleway', sans-serif;
-        color: #7f8c8d;
-        font-size: 15px;
-        margin-left: 100px;
-        padding: 10px;
-    }
-    
-    .conversas .back-left-circle {
-        width: 200px;
-        height: 200px;
-        margin-left: 20px;
-        z-index: 1;
-    }
-    
-    .conversas .back-right-circle {
-        width: 200px;
-        height: 200px;
-        margin-right: 20px;
-        z-index: 1;
-    }
-    
-    .conversas .front-circle {
-        width: 215px;
-        height: 215px;
-        z-index: 10;
-        margin-right: 0px;
-        margin-left: 0px;
-        box-shadow: 10px 7px 10px rgba(0,0,0,.3);
-        border-radius: 130px;
-    }
-    
-    .combinacoes {
-        padding: 60px;
-    }
-    
-    .combinacoes img{
-        width: 200px;
-        height: 200px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    
-    .combinacoes small {
-       font-family: 'Raleway', sans-serif;
-       color: #7f8c8d;
-       font-size: 15px;
-    }
     @media (min-width: 576px) {
         .chat {
         box-shadow: 10px 20px 20px rgba(0,0,0,.5);
@@ -248,6 +206,37 @@ export default {
         width: 100vw;
         border-radius: 5px;
         }
-    } 
+    }
     
+    @media (min-width:352px) and (max-width: 811px) {
+        .conversas .back-left-circle {
+        width: 150px;
+        height: 150px;
+        margin-left: 20px;
+        z-index: 1;
+        }
+
+        .conversas .back-right-circle {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            z-index: 1;
+        }
+
+        .conversas .front-circle {
+            width: 160px;
+            height: 160px;
+        }
+        
+        .combinacoes {
+        padding: 60px;
+        }
+
+        .combinacoes img{
+            width: 150px;
+            height: 150px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
 </style>
