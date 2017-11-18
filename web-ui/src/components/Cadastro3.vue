@@ -8,7 +8,9 @@
                     </div> <br> <br>
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
                     <p>Personaliza o seu Perfil.</p>
+                    
                     <!-- Perfil Card -->
+                       
                         <h5>Selecione sua foto de Perfil</h5>
                         <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
                         
@@ -30,7 +32,37 @@
                                 </p>
                               </div>
                         </div>
+                        <h6>Redes Sociais</h6>
+                        <div class="social">
+                            <b-input-group id="facebook">
+                                <b-input-group-addon class="bg-primary"><i class="fa fa-facebook" aria-hidden="true"></i></b-input-group-addon>
+                                <b-input-group-addon class="bg-primary">facebook.com/</b-input-group-addon>
+                                 <b-form-input placeholder="Maria.monte"></b-form-input>
+                            </b-input-group>
+                            <b-input-group id="whatsapp">
+                                <b-input-group-addon class="bg-success"><i class="fa fa-whatsapp" aria-hidden="true"></i></b-input-group-addon>
+                                <b-input-group-addon class="bg-success whatsapp">+ 55</b-input-group-addon>
+                                <b-form-input placeholder="(xx) xxxxx-xxxx"></b-form-input>
+                            </b-input-group>
+                            <b-input-group id="snapchat">
+                                <b-input-group-addon class="bg-warning"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></b-input-group-addon>
+                                <b-input-group-addon class="bg-warning arroba">@</b-input-group-addon>
+                                 <b-form-input placeholder="mysnapUser"></b-form-input>
+                            </b-input-group>
+                            <b-input-group id="twitter">
+                                <b-input-group-addon class="bg-info"><i class="fa fa-twitter" aria-hidden="true"></i></b-input-group-addon>
+                                <b-input-group-addon class="bg-info arroba">@</b-input-group-addon>
+                                 <b-form-input placeholder="mytwUser"></b-form-input>
+                            </b-input-group>
+                            <b-input-group id="instagram">
+                                <b-input-group-addon class="bg-gradient"><i class="fa fa-instagram" aria-hidden="true"></i></b-input-group-addon>
+                                <b-input-group-addon class="bg-gradient2">@</b-input-group-addon>
+                                 <b-form-input placeholder="myinstagramUser"></b-form-input>
+                            </b-input-group>
+                        </div>
+                        
                  <!-- END Perfil Card -->
+                   
                     <div class="buttons d-flex justify-content-center">
                         <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                         <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
@@ -205,4 +237,53 @@ export default {
     .buttons {
         margin-top: 25px;
     }
+    
+    .social .input-group{
+        margin: 15px;
+    }
+    
+    .social input{
+        background-color: transparent;
+        border-color: gray;
+        border-left-color: transparent;
+        color: white;
+        width: 500px;
+        border-radius: 10px;
+    }
+    
+    .social input:focus{
+        background-color: rgba(0,0,0,.3);
+        border-color: transparent;
+        color: white;
+    }
+    
+    .social input::-webkit-input-placeholder { /* WebKit browsers */
+        color: #bdc3c7;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .social .input-group-addon{
+       color: white;
+    }
+    
+    .social .bg-gradient{
+        background: linear-gradient(-45deg, #F89406, #DB0A5B);
+    }
+    
+    .social .bg-gradient2{
+        background: linear-gradient(45deg, #F89406, #DB0A5B);
+        padding-left: 58px;
+        padding-right: 58px;
+    }
+    
+    .social .whatsapp {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    .social .arroba {
+        padding-left: 58px;
+        padding-right: 58px;
+    }
+    
 </style>
