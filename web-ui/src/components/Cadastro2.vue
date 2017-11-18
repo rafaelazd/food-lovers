@@ -10,24 +10,24 @@
                     <p>Selecione até 5 categorias culinárias de sua preferência.</p>
                     <!-- Formulario -->
                     <div class="card-block">
-                        <form class="form" role="form" autocomplete="off" id="formCad" action="">
+                        <form class="form" role="form" autocomplete="off" name="form" id="formCad" action="">
                            <b-row class="d-flex justify-content-center">
                                <b-col class="options">
                                    <label for="check1" class="btn">
                                        <img src="/static/img/hotdog.png" class="select-img" id="hotdog" alt="Hot Dog">
-                                       <b-form-checkbox v-model="selected" id="check1" value="HotDog"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check1" class="prefer" name="hotdog" ref="prefer" value="HotDog"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                    <label for="check2" class="btn">
                                        <img src="/static/img/bolo.png" class="select-img" id="bolo" alt="Bolo">
-                                       <b-form-checkbox v-model="selected" id="check2" value="Bolo"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check2" class="prefer" name="bolo" ref="prefer" value="Bolo"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                    <label for="check3" class="btn">
                                        <img src="/static/img/cafe.png" class="select-img" id="cafe" alt="Café">
-                                       <b-form-checkbox v-model="selected" id="check3" value="Café"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check3" class="prefer" name="cafe" ref="prefer" value="Café"></b-form-checkbox>
                                    </label>
                                </b-col>
                            </b-row>
@@ -35,19 +35,19 @@
                                <b-col class="options">
                                   <label for="check4" class="btn">
                                        <img src="/static/img/sorvete.png" class="select-img" id="sorvete" alt="Sorvete">
-                                       <b-form-checkbox v-model="selected" id="check4" value="Sorvete"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check4" class="prefer" name="sorvete" ref="prefer" value="Sorvete"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                    <label for="check5" class="btn">
                                        <img src="/static/img/pizza.png" class="select-img" id="pizza" alt="Pizza">
-                                       <b-form-checkbox v-model="selected" id="check5" value="Pizza"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check5" class="prefer" name="pizza" ref="prefer" value="Pizza"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                  <label for="check6" class="btn">
                                        <img src="/static/img/nachos.png" class="select-img" id="nachos" alt="Nachos">
-                                       <b-form-checkbox v-model="selected" id="check6" value="Nachos"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check6" class="prefer" name="nachos" ref="prefer" value="Nachos"></b-form-checkbox>
                                    </label>
                                </b-col>
                            </b-row>
@@ -55,25 +55,39 @@
                                <b-col class="options">
                                   <label for="check7" class="btn">
                                        <img src="/static/img/churrasco.png" class="select-img" id="churrasco" alt="Churrasco">
-                                       <b-form-checkbox v-model="selected" id="check7" value="Churrasco"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check7" class="prefer" name="churrasco" ref="prefer" value="Churrasco"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                   <label for="check8" class="btn">
                                        <img src="/static/img/spaghetti.png" class="select-img" id="spaghetti" alt="Spaghetti">
-                                       <b-form-checkbox v-model="selected" id="check8" value="Spaghetti"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check8" class="prefer" name="spaghetti" ref="prefer" value="Spaghetti"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                   <label for="check9" class="btn">
                                        <img src="/static/img/sopa.png" class="select-img" id="sopa" alt="Sopa">
-                                       <b-form-checkbox v-model="selected" id="check9" value="Sopa"></b-form-checkbox>
+                                       <b-form-checkbox v-model="selected" id="check9" class="prefer" name="sopa" ref="prefer" value="Sopa"></b-form-checkbox>
                                    </label>
                                </b-col>
                            </b-row>
+                           <div id="valRequired"class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Opa!</h4>
+                                <p class="card-text">Ao menos uma preferência deve ser selecionada!</p>
+                                <b-button variant="warning" id="close-card">Voltar</b-button>
+                              </div>
+                            </div>
+                            <div id="numeropref" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Opa!</h4>
+                                <p class="card-text">Você pode selecionar no máximo 5 preferências.</p>
+                                <b-button variant="warning" id="close-card2">Voltar</b-button>
+                              </div>
+                            </div>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
-                            <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-3">Confirmar</router-link>
+                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin2">Confirmar</b-button>
                         </form>
                     </div>
                 </div>
@@ -88,6 +102,28 @@ export default {
     data () {
         return {
             selected: []
+        }
+    },
+    
+    methods: {
+        realizaLogin2() {
+            var x = this.$refs.prefer.checked;
+            if(document.form.hotdog.checked == false && document.form.bolo.checked == false && document.form.cafe.checked == false && document.form.sorvete.checked == false && document.form.pizza.checked == false && document.form.nachos.checked == false && document.form.churrasco.checked == false && document.form.spaghetti.checked == false && document.form.sopa.checked == false ) {
+                    console.log('Falha no login');
+                     document.getElementById("valRequired").style.display = "block";
+                     document.getElementById('close-card').onclick = function(){
+                        document.getElementById("valRequired").style.display = "none";
+                    };
+            } else if(x.length>5) {
+                    console.log('Falha no login');
+                    document.getElementById("numeropref").style.display = "block";
+                    document.getElementById('close-card2').onclick = function(){
+                        document.getElementById("numeropref").style.display = "none";
+                    };      
+            } else {
+                this.$router.push('cadastro-3');
+                console.log('Login!');
+            }
         }
     }
 }
@@ -212,5 +248,61 @@ export default {
         min-height: 1.5rem;
         padding-left: 1.5rem;
         margin-right: 1rem;
+    }
+    
+     #valRequired {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+    }
+    
+     #numeropref {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+    }
+    
+    @media (max-width:805px) {
+        #valRequired {
+        top:30%;
+        left: 29%;
+        }
+        
+        #numeropref{
+        top:30%;
+        left: 29%;
+        } 
+    }
+    
+    @media (max-width:497px) {
+        #valRequired {
+        top:30%;
+        left: 13%;
+        }
+        
+        #numeropref {
+        top:30%;
+        left: 13%;
+        }
+    }
+     
+    @media (min-width:500px) and (max-width:697px) {
+        #valRequired {
+        top:30%;
+        left: 28%;
+        }
+        
+        #numeropref {
+        top:30%;
+        left: 28%;
+        }
     }
 </style>
