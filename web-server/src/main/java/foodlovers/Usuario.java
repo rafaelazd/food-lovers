@@ -21,7 +21,6 @@ public class Usuario {
 	private String sexo;
 	private String usuario;
 	private String senha;
-	private String senha2;
 	private String local;
 	private String Facebook;
 	private String Whatsapp;
@@ -34,7 +33,7 @@ public class Usuario {
 	
 	protected Usuario() {}
 
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String senha2, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram) {
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -43,7 +42,6 @@ public class Usuario {
 		this.sexo = sexo;
 		this.usuario = usuario;
 		this.senha = senha;
-		this.senha2 = senha2;
 		this.biografia = biografia;
 		this.local = local;
 		this.Facebook = Facebook;
@@ -115,14 +113,6 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	
-	public String getSenha2() {
-		return senha2;
-	}
-
-	public void setSenha2(String senha2) {
-		this.senha2 = senha2;
 	}
 
 	public String getBiografia() {
