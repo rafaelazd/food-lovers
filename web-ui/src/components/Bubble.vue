@@ -14,19 +14,19 @@
                 <div class="social">
                     <b-list-group>
                       <b-list-group-item class="bg-primary">
-                        <i class="fa fa-facebook" aria-hidden="true"></i> | facebook.com/
+                        <i class="fa fa-facebook" aria-hidden="true"></i> | facebook.com/{{bubble.facebook}}
                       </b-list-group-item>
                        <b-list-group-item class="bg-success">
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i> | 
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i> | {{bubble.whatsapp}}
                       </b-list-group-item>
                       <b-list-group-item class="bg-warning">
-                        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i> | @
+                        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i> | @{{bubble.snapchat}}
                       </b-list-group-item>
                       <b-list-group-item class="bg-info">
-                        <i class="fa fa-twitter" aria-hidden="true"></i> | @
+                        <i class="fa fa-twitter" aria-hidden="true"></i> | @{{bubble.twitter}}
                       </b-list-group-item>
                       <b-list-group-item class="bg-gradient">
-                        <i class="fa fa-instagram" aria-hidden="true"></i> | @
+                        <i class="fa fa-instagram" aria-hidden="true"></i> | @{{bubble.instagram}}
                       </b-list-group-item>
                     </b-list-group>
                 </div>

@@ -23,13 +23,18 @@ public class Usuario {
 	private String senha;
 	private String senha2;
 	private String local;
+	private String Facebook;
+	private String Whatsapp;
+	private String Snapchat;
+	private String Twitter;
+	private String Instagram;
 	
 	@Column( columnDefinition = "TEXT" )
 	private String biografia;
 	
 	protected Usuario() {}
 
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String senha2, String biografia, String local) {
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String senha2, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -41,6 +46,11 @@ public class Usuario {
 		this.senha2 = senha2;
 		this.biografia = biografia;
 		this.local = local;
+		this.Facebook = Facebook;
+		this.Whatsapp = Whatsapp;
+		this.Snapchat = Snapchat;
+		this.Twitter = Twitter;
+		this.Instagram = Instagram;
 	}
 
 	public String getNome() {
@@ -129,5 +139,45 @@ public class Usuario {
 
 	public void setLocal(String local) {
 		this.local = local;
+	}
+
+	public String getFacebook() {
+		return Facebook;
+	}
+
+	public void setFacebook(String Facebook) {
+		this.Facebook = Facebook;
+	}
+
+	public String getWhatsapp() {
+		return Whatsapp;
+	}
+
+	public void setWhatsapp(String Whatsapp) {
+		this.Whatsapp = Whatsapp;
+	}
+
+	public String getSnapchat() {
+		return Snapchat;
+	}
+
+	public void setSnapchat(String Snapchat) {
+		this.Snapchat = Snapchat;
+	}
+
+	public String getTwitter() {
+		return Twitter;
+	}
+
+	public void setTwitter(String Twitter) {
+		this.Twitter = Twitter;
+	}
+
+	public String getInstagram() {
+		return Instagram;
+	}
+
+	public void setInstagram(String Instagram) {
+		this.Instagram = Instagram;
 	}
 }
