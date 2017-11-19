@@ -10,63 +10,72 @@
                     <p>Personaliza o seu Perfil.</p>
                     
                     <!-- Perfil Card -->
-                       
-                        <h5>Selecione sua foto de Perfil</h5>
-                        <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
-                        
-                        <h5>Biografia</h5>
-                        <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
-                        <small class="float-right">Máximo de 170 caracteres</small>
-                        
-                        <h6>Localização</h6>
-                        <b-row>
-                            <b-col cols="6" lg="4"><i class="fa fa-map-marker" aria-hidden="true"></i></b-col>
-                            <b-col cols="6" lg="4" id="location-col"><b-button class="btn btn-light" v-on:click="getLocalizacao">Localização</b-button></b-col>
-                        </b-row>
-                        <div id="locConfirma" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-                              <div class="card-body">
-                                <h4 class="card-title">Você deseja compartilhar sua localização com seus amigos?</h4>
-                                <p class="card-text">
-                                    <b-button id="nope" variant="danger">Não</b-button>
-                                    <b-button id="yes" variant="success">Sim</b-button>
-                                </p>
-                              </div>
-                        </div>
-                        <h6>Redes Sociais</h6>
-                        <div class="social">
-                            <b-input-group id="facebook">
-                                <b-input-group-addon class="bg-primary"><i class="fa fa-facebook" aria-hidden="true"></i></b-input-group-addon>
-                                <b-input-group-addon class="bg-primary">facebook.com/</b-input-group-addon>
-                                 <b-form-input placeholder="Maria.monte"></b-form-input>
-                            </b-input-group>
-                            <b-input-group id="whatsapp">
-                                <b-input-group-addon class="bg-success"><i class="fa fa-whatsapp" aria-hidden="true"></i></b-input-group-addon>
-                                <b-input-group-addon class="bg-success whatsapp">+ 55</b-input-group-addon>
-                                <the-mask id="number" :mask="['(##) ####-####', '(##) #####-####']" placeholder="(xx) xxxxx-xxxx"/>
-                            </b-input-group>
-                            <b-input-group id="snapchat">
-                                <b-input-group-addon class="bg-warning"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></b-input-group-addon>
-                                <b-input-group-addon class="bg-warning arroba">@</b-input-group-addon>
-                                 <b-form-input placeholder="mysnapUser"></b-form-input>
-                            </b-input-group>
-                            <b-input-group id="twitter">
-                                <b-input-group-addon class="bg-info"><i class="fa fa-twitter" aria-hidden="true"></i></b-input-group-addon>
-                                <b-input-group-addon class="bg-info arroba">@</b-input-group-addon>
-                                 <b-form-input placeholder="mytwUser"></b-form-input>
-                            </b-input-group>
-                            <b-input-group id="instagram">
-                                <b-input-group-addon class="bg-gradient"><i class="fa fa-instagram" aria-hidden="true"></i></b-input-group-addon>
-                                <b-input-group-addon class="bg-gradient2">@</b-input-group-addon>
-                                 <b-form-input placeholder="myinstagramUser"></b-form-input>
-                            </b-input-group>
-                        </div>
+                      
+                       <form action="" role="form" class="form" autocomplete="off" name="form3">
+                          <h5>Selecione sua foto de Perfil</h5>
+                            <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
+                            <span class="validate" id="valFoto">Você deve selecionar uma foto de Perfil</span>
+
+                            <h5>Biografia</h5>
+                            <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
+                            <small class="float-right">Máximo de 170 caracteres</small>
+                            <span class="validate" id="valBio">É importante escrever um pouco sobre si mesmo, assim outros poderão te conhecer melhor!</span>
+
+                            <h6>Localização</h6>
+                            <b-row>
+                                <b-col cols="6" lg="4"><i class="fa fa-map-marker" aria-hidden="true"></i></b-col>
+                                <b-col cols="6" lg="4" id="location-col"><b-button id="localbtn" class="btn btn-light" v-on:click="getLocalizacao">Localização</b-button></b-col>
+                            </b-row>
+                            <span class="validate" id="valLoc">Precisamos da sua localização para um melhor uso do aplicativo!</span>
+                            <div id="locConfirma" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                                  <div class="card-body">
+                                    <h4 class="card-title">Você deseja compartilhar sua localização com seus amigos?</h4>
+                                    <p class="card-text">
+                                        <b-button id="nope" variant="danger">Não</b-button>
+                                        <b-button id="yes" variant="success">Sim</b-button>
+                                    </p>
+                                  </div>
+                            </div>
+                            <div class="form-inline">
+                                <h6>Redes Sociais</h6>
+                                <small id="help">Relaxa! Essas informações só são compartilhadas com quem você combina.</small>
+                            </div>
+                            <div class="social">
+                                <b-input-group id="facebook">
+                                    <b-input-group-addon class="bg-primary"><i class="fa fa-facebook" aria-hidden="true"></i></b-input-group-addon>
+                                    <b-input-group-addon class="bg-primary">facebook.com/</b-input-group-addon>
+                                     <b-form-input id="inputfb" placeholder="Maria.monte"></b-form-input>
+                                </b-input-group>
+                                <b-input-group id="whatsapp">
+                                    <b-input-group-addon class="bg-success"><i class="fa fa-whatsapp" aria-hidden="true"></i></b-input-group-addon>
+                                    <b-input-group-addon class="bg-success whatsapp">+ 55</b-input-group-addon>
+                                    <the-mask id="number" :mask="['(##) ####-####', '(##) #####-####']" placeholder="(xx) xxxxx-xxxx"/>
+                                </b-input-group>
+                                <b-input-group id="snapchat">
+                                    <b-input-group-addon class="bg-warning"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></b-input-group-addon>
+                                    <b-input-group-addon class="bg-warning arroba">@</b-input-group-addon>
+                                     <b-form-input id="inputsnap" placeholder="mysnapUser"></b-form-input>
+                                </b-input-group>
+                                <b-input-group id="twitter">
+                                    <b-input-group-addon class="bg-info"><i class="fa fa-twitter" aria-hidden="true"></i></b-input-group-addon>
+                                    <b-input-group-addon class="bg-info arroba">@</b-input-group-addon>
+                                     <b-form-input id="inputtw" placeholder="mytwUser"></b-form-input>
+                                </b-input-group>
+                                <b-input-group id="instagram">
+                                    <b-input-group-addon class="bg-gradient"><i class="fa fa-instagram" aria-hidden="true"></i></b-input-group-addon>
+                                    <b-input-group-addon class="bg-gradient2">@</b-input-group-addon>
+                                     <b-form-input id="inputinst" placeholder="myinstagramUser"></b-form-input>
+                                </b-input-group>
+                            </div>
+                            <span class="validate" id="valSocial">Você precisa informar pelo menos uma de suas redes sociais!</span>
+                       </form>
                         
                  <!-- END Perfil Card -->
                    
                     <div class="buttons d-flex justify-content-center">
                         <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                         <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
-                        <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/inicio">Confirmar</router-link>
+                        <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin3">Confirmar</b-button>
                     </div>
                 </div>
          </div>
@@ -89,6 +98,33 @@ export default {
                           document.getElementById("locConfirma").style.display = "none";
                     }, "jsonp")
                 };
+            },
+            
+            realizaLogin3 () {
+                var file = document.getElementById("file");
+                var text = document.getElementById("textarea1").value;
+                var fb = document.getElementById("inputfb").value;
+                var whats = document.getElementById("number").value;
+                var snap = document.getElementById("inputsnap").value;
+                var tw = document.getElementById("inputtw").value;
+                var insta = document.getElementById("inputinst").value;
+                
+                if (file.value == ''){
+                    document.getElementById("valFoto").style.display = "block";
+                } 
+                
+                else if (text.length == 0) {
+                     document.getElementById("valBio").style.display = "block";
+                } 
+                
+                else if (fb.length == 0 && whats.length == 0 && snap.length == 0 && tw.length == 0 && insta.length == 0) {
+                    document.getElementById("valSocial").style.display = "block";
+                }
+                
+                else {
+                this.$router.push('inicio');
+                console.log('Login!');
+                }
             }
         }
 }
@@ -175,6 +211,11 @@ export default {
         margin-left: 15px;
         text-align: left;
         margin-top: 70px;
+    }
+    
+    #help {
+        margin-top: 70px;
+        margin-left: 10px;
     }
     
     .nb-login .row {
@@ -299,4 +340,9 @@ export default {
         padding-right: 58px;
     }
     
+    .nb-login .validate{
+        display: none;
+        color: #e74c3c;
+        font-weight: 700;
+    }
 </style>
