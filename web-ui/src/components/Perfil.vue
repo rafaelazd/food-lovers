@@ -20,7 +20,7 @@
         <!--END Nav -->
     
         <!-- Perfil Card -->
-        <div class="perfil">
+        <div class="perfil" id="profile">
             <b-jumbotron>
                 <div class="head-perfil">
                     <b-row class="pt1">
@@ -34,14 +34,15 @@
                          <h1>Thea Queen, 19</h1>
                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas amet reprehenderit dicta mollitia asperiores numquam saepe!</p>
                          <dl class="row">
+                              <dt class="col-sm-6 left"><i class="fa fa-user" aria-hidden="true"></i></dt>
+                              <dd class="col-sm-6 right">theaqueen</dd>
+                              
                               <dt class="col-sm-6 left"><i class="fa fa-map-marker" aria-hidden="true"></i></dt>
                               <dd class="col-sm-6 right"><a href="#">Curitiba - PR</a></dd>
 
-                              <dt class="col-sm-6 left"><i class="fa fa-birthday-cake" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-6 right">19 anos</dd>
-
                               <dt class="col-sm-6 left"><i class="fa fa-venus-mars" aria-hidden="true"></i></dt>
                               <dd class="col-sm-6 right">Feminino</dd>
+                              
                          </dl>
                          <div class="preferencias">
                             <b-row>
@@ -53,19 +54,6 @@
                             </b-row>
                          </div>
                     </div>
-                    <div class="fotos-perfil">
-                        <div class="head-fotos">
-                          <h1>Fotos</h1>
-                        </div>
-                        <b-row>
-                             <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato10.jpg" class="img-thumbnail" alt=""> 
-                             </b-col>
-                             <b-col cols="6" sm="6" md="3" xl="3" >
-                                 <img src="/static/img/prato9.jpg" class="img-thumbnail" alt=""> 
-                             </b-col>
-                         </b-row>
-                  </div>
             </b-jumbotron>
         </div>
         <!-- END Perfil Card -->
@@ -76,12 +64,31 @@
 
 
 <script>
+import axios from 'axios'
 export default {
-    data() {
-        return {
-            url1: '/usu-perfil',
+        data() {
+            return {
+                url1: '/usu-perfil',
+            }
+        },
+        
+        created() {
+            this.buscarDados();  
+        },
+
+        methods: {
+            buscarDados() {
+                axios.get('http://localhost:8060/pessoas/1')
+                    .then((resp) => {
+                        this.erro = false;
+                        console.log(resp.data)
+                    })
+                    .catch((err) => {
+                        this.erro = true;
+                        console.log(err)
+                    });
+            }
         }
-    }
 }
 </script>
 
@@ -109,7 +116,12 @@ export default {
         overflow: auto;
     }
     
-    
+    .container nav {
+        background-color: #34495e;
+        max-width: none;
+        min-width: 100vw;
+        font-family: 'Exo', sans-serif;
+    }
     .container {
         min-width: 100vw;
         left: 0px;
@@ -204,46 +216,6 @@ export default {
     .jumbotron .head-perfil .pt1 h1{
         visibility: hidden;
     }
-    
-    .jumbotron .fotos-perfil{
-        background-color: white;
-        margin-top: 30px;
-        border-radius: 5px;
-        border: 1px solid;
-        border-color: #ecf0f1;
-        padding-bottom: 0px;
-        margin-left: 10px;
-        margin-right: 10px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    }
-    
-    .jumbotron .fotos-perfil h1{
-        text-align: center; 
-        margin-left:20px; 
-        color: #ffffff;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 200;
-        padding: 5px;
-    }
-    
-    .jumbotron .fotos-perfil .img-thumbnail{
-        width: 300px;
-        height: 300px;
-        margin: 0px;
-    }
-    
-    .jumbotron .head-fotos{
-      background: linear-gradient(-45deg, #3498db, #1abc9c, #3498db, #9b59b6);
-      background-size: 400% 400%;
-      -webkit-animation: Gradient2 15s ease infinite;
-	  -moz-animation: Gradient2 15s ease infinite;
-	  animation: Gradient2 15s ease infinite;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      
-    }
-    
     .jumbotron .head-perfil .pt1{
       background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
       background-size: 400% 400%;
@@ -309,7 +281,6 @@ export default {
         .jumbotron {
         margin-top: 20px;
         }
-    
     }
     
     @media (min-width: 332px) and (max-width: 436px) {
@@ -321,13 +292,10 @@ export default {
         .jumbotron {
         margin-top: 20px;
         }
-    
     }
-    
     @media (max-width: 575px) {
         .jumbotron {
         margin-top: 30px;
         }
-    
     }
 </style>
