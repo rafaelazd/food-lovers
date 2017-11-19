@@ -10,7 +10,7 @@
                     <p>Preencha o campo abaixo com seus dados pessoais.</p>
                     <!-- Formulario -->
                     <div class="card-block">
-                        <form class="form" role="form" autocomplete="off" id="formCad" action="">
+                        <form class="form" role="form" autocomplete="off" name="formCad" action="">
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" ref="email" placeholder="E-mail">
                                 <small id="valEmail" class="danger">Você deve digitar um E-mail válido!</small>
@@ -102,6 +102,8 @@
 
 
 <script>  
+import axios from 'axios'
+    
 export default {
      methods: {
         realizaLogin(event) {
@@ -167,8 +169,21 @@ export default {
             }
             
             else {
-                this.$router.push('cadastro-2');
-                console.log('Login!');
+                axios.post('http://localhost:8060/pessoas', {
+                email: this.$refs.email.value,
+                nome: this.$refs.nome.value,
+                sobrenome: this.$refs.sobrenome.value,
+                idade: this.$refs.idade.value,
+                usuario: this.$refs.usuario.value,
+                senha: this.$refs.senha.value,
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+              this.$router.push('cadastro-2');
             }
             
     }

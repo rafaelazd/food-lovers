@@ -11,7 +11,7 @@
                     
                     <!-- Perfil Card -->
                       
-                       <form action="" role="form" class="form" autocomplete="off" name="form3">
+                       <form class="form" role="form" autocomplete="off" name="formCad" action="">
                           <h5>Selecione sua foto de Perfil</h5>
                             <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
                             <span class="validate" id="valFoto">Você deve selecionar uma foto de Perfil</span>
@@ -23,8 +23,8 @@
 
                             <h6>Localização</h6>
                             <b-row>
-                                <b-col cols="6" lg="4"><i class="fa fa-map-marker" aria-hidden="true"></i></b-col>
-                                <b-col cols="6" lg="4" id="location-col"><b-button id="localbtn" class="btn btn-light" v-on:click="getLocalizacao">Localização</b-button></b-col>
+                                <b-col cols="6" lg="4"><b-button id="localbtn" class="btn btn-light" v-on:click="getLocalizacao"> Localização</b-button></b-col>
+                                <b-col cols="6" lg="4" id="location-col"></b-col>
                             </b-row>
                             <span class="validate" id="valLoc">Precisamos da sua localização para um melhor uso do aplicativo!</span>
                             <div id="locConfirma" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
@@ -85,6 +85,8 @@
 
 
 <script>
+import axios from 'axios'
+    
 export default {
   methods: {
             getLocalizacao() {
@@ -103,6 +105,7 @@ export default {
             realizaLogin3 () {
                 var file = document.getElementById("file");
                 var text = document.getElementById("textarea1").value;
+                var localize = document.getElementById("location-col").innerHTML;
                 var fb = document.getElementById("inputfb").value;
                 var whats = document.getElementById("number").value;
                 var snap = document.getElementById("inputsnap").value;
@@ -122,8 +125,24 @@ export default {
                 }
                 
                 else {
-                this.$router.push('inicio');
-                console.log('Login!');
+                axios.post('http://localhost:8060/pessoas', {
+                    biografia: text,
+                    local: localize,
+                    facebook: fb,
+                    whatsapp: whats,
+                    snapchat: snap,
+                    twitter: tw,
+                    instagram: insta
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+                    
+                    this.$router.push('inicio');
+                    console.log('Login!');
                 }
             }
         }
