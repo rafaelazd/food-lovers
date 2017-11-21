@@ -2,7 +2,7 @@
     <div id="bubble">
         <b-col id="bubble">
             <b-button v-b-toggle="'collapse'" variant="light" class="d-flex flex-column">
-                <img src="/static/img/M3.jpg" alt="">
+                <img src="/static/img/H1.4.jpg" alt="">
                 <small>{{bubble.nome}} {{bubble.sobrenome}}</small>
             </b-button>
         </b-col>
@@ -70,6 +70,7 @@ export default {
     #bubble img {
         width: 150px;
         height: 150px;
+        border-radius: 80px;
     }
     
     #bubble small {
