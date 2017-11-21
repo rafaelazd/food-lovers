@@ -112,7 +112,8 @@ import axios from 'axios'
     .card-group .card + .card {
         margin-left: 0;
         border-left: 0;
-        margin-left: -280px;
+        margin-left: -275px;
+        border-radius: 15px;
     }
     
     .container .profile .btn {
