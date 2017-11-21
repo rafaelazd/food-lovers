@@ -51,7 +51,7 @@ import axios from 'axios'
         
         created() {
             console.log(this.id);
-            this.buscarDados();  
+            this.buscarDados();
         },
 
         methods: {
@@ -109,6 +109,12 @@ import axios from 'axios'
         background-size: cover;
     }
     
+    .card-group .card + .card {
+        margin-left: 0;
+        border-left: 0;
+        margin-left: -280px;
+    }
+    
     .container .profile .btn {
         margin: 2px;
     }
@@ -163,6 +169,6 @@ import axios from 'axios'
         text-align: center;
         padding: 7px;
     }
-  
+
     
 </style>

@@ -11,6 +11,7 @@ public class FoodLoversApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
 	}
 
 }
