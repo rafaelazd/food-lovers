@@ -14,19 +14,19 @@
                 <div class="social">
                     <b-list-group>
                       <b-list-group-item class="bg-primary">
-                        <i class="fa fa-facebook" aria-hidden="true"></i> | facebook.com/{{bubble.facebook}}
+                        <i class="fa fa-facebook" aria-hidden="true"></i> | <span id="sp1" v-on:click="copyToClipboard('#sp1')">facebook.com/{{bubble.facebook}}</span>
                       </b-list-group-item>
                        <b-list-group-item class="bg-success">
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i> | {{bubble.whatsapp}}
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i> | <span id="sp2" v-on:click="copyToClipboard('#sp2')">{{bubble.whatsapp}}</span>
                       </b-list-group-item>
                       <b-list-group-item class="bg-warning">
-                        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i> | @{{bubble.snapchat}}
+                        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i> | <span id="sp3" v-on:click="copyToClipboard('#sp3')" >@{{bubble.snapchat}}</span>
                       </b-list-group-item>
                       <b-list-group-item class="bg-info">
-                        <i class="fa fa-twitter" aria-hidden="true"></i> | @{{bubble.twitter}}
+                        <i class="fa fa-twitter" aria-hidden="true"></i> | <span id="sp4" v-on:click="copyToClipboard('#sp4')">@{{bubble.twitter}}</span>
                       </b-list-group-item>
                       <b-list-group-item class="bg-gradient">
-                        <i class="fa fa-instagram" aria-hidden="true"></i> | @{{bubble.instagram}}
+                        <i class="fa fa-instagram" aria-hidden="true"></i> | <span id="sp5" v-on:click="copyToClipboard('#sp5')">@{{bubble.instagram}}</span>
                       </b-list-group-item>
                     </b-list-group>
                 </div>
@@ -49,7 +49,17 @@ export default {
      
      created() {
          console.log(this.bubble.id);
-     }
+     },
+    
+    methods:{
+        copyToClipboard(element) {
+          var $temp = $("<input>");
+          $("body").append($temp);
+          $temp.val($(element).text()).select();
+          document.execCommand("copy");
+          $temp.remove();
+        }
+    }
 }
 </script>
 
