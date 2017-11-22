@@ -10,7 +10,7 @@
                     <p>Selecione até 5 categorias culinárias de sua preferência.</p>
                     <!-- Formulario -->
                     <div class="card-block">
-                        <form class="form" role="form" autocomplete="off" name="form" id="formCad" action="">
+                        <form class="form" role="form" autocomplete="off" name="form" id="form" action="">
                            <b-row class="d-flex justify-content-center">
                                <b-col class="options">
                                    <label for="check1" class="btn">

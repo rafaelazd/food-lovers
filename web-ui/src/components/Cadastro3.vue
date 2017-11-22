@@ -11,7 +11,7 @@
                     
                     <!-- Perfil Card -->
                       
-                       <form class="form" role="form" autocomplete="off" name="formCad" action="" enctype="multipart/form-data">
+                       <form class="form" role="form" autocomplete="off" name="form" action="" enctype="multipart/form-data">
                           <h5>Selecione sua foto de Perfil</h5>
                             <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
                             <span class="validate" id="valFoto">Você deve selecionar uma foto de Perfil</span>

@@ -10,7 +10,7 @@
                     <p>Preencha o campo abaixo com seus dados pessoais.</p>
                     <!-- Formulario -->
                     <div class="card-block">
-                        <form class="form" role="form" autocomplete="off" name="formCad" action="">
+                        <form class="form" role="form" autocomplete="off" name="form" action="">
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" ref="email" placeholder="E-mail">
                                 <small id="valEmail" class="danger">Você deve digitar um E-mail válido!</small>
@@ -27,43 +27,45 @@
                             </div>
                             <div class="form-group d-flex justify-content-center form-inline">
                                <h5>Preferência em</h5>
-                                 <b-form-checkbox name="prefsex" ref="checkbox1" value="Homens"> Homens </b-form-checkbox>
-                                 <b-form-checkbox name="prefsex" ref="checkbox2" value="Mulheres"> Mulheres </b-form-checkbox>
+                                 <b-form-checkbox v-model="checkselected" id="prefsex" name="Homens" value="Homens"> Homens </b-form-checkbox>
+                                 <b-form-checkbox v-model="checkselected" id="prefsex" name="Mulheres" value="Mulheres"> Mulheres </b-form-checkbox>
                             </div>
                                 <small id="valCheckboxes" class="danger">Você deve escolher ao menos uma das Preferências!</small>
+                                <p id="check-choice"></p>
                             <div class="d-flex justify-content-center">
                               <b-row>
                                <b-col cols="12"><h5>Sexo</h5></b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="agenero" id="radio1" ref="radio1"/>
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Agênero" ref="radio1"/>
                                           <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
                                        </p>
                                    </b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                         <p>
-                                          <input type="radio" class="option-input radio" name="bigenero" id="radio2" ref="radio2"/>
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Bigênero" ref="radio2"/>
                                           <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                        </p>
                                    </b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="transgenero" id="radio3" ref="radio3"/>
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Transgênero" ref="radio3"/>
                                           <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                        </p>
                                    </b-col>
                                    <b-col cols="6" sm="4" lg="3">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="masculino" id="radio4" ref="radio4"/>
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Masculino" ref="radio4"/>
                                           <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                        </p>
                                    </b-col>
                                    <b-col cols="12" sm="4" lg="12">
                                        <p>
-                                          <input type="radio" class="option-input radio" name="feminino" id="radio5" ref="radio5"/>
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Feminino" ref="radio5"/>
                                           <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                        </p>
                                    </b-col>
+                                   <p id="radio-choice">{{radioselected}}</p>
                                 </b-row>
                             </div>
                                 <small id="valRadios" class="danger">Você deve escolher ao menos uma das opções!</small>
@@ -105,7 +107,14 @@
 import axios from 'axios'
     
 export default {
-     methods: {
+    data () {
+        return {
+            checkselected: [],
+            radioselected: []
+        }
+    },
+    
+    methods: {
         realizaLogin(event) {
             if (this.$refs.nome.value=="" || this.$refs.email.value=="" || this.$refs.sobrenome.value=="" || this.$refs.idade.value=="" || this.$refs.usuario.value=="" || this.$refs.senha.value=="" || this.$refs.senha2.value=="") {
                  console.log('Falha no login');
@@ -116,7 +125,7 @@ export default {
                     
             } 
             
-            else if (this.$refs.checkbox1.checked==false && this.$refs.checkbox2.checked==false ) {
+            else if (document.form.Homens.checked == false && document.form.Mulheres.checked == false ) {
                      console.log('Falha no login');
                       document.getElementById("valCheckboxes").style.display = "block";
             }
@@ -169,21 +178,34 @@ export default {
             }
             
             else {
+                if (document.form.Homens.checked == false && document.form.Mulheres.checked == true) {
+                    document.getElementById("check-choice").innerHTML = "Mulheres";
+                } else if (document.form.Homens.checked == true && document.form.Mulheres.checked == false) {
+                    document.getElementById("check-choice").innerHTML = "Homens";
+                } else {
+                    document.getElementById("check-choice").innerHTML = "Homens e Mulheres";
+                }
+                
+                var radio = document.getElementById("radio-choice").innerHTML;
+                var checkbox = document.getElementById("check-choice").innerHTML;
+                
                 axios.post('http://localhost:8060/pessoas', {
-                email: this.$refs.email.value,
-                nome: this.$refs.nome.value,
-                sobrenome: this.$refs.sobrenome.value,
-                idade: this.$refs.idade.value,
-                usuario: this.$refs.usuario.value,
-                senha: this.$refs.senha.value,
-              })
-              .then(function (response) {
-                console.log(response);
-              })
-              .catch(function (error) {
-                console.log(error);
-              });
-              this.$router.push('cadastro-2');
+                    email: this.$refs.email.value,
+                    nome: this.$refs.nome.value,
+                    sobrenome: this.$refs.sobrenome.value,
+                    idade: this.$refs.idade.value,
+                    prefsex: checkbox,
+                    sexo: radio,
+                    usuario: this.$refs.usuario.value,
+                    senha: this.$refs.senha.value,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+                  this.$router.push('cadastro-2');
             }
             
     }
