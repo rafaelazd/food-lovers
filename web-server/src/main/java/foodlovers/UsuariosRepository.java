@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource(collectionResourceRel = "pessoas", path = "pessoas")
 public interface UsuariosRepository extends PagingAndSortingRepository<Usuario, Long> {
 
-	List<Usuario> findBySobrenome(@Param("nome") String nome);
+	List<Usuario> findByNome(@Param("nome") String nome);
 
 }
 
