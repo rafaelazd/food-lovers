@@ -109,6 +109,14 @@ import axios from 'axios'
         background-size: cover;
     }
     
+    .card-group .card:not(:first-child):not(:last-child) {
+        border-radius: 15px;
+    }
+    
+    .card-group .card:first-child {
+        border-radius: 15px;
+    }
+    
     .card-group .card + .card {
         margin-left: 0;
         border-left: 0;
