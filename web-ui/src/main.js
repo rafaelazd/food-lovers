@@ -7,6 +7,7 @@ import router from './router'
 
 import BootstrapVue from 'bootstrap-vue'
 import VueTheMask from 'vue-the-mask'
+import VueIntro from 'vue-introjs'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -16,7 +17,8 @@ import 'tether-shepherd/dist/js/shepherd.min.js'
 import 'tether/dist/js/tether.min.js'
 
 Vue.use(BootstrapVue);
-Vue.use(VueTheMask)
+Vue.use(VueTheMask);
+Vue.use(VueIntro)
 
 Vue.config.productionTip = false
 
