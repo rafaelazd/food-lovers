@@ -31,19 +31,19 @@
                     </div>
                 </div>
                 <div class="body-perfil">
-                         <h1>Thea Queen, 19</h1>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas amet reprehenderit dicta mollitia asperiores numquam saepe!</p>
-                         <dl class="row">
-                              <dt class="col-sm-6 left"><i class="fa fa-user" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-6 right">theaqueen</dd>
+                     <h1>{{perfil.nome}} {{perfil.sobrenome}}, {{perfil.idade}} </h1>
+                         <p id="bio">{{perfil.biografia}}</p>
+                         <b-row>
+                              <p class="col-sm-6 left"><i class="fa fa-user" aria-hidden="true"></i></p>
+                              <p class="col-sm-6 right">{{perfil.usuario}}</p>
                               
-                              <dt class="col-sm-6 left"><i class="fa fa-map-marker" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-6 right"><a href="#">Curitiba - PR</a></dd>
+                              <p class="col-sm-6 left"><i class="fa fa-map-marker" aria-hidden="true"></i></p>
+                              <p class="col-sm-6 right"><a href="#">{{perfil.local}}</a></p>
 
-                              <dt class="col-sm-6 left"><i class="fa fa-venus-mars" aria-hidden="true"></i></dt>
-                              <dd class="col-sm-6 right">Feminino</dd>
+                              <p class="col-sm-6 left"><i class="fa fa-venus-mars" aria-hidden="true"></i></p>
+                              <p class="col-sm-6 right">{{perfil.sexo}}</p>
                               
-                         </dl>
+                         </b-row>
                          <div class="preferencias">
                             <b-row>
                                 <b-col cols="6" sm="6" md="2" xl="2" id="pref1"><img src="/static/img/batataico.png" class="img-fluid" alt=""></b-col>
@@ -69,6 +69,7 @@ export default {
         data() {
             return {
                 url1: '/usu-perfil',
+                perfil: ''
             }
         },
         
@@ -78,10 +79,11 @@ export default {
 
         methods: {
             buscarDados() {
-                axios.get('http://localhost:8060/pessoas/1')
+                axios.get('http://localhost:8060/pessoas/3')
                     .then((resp) => {
                         this.erro = false;
-                        console.log(resp.data)
+                        console.log(resp.data);
+                        this.perfil = resp.data;
                     })
                     .catch((err) => {
                         this.erro = true;
@@ -142,13 +144,19 @@ export default {
         padding-top: 20px;
     }
     
-    .jumbotron p {
+    .jumbotron #bio {
         color: #7f8c8d;
         font-size: 18px;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+    
+    .jumbotron p {
+        font-size: 18px;    
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
     }
     
     .jumbotron .body-perfil {
