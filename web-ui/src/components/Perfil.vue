@@ -53,6 +53,9 @@
                                 <b-col cols="12" sm="12" md="2" xl="2" id="pref5"><img src="/static/img/cafeico.png" class="img-fluid" alt=""></b-col>
                             </b-row>
                          </div>
+                         <div class="button-cog">
+                             <b-button v-bind:href="toAlterPerfil"><i class="fa fa-cogs" aria-hidden="true"></i> Alterar Perfil</b-button>
+                         </div>
                     </div>
             </b-jumbotron>
         </div>
@@ -68,8 +71,8 @@ import axios from 'axios'
 export default {
         data() {
             return {
-                url1: '/usu-perfil',
-                perfil: ''
+                perfil: '',
+                toAlterPerfil: '#/alter-perfil'
             }
         },
         
@@ -224,12 +227,38 @@ export default {
     .jumbotron .head-perfil .pt1 h1{
         visibility: hidden;
     }
+    
     .jumbotron .head-perfil .pt1{
       background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
       background-size: 400% 400%;
       -webkit-animation: Gradient 15s ease infinite;
 	  -moz-animation: Gradient 15s ease infinite;
 	  animation: Gradient 15s ease infinite;
+    }
+    
+    .jumbotron .button-cog{
+        padding: 20px;
+        text-align: right;
+    }
+    
+    .jumbotron .button-cog .btn{
+        background: linear-gradient(-45deg, #E73C7E, #23A6D5);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient2 5s ease infinite;
+	    -moz-animation: Gradient2 5s ease infinite;
+	    animation: Gradient2 5s ease infinite;
+        border-radius: 20px;
+        border-color: transparent;
+    }
+    
+    .jumbotron .button-cog .btn:hover{
+        background: linear-gradient(-45deg, #3498db, #9b59b6);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient2 3s ease infinite;
+	    -moz-animation: Gradient2 3s ease infinite;
+	    animation: Gradient2 3s ease infinite;
+        border-radius: 20px;
+        border-color: transparent;
     }
     
     @-webkit-keyframes Gradient {
