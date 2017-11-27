@@ -13,13 +13,11 @@ public class Preferencias {
 	private long idPreferencia;
 
 	private String nome;
-	private String filepath;
 
 	protected Preferencias() {}
 	
-	public Preferencias(String nome, String filepath) {
+	public Preferencias(String nome) {
 		this.nome = nome;
-		this.filepath = filepath;
 	}
 	
 	public String getNome() {
@@ -30,12 +28,5 @@ public class Preferencias {
 		this.nome = nome;
 	}
 	
-	public String getFile() {
-		return filepath;
-	}
-
-	public void setFile(String filepath) {
-		this.filepath = filepath;
-	}
 
 }

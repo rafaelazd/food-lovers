@@ -26,6 +26,7 @@ public class FoodLoversApplication {
 			log.info("Antes de criar os registros");
 			usuariosRepository.save(new Usuario("Kali", "Meinar", "kalimeinar@gmail.com", 19, "Homens e Mulheres", "Feminino", "kardashianlostsis", "kalimeinar", "Cinema, arte e fotografia <3","Campinas, São Paulo", "kali.meinar", "(19)99726-9062", "kalim_", "", "kardashianlostsis"));
 			usuariosRepository.save(new Usuario("Mateus", "Takeda", "MateusTakeda@outlook.com", 21, "Homens", "Masculino", "_mateustakeda", "mateustakeda", "'O que é melhor - nascer bom, ou superar sua natureza maligna através de grande esforço?' - Paarthurnax","Joinville, Santa Catarina", "mateustakeda67", "(47)98890-3627", "mateustk", "matheustakeda", ""));
+			usuariosRepository.save(new Usuario("Thea", "Queen", "theaqueen@gmail.com", 20, "Homens e Mulheres", "Feminino", "theaqueen", "theaqueen", "I'm sorry if I turned out some major disappointment","Curitiba, Paraná", "thea.queen", "(42)99738-2384", "theaqn", "theQueen", "theQueen"));
 			log.info("Depois de criar os registros");
 			
 
