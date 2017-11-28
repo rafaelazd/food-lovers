@@ -252,7 +252,7 @@ export default {
     }
     
     .jumbotron .button-cog .btn:hover{
-        background: linear-gradient(-45deg, #3498db, #9b59b6);
+        background: linear-gradient(-45deg, #E73C7E, #9b59b6);
         background-size: 400% 400%;
         -webkit-animation: Gradient2 3s ease infinite;
 	    -moz-animation: Gradient2 3s ease infinite;
