@@ -134,7 +134,7 @@
                          <small>{{counter}} Curtidas</small>
                     </div>
               </div>
-              <div class="footer">
+              <div class="foot">
                   <b-button  v-on:click="showhide" class="btn btn-danger btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></b-button>
               </div>
             </div>
@@ -252,7 +252,7 @@ export default {
         margin-left: -100px;
     }
     
-    .footer {
+    .foot {
         position: fixed;
         left: 0;
         bottom:0;
@@ -262,7 +262,7 @@ export default {
         background-color:  transparent;
     }
     
-    .footer .btn-circle {
+    .foot .btn-circle {
         width: 90px;
         height: 90px;
         border-radius: 50px;
