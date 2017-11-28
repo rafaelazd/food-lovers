@@ -3,8 +3,16 @@ package foodlovers;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Usuario {
@@ -12,7 +20,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idUsuario;
-
+	
 	private String nome;
 	private String sobrenome;
 	private String email;
@@ -32,6 +40,12 @@ public class Usuario {
 	private String biografia;
 	
 	protected Usuario() {}
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="usuario_preferencia",
+				joinColumns={@JoinColumn(name="idUsuario")},
+				inverseJoinColumns={@JoinColumn(name="idPreferencia")})
+	private List<Preferencias> preferencias = new ArrayList<Preferencias>();
 
 	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram) {
 		this.nome = nome;
@@ -169,5 +183,13 @@ public class Usuario {
 
 	public void setInstagram(String Instagram) {
 		this.Instagram = Instagram;
+	}
+	
+	public List<Preferencias> getPreferencias() {
+		return preferencias;
+	}
+
+	public void setPreferencias(List<Preferencias> preferencias) {
+		this.preferencias = preferencias;
 	}
 }
