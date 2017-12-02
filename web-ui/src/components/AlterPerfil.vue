@@ -172,7 +172,24 @@
                                 </form> <br>
                             </div>
                          </div>
-                        <!------------------------------------------->
+                        <!------------------------------------------------>
+                        <!-------------------Aviso-Danger----------------->
+                            <div id="updateFail" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Opa!</h4>
+                                <p class="card-text" id="aviso-fail"> </p>
+                                <b-button variant="warning" id="close-fail">Voltar</b-button>
+                              </div>
+                            </div>
+                        <!------------------Aviso-Sucesso--------------->
+                            <div id="updateSuccess" class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Eba!</h4>
+                                <p class="card-text" id="aviso-success"> </p>
+                                <b-button variant="dark" id="close-success">Voltar</b-button>
+                              </div>
+                            </div>
+                        <!---------------------------------------------->
                        </div>
                    </div>
                 </b-col>
@@ -283,19 +300,19 @@ methods: {
       },
       
       idadeFunction () {
-          if (this.$refs.idade.value != "") {
+         if (this.$refs.idade.value != "" && this.$refs.idade.value > 14) {
               axios.patch('http://localhost:8060/pessoas/3', {
                   idade: this.$refs.idade.value
               })
               .then(function (response) {
-                    console.log(response);
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
-          } else {
-              console.log("idade não preenchido")
-          }
+                  console.log(response);
+              })
+              .catch(function (error) {
+                  console.log(error);
+              });
+         } else {
+             console.log("idade não preenchido")
+         } 
       },
       
       radioFunction () {
@@ -338,19 +355,60 @@ methods: {
            this.idadeFunction();
            this.radioFunction();
            this.checkFunction();
+               
+               if (this.$refs.idade.value != "" && this.$refs.idade.value<14) {
+                   var alerta = document.getElementById("updateFail");
+                   var alertatxt = document.getElementById("aviso-fail");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "Nenês não podem usar esse aplicativo.";
+                   document.getElementById('close-fail').onclick = function(){
+                         document.getElementById("updateFail").style.display = "none";
+                   }
+               }
+               
+               else {
+                   var alerta = document.getElementById("updateSuccess");
+                   var alertatxt = document.getElementById("aviso-success");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "Seus dados pessoais foram alterados com sucesso.";
+                   document.getElementById('close-success').onclick = function(){
+                         document.getElementById("updateSuccess").style.display = "none";
+                   }
+               }
       },
     
       updateTres() {
            if (this.$refs.email.value != ''){
-               axios.patch('http://localhost:8060/pessoas/3', {
-                 email: this.$refs.email.value
-               })
-               .then(function (response) {
-                 console.log(response);
-                })
-               .catch(function (error) {
-                 console.log(error);
-               });
+               
+               if (this.$refs.email.value.indexOf('@')==-1 || this.$refs.email.value.indexOf('.')==-1 ) {
+                   var alerta = document.getElementById("updateFail");
+                   var alertatxt = document.getElementById("aviso-fail");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "Você deve escrever um endereço de e-mail válido.";
+                   document.getElementById('close-fail').onclick = function(){
+                         document.getElementById("updateFail").style.display = "none";
+                   }
+              } 
+               
+              else {
+                 axios.patch('http://localhost:8060/pessoas/3', {
+                    email: this.$refs.email.value
+                 })
+                 .then(function (response) {
+                    console.log(response);
+                 })
+                 .catch(function (error) {
+                    console.log(error);
+                 });
+                 var alerta = document.getElementById("updateSuccess");
+                 var alertatxt = document.getElementById("aviso-success");
+                 alerta.style.display = "block";
+                 alertatxt.innerHTML = "Seu e-mail foi alterado com sucesso.";
+                 document.getElementById('close-success').onclick = function(){
+                      document.getElementById("updateSuccess").style.display = "none";
+                 }
+              }
+               
            } else {
                console.log("E-mail não preenchido")
            }
@@ -358,15 +416,36 @@ methods: {
     
       updateQuatro() {
            if (this.$refs.usuario.value != ''){
-               axios.patch('http://localhost:8060/pessoas/3', {
-                 usuario: this.$refs.usuario.value
-               })
-               .then(function (response) {
-                 console.log(response);
-                })
-               .catch(function (error) {
-                 console.log(error);
-               });
+               
+               if (this.$refs.usuario.value.length<4 || this.$refs.usuario.value.length>10) {
+                   var alerta = document.getElementById("updateFail");
+                   var alertatxt = document.getElementById("aviso-fail");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "O seu usuário deve conter entre 4 e 10 caracteres.";
+                   document.getElementById('close-fail').onclick = function(){
+                         document.getElementById("updateFail").style.display = "none";
+                   }
+               }
+               
+               else {
+                   axios.patch('http://localhost:8060/pessoas/3', {
+                     usuario: this.$refs.usuario.value
+                   })
+                   .then(function (response) {
+                     console.log(response);
+                    })
+                   .catch(function (error) {
+                     console.log(error);
+                   });
+                   var alerta = document.getElementById("updateSuccess");
+                   var alertatxt = document.getElementById("aviso-success");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "Seu usuário foi alterado com sucesso.";
+                   document.getElementById('close-success').onclick = function(){
+                        document.getElementById("updateSuccess").style.display = "none";
+                   }
+               }
+               
            } else {
                console.log("Usuário não preenchido")
            }
@@ -374,15 +453,46 @@ methods: {
     
       updateCinco() {
            if (this.$refs.senha.value != ''){
-               axios.patch('http://localhost:8060/pessoas/3', {
-                 senha: this.$refs.senha.value
-               })
-               .then(function (response) {
-                 console.log(response);
-                })
-               .catch(function (error) {
-                 console.log(error);
-               });
+               
+               if (this.$refs.senha.value != this.$refs.senha2.value) {
+                   var alerta = document.getElementById("updateFail");
+                   var alertatxt = document.getElementById("aviso-fail");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "As suas senhas devem ser correspondentes.";
+                   document.getElementById('close-fail').onclick = function(){
+                         document.getElementById("updateFail").style.display = "none";
+                   }
+               } 
+               
+               else if (this.$refs.senha.value.length < 7 || this.$refs.senha.value.length > 20){
+                   var alerta = document.getElementById("updateFail");
+                   var alertatxt = document.getElementById("aviso-fail");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "A sua senha deve conter entre 7 e 20 caracteres.";
+                   document.getElementById('close-fail').onclick = function(){
+                         document.getElementById("updateFail").style.display = "none";
+                   }
+               }
+               
+               else {
+                   axios.patch('http://localhost:8060/pessoas/3', {
+                     senha: this.$refs.senha.value
+                   })
+                   .then(function (response) {
+                     console.log(response);
+                    })
+                   .catch(function (error) {
+                     console.log(error);
+                   });
+                   var alerta = document.getElementById("updateSuccess");
+                   var alertatxt = document.getElementById("aviso-success");
+                   alerta.style.display = "block";
+                   alertatxt.innerHTML = "Sua senha foi alterada com sucesso.";
+                   document.getElementById('close-success').onclick = function(){
+                        document.getElementById("updateSuccess").style.display = "none";
+                   }
+               }
+               
            } else {
                console.log("Senha não preenchida")
            }
@@ -405,7 +515,7 @@ methods: {
     }
     
     .container {
-    padding: 0px;  
+        padding: 0px;  
     }
     
     .container nav {
@@ -419,6 +529,7 @@ methods: {
         margin: 20px;
         margin-left: 51px;
     }
+    
     .head h1 {
         color: #2c3e50;
         font-size: 35px;
@@ -541,12 +652,15 @@ methods: {
       outline: none;
       z-index: 1000;
     }
+    
     .option-input:hover {
       background: #9faab7;
     }
+    
     .option-input:checked {
       background: #007bff;
     }
+    
     .option-input:checked::before {
       height: 40px;
       width: 40px;
@@ -558,6 +672,7 @@ methods: {
       line-height: 22px;
       margin-left: -8px;
     }
+    
     .option-input:checked::after {
       -webkit-animation: click-wave 0.65s;
       -moz-animation: click-wave 0.65s;
@@ -568,12 +683,35 @@ methods: {
       position: relative;
       z-index: 100;
     }
+    
     .option-input.radio {
-      border-radius: 50%;
+        border-radius: 50%;
     }
+    
     .option-input.radio::after {
-      border-radius: 50%;
+        border-radius: 50%;
     }
+    
+     #updateSuccess {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+    }
+    
+     #updateFail {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+    }
+    
     @media (max-width: 594px) {
         #usuFoto {
             width: 200px;
@@ -582,26 +720,26 @@ methods: {
         }
         
         .body small{
-           margin-right: 0px;
+            margin-right: 0px;
         }
         
         .body #textarea2{
-           width: 100%;
+            width: 100%;
             margin-left: 15px;
         }
         
         .body .inputs{
-        margin-left: 0px;
-        margin-right: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     }
     
     @media (min-width: 595px) and (max-width: 780px) {
         .body small{
-           margin-right: 10px;
+            margin-right: 10px;
         }
         .body #textarea2{
-           margin-left: 10px;
+            margin-left: 10px;
         }
     }
     
