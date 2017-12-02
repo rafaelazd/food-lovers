@@ -31,7 +31,7 @@
                                  <b-form-checkbox v-model="checkselected" id="prefsex" name="Mulheres" value="Mulheres"> Mulheres </b-form-checkbox>
                             </div>
                                 <small id="valCheckboxes" class="danger">Você deve escolher ao menos uma das Preferências!</small>
-                                <p id="check-choice"></p>
+                                <p id="check-choice" style="display:none;">{{checkselected}}</p>
                             <div class="d-flex justify-content-center">
                               <b-row>
                                <b-col cols="12"><h5>Sexo</h5></b-col>
@@ -65,7 +65,7 @@
                                           <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                        </p>
                                    </b-col>
-                                   <p id="radio-choice">{{radioselected}}</p>
+                                   <p id="radio-choice"  style="display:none;">{{radioselected}}</p>
                                 </b-row>
                             </div>
                                 <small id="valRadios" class="danger">Você deve escolher ao menos uma das opções!</small>
@@ -178,16 +178,8 @@ export default {
             }
             
             else {
-                if (document.form.Homens.checked == false && document.form.Mulheres.checked == true) {
-                    document.getElementById("check-choice").innerHTML = "Mulheres";
-                } else if (document.form.Homens.checked == true && document.form.Mulheres.checked == false) {
-                    document.getElementById("check-choice").innerHTML = "Homens";
-                } else {
-                    document.getElementById("check-choice").innerHTML = "Homens e Mulheres";
-                }
-                
                 var radio = document.getElementById("radio-choice").innerHTML;
-                var checkbox = document.getElementById("check-choice").innerHTML;
+                var checkbox = document.getElementById("check-choice").innerHTML.replace(/[^a-zA-Z ]/g, "");
                 
                 axios.post('http://localhost:8060/pessoas', {
                     email: this.$refs.email.value,
