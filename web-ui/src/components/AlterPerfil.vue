@@ -1,4 +1,4 @@
-<template>
+    <template>
    <section id="inicio-cover">
        <div class="container">
        <!-- Navbar -->
@@ -33,6 +33,7 @@
                 <b-col cols="8">
                    <div class="body-alter">                         
                       <div class="tab-content" id="v-pills-tabContent">
+                        
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">
                              <div class="body first">
                                 <h4>Foto atual:</h4>
@@ -42,9 +43,10 @@
                                     <b-form-textarea id="textarea2" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
                                     <small class="float-right">Máximo de 170 caracteres</small>
                                     <br>
-                                <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:0px">Confirmar</b-button>
+                                <b-button type="submit" class="btn btn-outline-success float-left" @click="updateUm" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
+                         
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -55,13 +57,13 @@
                                   </b-row>
                                   <b-row class="inputs">
                                      <b-col cols="4" sm="4" lg="4">
-                                         <input type="text" class="form-control" name="nome" ref="nome" required="" placeholder="Nome" id="nome">
+                                         <input type="text" class="form-control" name="nome" ref="nome"  placeholder="Nome" id="nome">
                                      </b-col>
                                      <b-col cols="4" sm="4" lg="4">
-                                         <input type="text" class="form-control" name="sobrenome" ref="sobrenome" required="" placeholder="Sobrenome" id="sobrenome">
+                                         <input type="text" class="form-control" name="sobrenome" ref="sobrenome"  placeholder="Sobrenome" id="sobrenome">
                                      </b-col>
                                      <b-col cols="4" sm="4" lg="4">
-                                         <input type="number" class="form-control" name="idade" ref="idade" required="" placeholder="Idade" id="idade"><br>
+                                         <input type="number" class="form-control" name="idade" ref="idade"  placeholder="Idade" id="idade"><br>
                                      </b-col>
                                   </b-row>
                                   <b-row>
@@ -100,6 +102,7 @@
                                 </form> <br>
                             </div>
                          </div>
+                         
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.email, show: abaAtiva.email, fade: !abaAtiva.email }" id="#/alter-perfil/#email" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -109,12 +112,13 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs2">'
-                                       <input type="email" class="form-control" name="email" ref="email" required="" id="email" placeholder="E-mail">
+                                       <input type="email" class="form-control" name="email" ref="email"  id="email" placeholder="E-mail">
                                   </b-row>
                                   <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
                                 </form><br>
                             </div>
                          </div>
+                         
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -124,12 +128,13 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs2">
-                                       <input type="text" class="form-control" name="usuario" ref="usuario" required="" placeholder="Usuário" id="usuario">
+                                       <input type="text" class="form-control" name="usuario" ref="usuario"  placeholder="Usuário" id="usuario">
                                   </b-row>
                                   <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
+                         
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -139,7 +144,7 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs3">
-                                       <input type="password" class="form-control" name="senha" ref="senha" id="senha" required="" placeholder="Senha" autocomplete="new-password"> <br><br>
+                                       <input type="password" class="form-control" name="senha" ref="senha" id="senha"  placeholder="Senha" autocomplete="new-password"> <br><br>
                                   </b-row>
                                   <b-row>
                                      <b-col>
@@ -147,12 +152,13 @@
                                      </b-col>
                                   </b-row>
                                   <b-row class="inputs2">
-                                       <input type="password" class="form-control" name="senha2" ref="senha2" id="senha2" required="" placeholder="Senha" autocomplete="new-password">
+                                       <input type="password" class="form-control" name="senha2" ref="senha2" id="senha2"  placeholder="Senha" autocomplete="new-password">
                                   </b-row>
                                   <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
+                         
                        </div>
                    </div>
                 </b-col>
@@ -164,6 +170,7 @@
 
 
 <script>
+    import axios from 'axios'
 export default {
   methods: {
       
@@ -198,7 +205,20 @@ export default {
           //console.log(secao);
       },
       
-     
+      updateUm() {
+           var text = document.getElementById("textarea2").value;
+           if (text != '') {
+               axios.patch('http://localhost:8060/pessoas/3', {
+                  biografia: text,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+           }
+      }
   },    
   data () {
     return {
