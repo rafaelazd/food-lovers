@@ -20,11 +20,17 @@
                 <!-- Nav Vertical -->
                 <b-col cols="4">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                       
                         <a class="nav-link" id="Foto-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.fotoPerfil}" v-bind:href="fotoperfil" role="tab" aria-controls="v-pills-home" aria-selected="true" v-on:click="trocaSecao('foto-perfil', $event)">Foto de Perfil</a>
+                        
                         <a class="nav-link" id="Dados-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.dadosPessoais}" v-bind:href="dadospessoais" role="tab" aria-controls="v-pills-profile" aria-selected="false"  v-on:click="trocaSecao('dados-pessoais', $event)">Dados Pessoais</a>
+                        
                         <a class="nav-link" id="Email-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.email}" v-bind:href="email" role="tab" aria-controls="v-pills-messages" aria-selected="false" v-on:click="trocaSecao('email', $event)">E-mail</a>
+                        
                         <a class="nav-link" id="Usuario-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.usuario}" v-bind:href="usuario" role="tab" aria-controls="v-pills-settings" aria-selected="false" v-on:click="trocaSecao('usuario', $event)">Usuário</a>
+                        
                         <a class="nav-link" id="Senha-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.senha}" v-bind:href="senha" v-on:click="trocaSecao('senha', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Senha</a>
+                        
                     </div>
                 </b-col>
                 <!-- END Nav Vertical -->
@@ -33,7 +39,8 @@
                 <b-col cols="8">
                    <div class="body-alter">                         
                       <div class="tab-content" id="v-pills-tabContent">
-                        
+                        <!---------------------------------------------->
+                        <!-----------------Foto&Bio--------------------->
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">
                              <div class="body first">
                                 <h4>Foto atual:</h4>
@@ -43,10 +50,11 @@
                                     <b-form-textarea id="textarea2" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
                                     <small class="float-right">Máximo de 170 caracteres</small>
                                     <br>
-                                <b-button type="submit" class="btn btn-outline-success float-left" @click="updateUm" style="margin-top:0px">Confirmar</b-button>
+                                <b-button class="btn btn-outline-success float-left" @click="updateUm" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
-                         
+                         <!---------------------------------------------------->
+                         <!-----------------Dados-Pessoais--------------------->
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.dadosPessoais, show: abaAtiva.dadosPessoais, fade: !abaAtiva.dadosPessoais }" id="#/alter-perfil/#dadospessoais" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -70,39 +78,43 @@
                                        <h5>Preferência em:</h5><br>    
                                   </b-row>
                                   <b-row class="inputs2 form-inline">
-                                      <b-form-checkbox id="checkboxes" value="Homens" ref="checkbox"> Homens </b-form-checkbox>
-                                      <b-form-checkbox id="checkboxes" value="Mulheres" ref="checkbox"> Mulheres </b-form-checkbox>
+                                      <b-form-checkbox v-model="checkselected" id="prefsex" name="Homens" value="Homens"> Homens </b-form-checkbox>
+                                      <b-form-checkbox v-model="checkselected" id="prefsex" name="Mulheres" value="Mulheres"> Mulheres </b-form-checkbox>
                                   </b-row>
+                                  <p id="check-choice" style="display:none;">{{checkselected}}</p>
+                                  <p id="check-final"></p>
                                   <b-row>
                                        <h5>Sexo:</h5><br>    
                                   </b-row>
                                   <b-row class="inputs4" id="radio-alterperfil">
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" ref="radio1"/>
-                                        <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Agênero" ref="radio1"/>
+                                          <i class="fa fa-genderless" aria-hidden="true"></i> Agênero
+                                       </p>
+                                        <p>
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Bigênero" ref="radio2"/>
+                                          <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" ref="radio2"/>
-                                        <i class="fa fa-venus-mars" aria-hidden="true"></i> Bigênero
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Transgênero" ref="radio3"/>
+                                          <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" ref="radio3"/>
-                                        <i class="fa fa-transgender-alt" aria-hidden="true"></i> Transgênero
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Masculino" ref="radio4"/>
+                                          <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
                                        </p>
                                        <p>
-                                        <input type="radio" class="option-input radio" name="example" ref="radio4"/>
-                                        <i class="fa fa-mars" aria-hidden="true"> </i> Masculino
+                                          <input type="radio" v-model="radioselected" class="option-input radio" name="generos" value="Feminino" ref="radio5"/>
+                                          <i class="fa fa-venus" aria-hidden="true"></i> Feminino
                                        </p>
-                                       <p>
-                                        <input type="radio" class="option-input radio" name="example" ref="radio5"/>
-                                       <i class="fa fa-venus" aria-hidden="true"></i> Feminino
-                                       </p>
-                                  </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 10px;">Confirmar</b-button>
+                                   </b-row>
+                                   <p id="radio-choice" style="display:none;">{{radioselected}}</p>
+                                  <b-button class="btn btn-outline-success float-left" @click="updateDois" style="margin-top: 10px;">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
-                         
+                         <!------------------------------------------->
+                         <!-----------------E-mail--------------------->
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.email, show: abaAtiva.email, fade: !abaAtiva.email }" id="#/alter-perfil/#email" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -114,11 +126,12 @@
                                   <b-row class="inputs2">'
                                        <input type="email" class="form-control" name="email" ref="email"  id="email" placeholder="E-mail">
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
+                                  <b-button @click="updateTres" class="btn btn-outline-success float-left" style="margin-top: 17px;">Confirmar</b-button>
                                 </form><br>
                             </div>
                          </div>
-                         
+                         <!------------------------------------------->
+                         <!-----------------Usuário--------------------->
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.usuario, show: abaAtiva.usuario, fade: !abaAtiva.usuario }" id="#/alter-perfil/#usuario" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -130,11 +143,12 @@
                                   <b-row class="inputs2">
                                        <input type="text" class="form-control" name="usuario" ref="usuario"  placeholder="Usuário" id="usuario">
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                  <b-button @click="updateQuatro" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
-                         
+                         <!------------------------------------------->
+                         <!-----------------Senha--------------------->
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.senha, show: abaAtiva.senha, fade: !abaAtiva.senha }" id="#/alter-perfil/#senha" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                              <div class="body d-flex flex-column justify-content-center">
                                 <form class="form" role="form" autocomplete="off" id="formConfig" action="">
@@ -154,11 +168,11 @@
                                   <b-row class="inputs2">
                                        <input type="password" class="form-control" name="senha2" ref="senha2" id="senha2"  placeholder="Senha" autocomplete="new-password">
                                   </b-row>
-                                  <b-button type="submit" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
+                                  <b-button @click="updateCinco" class="btn btn-outline-success float-left" style="margin-top:17px">Confirmar</b-button>
                                 </form> <br>
                             </div>
                          </div>
-                         
+                        <!------------------------------------------->
                        </div>
                    </div>
                 </b-col>
@@ -172,7 +186,26 @@
 <script>
     import axios from 'axios'
 export default {
-  methods: {
+data () {
+    return {
+      fotoperfil: '#/alter-perfil/#fotoperfil',
+      dadospessoais: '#/alter-perfil/#dadospessoais',
+      email: '#/alter-perfil/#email',
+      usuario: '#/alter-perfil/#usuario',
+      senha: '#/alter-perfil/#senha',
+      abaAtiva: {
+          fotoPerfil: true,
+          dadosPessoais: false,
+          email: false,
+          usuario: false,
+          senha: false,
+      },
+      checkselected: [],
+      radioselected: []
+    }
+  },
+
+methods: {
       
       trocaSecao(secao, event) {
           // previne que o link seja seguido
@@ -182,8 +215,6 @@ export default {
           this.abaAtiva.email = false;
           this.abaAtiva.usuario = false;
           this.abaAtiva.senha = false;
-          
-
           
           switch(secao) {
               case 'foto-perfil':
@@ -202,7 +233,6 @@ export default {
                   this.abaAtiva.senha = true;
                   break;
           }
-          //console.log(secao);
       },
       
       updateUm() {
@@ -218,25 +248,149 @@ export default {
                     console.log(error);
                   });
            }
-      }
-  },    
-  data () {
-    return {
-      fotoperfil: '#/alter-perfil/#fotoperfil',
-      dadospessoais: '#/alter-perfil/#dadospessoais',
-      email: '#/alter-perfil/#email',
-      usuario: '#/alter-perfil/#usuario',
-      senha: '#/alter-perfil/#senha',
-      abaAtiva: {
-          fotoPerfil: true,
-          dadosPessoais: false,
-          email: false,
-          usuario: false,
-          senha: false,
-      }
-    }
-  }
+      },
+      
+      nomeFunction () {
+          if (this.$refs.nome.value != "") {
+              axios.patch('http://localhost:8060/pessoas/3', {
+                  nome: this.$refs.nome.value
+              })
+                .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+          } else {
+              console.log("nome não preenchido")
+          }
+      },
+      
+      sobrenomeFunction () {
+        if (this.$refs.sobrenome.value != "") {
+              axios.patch('http://localhost:8060/pessoas/3', {
+                  sobrenome: this.$refs.sobrenome.value
+              })
+            .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+          } else {
+              console.log("sobrenome não preenchido")
+          }
+      },
+      
+      idadeFunction () {
+          if (this.$refs.idade.value != "") {
+              axios.patch('http://localhost:8060/pessoas/3', {
+                  idade: this.$refs.idade.value
+              })
+              .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+          } else {
+              console.log("idade não preenchido")
+          }
+      },
+      
+      radioFunction () {
+          if (this.$refs.radio1.checked==false && this.$refs.radio2.checked==false && this.$refs.radio3.checked==false && this.$refs.radio4.checked==false && this.$refs.radio5.checked==false) {
+              console.log("Nenhum radio selecionado")
+          } else {
+              var radio = document.getElementById("radio-choice").innerHTML;
+              axios.patch('http://localhost:8060/pessoas/3', {
+                 sexo: radio
+              })
+              .then(function (response) {
+                  console.log(response);
+              })
+              .catch(function (error) {
+                  console.log(error);
+              });
+          }
+      },
+      
+      checkFunction () {
+             var checkbox = document.getElementById("check-choice").innerHTML.replace(/[^a-zA-Z ]/g, "");
+             if (checkbox != ''){
+                 axios.patch('http://localhost:8060/pessoas/3', {
+                 prefsex: checkbox
+                  })
+                  .then(function (response) {
+                      console.log(response);
+                  })
+                  .catch(function (error) {
+                      console.log(error);
+                  });
+             } else {
+                 console.log("Nenhum check selecionado")
+             }
+      },
+      
+      updateDois() {
+           this.nomeFunction();
+           this.sobrenomeFunction();
+           this.idadeFunction();
+           this.radioFunction();
+           this.checkFunction();
+      },
+    
+      updateTres() {
+           if (this.$refs.email.value != ''){
+               axios.patch('http://localhost:8060/pessoas/3', {
+                 email: this.$refs.email.value
+               })
+               .then(function (response) {
+                 console.log(response);
+                })
+               .catch(function (error) {
+                 console.log(error);
+               });
+           } else {
+               console.log("E-mail não preenchido")
+           }
+      },
+    
+      updateQuatro() {
+           if (this.$refs.usuario.value != ''){
+               axios.patch('http://localhost:8060/pessoas/3', {
+                 usuario: this.$refs.usuario.value
+               })
+               .then(function (response) {
+                 console.log(response);
+                })
+               .catch(function (error) {
+                 console.log(error);
+               });
+           } else {
+               console.log("Usuário não preenchido")
+           }
+      },
+    
+      updateCinco() {
+           if (this.$refs.senha.value != ''){
+               axios.patch('http://localhost:8060/pessoas/3', {
+                 senha: this.$refs.senha.value
+               })
+               .then(function (response) {
+                 console.log(response);
+                })
+               .catch(function (error) {
+                 console.log(error);
+               });
+           } else {
+               console.log("Senha não preenchida")
+           }
+      },
+    
+   }
 }
+
 </script>
 
 
@@ -352,6 +506,7 @@ export default {
         justify-content: center;
     }
 
+     
     @keyframes click-wave {
       0% {
         height: 40px;
@@ -369,10 +524,6 @@ export default {
     }
 
     .option-input {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
       appearance: none;
       position: relative;
       top: 7px;
@@ -382,15 +533,12 @@ export default {
       margin-right: 15px;
       height: 25px;
       width: 25px;
-      transition: all 0.15s ease-out 0s;
-      background: #cbd1d8;
       border: none;
       color: #fff;
       cursor: pointer;
       display: inline-block;
       margin-right: 0.5rem;
       outline: none;
-      position: relative;
       z-index: 1000;
     }
     .option-input:hover {
@@ -399,7 +547,7 @@ export default {
     .option-input:checked {
       background: #007bff;
     }
-    .option-input:checked::before #radio-alterperfil{
+    .option-input:checked::before {
       height: 40px;
       width: 40px;
       position: absolute;
@@ -407,8 +555,8 @@ export default {
       display: inline-block;
       font-size: 15px;
       text-align: center;
-      line-height: 90px;
-      margin-left: -7px;
+      line-height: 22px;
+      margin-left: -8px;
     }
     .option-input:checked::after {
       -webkit-animation: click-wave 0.65s;
@@ -420,15 +568,12 @@ export default {
       position: relative;
       z-index: 100;
     }
-    
     .option-input.radio {
       border-radius: 50%;
     }
-    
     .option-input.radio::after {
       border-radius: 50%;
     }
-
     @media (max-width: 594px) {
         #usuFoto {
             width: 200px;
