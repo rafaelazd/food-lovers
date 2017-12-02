@@ -13,9 +13,16 @@
                       
                        <form class="form" role="form" autocomplete="off" name="form" action="" enctype="multipart/form-data">
                           <h5>Selecione sua foto de Perfil</h5>
-                            <b-form-file id="file" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
-                            <span class="validate" id="valFoto">Você deve selecionar uma foto de Perfil</span>
-
+                            <b-row>
+                                <div v-if="!image" class="img-file">
+                                   <b-form-file id="file"  @change="onFileChange" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
+                                   <span class="validate" id="valFoto">Você deve selecionar uma foto de Perfil</span>
+                                </div>
+                                <div v-else  class="img-file">
+                                    <img id="usuFoto" :src="image" />
+                                    <b-button variant="danger" id="removeImage" @click="removeImage">Remover</b-button>
+                                </div>
+                            </b-row>
                             <h5>Biografia</h5>
                             <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
                             <small class="float-right">Máximo de 170 caracteres</small>
@@ -88,6 +95,11 @@
 import axios from 'axios'
     
 export default {
+data () {
+    return {
+      image: ''
+    }
+  },
   methods: {
             getLocalizacao() {
                 document.getElementById("locConfirma").style.display = "block";
@@ -114,6 +126,7 @@ export default {
                 
                 if (file.value == ''){
                     document.getElementById("valFoto").style.display = "block";
+                    
                 } 
                 
                 else if (text.length == 0) {
@@ -144,6 +157,26 @@ export default {
                     this.$router.push('inicio');
                     console.log('Login!');
                 }
+            },
+            onFileChange(e) {
+                var files = e.target.files || e.dataTransfer.files;
+                  if (!files.length)
+                    return;
+                  this.createImage(files[0]);
+                },
+                createImage(file) {
+                  var image = new Image();
+                  var reader = new FileReader();
+                  var vm = this;
+
+                  reader.onload = (e) => {
+                    vm.image = e.target.result;
+                  };
+                  reader.readAsDataURL(file);
+                },
+                removeImage: function (e) {
+                  this.image = '';
+                
             }
         }
 }
@@ -165,6 +198,13 @@ export default {
         overflow: auto;
         
     }
+        
+    #usuFoto {
+      width: 300px;
+      height: 300px;
+      border-radius: 150px;
+      
+    }
     
     .nb-login {
         padding: 20px 25px;
@@ -174,6 +214,11 @@ export default {
         color: white;
         overflow: auto;
         font-family: 'Open Sans', sans-serif;
+    }
+    
+    .nb-login .img-file {
+        justify-content: center;
+        margin-left: 28%;
     }
     
     .nb-login form {
@@ -207,6 +252,11 @@ export default {
     .nb-login small { 
         color: #bdc3c7;
         font-family: 'Open Sans', sans-serif;
+    }
+    
+    #removeImage:hover {
+        background-color: darkred;
+        border-color: darkred;
     }
     
     .nb-login p {
