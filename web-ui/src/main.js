@@ -7,6 +7,7 @@ import router from './router'
 
 import BootstrapVue from 'bootstrap-vue'
 import VueTheMask from 'vue-the-mask'
+import VueClip from 'vue-clip'
 import VueIntro from 'vue-introjs'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -18,6 +19,7 @@ import 'tether/dist/js/tether.min.js'
 
 Vue.use(BootstrapVue);
 Vue.use(VueTheMask);
+Vue.use(VueClip);
 Vue.use(VueIntro)
 
 Vue.config.productionTip = false
