@@ -5,7 +5,7 @@
                 <div class="nb-login">
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
                     <!-- Formulario -->
-                    <div class="card-block">
+                    <div class="card-block" id="login">
                         <form class="form" role="form" autocomplete="off" id="formLogin" action="">
                             <div class="form-group">
                             <input type="text" class="form-control" ref="usuario" name="usuario" required placeholder="Usuário" id="usuario">
@@ -13,14 +13,9 @@
                             <div class="form-group">
                             <input type="password" name="senha" ref="senha" class="form-control" id="senha" required placeholder="Senha" autocomplete="new-password">
                             </div>
-                            <b-button class="btn btn-block btn-outline-danger" v-on:click="realizaLogin" >Entrar</b-button>
-                            <div class="center or">OU</div>
-                            <h3 class="center">Entrar com</h3>
-                            <div class="social">
-                                <a href="#" class="facebook"><i class="fa fa-facebook"></i> &nbsp; Login com Facebook</a>
-                                <a href="#" class="twitter"><i class="fa fa-twitter"></i> &nbsp; Login com Twitter</a>
-                                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i> &nbsp; Login com Google Plus</a>
-                            </div>
+                            <b-button class="btn btn-block btn-success" v-on:click="realizaLogin" >Entrar</b-button>
+                            <h5>Não tem uma conta?</h5>
+                            <b-button variant="info"class="cad" v-bind:href="toCadastro">Cadastre-se</b-button>
                         </form>
                     </div>
                     <!-- end Formulario -->
@@ -32,19 +27,29 @@
 
 
 <script>
+import axios from 'axios'
 export default {
-    methods: {
-        realizaLogin(event) {
-            console.log(this.$refs.usuario);
-            console.log(this.$refs.senha);
-            if (this.$refs.usuario.value == "rafa" && this.$refs.senha.value == "123") {
-                // soh se o usuario autenticar com sucesso!
-                this.$router.push('inicio');
-                console.log('Login!');
-            } else {
-                console.log('Falha no login');
-            }
+    data() {
+        return {
+            login: '',
+            toCadastro: '#/cadastro-1'
         }
+    },
+    
+    created () {
+        this.buscarDados()
+    },
+    methods: {
+        buscarDados () {
+             axios.get('http://localhost:8060/pessoas/2')
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+//                  this.$router.push('inicio');
+            }
     }
 }
 
@@ -52,6 +57,7 @@ export default {
 
 
 <style scoped="true">
+    @import url('https://fonts.googleapis.com/css?family=Exo|Raleway:400,700,800|Poiret+One');
     #login-cover {
         height: 100vh;
         width: 100vw;
@@ -84,8 +90,8 @@ export default {
     
     .nb-login form input,
     .nb-login form textarea {
-        box-shadow: none !important;
-        padding: 6px 5px;
+         padding: 6px 5px;
+        color: #ffffff;
         border: 0px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         background: transparent;
@@ -95,69 +101,23 @@ export default {
     
     .nb-login form input:focus {
         background: rgba(255, 255, 255, 0.05);
+        color: #ecf0f1;
     }
     
-    .nb-login form ::-webkit-input-placeholder {
-        color: #fff;
+    .nb-login .btn {
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-bottom: 35px;
     }
     
-    .nb-login form ::-moz-placeholder {
-        color: #fff;
+    .nb-login .cad {
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
     
-    .nb-login form :-ms-input-placeholder {
-        color: #ffffff;
-    }
-    
-    .nb-login form .btn {
-        border: 0px;
-        border-radius: 25px;
-        padding: 10px 20px;
-        border: 1px solid #e74c3c;
-        color: #e74c3c;
-        text-transform: uppercase;
-        font-weight: 600;
-        background: transparent;
-        margin-top: 15px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-    
-    .nb-login form .btn:hover {
-        background: #e74c3c;
-        color: #fff;
-    }
-    
-    .nb-login .social a {
-        display: block;
-        margin-bottom: 15px;
-        color: #fff;
-        padding: 8px 20px;
-        border-radius: 25px;
-        text-align: center;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 600;
-        text-decoration: none;
-    }
-    
-    .nb-login .social a:hover {
-        opacity: 0.9;
-    }
-    
-    .nb-login .social a.facebook {
-        background: #3280e7;
-    }
-    
-    .nb-login .social a.twitter {
-        background: #32c8de;
-    }
-    
-    .nb-login .social a.google-plus {
-        background: #f96f4a;
+    .nb-login h5 {
+        font-size: 25px;
+        font-family: 'Poiret One', cursive;
     }
     
     .nb-login .center {
