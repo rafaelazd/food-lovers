@@ -50,6 +50,16 @@
                                     <b-form-textarea id="textarea2" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
                                     <small class="float-right">Máximo de 170 caracteres</small>
                                     <br>
+                                  <h5>Local</h5>
+                                     <b-row>
+                                         <b-col>
+                                             <b-button variant="secondary" @click="getLocalizacao">Localização</b-button>
+                                         </b-col>
+                                         <b-col id="location-col">
+                                             
+                                         </b-col>
+                                     </b-row>
+                                    <br>
                                 <b-button class="btn btn-outline-success float-left" @click="updateUm" style="margin-top:0px">Confirmar</b-button>
                              </div>
                          </div>
@@ -252,8 +262,14 @@ methods: {
           }
       },
       
-      updateUm() {
-           var text = document.getElementById("textarea2").value;
+      getLocalizacao () {
+            $.get("http://ipinfo.io/?token=ecc895cca16b9f", function(response) {
+                    document.getElementById("location-col").innerHTML = (response.city + ", " + response.region);
+            }, "jsonp")
+       },
+      
+      BioFunction () {
+          var text = document.getElementById("textarea2").value;
            if (text != '') {
                axios.patch('http://localhost:8060/pessoas/3', {
                   biografia: text,
@@ -264,8 +280,27 @@ methods: {
                   .catch(function (error) {
                     console.log(error);
                   });
-           }
-      },
+           } else {
+               console.log("Biografia não preenchida")
+           } 
+       },
+      
+      LocalizeFunction () {
+          var localize = document.getElementById("location-col").innerHTML;
+           if (localize != '') {
+               axios.patch('http://localhost:8060/pessoas/3', {
+                  local: localize,
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+           } else {
+               console.log("Localização não informada")
+           }   
+       },
       
       nomeFunction () {
           if (this.$refs.nome.value != "") {
@@ -347,6 +382,18 @@ methods: {
              } else {
                  console.log("Nenhum check selecionado")
              }
+      },
+    
+     updateUm() {
+         this.LocalizeFunction();
+         this.BioFunction();
+         var alerta = document.getElementById("updateSuccess");
+         var alertatxt = document.getElementById("aviso-success");
+         alerta.style.display = "block";
+         alertatxt.innerHTML = "Seu perfil foi alterado com sucesso.";
+         document.getElementById('close-success').onclick = function(){
+             document.getElementById("updateSuccess").style.display = "none";
+         }
       },
       
       updateDois() {
@@ -710,6 +757,17 @@ methods: {
         box-shadow: 10px 30px 20px rgba(0,0,0,.5);
         padding: 20px;
         display: none;
+    }
+    
+    #location-col {
+        font-family: 'Open Sans', sans-serif;
+        text-decoration: underline;
+        color: #3498db;
+        font-size: 18px;
+        cursor: pointer;
+        font-size: 19px;
+        text-align: left;
+        margin-top: 7px;
     }
     
     @media (max-width: 594px) {
