@@ -197,6 +197,7 @@
                                 <h4 class="card-title">Eba!</h4>
                                 <p class="card-text" id="aviso-success"> </p>
                                 <b-button variant="dark" id="close-success">Voltar</b-button>
+                                <b-button variant="info" v-bind:href="toPerfil"><i class="fa fa-id-card-o" aria-hidden="true"></i> Ver Perfil</b-button>
                               </div>
                             </div>
                         <!---------------------------------------------->
@@ -228,7 +229,8 @@ data () {
           senha: false,
       },
       checkselected: [],
-      radioselected: []
+      radioselected: [],
+      toPerfil: '#/perfil'
     }
   },
 

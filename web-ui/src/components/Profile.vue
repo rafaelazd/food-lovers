@@ -16,7 +16,7 @@
             <img src="/static/img/pizzaico.png" alt="icoPizza" width="40px" height="40px">
             </p>
             <p>
-            <b-button class="btn btn-sm btn-secondary" href="#"><i class="fa fa-id-card-o" aria-hidden="true"></i>Ver Perfil</b-button>
+            <b-button class="btn btn-sm btn-secondary" :href="toPerfil"><i class="fa fa-id-card-o" aria-hidden="true"></i> Ver Perfil</b-button>
             </p>
         </b-collapse>
     </b-card>
@@ -41,6 +41,7 @@
      data() {
          return {
              image: "/static/img/m5.jpg",
+             toPerfil: '#/perfil',
              clckNo: false,
              clckYes: false
          }
