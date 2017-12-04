@@ -1,14 +1,13 @@
 <template>
     <div id="bubble">
         <b-col id="bubble">
-            <b-button v-b-toggle="'collapse'" variant="light" class="d-flex flex-column">
+            <b-button @click="toggleActive" variant="light" class="d-flex flex-column">
                 <img src="/static/img/H1.4.jpg" alt="">
                 <small>{{bubble.nome}} {{bubble.sobrenome}}</small>
             </b-button>
         </b-col>
-        <b-collapse id="collapse">
             <div id="info">
-               <b-button v-b-toggle="'collapse'" id="close" class="btn-circle btn-sm float-left" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
+               <b-button id="close" class="btn-circle btn-sm float-left " variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
                 <h4>{{bubble.nome}} {{bubble.sobrenome}}</h4>
                    <p>Combinado em: dd/mm/aaaa</p>
                 <div class="social">
@@ -31,8 +30,7 @@
                     </b-list-group>
                 </div>
             </div>
-        </b-collapse> 
-    </div>
+     </div>
 </template>
 
 
@@ -58,6 +56,18 @@ export default {
           $temp.val($(element).text()).select();
           document.execCommand("copy");
           $temp.remove();
+            document.getElementById("info").style.display = "none";
+            document.getElementById("copied").style.display = "block";
+            setTimeout(function(){
+               document.getElementById("copied").style.display = "none";
+            }, 1100);
+        },
+        
+        toggleActive() {
+                document.getElementById("info").style.display = "block";
+                $("#close").click(function() {
+                    document.getElementById("info").style.display = "none";
+                })
         }
     }
 }
@@ -130,6 +140,12 @@ export default {
        font-family: 'Poiret One', cursive;
         padding: 7px;
         font-size: 30px;
+    }
+    
+    #bubble #info{
+        display: none;
+        width: 50%;
+        left: 25%;
     }
     
 </style>

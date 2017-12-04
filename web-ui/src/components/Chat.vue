@@ -37,6 +37,12 @@
                     <chatbubbles v-for="bubble in bubbles"  :key="bubble.id" :bubble="bubble"></chatbubbles>
                 </b-row>
             </div>
+            <div class="card text-white bg-success mb-3" style="max-width: 20rem;" id="copied">
+              <div class="card-body">
+                <h4 class="card-title">Eba!</h4>
+                <h6 class="card-text">Link copiado com sucesso.</h6>
+              </div>
+            </div>
         </div>
         <!-- END Chat Card -->
 
@@ -192,6 +198,17 @@ import axios from 'axios'
         margin-right: 25px;
     }
 
+    #copied{
+        display: none;
+        position: fixed;
+        width: 50%;
+        left: 40%;
+        top:40%;
+        z-index: 10000000;
+        padding: 20px;
+        color: white;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+    }
     
     @media (min-width: 576px) {
         .chat {
