@@ -5,7 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -41,11 +43,30 @@ public class Usuario {
 	
 	protected Usuario() {}
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.MERGE)
 	@JoinTable(name="usuario_preferencia",
 				joinColumns={@JoinColumn(name="idUsuario")},
 				inverseJoinColumns={@JoinColumn(name="idPreferencia")})
-	private List<Preferencias> preferencias = new ArrayList<Preferencias>();
+	private Set<Preferencias> preferencias = new HashSet<Preferencias>();
+
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, HashSet<Preferencias> preferencias) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.idade = idade;
+		this.prefsex = prefsex;
+		this.sexo = sexo;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.biografia = biografia;
+		this.local = local;
+		this.Facebook = Facebook;
+		this.Whatsapp = Whatsapp;
+		this.Snapchat = Snapchat;
+		this.Twitter = Twitter;
+		this.Instagram = Instagram;
+		this.preferencias = preferencias;
+	}
 
 	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram) {
 		this.nome = nome;
@@ -185,11 +206,16 @@ public class Usuario {
 		this.Instagram = Instagram;
 	}
 	
-	public List<Preferencias> getPreferencias() {
+	public Set<Preferencias> getPreferencias() {
 		return preferencias;
 	}
 
-	public void setPreferencias(List<Preferencias> preferencias) {
+	public void setPreferencias(Set<Preferencias> preferencias) {
 		this.preferencias = preferencias;
+	}
+	
+	public void addPreferencia(Preferencias p) {
+		this.preferencias.add(p);
+		p.addUsuario(this);
 	}
 }

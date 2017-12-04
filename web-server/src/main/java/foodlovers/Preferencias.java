@@ -1,7 +1,9 @@
 package foodlovers;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ public class Preferencias {
 	private String filepath;
 	
 	@ManyToMany(mappedBy="preferencias", cascade=CascadeType.ALL)
-	private List<Usuario> usuario = new ArrayList<Usuario>();
+	private Set<Usuario> usuario = new HashSet<Usuario>();
 
 	public Preferencias(String nome, String filepath) {
 		this.nome = nome;
@@ -46,12 +48,16 @@ public class Preferencias {
 		this.filepath = filepath;
 	}
 	
-	public List<Usuario> getUsuario() {
+	public Set<Usuario> getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(List<Usuario> usuario) {
+	public void setUsuario(Set<Usuario> usuario) {
 		this.usuario = usuario;
+	}
+	
+	public void addUsuario(Usuario u) {
+		this.usuario.add(u);
 	}
 
 }
