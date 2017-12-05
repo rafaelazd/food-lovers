@@ -1,4 +1,4 @@
-<template>
+    <template>
    <section id="inicio-cover">
        <div class="container">
        <!-- Navbar -->
@@ -44,13 +44,11 @@
                               <p class="col-sm-6 right">{{perfil.sexo}}</p>
                               
                          </b-row>
-                         <div class="preferencias">
+                         <div class="preferencias" id="preferencias">
                             <b-row>
-                                <b-col cols="6" sm="6" md="2" xl="2" id="pref1"><img src="/static/img/batataico.png" class="img-fluid" alt=""></b-col>
-                                <b-col cols="6" sm="6" md="3" xl="3" id="pref2"><img src="/static/img/pizzaico.png" class="img-fluid" alt=""></b-col>
-                                <b-col cols="6" sm="6" md="2" xl="2" id="pref3"><img src="/static/img/macarraoico.png" class="img-fluid" alt=""></b-col>
-                                <b-col cols="6" sm="6" md="3" xl="3" id="pref4"><img src="/static/img/nachosico.png" class="img-fluid" alt=""></b-col>
-                                <b-col cols="12" sm="12" md="2" xl="2" id="pref5"><img src="/static/img/cafeico.png" class="img-fluid" alt=""></b-col>
+                               <b-col  v-for="pref in prefs"  :key="pref.id" class="pref foot-icon">
+                                    <img :src="pref.filepath" alt="">
+                                </b-col>
                             </b-row>
                          </div>
                          <div class="button-cog">
@@ -72,21 +70,36 @@ export default {
         data() {
             return {
                 perfil: '',
-                toAlterPerfil: '#/alter-perfil'
+                toAlterPerfil: '#/alter-perfil',
+                prefs: []
             }
         },
         
         created() {
-            this.buscarDados();  
+            this.buscarDados();
+            this.buscarPref();
         },
 
         methods: {
             buscarDados() {
-                axios.get('http://localhost:8060/pessoas/3')
+                 axios.get('http://localhost:8060/pessoas/3')
                     .then((resp) => {
                         this.erro = false;
                         console.log(resp.data);
                         this.perfil = resp.data;
+                    })
+                    .catch((err) => {
+                        this.erro = true;
+                        console.log(err)
+                    });
+            },
+            
+            buscarPref() {
+                axios.get('http://localhost:8060/pessoas/3/preferencias')
+                    .then((resp) => {
+                        this.erro = false;
+                        this.prefs = resp.data._embedded.preferencias;
+                        console.log(resp.data);
                     })
                     .catch((err) => {
                         this.erro = true;
