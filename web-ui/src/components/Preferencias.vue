@@ -120,6 +120,7 @@
                           </label>
                        </b-col>
                    </b-row>
+                   <b-button variant="outline-success" class="float-right" id="confirma">Confirmar </b-button>
                </form>
            </div>
            </div>
@@ -217,7 +218,11 @@ export default {
     }
     
     .categorias {
-        margin-bottom: 70px;
+        margin-bottom: 150px;
+    }
+    
+    #confirma {
+        margin-right: 30px;
     }
     
     .preferencias {
@@ -282,12 +287,14 @@ export default {
         margin-left: 20px;
     }
     
-    #pref.btn {
-        margin-left: 0px;
-        margin-bottom: 90px;
+    #pref .btn {
+        margin-left: -50px;
+        margin-bottom: 70px;
         color: #fff;
-        border-radius: 20px;
-        font-size: 10px;
+        border-radius: 90px;
+        font-size: 15px;
+        width: 35px;
+        height: 35px;
     }
     
     @media (max-width: 320px) {
