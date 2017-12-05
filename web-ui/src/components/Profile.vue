@@ -35,7 +35,7 @@
      },
      
      created() {
-         console.log(this.profile.id);
+         console.log(this.profile.idusu);
      },
      
      data() {

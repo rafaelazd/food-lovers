@@ -50,7 +50,6 @@ import axios from 'axios'
         },
         
         created() {
-            console.log(this.id);
             this.buscarDados();
         },
 
