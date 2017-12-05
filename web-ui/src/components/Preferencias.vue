@@ -15,6 +15,7 @@
         <div class="head">
             <h1>Alterar Preferências</h1><br>
             <p>Modifique suas preferências culinárias quando quiser.</p>
+            <p id="txtPref"></p>
         </div> 
         <div class="preferencias">
            <div class="categorias">
@@ -23,19 +24,19 @@
                        <b-col class="options">
                            <label for="check1" class="btn">
                                 <img src="/static/img/hotdog.png" class="select-img" id="hotdog" alt="Hot Dog">
-                                <b-form-checkbox v-model="selected" id="check1" value="HotDog"></b-form-checkbox>
+                                <b-form-checkbox id="check1" value="HotDog"></b-form-checkbox>
                            </label>
                        </b-col>
                        <b-col class="options">
                            <label for="check2" class="btn">
                                 <img src="/static/img/bolo.png" class="select-img" id="bolo" alt="Bolo">
-                                <b-form-checkbox v-model="selected" id="check2" value="Bolo"></b-form-checkbox>
+                                <b-form-checkbox id="check2" value="Bolo"></b-form-checkbox>
                            </label>
                        </b-col>
                        <b-col class="options">
                            <label for="check3" class="btn">
                                  <img src="/static/img/cafe.png" class="select-img" id="cafe" alt="Café">
-                                 <b-form-checkbox v-model="selected" id="check3" value="Café"></b-form-checkbox>
+                                 <b-form-checkbox id="check3" value="Café"></b-form-checkbox>
                            </label>
                        </b-col>
                    </b-row>
@@ -43,19 +44,19 @@
                        <b-col class="options">
                           <label for="check4" class="btn">
                                  <img src="/static/img/sorvete.png" class="select-img" id="sorvete" alt="Sorvete">
-                                 <b-form-checkbox v-model="selected" id="check4" value="Sorvete"></b-form-checkbox>
+                                 <b-form-checkbox id="check4" value="Sorvete"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                            <label for="check5" class="btn">
                                 <img src="/static/img/pizza.png" class="select-img" id="pizza" alt="Pizza">
-                                <b-form-checkbox v-model="selected" id="check5" value="Pizza"></b-form-checkbox>
+                                <b-form-checkbox id="check5" value="Pizza"></b-form-checkbox>
                            </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check6" class="btn">
                                 <img src="/static/img/nachos.png" class="select-img" id="nachos" alt="Nachos">
-                                <b-form-checkbox v-model="selected" id="check6" value="Nachos"></b-form-checkbox>
+                                <b-form-checkbox id="check6" value="Nachos"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
@@ -63,19 +64,19 @@
                        <b-col class="options">
                           <label for="check7" class="btn">
                                  <img src="/static/img/churrasco.png" class="select-img" id="churrasco" alt="Churrasco">
-                                 <b-form-checkbox v-model="selected" id="check7" value="Churrasco"></b-form-checkbox>
+                                 <b-form-checkbox id="check7" value="Churrasco"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check8" class="btn">
                                  <img src="/static/img/spaghetti.png" class="select-img" id="spaghetti" alt="Spaghetti">
-                                 <b-form-checkbox v-model="selected" id="check8" value="Spaghetti"></b-form-checkbox>
+                                 <b-form-checkbox id="check8" value="Spaghetti"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check9" class="btn">
                                  <img src="/static/img/sopa.png" class="select-img" id="sopa" alt="Sopa">
-                                 <b-form-checkbox v-model="selected" id="check9" value="Sopa"></b-form-checkbox>
+                                 <b-form-checkbox id="check9" value="Sopa"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
@@ -83,19 +84,19 @@
                        <b-col class="options">
                           <label for="check10" class="btn">
                                  <img src="/static/img/salada.png" class="select-img" id="salada" alt="Salada">
-                                 <b-form-checkbox v-model="selected" id="check10" value="Salada"></b-form-checkbox>
+                                 <b-form-checkbox id="check10" value="Salada"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check11" class="btn">
                                  <img src="/static/img/sanduiche.png" class="select-img" id="sanduiche" alt="Sanduiche">
-                                 <b-form-checkbox v-model="selected" id="check11" value="Sanduiche"></b-form-checkbox>
+                                 <b-form-checkbox id="check11" value="Sanduiche"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check12" class="btn">
                                  <img src="/static/img/sushi.png" class="select-img" id="sushi" alt="Sushi">
-                                 <b-form-checkbox v-model="selected" id="check12" value="Sushi"></b-form-checkbox>
+                                 <b-form-checkbox id="check12" value="Sushi"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
@@ -103,61 +104,30 @@
                        <b-col class="options">
                           <label for="check13" class="btn">
                                  <img src="/static/img/batata.png" class="select-img" id="batata" alt="Batata Frita">
-                                 <b-form-checkbox v-model="selected" id="check13" value="Batata Frita"></b-form-checkbox>
+                                 <b-form-checkbox id="check13" value="Batata Frita"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check14" class="btn">
                                  <img src="/static/img/tacos.png" class="select-img" id="tacos" alt="Tacos">
-                                 <b-form-checkbox v-model="selected" id="check14" value="Tacos"></b-form-checkbox>
+                                 <b-form-checkbox id="check14" value="Tacos"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check15" class="btn">
                                  <img src="/static/img/panquecas.png" class="select-img" id="panquecas" alt="Panquecas">
-                                 <b-form-checkbox v-model="selected" id="check15" value="Panquecas"></b-form-checkbox>
+                                 <b-form-checkbox id="check15" value="Panquecas"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
                </form>
            </div>
-           </div>    
-           <div class="footer d-flex justify-content-center" id="footerPref">
-               <form class="form-conf-pref form-inline" name="formFooterPref" action="">
-                   <b-row>
-                   <b-col>
-                        <img src="/static/img/batataico.png" id="" class="img-fluid" alt="icoFrituras">
-                        <b-button size="sm" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
-                   </b-col>
-               </b-row>
-               <b-row>
-                   <b-col>
-                        <img src="/static/img/pizzaico.png" class="img-fluid" alt="icoPizza">
-                        <b-button size="sm" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
-                   </b-col>
-               </b-row>
-               <b-row>
-                   <b-col>
-                       <img src="/static/img/macarraoico.png" class="img-fluid" alt="icoMassas">
-                       <b-button size="sm" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
-                   </b-col>
-               </b-row>
-               <b-row>
-                   <b-col>
-                       <img src="/static/img/nachosico.png" class="img-fluid" alt="icoMexicanos">
-                       <b-button size="sm" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
-                   </b-col>
-               </b-row>
-               <b-row>
-                   <b-col>
-                       <img src="/static/img/cafeico.png" class="img-fluid" alt="icoBebidasHot">
-                       <b-button size="sm" variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
-                   </b-col>
-               </b-row>
-               
-               </form>
            </div>
-        
+           <!-- Footer -->
+                <b-row class="foot-bar" id="pref">
+                    <pref v-for="pref in prefs"  :key="pref.id" :pref="pref"></pref>
+                </b-row>
+           <!-- END Footer-->
         <!-- END Preferencias Card -->
 
        </div>
@@ -166,12 +136,37 @@
 
 
 <script>
+import Prefs from '@/components/Prefs'
+import axios from 'axios'
 export default {
-    data () {
-        return {
-            selected: []
+    components: {
+            'pref': Prefs
+        },
+        
+        data() {
+            return {
+                prefs: []
+            }
+        },
+        
+        created() {
+            this.buscarPrefs();  
+        },
+
+        methods: {
+            buscarPrefs() {
+                axios.get('http://localhost:8060/pessoas/3/preferencias')
+                    .then((resp) => {
+                        this.erro = false;
+                        this.prefs = resp.data._embedded.preferencias;
+                        console.log(resp.data);
+                    })
+                    .catch((err) => {
+                        this.erro = true;
+                        console.log(err)
+                    });
+            }
         }
-    }
 }
 </script>
 
@@ -221,33 +216,6 @@ export default {
         margin-bottom: 30px;
     }
     
-    #footerPref {
-        text-align: center;
-        justify-content: center;
-        position: fixed;
-        bottom: 0px;
-        width: 100%;
-        background-color: #fff;
-        border-top: 1.5px solid;
-        border-top-color: #ecf0f1;
-        box-shadow: 0 -6px 10px -4px #7f8c8d;
-    }
-    
-    #footerPref img {
-        width: 110px;
-        height: 110px;
-        margin-right: 20px;
-        margin-left: 20px;
-    }
-    
-    #footerPref .btn {
-        margin-left: 0px;
-        margin-bottom: 90px;
-        color: #fff;
-        border-radius: 20px;
-        font-size: 10px;
-    }
-    
     .categorias {
         margin-bottom: 70px;
     }
@@ -295,8 +263,35 @@ export default {
         margin-right: 1rem;
     }
     
+    #pref {
+        text-align: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1.5px solid;
+        border-top-color: #ecf0f1;
+        box-shadow: 0 -6px 10px -4px #7f8c8d;
+    }
+    
+    #pref img {
+        width: 110px;
+        height: 110px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    #pref.btn {
+        margin-left: 0px;
+        margin-bottom: 90px;
+        color: #fff;
+        border-radius: 20px;
+        font-size: 10px;
+    }
+    
     @media (max-width: 320px) {
-        #footerPref img {
+        #pref img {
             width: 60px;
             height: 60px;
         }
@@ -309,11 +304,11 @@ export default {
             width: 180px;
             height: 210px;
         }
-        #footerPref {
+        #pref {
             padding-left: 0px;
             position: fixed;
         }
-        #footerPref .btn {
+        #pref .btn {
             margin-bottom: 0px;
             margin-left: 0px;
             margin-top: -125px;
@@ -337,7 +332,7 @@ export default {
     }
     
     @media (min-width: 320px) and (max-width: 375px) {
-        #footerPref img {
+        #pref img {
             width: 60px;
             height: 60px;
         }
@@ -350,11 +345,11 @@ export default {
             width: 180px;
             height: 210px;
         }
-        #footerPref {
+        #pref {
             padding-left: 0px;
             position: fixed;
         }
-        #footerPref .btn {
+        #pref .btn {
             margin-bottom: 0px;
             margin-left: 0px;
             margin-top: -125px;
@@ -378,7 +373,7 @@ export default {
     }
     
     @media (min-width: 375px) and (max-width: 425px) {
-        #footerPref img {
+        #pref img {
             width: 70px;
             height: 70px;
         }
@@ -391,11 +386,11 @@ export default {
             width: 180px;
             height: 210px;
         }
-        #footerPref {
+        #pref {
             padding-left: 0px;
             position: fixed;
         }
-        #footerPref .btn {
+        #pref .btn {
             margin-bottom: 0px;
             margin-left: -15px;
             margin-top: -140px;
@@ -406,12 +401,12 @@ export default {
             font-size: 9px;
             justify-content: center;
         }
-        #footerPref .form-inline {
+        #pref .form-inline {
             justify-content: center;
             margin-left: -30px;
             margin-bottom: -30px;
         }
-        #footerPref .form-inline .col {
+        #pref .form-inline .col {
             width: 110px;
             padding-right: 15px;
             padding-left: 15px;
@@ -421,7 +416,7 @@ export default {
     }
     
     @media (min-width: 425px) and (max-width: 768px) {
-        #footerPref img {
+        #pref img {
             width: 90px;
             height: 90px;
         }
@@ -434,11 +429,11 @@ export default {
             width: 180px;
             height: 210px;
         }
-        #footerPref {
+        #pref {
             padding-left: 0px;
             position: fixed;
         }
-        #footerPref .btn {
+        #pref .btn {
             margin-bottom: 0px;
             margin-left: -60px;
             margin-top: -170px;
@@ -449,12 +444,12 @@ export default {
             font-size: 9px;
             justify-content: center;
         }
-        #footerPref .form-inline {
+        #pref .form-inline {
             justify-content: center;
             margin-left: 0px;
             margin-bottom: -30px;
         }
-        #footerPref .form-inline .col {
+        #pref .form-inline .col {
             width: 160px;
             padding-right: 15px;
             padding-left: 15px;
