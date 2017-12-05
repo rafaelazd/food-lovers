@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -86,6 +84,14 @@ public class Usuario {
 		this.Instagram = Instagram;
 	}
 
+	public long getIdusu() {
+		return idUsuario;
+	}
+
+	public void setIdusu(long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

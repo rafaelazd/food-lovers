@@ -1,8 +1,6 @@
 package foodlovers;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -30,6 +28,14 @@ public class Preferencias {
 	public Preferencias(String nome, String filepath) {
 		this.nome = nome;
 		this.filepath = filepath;
+	}
+	
+	public long getIdpref() {
+		return idPreferencia;
+	}
+
+	public void setIdPref(long idPreferencia) {
+		this.idPreferencia = idPreferencia;
 	}
 	
 	public String getNome() {
