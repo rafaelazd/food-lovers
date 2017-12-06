@@ -35,6 +35,7 @@ public class Usuario {
 	private String Snapchat;
 	private String Twitter;
 	private String Instagram;
+	private String pathfoto;
 	
 	@Column( columnDefinition = "TEXT" )
 	private String biografia;
@@ -47,7 +48,7 @@ public class Usuario {
 				inverseJoinColumns={@JoinColumn(name="idPreferencia")})
 	private Set<Preferencias> preferencias = new HashSet<Preferencias>();
 
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, HashSet<Preferencias> preferencias) {
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -63,10 +64,11 @@ public class Usuario {
 		this.Snapchat = Snapchat;
 		this.Twitter = Twitter;
 		this.Instagram = Instagram;
+		this.pathfoto = pathfoto;
 		this.preferencias = preferencias;
 	}
 
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram) {
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -82,6 +84,7 @@ public class Usuario {
 		this.Snapchat = Snapchat;
 		this.Twitter = Twitter;
 		this.Instagram = Instagram;
+		this.pathfoto = pathfoto;
 	}
 
 	public long getIdusu() {
@@ -210,6 +213,14 @@ public class Usuario {
 
 	public void setInstagram(String Instagram) {
 		this.Instagram = Instagram;
+	}
+	
+	public String getFoto() {
+		return pathfoto;
+	}
+
+	public void setFoto(String pathfoto) {
+		this.pathfoto = pathfoto;
 	}
 	
 	public Set<Preferencias> getPreferencias() {
