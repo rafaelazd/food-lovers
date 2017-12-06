@@ -2,7 +2,7 @@
     <div id="bubble">
         <b-col id="bubble">
             <b-button @click="toggleActive" variant="light" class="d-flex flex-column">
-                <img src="/static/img/H1.4.jpg" alt="">
+                <img :src="bubble.foto" alt="">
                 <small>{{bubble.nome}} {{bubble.sobrenome}}</small>
             </b-button>
         </b-col>
