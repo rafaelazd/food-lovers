@@ -52,7 +52,8 @@
                             </b-row>
                          </div>
                          <div class="button-cog">
-                             <b-button v-bind:href="toAlterPerfil"><i class="fa fa-cogs" aria-hidden="true"></i> Alterar Perfil</b-button>
+                                <b-button class="buttons" v-bind:href="toAlterPerfil">Perfil</b-button>
+                                <b-button class="buttons" v-bind:href="toPreferencias">Preferências</b-button>
                          </div>
                     </div>
             </b-jumbotron>
@@ -71,6 +72,7 @@ export default {
             return {
                 perfil: '',
                 toAlterPerfil: '#/alter-perfil',
+                toPreferencias: '#/preferencias',
                 prefs: []
             }
         },
@@ -254,23 +256,13 @@ export default {
         text-align: right;
     }
     
-    .jumbotron .button-cog .btn{
-        background: linear-gradient(-45deg, #E73C7E, #23A6D5);
+    .jumbotron .buttons {
+        border-radius: 25px;
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
         background-size: 400% 400%;
-        -webkit-animation: Gradient2 5s ease infinite;
-	    -moz-animation: Gradient2 5s ease infinite;
-	    animation: Gradient2 5s ease infinite;
-        border-radius: 20px;
-        border-color: transparent;
-    }
-    
-    .jumbotron .button-cog .btn:hover{
-        background: linear-gradient(-45deg, #E73C7E, #9b59b6);
-        background-size: 400% 400%;
-        -webkit-animation: Gradient2 3s ease infinite;
-	    -moz-animation: Gradient2 3s ease infinite;
-	    animation: Gradient2 3s ease infinite;
-        border-radius: 20px;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+	    animation: Gradient 15s ease infinite;
         border-color: transparent;
     }
     
