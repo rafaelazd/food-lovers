@@ -1,5 +1,5 @@
 <template> 
-    <b-card class="profile" id="profile"  :style="{backgroundImage: 'url(' + image + ')'}" v-bind:class="{'swipe-left': clckNo, 'swipe-right': clckYes}">
+    <b-card class="profile" id="profile"  :style="{backgroundImage: 'url(' + profile.foto + ')'}" v-bind:class="{'swipe-left': clckNo, 'swipe-right': clckYes}">
          <div slot="footer" class="d-flex justify-content-around">
             <b-button class="btn btn-circle btn-danger" id="no" v-on:click="funcNo"><i class="fa fa-times" aria-hidden="true"></i></b-button>
             <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-info m-1"><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
@@ -46,7 +46,6 @@ import axios from 'axios'
      
      data() {
          return {
-             image: "/static/img/m5.jpg",
              toPerfil: '#/perfil',
              clckNo: false,
              clckYes: false,
