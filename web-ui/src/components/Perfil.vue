@@ -26,8 +26,9 @@
                     <b-row class="pt1">
                         <h1>invisible</h1>
                     </b-row>
-                    <div class="foto-margin">
-                        <img src="/static/img/m7.png" class="img-fluid img-perfil" id="usuFoto" alt="">
+                    <div class="foto-margin d-flex justify-content-center">
+                        <div class="foto" id="usuFoto" :style="{backgroundImage: 'url(' + perfil.foto + ')'}" >
+                        </div>
                     </div>
                 </div>
                 <div class="body-perfil">

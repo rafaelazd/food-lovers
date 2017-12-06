@@ -11,9 +11,6 @@
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{profile.local}}</p>
                 <h6>{{profile.biografia}}</h6>
             <p>
-            <!--<img src="/static/img/batataico.png" alt="icoFrituras" width="40px" height="40px">
-            <img src="/static/img/cafeico.png" alt="icoBebidasHot" width="40px" height="40px">
-            <img src="/static/img/pizzaico.png" alt="icoPizza" width="40px" height="40px">-->
                 <b-row class="d-flex justify-content-center" id="minicons">
                     <b-col  v-for="pref in prefs"  :key="pref.id" class="prefs-icon" cols="2">
                         <img :src="pref.filepath" alt="">

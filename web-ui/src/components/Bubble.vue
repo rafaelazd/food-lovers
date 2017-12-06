@@ -2,7 +2,8 @@
     <div id="bubble">
         <b-col id="bubble">
             <b-button @click="toggleActive" variant="light" class="d-flex flex-column">
-                <img :src="bubble.foto" alt="">
+                <div class="foto" id="usuFoto" :style="{backgroundImage: 'url(' + bubble.foto + ')'}" >
+                </div>
                 <small>{{bubble.nome}} {{bubble.sobrenome}}</small>
             </b-button>
         </b-col>
@@ -87,10 +88,11 @@ export default {
         z-index: 100000;
     }
     
-    #bubble img {
+    #usuFoto {
         width: 150px;
         height: 150px;
         border-radius: 80px;
+        background-size: cover;
     }
     
     #bubble small {
