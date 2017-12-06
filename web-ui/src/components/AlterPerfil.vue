@@ -29,7 +29,9 @@
                         
                         <a class="nav-link" id="Usuario-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.usuario}" v-bind:href="usuario" role="tab" aria-controls="v-pills-settings" aria-selected="false" v-on:click="trocaSecao('usuario', $event)">Usuário</a>
                         
-                        <a class="nav-link" id="Senha-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.senha}" v-bind:href="senha" v-on:click="trocaSecao('senha', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Senha</a>
+                        <a class="nav-link" id="Senha-Tab" data-toggle="pill" v-bind:class="{ active: abaAtiva.senha}" v-bind:href="senha" v-on:click="trocaSecao('senha', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Senha</a> 
+                        
+                        <a class="nav-link" id="Excluir" data-toggle="pill" v-bind:class="{ active: abaAtiva.excluir}" v-bind:href="excluir" v-on:click="trocaSecao('excluir', $event)" role="tab" aria-controls="v-pills-settings" aria-selected="false">Excluir conta</a>
                         
                     </div>
                 </b-col>
@@ -183,6 +185,19 @@
                             </div>
                          </div>
                         <!------------------------------------------------>
+                        <!-----------------Excluir Perfil--------------------->
+                         <div class="tab-pane" v-bind:class="{ active: abaAtiva.excluir, show: abaAtiva.excluir, fade: !abaAtiva.excluir }" id="#/alter-perfil/#excluir" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                             <div class="body d-flex flex-column justify-content-center">
+                                <form action="" name="formExcluir">
+                                    <h4 style="margin-left: 0px; margin-bottom: 20px;">Por que você deseja excluir sua conta?</h4>
+                                    <b-form-textarea id="textarea3" placeholder="Explique aqui" :rows="3" :maxlength="170"></b-form-textarea>
+                                    <b-form-checkbox style="margin-top:20px;" class="float-left"  id="excluirconta" name="Excluir" value="Excluir"> Excluir conta </b-form-checkbox><br>
+                                    <small id="valExcluir" class="danger">Você deve selecionar a caixa se deseja prosseguir!</small><br>
+                                    <b-button @click="excluirConta" class="btn btn-outline-success float-right" >Confirmar</b-button>
+                                </form>
+                            </div>
+                         </div>
+                        <!------------------------------------------------>
                         <!-------------------Aviso-Danger----------------->
                             <div id="updateFail" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
                               <div class="card-body">
@@ -198,6 +213,16 @@
                                 <p class="card-text" id="aviso-success"> </p>
                                 <b-button variant="dark" id="close-success">Voltar</b-button>
                                 <b-button variant="info" v-bind:href="toPerfil"><i class="fa fa-id-card-o" aria-hidden="true"></i> Ver Perfil</b-button>
+                              </div>
+                            </div>
+                        <!---------------------------------------------->
+                        <!------------------Aviso-Delete--------------->
+                            <div id="ExcluirPerfil" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                              <div class="card-body">
+                                <h4 class="card-title">Você deseja prosseguir?</h4>
+                                <p class="card-text"> Seus dados não podem ser recuperados. </p>
+                                <b-button variant="secondary" id="close-card">Voltar</b-button>
+                                <b-button variant="dark" id="confirmaExcluir" v-bind:href="toUsuNaoIden"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Confirmar</b-button>
                               </div>
                             </div>
                         <!---------------------------------------------->
@@ -221,16 +246,19 @@ data () {
       email: '#/alter-perfil/#email',
       usuario: '#/alter-perfil/#usuario',
       senha: '#/alter-perfil/#senha',
+      excluir: '#/alter-perfil/#excluir',
       abaAtiva: {
           fotoPerfil: true,
           dadosPessoais: false,
           email: false,
           usuario: false,
           senha: false,
+          excluir: false,
       },
       checkselected: [],
       radioselected: [],
-      toPerfil: '#/perfil'
+      toPerfil: '#/perfil',
+      toUsuNaoIden: '#/usuario-nao-autenticado'
     }
   },
 
@@ -244,6 +272,7 @@ methods: {
           this.abaAtiva.email = false;
           this.abaAtiva.usuario = false;
           this.abaAtiva.senha = false;
+          this.abaAtiva.excluir = false;
           
           switch(secao) {
               case 'foto-perfil':
@@ -260,6 +289,9 @@ methods: {
                   break;
               case 'senha':
                   this.abaAtiva.senha = true;
+                  break;
+              case 'excluir':
+                  this.abaAtiva.excluir = true;
                   break;
           }
       },
@@ -547,6 +579,23 @@ methods: {
            }
       },
     
+        excluirConta() {
+            if (document.formExcluir.Excluir.checked == false) {
+                document.getElementById("valExcluir").style.display = "block";
+            } else {
+                document.getElementById("ExcluirPerfil").style.display = "block";
+                document.getElementById('close-card').onclick = function(){
+                    document.getElementById("ExcluirPerfil").style.display = "none";
+                }; 
+                document.getElementById('confirmaExcluir').onclick = function(){
+                    axios({
+                      method: 'DELETE',
+                      url: 'http://localhost:8060/pessoas/3'
+                    });
+                };
+            }
+        }
+    
    }
 }
 
@@ -617,6 +666,15 @@ methods: {
        color: #7f8c8d;
        font-family: 'Open Sans', sans-serif;
     }
+    
+    #valExcluir {
+        color: #c0392b;
+        font-size: 14px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        display: none;
+    }
+    
     
     .body {
         max-width: none;
@@ -761,6 +819,16 @@ methods: {
         display: none;
     }
     
+      #ExcluirPerfil{
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
+    }
+    
     #location-col {
         font-family: 'Open Sans', sans-serif;
         text-decoration: underline;
@@ -770,6 +838,15 @@ methods: {
         font-size: 19px;
         text-align: left;
         margin-top: 7px;
+    }
+    
+    #Excluir:focus {
+        background-color: #e74c3c;
+    }
+    
+    #Excluir:active {
+        background-color: #e74c3c;
+        color: white;
     }
     
     @media (max-width: 594px) {
