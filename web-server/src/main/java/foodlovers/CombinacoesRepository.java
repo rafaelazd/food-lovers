@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = {"http://localhost", "http://localhost:8000"})
 @RepositoryRestResource(collectionResourceRel = "combinacoes", path = "combinacoes")
-public interface CombinacoesRepository extends PagingAndSortingRepository<Combinacoes, Long> {
-
-
+public interface CombinacoesRepository extends PagingAndSortingRepository<Combinacao, Long> {
+	
+	List<Combinacao> findByUsuario1(@Param("usuario1") Usuario usuario1);
+	
 }

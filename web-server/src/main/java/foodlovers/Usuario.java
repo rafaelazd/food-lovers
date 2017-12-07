@@ -1,6 +1,7 @@
 package foodlovers;
 	
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -13,6 +14,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Usuario {
@@ -48,14 +52,14 @@ public class Usuario {
 				inverseJoinColumns={@JoinColumn(name="idPreferencia")})
 	private Set<Preferencias> preferencias = new HashSet<Preferencias>();
 	
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@OneToMany(mappedBy = "usuario1", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	  private Set<Combinacao> combinacoes1 = new HashSet<Combinacao>();
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
-	@JoinTable(name="usuario_combinacao",
-				joinColumns={@JoinColumn(name="idUsuario")},
-				inverseJoinColumns={@JoinColumn(name="idCombinacao")})
-	private Set<Combinacoes> combinacoes = new HashSet<Combinacoes>();
-
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias, HashSet<Combinacoes> combinacoes) {
+	@OneToMany(mappedBy = "usuario2", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	  private Set<Combinacao> combinacoes2 = new HashSet<Combinacao>();
+	
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias, HashSet<Combinacao> combinacoes1, HashSet<Combinacao> combinacoes2) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -73,7 +77,8 @@ public class Usuario {
 		this.Instagram = Instagram;
 		this.pathfoto = pathfoto;
 		this.preferencias = preferencias;
-		this.combinacoes = combinacoes;
+		this.combinacoes1 = combinacoes1;
+		this.combinacoes2 = combinacoes2;
 	}
 
 	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto) {
@@ -238,13 +243,21 @@ public class Usuario {
 	public void setPreferencias(Set<Preferencias> preferencias) {
 		this.preferencias = preferencias;
 	}
-	
-	public Set<Combinacoes> getCombinacoes() {
-		return combinacoes;
+
+	public Set<Combinacao> getCombinacoes1() {
+		return combinacoes1;
 	}
 
-	public void setCombinacoes(Set<Combinacoes> combinacoes) {
-		this.combinacoes = combinacoes;
+	public void setCombinacoes1(Set<Combinacao> combinacoes1) {
+		this.combinacoes1 = combinacoes1;
+	}
+	
+	public Set<Combinacao> getCombinacoes2() {
+		return combinacoes2;
+	}
+
+	public void setCombinacoes2(Set<Combinacao> combinacoes2) {
+		this.combinacoes2 = combinacoes2;
 	}
 	
 	public void addPreferencia(Preferencias p) {
@@ -252,8 +265,13 @@ public class Usuario {
 		p.addUsuario(this);
 	}
 	
-	public void addCombinacao(Combinacoes c) {
-		this.combinacoes.add(c);
-		c.addUsuario(this);
+	public void addCombinacao1(Combinacao c) {
+		this.combinacoes1.add(c);
+		c.setUsuario1(this);
+	}
+	
+	public void addCombinacao2(Combinacao c) {
+		this.combinacoes2.add(c);	
+		c.setUsuario2(this);
 	}
 }

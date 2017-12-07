@@ -76,29 +76,24 @@ public class FoodLoversApplication {
 			thea.addPreferencia(Nachos);
 			thea.addPreferencia(Pizza);
 			
-			Combinacoes um = new Combinacoes();
-			Combinacoes dois = new Combinacoes();
-			Combinacoes tres = new Combinacoes();
+			usuariosRepository.save(kali);
+			usuariosRepository.save(mateus);
+			usuariosRepository.save(thea);
 			
-			/*um.addUsuario(mateus);
-			um.addUsuario(thea);
-			dois.addUsuario(thea);
-			dois.addUsuario(kali);
-			tres.addUsuario(mateus);
-			tres.addUsuario(kali);*/
+			Combinacao um = new Combinacao();
+			Combinacao dois = new Combinacao();
+			Combinacao tres = new Combinacao();
 			
-			mateus.addCombinacao(um);
-			kali.addCombinacao(um);
-			mateus.addCombinacao(dois);
-			thea.addCombinacao(dois);
+			um.setUsuario1(thea);
+			um.setUsuario2(kali);
+			dois.setUsuario1(mateus);
+			dois.setUsuario2(thea);
+			tres.setUsuario1(mateus);
+			tres.setUsuario2(kali);
 			
 			combinacoesRepository.save(um);
 			combinacoesRepository.save(dois);
 			combinacoesRepository.save(tres);
-			
-			usuariosRepository.save(kali);
-			usuariosRepository.save(mateus);
-			usuariosRepository.save(thea);
 			log.info("Depois de criar os registros");
 			
 			storageService.deleteAll();
