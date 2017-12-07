@@ -47,8 +47,15 @@ public class Usuario {
 				joinColumns={@JoinColumn(name="idUsuario")},
 				inverseJoinColumns={@JoinColumn(name="idPreferencia")})
 	private Set<Preferencias> preferencias = new HashSet<Preferencias>();
+	
+	
+	@ManyToMany(cascade = CascadeType.MERGE)
+	@JoinTable(name="usuario_combinacao",
+				joinColumns={@JoinColumn(name="idUsuario")},
+				inverseJoinColumns={@JoinColumn(name="idCombinacao")})
+	private Set<Combinacoes> combinacoes = new HashSet<Combinacoes>();
 
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias) {
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias, HashSet<Combinacoes> combinacoes) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -66,6 +73,7 @@ public class Usuario {
 		this.Instagram = Instagram;
 		this.pathfoto = pathfoto;
 		this.preferencias = preferencias;
+		this.combinacoes = combinacoes;
 	}
 
 	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto) {
@@ -231,8 +239,21 @@ public class Usuario {
 		this.preferencias = preferencias;
 	}
 	
+	public Set<Combinacoes> getCombinacoes() {
+		return combinacoes;
+	}
+
+	public void setCombinacoes(Set<Combinacoes> combinacoes) {
+		this.combinacoes = combinacoes;
+	}
+	
 	public void addPreferencia(Preferencias p) {
 		this.preferencias.add(p);
 		p.addUsuario(this);
+	}
+	
+	public void addCombinacao(Combinacoes c) {
+		this.combinacoes.add(c);
+		c.addUsuario(this);
 	}
 }

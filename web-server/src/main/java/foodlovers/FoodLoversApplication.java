@@ -22,7 +22,7 @@ public class FoodLoversApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, StorageService storageService) {
+	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, CombinacoesRepository combinacoesRepository, StorageService storageService) {
 		return (args) -> {
 			log.info("Antes de criar os registros");
 			Preferencias HotDog = new Preferencias("Hot Dog", "/static/img/hotdogico.png");
@@ -75,6 +75,26 @@ public class FoodLoversApplication {
 			thea.addPreferencia(Sushi);
 			thea.addPreferencia(Nachos);
 			thea.addPreferencia(Pizza);
+			
+			Combinacoes um = new Combinacoes();
+			Combinacoes dois = new Combinacoes();
+			Combinacoes tres = new Combinacoes();
+			
+			/*um.addUsuario(mateus);
+			um.addUsuario(thea);
+			dois.addUsuario(thea);
+			dois.addUsuario(kali);
+			tres.addUsuario(mateus);
+			tres.addUsuario(kali);*/
+			
+			mateus.addCombinacao(um);
+			kali.addCombinacao(um);
+			mateus.addCombinacao(dois);
+			thea.addCombinacao(dois);
+			
+			combinacoesRepository.save(um);
+			combinacoesRepository.save(dois);
+			combinacoesRepository.save(tres);
 			
 			usuariosRepository.save(kali);
 			usuariosRepository.save(mateus);
