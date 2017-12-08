@@ -32,29 +32,45 @@
             </b-row>
             <h4>Avalie o Aplicativo</h4>
             <b-row class="rating d-flex justify-content-center">
-                <b-col id="ratings" @click="rating('ruim', $event)" v-bind:class="{ active: isActive.ruim }">
-                    <img src="/static/img/1.PNG" alt="Triste"><br>
-                    <small>Ruim</small>
+                <b-col id="ratings" cols="6" md="4" lg="2">
+                    <label for="ruim">
+                        <img src="/static/img/1.PNG" class="img-fluid" id="Triste" alt="Triste"><br>
+                        <input type="radio" class="option-input radio" id="ruim" v-model="radioselected" name="rate" value="Ruim">
+                        <small>Ruim</small>
+                    </label>
                 </b-col>
-                <b-col id="ratings" @click="rating('razoavel', $event)" v-bind:class="{ active: isActive.razoavel }">
-                    <img src="/static/img/2.PNG" alt="Razoável"><br>
-                    <small>Razoável</small>
+                <b-col id="ratings" cols="6" md="4" lg="2">
+                    <label for="razoavel">
+                        <img src="/static/img/2.PNG" class="img-fluid" id="Razoavel" alt="Razoável"><br>
+                        <input type="radio" class="option-input radio"  id="razoavel" v-model="radioselected" name="rate" value="Razoável">
+                        <small>Razoável</small>
+                    </label>
                 </b-col>
-                <b-col id="ratings" @click="rating('bom', $event)" v-bind:class="{ active: isActive.bom }">
-                    <img src="/static/img/3.PNG" alt="Satisfeito"><br>
-                    <small>Bom</small>
+                <b-col id="ratings" cols="6" md="4" lg="2">
+                    <label for="bom">
+                        <img src="/static/img/3.PNG" class="img-fluid" id="Satisfeito" alt="Satisfeito"><br>
+                        <input type="radio" class="option-input radio" id="bom" v-model="radioselected" name="rate" value="Bom">
+                        <small>Bom</small>
+                    </label>
                 </b-col>
-                <b-col id="ratings" @click="rating('otimo', $event)" v-bind:class="{ active: isActive.otimo }">
-                    <img src="/static/img/4.PNG" alt="Feliz"><br>
-                    <small>Ótimo</small>
+                <b-col id="ratings" cols="6" md="4" lg="2">
+                    <label for="otimo">
+                        <img src="/static/img/4.PNG" class="img-fluid" id="Feliz" alt="Feliz"><br>
+                        <input type="radio" class="option-input radio" id="otimo" v-model="radioselected" name="rate" value="Ótimo">
+                        <small>Ótimo</small>
+                    </label>
                 </b-col>
-                <b-col id="ratings" @click="rating('incrivel', $event)" v-bind:class="{ active: isActive.incrivel }">
-                    <img src="/static/img/5.PNG" alt="Muito Feliz"><br>
-                    <small>Incrível</small>
+                <b-col id="ratings" cols="6" md="4" lg="2">
+                    <label for="incrivel">
+                        <img src="/static/img/5.PNG" class="img-fluid" id="MuitoFeliz" alt="Muito Feliz"><br>
+                        <input type="radio" class="option-input radio" id="incrivel" v-model="radioselected" name="rate" value="Incrível">
+                        <small>Incrível</small>
+                    </label>
                 </b-col>
             </b-row>
+            {{radioselected}}
             <b-row class="btn-small">
-                <b-button type="submit" id="submit-form" class="btn btn-outline-success float-left" @click="enviarDados">Confirmar</b-button>
+                <b-button class="btn btn-outline-success float-left" @click="enviarDados">Confirmar</b-button>
             </b-row>
         </div>
         </form>
@@ -70,49 +86,16 @@ import axios from 'axios'
 export default {
     data () {
         return {
-           isActive: {
-              ruim: true,
-              razoavel: true,
-              bom: true,
-              otimo: true,
-              incrivel: true
-            }
+           radioselected: []
         }
     }, 
     
     methods: {
         enviarDados() {
             
-        },
-        
-        rating(secao, event) {           
-              event.preventDefault();
-              this.isActive.ruim = true;
-              this.isActive.razoavel = true;
-              this.isActive.bom = true;
-              this.isActive.otimo = true;
-              this.isActive.incrivel = true;
-
-              switch(secao) {
-                  case 'ruim':
-                      this.isActive.ruim = false;
-                      break;
-                  case 'razoavel':
-                      this.isActive.razoavel = false;
-                      break;
-                  case 'bom':
-                      this.isActive.bom = false;
-                      break;
-                  case 'otimo':
-                      this.isActive.otimo = false;
-                      break;
-                  case 'incrivel':
-                      this.isActive.incrivel = false;
-                      break;
-             }
         }
     }
-  }
+}
 </script>
 
 
@@ -231,10 +214,63 @@ export default {
         font-size: 18px;    
     }
     
-    .active {
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(70%);
-        opacity: 0.5;
+    .option-input {
+        appearance: none;
+        position: relative;
+        top: 7px;
+        right: 0;
+        bottom: 0;
+        margin-left: 15px;
+        margin-right: 15px;
+        height: 25px;
+        width: 25px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 0.5rem;
+        outline: none;
+        z-index: 1000;
+        background: #ecf0f1;
+    }
+    
+    .option-input:hover {
+        background: #9faab7;
+    }
+    
+    .option-input:checked {
+        background: #007bff;
+    }
+    
+    .option-input:checked::before {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        content: '✔';
+        display: inline-block;
+        font-size: 15px;
+        text-align: center;
+        line-height: 23px;
+        margin-left: -8px;
+    }
+    
+    .option-input:checked::after {
+        -webkit-animation: click-wave 0.65s;
+        -moz-animation: click-wave 0.65s;
+        animation: click-wave 0.65s;
+        background: #007bff;
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+    }
+    
+    .option-input.radio {
+        border-radius: 50%;
+    }
+    
+    .option-input.radio::after {
+        border-radius: 50%;
     }
     
 </style>
