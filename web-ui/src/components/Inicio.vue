@@ -8,13 +8,13 @@
        <!-- Nav -->
         <div class="nav nav-pills nav-fill">
             <div class="nav-item">
-            <router-link class="nav-link" role="a" aria-pressed="true" to="/feed"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
+                <router-link class="nav-link" role="a" aria-pressed="true" to="/feed"><i class="fa fa-camera" aria-hidden="true"></i></router-link>
             </div>
             <div class="nav-item">
-            <router-link class="nav-link active" role="a" aria-pressed="true" to="/inicio"><i class="fa fa-heart" aria-hidden="true"></i></router-link>
+                <router-link class="nav-link active" role="a" aria-pressed="true" to="/inicio"><i class="fa fa-heart" aria-hidden="true"></i></router-link>
             </div>
             <div class="nav-item">
-            <router-link class="nav-link" role="a" aria-pressed="true" to="/chat"><i class="fa fa-comments" aria-hidden="true"></i></router-link>
+                <router-link class="nav-link" role="a" aria-pressed="true" to="/chat"><i class="fa fa-comments" aria-hidden="true"></i></router-link>
             </div>
         </div> <br>    
         <!--END Nav -->
@@ -176,6 +176,12 @@ import axios from 'axios'
         border-top-color: #ecf0f1;
         text-align: center;
         padding: 7px;
+    }
+    
+    @media (min-width: 576px) {
+        .card-group .card:not(:first-child):not(:last-child):not(:only-child) {
+     border-radius: 15px; 
+}
     }
 
     
