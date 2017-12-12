@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,7 @@ import foodlovers.storage.StorageService;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
+@EnableAutoConfiguration
 public class FoodLoversApplication {
 	private static final Logger log = LoggerFactory.getLogger(FoodLoversApplication.class);
 
@@ -22,7 +24,7 @@ public class FoodLoversApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, CombinacoesRepository combinacoesRepository, StorageService storageService) {
+	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, CombinacoesRepository combinacoesRepository) {
 		return (args) -> {
 			log.info("Antes de criar os registros");
 			Preferencias HotDog = new Preferencias("Hot Dog", "/static/img/hotdogico.png");
@@ -95,9 +97,15 @@ public class FoodLoversApplication {
 			combinacoesRepository.save(dois);
 			combinacoesRepository.save(tres);
 			log.info("Depois de criar os registros");
-			
-			storageService.deleteAll();
-            storageService.demo();
+		};
+	}
+	
+	@Bean
+	public CommandLineRunner initStorageService(StorageService storageService) {
+		return (args) -> {
+			log.info("Antes de inicializar o Storage Service");
+			storageService.init();
+			log.info("Apos de inicializar o Storage Service");
 		};
 	}
 }

@@ -90,7 +90,7 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public void demo() {
+    public void init() {
         try {
             Files.createDirectories(rootLocation);
         }
