@@ -32,7 +32,7 @@
                     <button class="btn btn-secondary input-group-addon"><i class="fa fa-search"></i></button>
                   </b-input-group>
             </div>
-            <div class="conversas">
+            <div class="conversas" id="conversas">
                 <b-row>
                     <chatbubbles v-for="bubble in bubbles"  :key="bubble.id" :bubble="bubble"></chatbubbles>
                 </b-row>

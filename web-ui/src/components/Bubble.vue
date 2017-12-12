@@ -1,14 +1,14 @@
 <template>
     <div id="bubble">
         <b-col id="bubble">
-            <b-button @click="toggleActive" variant="light" class="d-flex flex-column">
+            <b-button v-b-toggle.collapse1 variant="light" class="d-flex flex-column">
                 <div class="foto" id="usuFoto" :style="{backgroundImage: 'url(' + bubble.foto + ')'}" >
                 </div>
                 <small>{{bubble.nome}} {{bubble.sobrenome}}</small>
             </b-button>
         </b-col>
-            <div id="info">
-               <b-button id="close" class="btn-circle btn-sm float-left " variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
+             <b-collapse id="collapse1" class="mt-2">
+               <b-button v-b-toggle.collapse1 id="close" class="btn-circle btn-sm float-left " variant="danger"><i class="fa fa-times" aria-hidden="true"></i></b-button>
                 <h4>{{bubble.nome}} {{bubble.sobrenome}}</h4>
                    <p>Combinado em: dd/mm/aaaa</p>
                 <div class="social">
@@ -30,7 +30,7 @@
                       </b-list-group-item>
                     </b-list-group>
                 </div>
-            </div>
+        </b-collapse>
      </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
      },
      
      created() {
-         console.log(this.bubble.id);
+         console.log(this.bubble.idusu);
      },
     
     methods:{
@@ -144,10 +144,12 @@ export default {
         font-size: 30px;
     }
     
-    #bubble #info{
-        display: none;
+    #bubble #collapse1{
+        position: fixed;
         width: 50%;
-        left: 25%;
+        left: 40%;
+        top:40%;
+        padding: 20px;
     }
     
 </style>
