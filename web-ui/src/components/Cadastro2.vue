@@ -87,7 +87,7 @@
                             </div>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
-                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin2">Confirmar</b-button>
+                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="cadastrar">Confirmar</b-button>
                         </form>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ export default {
     },
     
     methods: {
-        realizaLogin2() {
+        cadastrar() {
             var x = this.$refs.prefer.checked;
             if(document.form.hotdog.checked == false && document.form.bolo.checked == false && document.form.cafe.checked == false && document.form.sorvete.checked == false && document.form.pizza.checked == false && document.form.nachos.checked == false && document.form.churrasco.checked == false && document.form.spaghetti.checked == false && document.form.sopa.checked == false ) {
                     console.log('Falha no login');

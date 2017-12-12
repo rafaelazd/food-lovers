@@ -85,7 +85,7 @@
                             </div>
                             <div class="form-group">
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
-                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin">Confirmar</b-button>
+                            <b-button class="btn btn-outline-secondary btn-lg" v-on:click="cadastrar">Confirmar</b-button>
                             </div>
                             <div id="valRequired"class="card text-white bg-danger mb-3" style="max-width: 20rem;">
                               <div class="card-body">
@@ -115,7 +115,7 @@ export default {
     },
     
     methods: {
-        realizaLogin(event) {
+        cadastrar(event) {
             if (this.$refs.nome.value=="" || this.$refs.email.value=="" || this.$refs.sobrenome.value=="" || this.$refs.idade.value=="" || this.$refs.usuario.value=="" || this.$refs.senha.value=="" || this.$refs.senha2.value=="") {
                  console.log('Falha no login');
                  document.getElementById("valRequired").style.display = "block";

@@ -82,7 +82,7 @@
                     <div class="buttons d-flex justify-content-center">
                         <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                         <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-2">Voltar</router-link>
-                        <b-button class="btn btn-outline-secondary btn-lg" v-on:click="realizaLogin3">Confirmar</b-button>
+                        <b-button class="btn btn-outline-secondary btn-lg" v-on:click="cadastrar">Confirmar</b-button>
                     </div>
                 </div>
          </div>
@@ -114,7 +114,7 @@ data () {
                 };
             },
             
-            realizaLogin3 () {
+            cadastrar () {
                 var file = document.getElementById("file");
                 var text = document.getElementById("textarea1").value;
                 var localize = document.getElementById("location-col").innerHTML;
