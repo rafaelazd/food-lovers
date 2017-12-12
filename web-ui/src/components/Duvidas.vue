@@ -11,70 +11,70 @@
         </div>
         <!--END Back Button -->
     
-        <!-- Duvidas -->
-        <div class="head">
-            <h1>Envie-nos a sua dúvida</h1><br>
-            <p>Pergunte o que quiser, respondemos rapidinho!</p>
-        </div> <br>
-        <form id="duvidas-form">
-            <div class="question-body">
-            <b-row>
-                <b-col>
-                    <b-form-textarea id="textarea2"
-                     placeholder="Digite a sua dúvida"
-                     :rows="4"
-                     :maxlength="900"
-                     name="Duvidas"
-                     ref="duvida">
-                    </b-form-textarea>
-                    <small class="float-right">Máximo de 900 caracteres</small>
-                </b-col>
-            </b-row>
-            <h4>Avalie o Aplicativo</h4>
-            <b-row class="rating d-flex justify-content-center">
-                <b-col id="ratings" cols="6" md="4" lg="2">
-                    <label for="ruim">
-                        <img src="/static/img/1.PNG" class="img-fluid" id="Triste" alt="Triste"><br>
-                        <input type="radio" class="option-input radio" id="ruim" v-model="radioselected" name="rate" value="Ruim">
-                        <small>Ruim</small>
-                    </label>
-                </b-col>
-                <b-col id="ratings" cols="6" md="4" lg="2">
-                    <label for="razoavel">
-                        <img src="/static/img/2.PNG" class="img-fluid" id="Razoavel" alt="Razoável"><br>
-                        <input type="radio" class="option-input radio"  id="razoavel" v-model="radioselected" name="rate" value="Razoável">
-                        <small>Razoável</small>
-                    </label>
-                </b-col>
-                <b-col id="ratings" cols="6" md="4" lg="2">
-                    <label for="bom">
-                        <img src="/static/img/3.PNG" class="img-fluid" id="Satisfeito" alt="Satisfeito"><br>
-                        <input type="radio" class="option-input radio" id="bom" v-model="radioselected" name="rate" value="Bom">
-                        <small>Bom</small>
-                    </label>
-                </b-col>
-                <b-col id="ratings" cols="6" md="4" lg="2">
-                    <label for="otimo">
-                        <img src="/static/img/4.PNG" class="img-fluid" id="Feliz" alt="Feliz"><br>
-                        <input type="radio" class="option-input radio" id="otimo" v-model="radioselected" name="rate" value="Ótimo">
-                        <small>Ótimo</small>
-                    </label>
-                </b-col>
-                <b-col id="ratings" cols="6" md="4" lg="2">
-                    <label for="incrivel">
-                        <img src="/static/img/5.PNG" class="img-fluid" id="MuitoFeliz" alt="Muito Feliz"><br>
-                        <input type="radio" class="option-input radio" id="incrivel" v-model="radioselected" name="rate" value="Incrível">
-                        <small>Incrível</small>
-                    </label>
-                </b-col>
-            </b-row>
-            {{radioselected}}
-            <b-row class="btn-small">
-                <b-button class="btn btn-outline-success float-left" @click="enviarDados">Confirmar</b-button>
-            </b-row>
-        </div>
-        </form>
-        <!-- END Duvidas https://script.google.com/macros/s/AKfycbx_DP7jDr23VRvLBdsIU9DNIf0Z5AFEUxd7qSfIdZmR-6AC1VM/exec-->
+        <!-- Duvidas -->   
+             <div class="head">
+                <h1>Envie-nos a sua dúvida</h1><br>
+                <p>Pergunte o que quiser, respondemos rapidinho!</p>
+            </div> <br>
+            <form id="duvidas-form">
+                <div class="question-body">
+                <b-row>
+                    <b-col>
+                        <b-form-textarea id="textarea2"
+                         placeholder="Digite a sua dúvida"
+                         :rows="4"
+                         :maxlength="900"
+                         name="Duvidas"
+                         ref="duvida">
+                        </b-form-textarea>
+                        <small class="float-right">Máximo de 900 caracteres</small>
+                    </b-col>
+                </b-row>
+                <h4>Avalie o Aplicativo</h4>
+                <b-row class="rating d-flex justify-content-center">
+                    <b-col id="ratings" cols="6" md="4" lg="2">
+                        <label for="ruim">
+                            <img src="/static/img/1.PNG" class="img-fluid" id="Triste" alt="Triste"><br>
+                            <input type="radio" class="option-input radio" id="ruim" v-model="radioselected" name="rate" value="Ruim">
+                            <small>Ruim</small>
+                        </label>
+                    </b-col>
+                    <b-col id="ratings" cols="6" md="4" lg="2">
+                        <label for="razoavel">
+                            <img src="/static/img/2.PNG" class="img-fluid" id="Razoavel" alt="Razoável"><br>
+                            <input type="radio" class="option-input radio"  id="razoavel" v-model="radioselected" name="rate" value="Razoável">
+                            <small>Razoável</small>
+                        </label>
+                    </b-col>
+                    <b-col id="ratings" cols="6" md="4" lg="2">
+                        <label for="bom">
+                            <img src="/static/img/3.PNG" class="img-fluid" id="Satisfeito" alt="Satisfeito"><br>
+                            <input type="radio" class="option-input radio" id="bom" v-model="radioselected" name="rate" value="Bom">
+                            <small>Bom</small>
+                        </label>
+                    </b-col>
+                    <b-col id="ratings" cols="6" md="4" lg="2">
+                        <label for="otimo">
+                            <img src="/static/img/4.PNG" class="img-fluid" id="Feliz" alt="Feliz"><br>
+                            <input type="radio" class="option-input radio" id="otimo" v-model="radioselected" name="rate" value="Ótimo">
+                            <small>Ótimo</small>
+                        </label>
+                    </b-col>
+                    <b-col id="ratings" cols="6" md="4" lg="2">
+                        <label for="incrivel">
+                            <img src="/static/img/5.PNG" class="img-fluid" id="MuitoFeliz" alt="Muito Feliz"><br>
+                            <input type="radio" class="option-input radio" id="incrivel" v-model="radioselected" name="rate" value="Incrível">
+                            <small>Incrível</small>
+                        </label>
+                    </b-col>
+                </b-row>
+                {{radioselected}}
+                <b-row class="btn-small">
+                    <b-button class="btn btn-outline-success float-left" @click="enviarDados">Confirmar</b-button>
+                </b-row>
+            </div>
+            </form>
+        <!-- END Duvidas-->
        </div>
   </section>
 </template>
@@ -129,6 +129,11 @@ export default {
         margin: 20px;
         margin-left: 50px;
     }
+    
+    .head {
+        margin-top: 40px;
+    }
+    
     .head h1 {
         color: #2c3e50;
         font-size: 35px;
