@@ -101,17 +101,26 @@ public class FoodLoversApplication {
 			Fotografia fotodois = new Fotografia("/static/img/prato4.jpg", "O melhor!");
 			Fotografia fototres = new Fotografia("/static/img/prato6.jpg", "Existe coisa melhor que pizza?");
 			Fotografia fotoquatro = new Fotografia("/static/img/prato10.jpg", "Boa companhia!");
+			Fotografia fotocinco = new Fotografia("/static/img/prato7.jpg", "Vc quer @?");
+			Fotografia fotoseis = new Fotografia("/static/img/prato3.jpg", "Sushiiiii");
+			Fotografia fotosete = new Fotografia("/static/img/prato5.jpg", "'Se o vinho cura as dores do corpo e da alma, uma boa taça deve nos tornar imortais'");
 			
 			
 			fotoum.setUsuario(thea);
 			fotodois.setUsuario(thea);
 			fototres.setUsuario(kali);
 			fotoquatro.setUsuario(mateus);
+			fotocinco.setUsuario(kali);
+			fotoseis.setUsuario(mateus);
+			fotosete.setUsuario(thea);
 			
 			fotografiasRepository.save(fotoum);
 			fotografiasRepository.save(fotodois);
 			fotografiasRepository.save(fototres);
 			fotografiasRepository.save(fotoquatro);
+			fotografiasRepository.save(fotocinco);
+			fotografiasRepository.save(fotoseis);
+			fotografiasRepository.save(fotosete);
 			log.info("Depois de criar os registros");
 		};
 	}
