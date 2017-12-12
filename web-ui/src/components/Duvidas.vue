@@ -68,13 +68,30 @@
                         </label>
                     </b-col>
                 </b-row>
-                ´<p id="radio" style='display:none;'>{{radioselected}}</p>
+                ´<p id="avaliacao" style='display:none;'>{{radioselected}}</p>
                 <b-row class="btn-small">
                     <b-button class="btn btn-outline-success float-left" @click="enviarDuvida">Confirmar</b-button>
                 </b-row>
             </div>
             </form>
         <!-- END Duvidas-->
+        <!-------------------Aviso-Danger----------------->
+            <div id="sendFail" class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+              <div class="card-body">
+                <h4 class="card-title">Opa!</h4>
+                <p class="card-text"> Você precisa preencher ao menos um dos campos para enviar.</p>
+                <b-button variant="warning" id="close-fail">Voltar</b-button>
+              </div>
+            </div>
+        <!------------------Aviso-Sucesso--------------->
+            <div id="sendSuccess" class="card text-white bg-success mb-3" style="max-width: 20rem;">
+              <div class="card-body">
+                <h4 class="card-title">Eba!</h4>
+                <p class="card-text" id="aviso-success">Sua questão foi enviada com sucesso!</p>
+                <b-button variant="dark" id="close-success">Voltar</b-button>
+              </div>
+            </div>
+        <!---------------------------------------------->
        </div>
   </section>
 </template>
@@ -113,20 +130,32 @@ export default {
                 var email = this.duvida.email;
                 var nome = this.duvida.nome + ' ' + this.duvida.sobrenome;
                 var texto = document.getElementById("textarea2").value;
-                var avaliacao = document.getElementById("radio").innerHTML;
+                var avaliacao = document.getElementById("avaliacao").innerHTML.replace(/[^a-zA-Z0-9]/g,'');
                 
-                axios.post('http://localhost:8060/duvidas', {
-                    nome: nome,
-                    email: email,
-                    duvida: texto,
-                    avaliacao: avaliacao
-                  })
-                  .then(function (response) {
-                    console.log(response);
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
+                if (texto == '' && avaliacao == ''){
+                    document.getElementById("sendFail").style.display = "block";
+                    document.getElementById('close-fail').onclick = function(){
+                        document.getElementById("sendFail").style.display = "none";
+                    };
+                } else {
+                    document.getElementById("sendSuccess").style.display = "block";
+                    document.getElementById('close-success').onclick = function(){
+                        document.getElementById("sendSuccess").style.display = "none";
+                    };
+            
+                    axios.post('http://localhost:8060/duvidas', {
+                        nome: nome,
+                        email: email,
+                        duvida: texto,
+                        avaliacao: avaliacao
+                      })
+                      .then(function (response) {
+                        console.log(response);
+                      })
+                      .catch(function (error) {
+                        console.log(error);
+                      });
+                }
             }
         }
 }
@@ -310,6 +339,16 @@ export default {
     
     .option-input.radio::after {
         border-radius: 50%;
+    }
+    
+    #sendFail, #sendSuccess {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
     }
     
 </style>
