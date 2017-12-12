@@ -32,7 +32,11 @@ import axios from 'axios'
              axios({
               method: 'DELETE',
               url: 'http://localhost:8060/pessoas/3/preferencias' + '/' + this.pref.idpref,
-            });
+            })
+                .then(function (resp) {
+                    console.log(resp);
+                    window.location.reload();
+                })
              
             //window.location.reload();
         }

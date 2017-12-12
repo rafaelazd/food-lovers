@@ -15,112 +15,112 @@
         <div class="head">
             <h1>Alterar Preferências</h1><br>
             <p>Modifique suas preferências culinárias quando quiser.</p>
-            <p id="txtPref"></p>
+            <p id="txtPref" style="display:none">{{checkselected}}</p>
         </div> 
         <div class="preferencias">
            <div class="categorias">
                <form action="" name="formChangePref" class="change-pref">
                    <b-row class="d-flex justify-content-center">
                        <b-col class="options">
-                           <label for="check1" class="btn">
-                                <img src="/static/img/hotdog.png" class="select-img" id="hotdog" alt="Hot Dog">
-                                <b-form-checkbox id="check1" value="HotDog"></b-form-checkbox>
-                           </label>
+                        <label for="check1" class="btn" value="1">
+                                <img src="/static/img/hotdog.png" class="select-img" alt="Hot Dog">
+                                <b-form-checkbox v-model="checkselected" id="check1" value="1"></b-form-checkbox>
+                        </label>
                        </b-col>
                        <b-col class="options">
                            <label for="check2" class="btn">
-                                <img src="/static/img/bolo.png" class="select-img" id="bolo" alt="Bolo">
-                                <b-form-checkbox id="check2" value="Bolo"></b-form-checkbox>
+                                <img src="/static/img/bolo.png" class="select-img" alt="Bolo">
+                                <b-form-checkbox id="check2"  v-model="checkselected" value="2"></b-form-checkbox>
                            </label>
                        </b-col>
                        <b-col class="options">
                            <label for="check3" class="btn">
-                                 <img src="/static/img/cafe.png" class="select-img" id="cafe" alt="Café">
-                                 <b-form-checkbox id="check3" value="Café"></b-form-checkbox>
+                                 <img src="/static/img/cafe.png" class="select-img" value="5" alt="Café">
+                                 <b-form-checkbox id="check3"  v-model="checkselected" value="5"></b-form-checkbox>
                            </label>
                        </b-col>
                    </b-row>
                    <b-row class="d-flex justify-content-center">
                        <b-col class="options">
                           <label for="check4" class="btn">
-                                 <img src="/static/img/sorvete.png" class="select-img" id="sorvete" alt="Sorvete">
-                                 <b-form-checkbox id="check4" value="Sorvete"></b-form-checkbox>
+                                 <img src="/static/img/sorvete.png" class="select-img" value="3" alt="Sorvete">
+                                 <b-form-checkbox id="check4"  v-model="checkselected" value="3" ></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                            <label for="check5" class="btn">
-                                <img src="/static/img/pizza.png" class="select-img" id="pizza" alt="Pizza">
-                                <b-form-checkbox id="check5" value="Pizza"></b-form-checkbox>
+                                <img src="/static/img/pizza.png" class="select-img" alt="Pizza">
+                                <b-form-checkbox id="check5"  v-model="checkselected" value="11"></b-form-checkbox>
                            </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check6" class="btn">
-                                <img src="/static/img/nachos.png" class="select-img" id="nachos" alt="Nachos">
-                                <b-form-checkbox id="check6" value="Nachos"></b-form-checkbox>
+                                <img src="/static/img/nachos.png" class="select-img" alt="Nachos">
+                                <b-form-checkbox id="check6"  v-model="checkselected" value="9"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
                    <b-row class="d-flex justify-content-center">
                        <b-col class="options">
                           <label for="check7" class="btn">
-                                 <img src="/static/img/churrasco.png" class="select-img" id="churrasco" alt="Churrasco">
-                                 <b-form-checkbox id="check7" value="Churrasco"></b-form-checkbox>
+                                 <img src="/static/img/churrasco.png" class="select-img" alt="Churrasco">
+                                 <b-form-checkbox id="check7"  v-model="checkselected" value="6"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check8" class="btn">
-                                 <img src="/static/img/spaghetti.png" class="select-img" id="spaghetti" alt="Spaghetti">
-                                 <b-form-checkbox id="check8" value="Spaghetti"></b-form-checkbox>
+                                 <img src="/static/img/spaghetti.png" class="select-img" alt="Spaghetti">
+                                 <b-form-checkbox id="check8"  v-model="checkselected" value="8"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check9" class="btn">
-                                 <img src="/static/img/sopa.png" class="select-img" id="sopa" alt="Sopa">
-                                 <b-form-checkbox id="check9" value="Sopa"></b-form-checkbox>
+                                 <img src="/static/img/sopa.png" class="select-img" alt="Sopa">
+                                 <b-form-checkbox id="check9"  v-model="checkselected" value="13"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
                    <b-row class="d-flex justify-content-center">
                        <b-col class="options">
                           <label for="check10" class="btn">
-                                 <img src="/static/img/salada.png" class="select-img" id="salada" alt="Salada">
-                                 <b-form-checkbox id="check10" value="Salada"></b-form-checkbox>
+                                 <img src="/static/img/salada.png" class="select-img" alt="Salada">
+                                 <b-form-checkbox id="check10"  v-model="checkselected" value="12"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check11" class="btn">
-                                 <img src="/static/img/sanduiche.png" class="select-img" id="sanduiche" alt="Sanduiche">
-                                 <b-form-checkbox id="check11" value="Sanduiche"></b-form-checkbox>
+                                 <img src="/static/img/sanduiche.png" class="select-img" alt="Sanduiche">
+                                 <b-form-checkbox id="check11" v-model="checkselected" value="7"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check12" class="btn">
-                                 <img src="/static/img/sushi.png" class="select-img" id="sushi" alt="Sushi">
-                                 <b-form-checkbox id="check12" value="Sushi"></b-form-checkbox>
+                                 <img src="/static/img/sushi.png" class="select-img" alt="Sushi">
+                                 <b-form-checkbox id="check12" v-model="checkselected" value="14"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
                    <b-row class="d-flex justify-content-center">
                        <b-col class="options">
                           <label for="check13" class="btn">
-                                 <img src="/static/img/batata.png" class="select-img" id="batata" alt="Batata Frita">
-                                 <b-form-checkbox id="check13" value="Batata Frita"></b-form-checkbox>
+                                 <img src="/static/img/batata.png" class="select-img" alt="Batata Frita">
+                                 <b-form-checkbox id="check13"  v-model="checkselected" value="4"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check14" class="btn">
-                                 <img src="/static/img/tacos.png" class="select-img" id="tacos" alt="Tacos">
-                                 <b-form-checkbox id="check14" value="Tacos"></b-form-checkbox>
+                                 <img src="/static/img/tacos.png" class="select-img" alt="Tacos">
+                                 <b-form-checkbox id="check14"  v-model="checkselected" value="15"></b-form-checkbox>
                           </label>
                        </b-col>
                        <b-col class="options">
                           <label for="check15" class="btn">
-                                 <img src="/static/img/panquecas.png" class="select-img" id="panquecas" alt="Panquecas">
-                                 <b-form-checkbox id="check15" value="Panquecas"></b-form-checkbox>
+                                 <img src="/static/img/panquecas.png" class="select-img" alt="Panquecas">
+                                 <b-form-checkbox id="check15"  v-model="checkselected" value="10"></b-form-checkbox>
                           </label>
                        </b-col>
                    </b-row>
-                   <b-button variant="outline-success" class="float-right" id="confirma">Confirmar </b-button>
+                   <b-button id="confirma" class="float-right" variant="outline-success" @click="upPreferencias">Confirmar</b-button>
                </form>
            </div>
            </div>
@@ -129,6 +129,15 @@
                     <pref v-for="pref in prefs"  :key="pref.id" :pref="pref"></pref>
                 </b-row>
            <!-- END Footer-->
+            <!-- Avisos -->
+                <div id="upFail"class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+                  <div class="card-body">
+                        <h4 class="card-title">Opa!</h4>
+                        <p class="card-text">Sua barra de preferências está cheia! Tente excluir algumas.</p>
+                        <b-button variant="warning" id="close">Voltar</b-button>
+                  </div>
+                </div>
+           <!-- END Avisos-->
         <!-- END Preferencias Card -->
 
        </div>
@@ -146,7 +155,8 @@ export default {
         
         data() {
             return {
-                prefs: []
+                prefs: [],
+                checkselected: []
             }
         },
         
@@ -166,6 +176,33 @@ export default {
                         this.erro = true;
                         console.log(err)
                     });
+            },
+            
+            upPreferencias() {
+                var count = $("#pref").children().length;
+                var value = document.getElementById("txtPref").innerHTML.replace(/[^a-zA-Z0-9]/g,'');
+                var variav;
+                if(count < 5) {
+                    
+                    axios({
+                      method: 'patch',
+                      url: 'http://localhost:8060/pessoas/3/preferencias',
+                      headers: { 'Content-Type': 'text/uri-list' },
+                      data: 'http://localhost:8060/preferencias/' + value
+                    })
+                        .then(function (resp) {
+                            console.log(resp);
+                            window.location.reload();
+                        })
+                        .catch(function (err) {
+                            console.log(err);
+                        });
+                } else {
+                    document.getElementById("upFail").style.display="block";
+                    document.getElementById('close').onclick = function(){
+                    document.getElementById("upFail").style.display = "none";
+                    };
+                }
             }
         }
 }
@@ -218,7 +255,7 @@ export default {
     }
     
     .categorias {
-        margin-bottom: 150px;
+        margin-bottom: 170px;
     }
     
     #confirma {
@@ -295,6 +332,16 @@ export default {
         font-size: 15px;
         width: 35px;
         height: 35px;
+    }
+    
+    #upFail {
+        position: fixed;
+        z-index: 10000000;
+        top:30%;
+        left: 40%;
+        box-shadow: 10px 30px 20px rgba(0,0,0,.5);
+        padding: 20px;
+        display: none;
     }
     
     @media (max-width: 320px) {
