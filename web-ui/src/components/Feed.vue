@@ -22,118 +22,7 @@
         <!-- Feed Card -->
         <div class="feed">
            <div class="card-columns">
-              <div class="card">
-                    <div class="header d-flex justify-content-around">
-                        <img src="/static/img/m7.png" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">theaqueen</a>
-                        <small> 1h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato10.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                    <div class="header d-flex justify-content-around">
-                        <img src="/static/img/M2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">rosamaria89</a>
-                        <small> 2h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato2.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                    <div class="header d-flex justify-content-around">
-                        <img src="/static/img/M1.3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">sosoalter</a>
-                        <small> 2h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato3.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                    <div class="header d-flex justify-content-around">
-                        <img src="/static/img/M4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">raquelsalva_</a>
-                        <small> 3h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato4.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                   <div class="header d-flex justify-content-around">
-                        <img src="/static/img/H2.4.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">herondis</a>
-                        <small> 5h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato5.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                  <div class="header d-flex justify-content-around">
-                        <img src="/static/img/M3.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">mirandeva</a>
-                        <small> 5h </small>
-                    </div>
-                    <div class="feed-foto">
-                        <img src="/static/img/prato6.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                    <div class="header d-flex justify-content-around">
-                        <img src="/static/img/m7.png" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">theaqueen</a>
-                        <small> 6h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato9.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
-              <div class="card">
-                   <div class="header d-flex justify-content-around">
-                        <img src="/static/img/M1.2.jpg" alt="Avatar" class="img-fluid" id="usuFoto" style="width:37px;height:37px;">
-                        <a id="idUsuario" v-bind:href="url">kardashianlostsis</a>
-                        <small> 10h </small>
-                    </div>
-                    <div class="feed-foto ">
-                        <img src="/static/img/prato7.jpg" class="img-fluid">
-                    </div>
-                    <div class="reaction-bar d-flex justify-content-around">
-                         <button type="button" v-on:click="counter += 1" class="btn btn-outline-danger btn-circle"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
-                         <small>{{counter}} Curtidas</small>
-                    </div>
-              </div>
+             <post v-for="post in posts"  :key="post.id" :post="post"></post>
               <div class="foot">
                   <b-button  v-on:click="showhide" class="btn btn-danger btn-circle"><i class="fa fa-plus" aria-hidden="true"></i></b-button>
               </div>
@@ -152,24 +41,46 @@
 
 
 <script>
+import Post from '@/components/Post'
+import axios from 'axios'
 export default {
-    methods: {
-        showhide() {
-       var div = document.getElementById("addFoto");
-        if (div.style.display !== "block") {
-            div.style.display = "block";
-        }
-        else {
-            div.style.display = "none";
-        }
-    }
-},
+    components: {
+            'post': Post
+    },
+    
+    created() {
+        this.buscarDados();
+    },
     
     data() {
-      return { 
-          counter: 0, 
-          url: '#/perfil'
+      return {
+          url: '#/perfil',
+          posts: []
       }
+    },
+    
+    methods: {
+        buscarDados() {
+            axios.get('http://localhost:8060/fotografias')
+                .then((resp) => {
+                    this.erro = false;
+                    this.posts = resp.data._embedded.fotografias;
+                    console.log(resp)
+                })
+                .catch((err) => {
+                    this.erro = true;
+                    console.log(err)
+                });
+        },
+        showhide() {
+           var div = document.getElementById("addFoto");
+            if (div.style.display !== "block") {
+                div.style.display = "block";
+            }
+            else {
+                div.style.display = "none";
+            }
+        }
     }
 }
 </script>
@@ -214,26 +125,26 @@ export default {
         overflow: hidden;
     }
     
-    .feed .header {
+    .feed .cab {
         background-color: #f4f4f4;
         width: 100%;
         color: #757575;
         padding: 4px;
     }
     
-    .feed .header a {
+    .feed .cab a {
         text-decoration: underline;
         font-family: 'Open Sans', sans-serif;
     }
     
-    .feed .header a {
+    .feed .cab a {
         margin: 9px;
         font-family: 'Questrial', sans-serif;
         font-size: 18px;
         
     }
     
-    .feed .header small {
+    .feed .cab small {
         font-size: 16px;
         color: darkgray;
         margin: 9px;
