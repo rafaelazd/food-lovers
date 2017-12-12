@@ -16,7 +16,7 @@
                 <h1>Envie-nos a sua dúvida</h1><br>
                 <p>Pergunte o que quiser, respondemos rapidinho!</p>
             </div> <br>
-            <form id="duvidas-form">
+            <form id="duvida">
                 <div class="question-body">
                 <b-row>
                     <b-col>
@@ -68,9 +68,9 @@
                         </label>
                     </b-col>
                 </b-row>
-                {{radioselected}}
+                ´<p id="radio" style='display:none;'>{{radioselected}}</p>
                 <b-row class="btn-small">
-                    <b-button class="btn btn-outline-success float-left" @click="enviarDados">Confirmar</b-button>
+                    <b-button class="btn btn-outline-success float-left" @click="enviarDuvida">Confirmar</b-button>
                 </b-row>
             </div>
             </form>
@@ -84,17 +84,51 @@
 import axios from 'axios'
 
 export default {
-    data () {
-        return {
-           radioselected: []
-        }
-    }, 
-    
-    methods: {
-        enviarDados() {
+    data() {
+            return {
+                duvida: '',
+                radioselected: []
+            }
+        },
+        
+        created() {
+            this.buscarDados();
+        },
+
+        methods: {
+            buscarDados() {
+                 axios.get('http://localhost:8060/pessoas/3')
+                    .then((resp) => {
+                        this.erro = false;
+                        console.log(resp.data);
+                        this.duvida = resp.data;
+                    })
+                    .catch((err) => {
+                        this.erro = true;
+                        console.log(err)
+                    });
+            },
             
+            enviarDuvida() {
+                var email = this.duvida.email;
+                var nome = this.duvida.nome + ' ' + this.duvida.sobrenome;
+                var texto = document.getElementById("textarea2").value;
+                var avaliacao = document.getElementById("radio").innerHTML;
+                
+                axios.post('http://localhost:8060/duvidas', {
+                    nome: nome,
+                    email: email,
+                    duvida: texto,
+                    avaliacao: avaliacao
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+            }
         }
-    }
 }
 </script>
 
