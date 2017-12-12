@@ -59,7 +59,10 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario2", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	  private Set<Combinacao> combinacoes2 = new HashSet<Combinacao>();
 	
-	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias, HashSet<Combinacao> combinacoes1, HashSet<Combinacao> combinacoes2) {
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	  private Set<Fotografia> fotografias = new HashSet<Fotografia>();
+	
+	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto, HashSet<Preferencias> preferencias, HashSet<Combinacao> combinacoes1, HashSet<Combinacao> combinacoes2, HashSet<Fotografia> fotografias) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -79,6 +82,7 @@ public class Usuario {
 		this.preferencias = preferencias;
 		this.combinacoes1 = combinacoes1;
 		this.combinacoes2 = combinacoes2;
+		this.fotografias = fotografias;
 	}
 
 	public Usuario(String nome, String sobrenome, String email, int idade, String prefsex, String sexo, String usuario, String senha, String biografia, String local, String Facebook, String Whatsapp, String Snapchat, String Twitter, String Instagram, String pathfoto) {
@@ -260,6 +264,14 @@ public class Usuario {
 		this.combinacoes2 = combinacoes2;
 	}
 	
+	public Set<Fotografia> getFotografias() {
+		return fotografias;
+	}
+
+	public void setFotografias(Set<Fotografia> fotografias) {
+		this.fotografias = fotografias;
+	}
+	
 	public void addPreferencia(Preferencias p) {
 		this.preferencias.add(p);
 		p.addUsuario(this);
@@ -274,4 +286,10 @@ public class Usuario {
 		this.combinacoes2.add(c);	
 		c.setUsuario2(this);
 	}
+	
+	public void addFotografia(Fotografia f) {
+		this.fotografias.add(f);
+		f.setUsuario(this);
+	}
+	
 }

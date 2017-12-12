@@ -24,7 +24,7 @@ public class FoodLoversApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, CombinacoesRepository combinacoesRepository) {
+	public CommandLineRunner demo(UsuariosRepository usuariosRepository, PreferenciasRepository preferenciasRepository, CombinacoesRepository combinacoesRepository, FotografiasRepository fotografiasRepository) {
 		return (args) -> {
 			log.info("Antes de criar os registros");
 			Preferencias HotDog = new Preferencias("Hot Dog", "/static/img/hotdogico.png");
@@ -96,6 +96,22 @@ public class FoodLoversApplication {
 			combinacoesRepository.save(um);
 			combinacoesRepository.save(dois);
 			combinacoesRepository.save(tres);
+			
+			Fotografia fotoum = new Fotografia("/static/img/prato2.jpg", "Café para Renovar!");
+			Fotografia fotodois = new Fotografia("/static/img/prato4.jpg", "O melhor!");
+			Fotografia fototres = new Fotografia("/static/img/prato6.jpg", "Existe coisa melhor que pizza?");
+			Fotografia fotoquatro = new Fotografia("/static/img/prato10.jpg", "Boa companhia!");
+			
+			
+			fotoum.setUsuario(thea);
+			fotodois.setUsuario(thea);
+			fototres.setUsuario(kali);
+			fotoquatro.setUsuario(mateus);
+			
+			fotografiasRepository.save(fotoum);
+			fotografiasRepository.save(fotodois);
+			fotografiasRepository.save(fototres);
+			fotografiasRepository.save(fotoquatro);
 			log.info("Depois de criar os registros");
 		};
 	}
