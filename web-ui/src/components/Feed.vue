@@ -49,7 +49,7 @@ export default {
     },
     
     created() {
-        this.buscarDados();
+        this.buscarPosts();
     },
     
     data() {
@@ -60,7 +60,7 @@ export default {
     },
     
     methods: {
-        buscarDados() {
+        buscarPosts() {
             axios.get('http://localhost:8060/fotografias')
                 .then((resp) => {
                     this.erro = false;

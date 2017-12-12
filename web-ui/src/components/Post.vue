@@ -1,8 +1,8 @@
 <template> 
     <div class="card">
         <div class="cab d-flex justify-content-around">
-            <div id="usuFoto"></div>
-            <a href="">usuario</a>
+            <div id="usuFoto" :style="{backgroundImage: 'url(' + dados.foto + ')'}" ></div>
+            <a href="">{{dados.usuario}}</a>
             <small> 1h </small>
         </div>
         <div class="feed-foto">
@@ -30,16 +30,29 @@ import axios from 'axios'
      
      created() {
          console.log(this.post.idFoto);
+         this.buscarDados();
      },
      
      data() {
          return {
-            counter: 0
+            counter: 0,
+            dados: ''
          }
      },
      
      methods: {
-        
+        buscarDados() {
+            axios.get('http://localhost:8060/fotografias/'+this.post.idFoto+'/usuario')
+                .then((resp) => {
+                    this.erro = false;
+                    this.dados = resp.data;
+                    console.log(resp)
+                })
+                .catch((err) => {
+                    this.erro = true;
+                    console.log(err)
+                });
+        }
      }
 };
 </script>
@@ -54,5 +67,13 @@ import axios from 'axios'
     
     .transparent {
         font-family: 'Open Sans', sans-serif;
+        padding: 5px;
+        padding-left: 5px;
+    }
+    
+    .transparent p {
+        border-left: 5px solid;
+        border-color: #bdc3c7;
+        padding-left: 9px;
     }
 </style>
