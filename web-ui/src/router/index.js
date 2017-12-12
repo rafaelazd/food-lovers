@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import UsuarioNaoAutenticado from '@/components/UsuarioNaoAutenticado'
 import Login from '@/components/Login'
 import Cadastro1 from '@/components/Cadastro1'
@@ -20,12 +19,8 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
+      {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    }, {
-      path: '/usuario-nao-autenticado',
       name: 'UsuarioNaoAutenticado',
       component: UsuarioNaoAutenticado
     }, {
