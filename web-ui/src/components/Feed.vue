@@ -29,8 +29,16 @@
             </div>
             <div id="addFoto">
                 <h4>Escolha a Foto:</h4>
-                <b-form-file class="inout"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br>
-                <b-button type="submit"class="btn btn-outline-success">Confirmar</b-button>
+                <b-form-file class="input" id="inputFoto" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                <h5>Descrição</h5>
+                <b-form-textarea id="textarea3"
+                         placeholder="Digite descrição da foto"
+                         :rows="4"
+                         :maxlength="900"
+                         name="Descricao">
+                </b-form-textarea>
+                <b-button @click="postFoto" variant="primary">Anonimo</b-button>
+                <b-button type="submit" class="btn btn-outline-success" @click="postPerson">Confirmar</b-button>
             </div>
         </div>
         <!-- END Feed Card -->
@@ -72,6 +80,7 @@ export default {
                     console.log(err)
                 });
         },
+        
         showhide() {
            var div = document.getElementById("addFoto");
             if (div.style.display !== "block") {
@@ -80,6 +89,41 @@ export default {
             else {
                 div.style.display = "none";
             }
+        },
+        
+        postFoto() {
+            var descricao = document.getElementById("textarea3").value;
+            var fole = document.getElementById("inputFoto").value.replace(/^.*\\/, "");
+            var path = 'static/img/' + fole;
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:8060/fotografias',
+                        data: {
+                            desc: descricao, 
+                            pathFotografia: path,
+                        }
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+        },
+        
+        postPerson() {
+             axios({
+                method: 'put',
+                url: 'http://localhost:8060/fotografias/8/usuario',
+                headers: { 'Content-Type': 'text/uri-list' },
+                data: 'http://localhost:8060/pessoas/3'
+                })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
         }
     }
 }
@@ -205,6 +249,14 @@ export default {
         text-align: left;
         margin-left: 20px;
         margin: 10px;
+    } 
+    
+    #addFoto h5 {
+        color: #34495e;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300; 
+        text-align: left;
+        margin-left: 10px;
     }
 
     #addFoto .inout {

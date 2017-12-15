@@ -1,7 +1,7 @@
 <template> 
     <div class="card">
         <div class="cab d-flex justify-content-around">
-            <div id="usuFoto" :style="{backgroundImage: 'url(' + dados.foto + ')'}" ></div>
+            <div id="profileFoto" :style="{backgroundImage: 'url(' + dados.foto + ')'}" ></div>
             <a href="">{{dados.usuario}}</a>
             <small> 1h </small>
         </div>
@@ -58,7 +58,7 @@ import axios from 'axios'
 </script>
 
 <style>
-    #usuFoto {
+    #profileFoto {
         width: 45px;
         height: 45px;
         border-radius: 25px;
