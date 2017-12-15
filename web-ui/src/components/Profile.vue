@@ -1,6 +1,6 @@
 <template> 
     <b-card class="profile" id="profile"  :style="{backgroundImage: 'url(' + profile.foto + ')'}" v-bind:class="{'swipe-left': clckNo, 'swipe-right': clckYes}">
-         <div slot="footer" class="d-flex justify-content-around">
+        <div slot="footer" class="d-flex justify-content-around">
             <b-button class="btn btn-circle btn-danger" id="no" v-on:click="funcNo"><i class="fa fa-times" aria-hidden="true"></i></b-button>
             <b-button v-b-toggle="'collapse2'" class="btn btn-circle btn-info m-1"><i class="fa fa-info-circle" aria-hidden="true"></i></b-button>
             <b-button class="btn btn-circle btn-success" id="yes" v-on:click="funcYes"><i class="fa fa-check" aria-hidden="true"></i></b-button> 
@@ -13,12 +13,12 @@
             <p>
                 <b-row class="d-flex justify-content-center" id="minicons">
                     <b-col  v-for="pref in prefs"  :key="pref.id" class="prefs-icon" cols="2">
-                        <img :src="pref.filepath" alt="">
+                        <img :src="pref.filepath" :alt="pref.nome">
                     </b-col>
                 </b-row>
             </p>
             <p>
-                <b-button class="btn btn-sm btn-secondary" :href="toPerfil"><i class="fa fa-id-card-o" aria-hidden="true"></i> Ver Perfil</b-button>
+                <b-button class="btn btn-sm btn-secondary" :href="toPerfil()"><i class="fa fa-id-card-o" aria-hidden="true"></i> Ver Perfil</b-button>
             </p>
         </b-collapse>
     </b-card>
@@ -43,7 +43,6 @@ import axios from 'axios'
      
      data() {
          return {
-             toPerfil: '#/perfil',
              clckNo: false,
              clckYes: false,
              prefs: []
@@ -61,7 +60,7 @@ import axios from 'axios'
          buscarPref() {
                 axios.get('http://localhost:8060/pessoas/'+ this.profile.idusu +'/preferencias')
                     .then((resp) => {
-                        this.erro = false;
+                       this.erro = false;
                         this.prefs = resp.data._embedded.preferencias;
                         console.log(resp.data);
                     })
@@ -69,7 +68,11 @@ import axios from 'axios'
                         this.erro = true;
                         console.log(err)
                     });
-            }
+         },
+         
+         toPerfil() {
+             return '#/perfil#' + this.profile.idusu
+         }
      }
 };
 </script>

@@ -85,7 +85,8 @@ export default {
 
         methods: {
             buscarDados() {
-                 axios.get('http://localhost:8060/pessoas/3')
+                 var x = window.location.hash.substr(9);
+                 axios.get('http://localhost:8060/pessoas/' + x)
                     .then((resp) => {
                         this.erro = false;
                         console.log(resp.data);
@@ -98,7 +99,8 @@ export default {
             },
             
             buscarPref() {
-                axios.get('http://localhost:8060/pessoas/3/preferencias')
+                var x = window.location.hash.substr(9);
+                axios.get('http://localhost:8060/pessoas/'+ x +'/preferencias')
                     .then((resp) => {
                         this.erro = false;
                         this.prefs = resp.data._embedded.preferencias;
