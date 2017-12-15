@@ -8,66 +8,67 @@
                     </div> <br> <br>
                     <h1><img src="/static/img/foodlovers.png" class="img-fluid"></h1>
                     <p>Selecione até 5 categorias culinárias de sua preferência.</p>
+                    <p>{{selected}}</p>
                     <!-- Formulario -->
                     <div class="card-block">
                         <form class="form" role="form" autocomplete="off" name="form" id="form" action="">
                            <b-row class="d-flex justify-content-center">
                                <b-col class="options">
                                    <label for="check1" class="btn">
-                                       <img src="/static/img/hotdog.png" class="select-img" id="hotdog" alt="Hot Dog">
-                                       <b-form-checkbox v-model="selected" id="check1" class="prefer" name="hotdog" ref="prefer" value="HotDog"></b-form-checkbox>
+                                       <img src="/static/img/hotdog.png" value="1" class="select-img" id="hotdog" alt="Hot Dog">
+                                       <b-form-checkbox v-model="selected" id="check1" class="prefer" name="hotdog" ref="prefer" value="1"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                    <label for="check2" class="btn">
-                                       <img src="/static/img/bolo.png" class="select-img" id="bolo" alt="Bolo">
-                                       <b-form-checkbox v-model="selected" id="check2" class="prefer" name="bolo" ref="prefer" value="Bolo"></b-form-checkbox>
+                                       <img src="/static/img/bolo.png" value="2" class="select-img" id="bolo" alt="Bolo">
+                                       <b-form-checkbox v-model="selected" id="check2" class="prefer" name="bolo" ref="prefer" value="2"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                    <label for="check3" class="btn">
-                                       <img src="/static/img/cafe.png" class="select-img" id="cafe" alt="Café">
-                                       <b-form-checkbox v-model="selected" id="check3" class="prefer" name="cafe" ref="prefer" value="Café"></b-form-checkbox>
+                                       <img src="/static/img/cafe.png" value="5" class="select-img" id="cafe" alt="Café">
+                                       <b-form-checkbox v-model="selected" id="check3" class="prefer" name="cafe" ref="prefer" value="5"></b-form-checkbox>
                                    </label>
                                </b-col>
                            </b-row>
                            <b-row class="d-flex justify-content-center">
                                <b-col class="options">
                                   <label for="check4" class="btn">
-                                       <img src="/static/img/sorvete.png" class="select-img" id="sorvete" alt="Sorvete">
-                                       <b-form-checkbox v-model="selected" id="check4" class="prefer" name="sorvete" ref="prefer" value="Sorvete"></b-form-checkbox>
+                                       <img src="/static/img/sorvete.png" value="3" class="select-img" id="sorvete" alt="Sorvete">
+                                       <b-form-checkbox v-model="selected" id="check4" class="prefer" name="sorvete" ref="prefer" value="3"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                    <label for="check5" class="btn">
-                                       <img src="/static/img/pizza.png" class="select-img" id="pizza" alt="Pizza">
-                                       <b-form-checkbox v-model="selected" id="check5" class="prefer" name="pizza" ref="prefer" value="Pizza"></b-form-checkbox>
+                                       <img src="/static/img/pizza.png" value="11" class="select-img" id="pizza" alt="Pizza">
+                                       <b-form-checkbox v-model="selected" id="check5" class="prefer" name="pizza" ref="prefer" value="11"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                  <label for="check6" class="btn">
-                                       <img src="/static/img/nachos.png" class="select-img" id="nachos" alt="Nachos">
-                                       <b-form-checkbox v-model="selected" id="check6" class="prefer" name="nachos" ref="prefer" value="Nachos"></b-form-checkbox>
+                                       <img src="/static/img/nachos.png" value="9" class="select-img" id="nachos" alt="Nachos">
+                                       <b-form-checkbox v-model="selected" id="check6" class="prefer" name="nachos" ref="prefer" value="9"></b-form-checkbox>
                                    </label>
                                </b-col>
                            </b-row>
                            <b-row class="d-flex justify-content-center">
                                <b-col class="options">
                                   <label for="check7" class="btn">
-                                       <img src="/static/img/churrasco.png" class="select-img" id="churrasco" alt="Churrasco">
-                                       <b-form-checkbox v-model="selected" id="check7" class="prefer" name="churrasco" ref="prefer" value="Churrasco"></b-form-checkbox>
+                                       <img src="/static/img/churrasco.png" value="6" class="select-img" id="churrasco" alt="Churrasco">
+                                       <b-form-checkbox v-model="selected" id="check7" class="prefer" name="churrasco" ref="prefer" value="6"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                   <label for="check8" class="btn">
-                                       <img src="/static/img/spaghetti.png" class="select-img" id="spaghetti" alt="Spaghetti">
-                                       <b-form-checkbox v-model="selected" id="check8" class="prefer" name="spaghetti" ref="prefer" value="Spaghetti"></b-form-checkbox>
+                                       <img src="/static/img/spaghetti.png" value="8" class="select-img" id="spaghetti" alt="Spaghetti">
+                                       <b-form-checkbox v-model="selected" id="check8" class="prefer" name="spaghetti" ref="prefer" value="8"></b-form-checkbox>
                                    </label>
                                </b-col>
                                <b-col class="options">
                                   <label for="check9" class="btn">
-                                       <img src="/static/img/sopa.png" class="select-img" id="sopa" alt="Sopa">
-                                       <b-form-checkbox v-model="selected" id="check9" class="prefer" name="sopa" ref="prefer" value="Sopa"></b-form-checkbox>
+                                       <img src="/static/img/sopa.png" value="13" class="select-img" id="sopa" alt="Sopa">
+                                       <b-form-checkbox v-model="selected" id="check9" class="prefer" name="sopa" ref="prefer" value="13"></b-form-checkbox>
                                    </label>
                                </b-col>
                            </b-row>
@@ -85,6 +86,7 @@
                                 <b-button variant="warning" id="close-card2">Voltar</b-button>
                               </div>
                             </div>
+                            
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/usuario-nao-autenticado">Cancelar</router-link>
                             <router-link class="btn btn-outline-secondary btn-lg" role="button" aria-pressed="true" to="/cadastro-1">Voltar</router-link>
                             <b-button class="btn btn-outline-secondary btn-lg" v-on:click="cadastrar">Confirmar</b-button>
@@ -98,6 +100,7 @@
 
 
 <script>
+import axios from 'axios'
 export default {
     data () {
         return {
@@ -108,7 +111,8 @@ export default {
     methods: {
         cadastrar() {
             var x = this.$refs.prefer.checked;
-            if(document.form.hotdog.checked == false && document.form.bolo.checked == false && document.form.cafe.checked == false && document.form.sorvete.checked == false && document.form.pizza.checked == false && document.form.nachos.checked == false && document.form.churrasco.checked == false && document.form.spaghetti.checked == false && document.form.sopa.checked == false ) {
+            var arr1 = this.selected;
+            if(arr1.length == 0) {
                     console.log('Falha no login');
                      document.getElementById("valRequired").style.display = "block";
                      document.getElementById('close-card').onclick = function(){
@@ -121,8 +125,52 @@ export default {
                         document.getElementById("numeropref").style.display = "none";
                     };      
             } else {
-                this.$router.push('cadastro-3');
-                console.log('Login!');
+                var arr1 = this.selected[0];
+                var arr2 = this.selected[1];
+                var arr3 = this.selected[2]; 
+                var arr4 = this.selected[3];
+                var arr5 = this.selected[4]; 
+                axios.all([
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:8060/pessoas/4/preferencias',
+                        headers: { 'Content-Type': 'text/uri-list' },
+                        data: 'http://localhost:8060/preferencias/' + arr1
+                    }),
+                    axios({
+                        method: 'patch',
+                        url: 'http://localhost:8060/pessoas/4/preferencias',
+                        headers: { 'Content-Type': 'text/uri-list' },
+                        data: 'http://localhost:8060/preferencias/' + arr5
+                    }),
+                    axios({
+                        method: 'patch',
+                        url: 'http://localhost:8060/pessoas/4/preferencias',
+                        headers: { 'Content-Type': 'text/uri-list' },
+                        data: 'http://localhost:8060/preferencias/' + arr2
+                    }),
+                    axios({
+                        method: 'patch',
+                        url: 'http://localhost:8060/pessoas/4/preferencias',
+                        headers: { 'Content-Type': 'text/uri-list' },
+                        data: 'http://localhost:8060/preferencias/' + arr3
+                    }),
+                    axios({
+                        method: 'patch',
+                        url: 'http://localhost:8060/pessoas/4/preferencias',
+                        headers: { 'Content-Type': 'text/uri-list' },
+                        data: 'http://localhost:8060/preferencias/' + arr4
+                    })
+                  ])
+                  .then(axios.spread(function (umResponse, doisResponse, tresResponse, quatroResponse, cincoResponse) {
+                    console.log('Um', umResponse.data);
+                    console.log('Dois', doisResponse.data);
+                    console.log('Tres', tresResponse.data);
+                    console.log('Quatro', quatroResponse.data);
+                    console.log('Cinco', cincoResponse.data);
+                  }));
+                    this.$router.push('cadastro-3');
+                    console.log('Login!');
             }
         }
     }
