@@ -45,9 +45,53 @@
                         <!-----------------Foto&Bio--------------------->
                          <div class="tab-pane" v-bind:class="{ active: abaAtiva.fotoPerfil, show: abaAtiva.fotoPerfil, fade: !abaAtiva.fotoPerfil }" id="#/alter-perfil/#fotoperfil" role="tabpanel" aria-labelledby="v-pills-home-tab">
                              <div class="body first">
-                                <h4>Foto atual:</h4>
-                                    <img src="/static/img/m7.png" id="usuFoto"> <br><br>
-                                    <b-form-file id="input2"  choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file><br><br>
+                                <h4>Escolha sua Arte</h4>
+                                  <b-row>
+                                   <b-col>
+                                      <label for="check1" class="btn clck">
+                                         <div style="backgroundImage: url('/static/img/option1.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check1"  v-model="fotoselected" value="option1"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <b-col>
+                                      <label for="check2" class="btn clck">
+                                        <div style="backgroundImage: url('/static/img/option8.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check2"  v-model="fotoselected" value="option8"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <b-col>
+                                      <label for="check3" class="btn clck">
+                                        <div style="backgroundImage: url('/static/img/option6.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check3"  v-model="fotoselected" value="option6"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <b-col>
+                                      <label for="check4" class="btn clck">
+                                        <div style="backgroundImage: url('/static/img/option5.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check4"  v-model="fotoselected" value="option5"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <b-col>
+                                      <label for="check5" class="btn clck">
+                                        <div style="backgroundImage: url('/static/img/option2.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check5"  v-model="fotoselected" value="option2"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <b-col>
+                                      <label for="check6" class="btn clck">
+                                        <div style="backgroundImage: url('/static/img/option7.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check6"  v-model="fotoselected" value="option7"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <b-col>
+                                      <label for="check9" class="btn clck">
+                                        <div style="backgroundImage: url('/static/img/option9.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                         <b-form-checkbox id="check9"  v-model="fotoselected" value="option9"></b-form-checkbox>
+                                      </label>
+                                   </b-col>
+                                   <p style="display:none;">{{fotoselected}}</p>
+                               </b-row>  
+                                    
                                   <h5>Biografia</h5>
                                     <b-form-textarea id="textarea2" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
                                     <small class="float-right">Máximo de 170 caracteres</small>
@@ -256,8 +300,9 @@ data () {
           excluir: false,
       },
       checkselected: [],
+      fotoselected: [],
       radioselected: [],
-      toPerfil: '#/perfil',
+      toPerfil: '#/perfil#4',
       toUsuNaoIden: '#/usuario-nao-autenticado'
     }
   },
@@ -302,10 +347,27 @@ methods: {
             }, "jsonp")
        },
       
-      BioFunction () {
+      FotoFunction () {
+          var foto = this.fotoselected;
+           if (foto !== 0) {
+               axios.patch('http://localhost:8060/pessoas/4', {
+                  foto: '/static/img/' + foto + '.jpg'
+                  })
+                  .then(function (response) {
+                    console.log(response);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+           } else {
+               console.log("Foto não selecionada")
+           } 
+       },
+    
+        BioFunction () {
           var text = document.getElementById("textarea2").value;
            if (text != '') {
-               axios.patch('http://localhost:8060/pessoas/3', {
+               axios.patch('http://localhost:8060/pessoas/4', {
                   biografia: text,
                   })
                   .then(function (response) {
@@ -322,7 +384,7 @@ methods: {
       LocalizeFunction () {
           var localize = document.getElementById("location-col").innerHTML;
            if (localize != '') {
-               axios.patch('http://localhost:8060/pessoas/3', {
+               axios.patch('http://localhost:8060/pessoas/4', {
                   local: localize,
                   })
                   .then(function (response) {
@@ -338,7 +400,7 @@ methods: {
       
       nomeFunction () {
           if (this.$refs.nome.value != "") {
-              axios.patch('http://localhost:8060/pessoas/3', {
+              axios.patch('http://localhost:8060/pessoas/4', {
                   nome: this.$refs.nome.value
               })
                 .then(function (response) {
@@ -354,7 +416,7 @@ methods: {
       
       sobrenomeFunction () {
         if (this.$refs.sobrenome.value != "") {
-              axios.patch('http://localhost:8060/pessoas/3', {
+              axios.patch('http://localhost:8060/pessoas/4', {
                   sobrenome: this.$refs.sobrenome.value
               })
             .then(function (response) {
@@ -370,7 +432,7 @@ methods: {
       
       idadeFunction () {
          if (this.$refs.idade.value != "" && this.$refs.idade.value > 14) {
-              axios.patch('http://localhost:8060/pessoas/3', {
+              axios.patch('http://localhost:8060/pessoas/4', {
                   idade: this.$refs.idade.value
               })
               .then(function (response) {
@@ -389,7 +451,7 @@ methods: {
               console.log("Nenhum radio selecionado")
           } else {
               var radio = document.getElementById("radio-choice").innerHTML;
-              axios.patch('http://localhost:8060/pessoas/3', {
+              axios.patch('http://localhost:8060/pessoas/4', {
                  sexo: radio
               })
               .then(function (response) {
@@ -404,7 +466,7 @@ methods: {
       checkFunction () {
              var checkbox = document.getElementById("check-choice").innerHTML.replace(/[^a-zA-Z ]/g, "");
              if (checkbox != ''){
-                 axios.patch('http://localhost:8060/pessoas/3', {
+                 axios.patch('http://localhost:8060/pessoas/4', {
                  prefsex: checkbox
                   })
                   .then(function (response) {
@@ -421,6 +483,7 @@ methods: {
      updateUm() {
          this.LocalizeFunction();
          this.BioFunction();
+         this.FotoFunction();
          var alerta = document.getElementById("updateSuccess");
          var alertatxt = document.getElementById("aviso-success");
          alerta.style.display = "block";
@@ -472,7 +535,7 @@ methods: {
               } 
                
               else {
-                 axios.patch('http://localhost:8060/pessoas/3', {
+                 axios.patch('http://localhost:8060/pessoas/4', {
                     email: this.$refs.email.value
                  })
                  .then(function (response) {
@@ -509,7 +572,7 @@ methods: {
                }
                
                else {
-                   axios.patch('http://localhost:8060/pessoas/3', {
+                   axios.patch('http://localhost:8060/pessoas/4', {
                      usuario: this.$refs.usuario.value
                    })
                    .then(function (response) {
@@ -556,7 +619,7 @@ methods: {
                }
                
                else {
-                   axios.patch('http://localhost:8060/pessoas/3', {
+                   axios.patch('http://localhost:8060/pessoas/4', {
                      senha: this.$refs.senha.value
                    })
                    .then(function (response) {
@@ -590,7 +653,7 @@ methods: {
                 document.getElementById('confirmaExcluir').onclick = function(){
                     axios({
                       method: 'DELETE',
-                      url: 'http://localhost:8060/pessoas/3'
+                      url: 'http://localhost:8060/pessoas/4'
                     });
                 };
             }
@@ -724,7 +787,23 @@ methods: {
         justify-content: center;
     }
 
-     
+    .body .img-thumbnail{
+        width: 120px;
+        height: 170px;
+    }
+    
+    .body label{
+        justify-content: center;
+        text-align: center;
+        height: 181px;
+    }
+    
+    .body .custom-control {
+        position: relative;
+        margin-right: -100px;
+        bottom: 26px;
+    }
+    
     @keyframes click-wave {
       0% {
         height: 40px;
@@ -850,7 +929,7 @@ methods: {
     }
     
     @media (max-width: 594px) {
-        #usuFoto {
+        #alterFoto {
             width: 200px;
             height: 200px;
             padding-left: 0px;

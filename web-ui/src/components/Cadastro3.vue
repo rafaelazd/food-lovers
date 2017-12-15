@@ -10,19 +10,47 @@
                     <p>Personaliza o seu Perfil.</p>
                     
                     <!-- Perfil Card -->
-                      
+                       <h5>Selecione uma foto de perfil</h5>
+                       <b-row>
+                           <b-col>
+                              <label for="check1" class="btn clck">
+                                 <div style="backgroundImage: url('/static/img/option1.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                 <b-form-checkbox id="check1"  v-model="checkselected" value="option1"></b-form-checkbox>
+                              </label>
+                           </b-col>
+                           <b-col>
+                              <label for="check2" class="btn clck">
+                                <div style="backgroundImage: url('/static/img/option8.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                 <b-form-checkbox id="check2"  v-model="checkselected" value="option8"></b-form-checkbox>
+                              </label>
+                           </b-col>
+                           <b-col>
+                              <label for="check3" class="btn clck">
+                                <div style="backgroundImage: url('/static/img/option6.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                 <b-form-checkbox id="check3"  v-model="checkselected" value="option6"></b-form-checkbox>
+                              </label>
+                           </b-col>
+                           <b-col>
+                              <label for="check4" class="btn clck">
+                                <div style="backgroundImage: url('/static/img/option5.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                 <b-form-checkbox id="check4"  v-model="checkselected" value="option5"></b-form-checkbox>
+                              </label>
+                           </b-col>
+                           <b-col>
+                              <label for="check5" class="btn clck">
+                                <div style="backgroundImage: url('/static/img/option2.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                 <b-form-checkbox id="check5"  v-model="checkselected" value="option2"></b-form-checkbox>
+                              </label>
+                           </b-col>
+                           <b-col>
+                              <label for="check6" class="btn clck">
+                                <div style="backgroundImage: url('/static/img/option7.jpg'); backgroundSize: cover;" class="img-thumbnail img-fluid"></div>
+                                 <b-form-checkbox id="check6"  v-model="checkselected" value="option7"></b-form-checkbox>
+                              </label>
+                           </b-col>
+                           <span class="validate" id="valFile">É necessário escolher uma imagem para seu perfil!</span>
+                       </b-row>
                        <form class="form" role="form" autocomplete="off" name="form" action="" enctype="multipart/form-data">
-                          <h5>Selecione sua foto de Perfil</h5>
-                            <b-row>
-                                <div v-if="!image" class="img-file">
-                                   <b-form-file id="file"  @change="onFileChange" choose-label="Procurar" placeholder="Nenhum selecionado"></b-form-file>
-                                   <span class="validate" id="valFoto">Você deve selecionar uma foto de Perfil</span>
-                                </div>
-                                <div v-else  class="img-file">
-                                    <img id="usuFoto" :src="image" />
-                                    <b-button variant="danger" id="removeImage" @click="removeImage">Remover</b-button>
-                                </div>
-                            </b-row>
                             <h5>Biografia</h5>
                             <b-form-textarea id="textarea1" placeholder="Escreva aqui sua Biografia" :rows="3" :maxlength="170"></b-form-textarea>
                             <small class="float-right">Máximo de 170 caracteres</small>
@@ -97,7 +125,8 @@ import axios from 'axios'
 export default {
 data () {
     return {
-      image: ''
+      checkselected: []
+        
     }
   },
   methods: {
@@ -115,7 +144,7 @@ data () {
             },
             
             cadastrar () {
-                var file = document.getElementById("file");
+                var foto = this.checkselected;
                 var text = document.getElementById("textarea1").value;
                 var localize = document.getElementById("location-col").innerHTML;
                 var fb = document.getElementById("inputfb").value;
@@ -124,10 +153,9 @@ data () {
                 var tw = document.getElementById("inputtw").value;
                 var insta = document.getElementById("inputinst").value;
                 
-                if (file.value == ''){
-                    document.getElementById("valFoto").style.display = "block";
-                    
-                } 
+                if (foto.length == 0) {
+                   document.getElementById("valFile").style.display = "block";
+                }
                 
                 else if (text.length == 0) {
                      document.getElementById("valBio").style.display = "block";
@@ -138,7 +166,8 @@ data () {
                 }
                 
                 else {
-                axios.post('http://localhost:8060/pessoas', {
+                axios.patch('http://localhost:8060/pessoas/4', {
+                    foto: '/static/img/' + foto + '.jpg',
                     biografia: text,
                     local: localize,
                     facebook: fb,
@@ -157,26 +186,6 @@ data () {
                     this.$router.push('inicio');
                     console.log('Login!');
                 }
-            },
-            onFileChange(e) {
-                var files = e.target.files || e.dataTransfer.files;
-                  if (!files.length)
-                    return;
-                  this.createImage(files[0]);
-                },
-                createImage(file) {
-                  var image = new Image();
-                  var reader = new FileReader();
-                  var vm = this;
-
-                  reader.onload = (e) => {
-                    vm.image = e.target.result;
-                  };
-                  reader.readAsDataURL(file);
-                },
-                removeImage: function (e) {
-                  this.image = '';
-                
             }
         }
 }
@@ -413,5 +422,26 @@ data () {
         display: none;
         color: #e74c3c;
         font-weight: 700;
+    }
+    
+    .nb-login .img-thumbnail{
+        width: 120px;
+        height: 170px;
+    }
+    
+    .nb-login label{
+        justify-content: center;
+        text-align: center;
+        height: 181px;
+    }
+    
+    .nb-login .custom-control {
+        position: relative;
+        margin-right: -100px;
+        bottom: 26px;
+    }
+    
+    .nb-login .clck {
+        border-color: transparent;
     }
 </style>
