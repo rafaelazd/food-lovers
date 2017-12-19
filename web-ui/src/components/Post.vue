@@ -1,5 +1,5 @@
 <template> 
-    <div class="card">
+    <div class="card" :value="post.idFoto">
         <div class="cab d-flex justify-content-around">
             <div id="profileFoto" :style="{backgroundImage: 'url(' + dados.foto + ')'}" ></div>
             <a href="">{{dados.usuario}}</a>

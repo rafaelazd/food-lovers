@@ -37,8 +37,7 @@
                          :maxlength="900"
                          name="Descricao">
                 </b-form-textarea>
-                <b-button @click="postFoto" variant="primary">Anonimo</b-button>
-                <b-button type="submit" class="btn btn-outline-success" @click="postPerson">Confirmar</b-button>
+                <b-button type="submit" class="btn btn-outline-success" @click="postFoto">Confirmar</b-button>
             </div>
         </div>
         <!-- END Feed Card -->
@@ -93,8 +92,10 @@ export default {
         
         postFoto() {
             var descricao = document.getElementById("textarea3").value;
-            var fole = document.getElementById("inputFoto").value.replace(/^.*\\/, "");
-            var path = 'static/img/' + fole;
+            var file = document.getElementById("inputFoto").value.replace(/^.*\\/, "");
+            var path = 'static/img/' + file;
+            var arr = this.posts.pop();
+            var lastChd = arr.idFoto + 1;
                     axios({
                         method: 'post',
                         url: 'http://localhost:8060/fotografias',
@@ -104,26 +105,19 @@ export default {
                         }
                     })
                     .then(function (response) {
-                        console.log(response);
+                        axios({
+                        method: 'put',
+                        url: 'http://localhost:8060/fotografias/'+lastChd+'/usuario',
+                        headers: { 'Content-Type': 'text/uri-list' },
+                        data: 'http://localhost:8060/pessoas/3'
+                        })
+                        .then(function (resp) {
+                            window.location.reload();
+                        })
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
-        },
-        
-        postPerson() {
-             axios({
-                method: 'put',
-                url: 'http://localhost:8060/fotografias/8/usuario',
-                headers: { 'Content-Type': 'text/uri-list' },
-                data: 'http://localhost:8060/pessoas/3'
-                })
-                  .then(function (response) {
-                    console.log(response);
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
         }
     }
 }
