@@ -180,8 +180,38 @@ import axios from 'axios'
     
     @media (min-width: 576px) {
         .card-group .card:not(:first-child):not(:last-child):not(:only-child) {
-     border-radius: 15px; 
-}
+             border-radius: 15px; 
+        }
+    }
+
+    
+    @media (max-width: 576px) {
+        .card-group .card:not(:first-child):not(:last-child):not(:only-child) {
+             border-radius: 15px;
+             margin-top: -464px;
+        }
+        
+        .card-group .card:not(:first-child):not(:last-child) {
+            border-radius: 15px;
+            margin-left: 1px;
+        }
+
+        .card-group .card:first-child {
+            border-radius: 15px;
+            z-index: 10;
+            margin-left: -5px;
+        }
+
+        .card-group .card + .card {
+            margin-left: 9px;
+            border-left: 10px;
+            z-index: 10000;
+            margin-top: -464px;
+        }
+        
+        .card-group {
+            padding-left: 30px;
+        }
     }
 
     
